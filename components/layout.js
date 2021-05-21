@@ -1,16 +1,18 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
+import utilStyles from '../styles/utils.module.css'
 
-const name = 'Eduardo Calvo'
-export const siteTitle = 'Next.js Sample Website'
+export const name = 'Eduardo Calvo'
+
+export const siteTitle = 'Eduardo Calvo - Portfolio'
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
@@ -25,49 +27,79 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <a>
+
+      <header>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div className="container">
+
+          {home ? (
+            <>
+              <div className="d-flex align-items-center text-white text-decoration-none">
                 <Image
                   priority
                   src="/images/profile.jpg"
                   className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
+                  height={44}
+                  width={44}
                   alt={name}
                 />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
+                <Image
+                  priority
+                  src="/images/logonegro.svg"
+                  height={44}
+                  width={44}
+                  alt={name}
+                />
+              </div>
+            </>
+          ) : (
+            <>
+            <div className="d-flex align-items-center text-white text-decoration-none">
               <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
+                <a>
+                  <Image
+                    priority
+                    src="/images/profile.jpg"
+                    className={utilStyles.borderCircle}
+                    height={44}
+                    width={44}
+                    alt={name}
+                  />
+                </a>
               </Link>
-            </h2>
-          </>
-        )}
+              <Link href="/">
+                <a>
+                  <Image
+                    priority
+                    src="/images/logonegro.svg"
+                    height={44}
+                    width={44}
+                    alt={name}
+                  />
+                </a>
+              </Link>
+              </div>
+            </>
+          )}
+            <div className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+              <a className="me-3 py-2 text-white text-decoration-none" href="#">Servicios</a>
+              <a className="me-3 py-2 text-white text-decoration-none" href="#">Proyectos</a>
+              <a className="me-3 py-2 text-white text-decoration-none" href="#">Recomendaciones</a>
+              <a className="py-2 text-white text-decoration-none" href="#">Blog</a>
+            </div>
+          </div>
+        </nav>
       </header>
-      <main>{children}</main>
+      <main className="container">{children}</main>
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
-            <a>← Back to home</a>
+            <a className="btn btn-primary">← Volver</a>
           </Link>
         </div>
       )}
+     <script src="/js/custom.js"></script>
     </div>
+
   )
 }
