@@ -29,58 +29,58 @@ export default function Layout({ children, home }) {
       </Head>
 
       <header>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
-        <div className="container">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
+          <div className="container">
 
-          {home ? (
-            <>
-              <div className="d-flex align-items-center text-white text-decoration-none">
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={44}
-                  width={44}
-                  alt={name}
-                />
-                <Image
-                  priority
-                  src="/images/logonegro.svg"
-                  height={44}
-                  width={44}
-                  alt={name}
-                />
-              </div>
-            </>
-          ) : (
-            <>
-            <div className="d-flex align-items-center text-white text-decoration-none">
-              <Link href="/">
-                <a>
+            {home ? (
+              <>
+                <div className="d-flex align-items-center text-white text-decoration-none">
                   <Image
                     priority
                     src="/images/profile.jpg"
                     className={utilStyles.borderCircle}
                     height={44}
                     width={44}
-                    alt={name}
+                    alt="foto Edu"
                   />
-                </a>
-              </Link>
-              <Link href="/">
-                <a>
                   <Image
                     priority
-                    src="/images/logonegro.svg"
+                    src="/images/logo_edu.svg"
                     height={44}
                     width={44}
-                    alt={name}
+                    alt="logo Edu"
                   />
-                </a>
-              </Link>
-              </div>
-            </>
-          )}
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="d-flex align-items-center text-white text-decoration-none">
+                  <Link href="/">
+                    <a>
+                      <Image
+                        priority
+                        src="/images/profile.jpg"
+                        className={utilStyles.borderCircle}
+                        height={44}
+                        width={44}
+                        alt={name}
+                      />
+                    </a>
+                  </Link>
+                  <Link href="/">
+                    <a>
+                      <Image
+                        priority
+                        src="/images/logonegro.svg"
+                        height={44}
+                        width={44}
+                        alt={name}
+                      />
+                    </a>
+                  </Link>
+                </div>
+              </>
+            )}
             <div className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
               <a className="me-3 py-2 text-white text-decoration-none" href="#">Servicios</a>
               <a className="me-3 py-2 text-white text-decoration-none" href="#">Proyectos</a>
@@ -98,7 +98,7 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
-     <script src="/js/custom.js"></script>
+      <script src="/js/custom.js"></script>
     </div>
 
   )
