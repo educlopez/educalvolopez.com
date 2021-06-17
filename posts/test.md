@@ -1,5 +1,5 @@
 ---
-title: 'Two Forms of Pre-rendering'
+title: 'test'
 fragment: 'prueba framento 1'
 date: '2020-01-01'
 img: '/images/post1.jpg'
