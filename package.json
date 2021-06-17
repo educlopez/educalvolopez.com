@@ -1,12 +1,24 @@
 {
-  "name": "learn-starter",
-  "version": "0.1.0",
+  "name": "educalvolopez.com",
+  "version": "2.0.0",
+  "description": "https://educalvolopez.com website",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/educlopez/nextjs-blog.git"
+  },
+  "keywords": [],
+  "author": "Eduardo Calvo López",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/educlopez/nextjs-blog/issues"
+  },
+  "homepage": "https://github.com/educlopez/nextjs-blog#readme",
   "dependencies": {
     "bootstrap": "^5.0.1",
     "date-fns": "^2.22.1",
