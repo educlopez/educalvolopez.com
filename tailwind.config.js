@@ -1,11 +1,34 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        primary: {
+          DEFAULT: '#FBB828',
+          50: '#FFFFFF',
+          100: '#FFFAF0',
+          200: '#FEEABE',
+          300: '#FDD98C',
+          400: '#FCC95A',
+          500: '#FBB828',
+          600: '#ECA204',
+          700: '#BA8003',
+          800: '#875D03',
+          900: '#553B02',
+        },
+      },
+    },
   },
   variants: {
-    extend: {},
+    extend: {
+      display: ['dark'],
+    },
   },
   plugins: [],
-}
+};

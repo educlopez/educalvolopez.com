@@ -1,12 +1,9 @@
-import Head from 'next/head'
-import styles from './layout.module.css'
-import Link from 'next/link'
-import Image from 'next/image'
-import utilStyles from '../styles/utils.module.css'
+import Head from 'next/head';
+import Link from 'next/link';
+import MyNav from './mainNav';
+export const name = 'Eduardo Calvo';
 
-export const name = 'Eduardo Calvo'
-
-export const siteTitle = 'Eduardo Calvo - Portfolio'
+export const siteTitle = 'Eduardo Calvo - Portfolio';
 
 export default function Layout({ children, home }) {
   return (
@@ -26,80 +23,33 @@ export default function Layout({ children, home }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
+          rel="stylesheet"
+        />{' '}
       </Head>
-
-      <header>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
-          <div className="container">
-
-            {home ? (
-              <>
-                <div className="d-flex align-items-center text-white text-decoration-none">
-                  <Image
-                    priority
-                    src="/images/profile.jpg"
-                    className={utilStyles.borderCircle}
-                    height={44}
-                    width={44}
-                    alt="foto Edu"
-                  />
-                  <Image
-                    priority
-                    src="/images/logo_edu.svg"
-                    height={44}
-                    width={44}
-                    alt="logo Edu"
-                  />
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="d-flex align-items-center text-white text-decoration-none">
-                  <Link href="/">
-                    <a>
-                      <Image
-                        priority
-                        src="/images/profile.jpg"
-                        className={utilStyles.borderCircle}
-                        height={44}
-                        width={44}
-                        alt={name}
-                      />
-                    </a>
-                  </Link>
-                  <Link href="/">
-                    <a>
-                      <Image
-                        priority
-                        src="/images/logonegro.svg"
-                        height={44}
-                        width={44}
-                        alt={name}
-                      />
-                    </a>
-                  </Link>
-                </div>
-              </>
-            )}
-            <div className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-              <a className="me-3 py-2 text-white text-decoration-none" href="#">Servicios</a>
-              <a className="me-3 py-2 text-white text-decoration-none" href="#">Proyectos</a>
-              <a className="me-3 py-2 text-white text-decoration-none" href="#">Recomendaciones</a>
-              <a className="py-2 text-white text-decoration-none" href="#">Blog</a>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <main className="container">{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
+      <main className="container mx-auto">
+        {home ? <MyNav home /> : <MyNav />}
+        {children}
+        {!home && (
           <Link href="/">
-            <a className="btn btn-primary">← Volver</a>
+            <a
+              type="button"
+              className="w-auto px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in rounded-lg shadow-md bg-primary-600 hover:bg-primary-700 focus:ring-primary-500 focus:ring-offset-primary-200 focus:outline-none focus:ring-2 focus:ring-offset-2 "
+            >
+              ← Volver
+            </a>
           </Link>
-        </div>
-      )}
+        )}
+      </main>
+
       <script src="/js/custom.js"></script>
     </div>
-
-  )
+  );
 }
