@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Date from '../components/date';
 import { getCurrentTime } from '../components/currentTime';
 import SectionService from '../components/sectionService';
+import SpotifyPlaying from '../components/spotifyPlaying';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -40,7 +41,7 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className="header-background"></div>
+      {/*<div className="header-background"></div>*/}
       <div className="flex flex-col my-32 space-y-10 md:flex-row md:space-x-96 md:space-y-0">
         <div className="flex-1 text-center md:text-left">
           <div className="sm:text-center lg:text-left">
@@ -50,7 +51,7 @@ export default function Home({ allPostsData }) {
             <p className="mt-3 text-base text-black dark:text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-1xl lg:mx-0">
               Especializado en diseño web, UI, UX y Maquetación.
             </p>
-            <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+            {/*<div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="">
                 <a
                   href="#"
@@ -67,11 +68,12 @@ export default function Home({ allPostsData }) {
                   Live demo
                 </a>
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>
         <div className="flex-1 text-center md:text-right">
-          <p className="text-white text-md-end text-sm-start">
+          <SpotifyPlaying />
+          <p className="mt-6 text-black dark:text-white text-md-end text-sm-start">
             Madrid, España
             <br></br>
             {getCurrentTime()} UTC+2
@@ -81,12 +83,14 @@ export default function Home({ allPostsData }) {
         </div>
       </div>
       <section>
-        <h2 className="mb-4 text-white">Blog</h2>
-        <div className="flex flex-row items-stretch content-center">
+        <h2 className="my-16 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+          Blog
+        </h2>
+        <div className="flex flex-col items-stretch content-center md:flex-row">
           {allPostsData.map(({ id, date, title, img, fragment }) => (
             <Link href={`/posts/${id}`} key={id}>
               <a className="flex-1">
-                <div className="overflow-hidden duration-500 transform bg-white rounded-md shadow-lg cursor-pointer dark:bg-black w-80 hover:shadow-xl hover:scale-105">
+                <div className="overflow-hidden duration-500 transform bg-white rounded-md shadow-lg cursor-pointer dark:bg-gray-900 ring-1 ring-black dark:ring-gray-600 ring-opacity-5 w-80 hover:shadow-xl hover:scale-105">
                   <Image
                     priority
                     src={img}

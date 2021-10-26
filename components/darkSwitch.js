@@ -16,7 +16,7 @@ export default function DarkSwitch() {
     if (currentTheme === 'dark') {
       return (
         <SunIcon
-          className="w-7 h-7"
+          className="w-5 h-5"
           role="button"
           onClick={() => setTheme('light')}
         />
@@ -24,7 +24,7 @@ export default function DarkSwitch() {
     } else {
       return (
         <MoonIcon
-          className="w-7 h-7"
+          className="w-5 h-5"
           role="button"
           onClick={() => setTheme('dark')}
         />
@@ -32,7 +32,7 @@ export default function DarkSwitch() {
     }
   };
   return (
-    <div className="p-1 bg-gray-900 rounded-full dark:bg-primary">
+    <div className="p-2 text-gray-500 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white">
       {renderThemeChanger()}
     </div>
   );

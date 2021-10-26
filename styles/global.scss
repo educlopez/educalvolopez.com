@@ -36,20 +36,6 @@ body {
   box-sizing: border-box;
 }
 
-a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
 .header-background {
   position: fixed;
   top: 0;
@@ -103,4 +89,9 @@ img {
   z-index: -2;
   transition: filter 0.5s, opacity 3s;
   background-image: url('/images/bg_portfolio_setup.jpg');
+}
+.bg-custom-gradient {
+  background-image: url('/images/gradient.svg');
+  background-repeat: no-repeat;
+  background-position: top center;
 }

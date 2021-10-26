@@ -4,17 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Popover, Transition } from '@headlessui/react';
 import {
-  BookmarkAltIcon,
-  CalendarIcon,
   ChartBarIcon,
   CursorClickIcon,
   MenuIcon,
-  PhoneIcon,
-  PlayIcon,
-  RefreshIcon,
-  ShieldCheckIcon,
-  SupportIcon,
-  ViewGridIcon,
   XIcon,
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
@@ -35,30 +27,11 @@ const solutions = [
     href: '#',
     icon: CursorClickIcon,
   },
-  {
-    name: 'Security',
-    description: "Your customers' data will be safe and secure.",
-    href: '#',
-    icon: ShieldCheckIcon,
-  },
-  {
-    name: 'Integrations',
-    description: "Connect with third-party tools that you're already using.",
-    href: '#',
-    icon: ViewGridIcon,
-  },
-  {
-    name: 'Automations',
-    description:
-      'Build strategic funnels that will drive your customers to convert',
-    href: '#',
-    icon: RefreshIcon,
-  },
 ];
-const callsToAction = [
+/*const callsToAction = [
   { name: 'Watch Demo', href: '#', icon: PlayIcon },
   { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-];
+];*/
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -97,7 +70,7 @@ export default function MyNav({ home }) {
             </div>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
-            <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md dark:bg-black dark:bg-dark hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
+            <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md dark:text-white dark:bg-black dark:bg-dark hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="w-6 h-6" aria-hidden="true" />
             </Popover.Button>
@@ -136,20 +109,20 @@ export default function MyNav({ home }) {
                     leaveTo="opacity-0 translate-y-1"
                   >
                     <Popover.Panel className="absolute z-10 w-screen max-w-md px-2 mt-3 -ml-4 transform sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
-                      <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                        <div className="relative grid gap-6 px-5 py-6 bg-white dark:bg-black sm:gap-8 sm:p-8">
+                      <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black dark:ring-gray-600 ring-opacity-5">
+                        <div className="relative grid gap-6 px-5 py-6 bg-white dark:bg-gray-900 sm:gap-8 sm:p-8">
                           {solutions.map((item) => (
                             <a
                               key={item.name}
                               href={item.href}
-                              className="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50"
+                              className="flex items-start p-3 -m-3 rounded-lg hover:bg-gray-50 dark:hover:bg-black"
                             >
                               <item.icon
                                 className="flex-shrink-0 w-6 h-6 text-primary-600"
                                 aria-hidden="true"
                               />
                               <div className="ml-4">
-                                <p className="text-base font-medium text-gray-900">
+                                <p className="text-base font-medium text-gray-900 dark:text-white">
                                   {item.name}
                                 </p>
                                 <p className="mt-1 text-sm text-gray-500">
@@ -159,7 +132,7 @@ export default function MyNav({ home }) {
                             </a>
                           ))}
                         </div>
-                        <div className="px-5 py-5 space-y-6 bg-gray-50 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
+                        {/*<div className="px-5 py-5 space-y-6 bg-gray-50 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                           {callsToAction.map((item) => (
                             <div key={item.name} className="flow-root">
                               <a
@@ -174,7 +147,7 @@ export default function MyNav({ home }) {
                               </a>
                             </div>
                           ))}
-                        </div>
+                          </div>*/}
                       </div>
                     </Popover.Panel>
                   </Transition>
@@ -183,16 +156,10 @@ export default function MyNav({ home }) {
             </Popover>
 
             <a
-              href="#"
+              href="/blog"
               className="text-base font-medium text-black dark:text-white hover:text-primary-500"
             >
-              Pricing
-            </a>
-            <a
-              href="#"
-              className="text-base font-medium text-black dark:text-white hover:text-primary-500"
-            >
-              Docs
+              Blog
             </a>
           </Popover.Group>
 
@@ -215,13 +182,13 @@ export default function MyNav({ home }) {
           focus
           className="absolute inset-x-0 top-0 p-2 transition origin-top-right transform md:hidden"
         >
-          <div className="bg-white divide-y-2 rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-gray-50">
+          <div className="bg-white divide-y-2 rounded-lg shadow-lg dark:bg-gray-800 ring-1 ring-black ring-opacity-5 divide-gray-50">
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <div>
                   <Image
                     priority
-                    className="w-auto h-8"
+                    className="w-auto h-8 rounded-full"
                     src="/images/profile.jpg"
                     height={44}
                     width={44}
@@ -229,8 +196,8 @@ export default function MyNav({ home }) {
                   />
                 </div>
                 <div className="-mr-2">
-                  <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
-                    <span className="sr-only">Close menu</span>
+                  <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md dark:text-white dark:bg-gray-900 ">
+                    <span className="sr-only">Cerrar menu</span>
                     <XIcon className="w-6 h-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>
@@ -241,13 +208,13 @@ export default function MyNav({ home }) {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center p-3 -m-3 rounded-md hover:bg-gray-50"
+                      className="flex items-center p-3 -m-3 border-gray-900 rounded-md hover:bg-gray-700"
                     >
                       <item.icon
                         className="flex-shrink-0 w-6 h-6 text-primary-600"
                         aria-hidden="true"
                       />
-                      <span className="ml-3 text-base font-medium text-gray-900">
+                      <span className="ml-3 text-base font-medium text-gray-900 dark:text-white">
                         {item.name}
                       </span>
                     </a>
@@ -258,17 +225,10 @@ export default function MyNav({ home }) {
             <div className="px-5 py-6 space-y-6">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
                 <a
-                  href="#"
-                  className="text-base font-medium text-gray-900 hover:text-gray-700"
+                  href="/blog"
+                  className="text-base font-medium text-gray-900 dark:text-white hover:text-gray-700"
                 >
-                  Pricing
-                </a>
-
-                <a
-                  href="#"
-                  className="text-base font-medium text-gray-900 hover:text-gray-700"
-                >
-                  Docs
+                  Blog
                 </a>
               </div>
             </div>
