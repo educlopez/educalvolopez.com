@@ -49,7 +49,7 @@ export default function MyNav({ home }) {
                 <Image
                   priority
                   className="rounded-full"
-                  src="/images/profile.jpg"
+                  src="/images/memoji_me_principal.jpeg"
                   height={44}
                   width={44}
                   alt="foto Edu"
@@ -69,7 +69,10 @@ export default function MyNav({ home }) {
               )}
             </div>
           </div>
-          <div className="-my-2 -mr-2 md:hidden">
+          <div className="fixed z-50 right-10 bottom-10 md:hidden">
+            <DarkSwitch />
+          </div>
+          <div className="my-2 mr-2 md:hidden">
             <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md dark:text-white dark:bg-black dark:bg-dark hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="w-6 h-6" aria-hidden="true" />
@@ -180,7 +183,7 @@ export default function MyNav({ home }) {
       >
         <Popover.Panel
           focus
-          className="absolute inset-x-0 top-0 p-2 transition origin-top-right transform md:hidden"
+          className="absolute inset-x-0 top-0 z-50 p-2 transition origin-top-right transform md:hidden"
         >
           <div className="bg-white divide-y-2 rounded-lg shadow-lg dark:bg-gray-800 ring-1 ring-black ring-opacity-5 divide-gray-50">
             <div className="px-5 pt-5 pb-6">

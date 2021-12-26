@@ -3,6 +3,9 @@ title: 'test'
 fragment: 'prueba framento 1'
 date: '2020-01-01'
 img: '/images/post1.jpg'
+author: 'Eduardo Calvo'
+authorimg: '/images/profile.jpg'
+tags: 'js'
 ---
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.

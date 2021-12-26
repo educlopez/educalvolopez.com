@@ -51,6 +51,20 @@ export default function Home({ allPostsData }) {
             <p className="mt-3 text-base text-black dark:text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-1xl lg:mx-0">
               Especializado en diseño web, UI, UX y Maquetación.
             </p>
+            <a
+              href="#"
+              className="inline-flex items-center p-2 mt-3 bg-white rounded-lg bg-opacity-5"
+            >
+              <span className="mr-2 text-xs text-black dark:text-white">
+                Comandos&nbsp;
+              </span>
+              <kbd className="inline-flex items-center px-2 py-1 pb-2 mr-2 text-xs font-medium text-gray-600 bg-gray-200 border-2 border-b-2 border-gray-600 rounded-lg shadow-sm retro-btn-shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-50">
+                ⌘
+              </kbd>
+              <kbd className="inline-flex items-center px-2 py-1 pb-2 text-xs font-medium text-gray-600 bg-gray-200 border-2 border-b-2 border-gray-600 rounded-lg shadow-sm retro-btn-shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-50">
+                k
+              </kbd>
+            </a>
             {/*<div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="">
                 <a
@@ -82,42 +96,91 @@ export default function Home({ allPostsData }) {
           </p>
         </div>
       </div>
-      <section>
-        <h2 className="my-16 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-          Blog
-        </h2>
-        <div className="flex flex-col items-stretch content-center md:flex-row">
-          {allPostsData.map(({ id, date, title, img, fragment }) => (
-            <Link href={`/posts/${id}`} key={id}>
-              <a className="flex-1">
-                <div className="overflow-hidden duration-500 transform bg-white rounded-md shadow-lg cursor-pointer dark:bg-gray-900 ring-1 ring-black dark:ring-gray-600 ring-opacity-5 w-80 hover:shadow-xl hover:scale-105">
-                  <Image
-                    priority
-                    src={img}
-                    alt={title}
-                    height={200}
-                    width={400}
-                    className="block"
-                    placeholder="blur"
-                    blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                      shimmer(200, 400)
-                    )}`}
-                  />
-                  <div className="p-4">
-                    <h5 className="mt-1 text-xl font-semibold leading-none text-black capitalize truncate dark:text-white">
-                      {title}
-                    </h5>
-                    <p className="mt-1 text-base font-medium tracking-wide text-black dark:text-white">
-                      {fragment}
-                    </p>
-                    <p className="text-sm font-semibold text-black dark:text-white">
-                      <Date dateString={date} />
-                    </p>
+      <section className="relative mx-auto max-w-7xl">
+        <div class="text-center">
+          <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+            From the blog
+          </h2>
+          <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4 dark:text-white">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
+            libero labore natus atque, ducimus sed.
+          </p>
+        </div>
+        <div className="grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
+          {allPostsData.map(
+            ({ id, date, title, img, fragment, author, tags, authorimg }) => (
+              <Link href={`/posts/${id}`} key={id}>
+                <a className="grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
+                  <div className="flex flex-col overflow-hidden duration-500 transform bg-white rounded-lg shadow-lg cursor-pointer bg-opacity-70 dark:bg-opacity-70 dark:bg-gray-900 ring-1 ring-black dark:ring-gray-600 ring-opacity-5 w-80 hover:shadow-xl hover:scale-105">
+                    <div className="flex-shrink-0">
+                      <Image
+                        priority
+                        src={img}
+                        alt={title}
+                        height={200}
+                        width={400}
+                        className="object-cover w-full h-48"
+                        placeholder="blur"
+                        blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                          shimmer(200, 400)
+                        )}`}
+                      />
+                    </div>
+                    <div className="flex flex-col justify-between flex-1 p-6">
+                      <div className="flex-1">
+                        <a href="#" class="inline-block">
+                          <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-pink-100 text-pink-800">
+                            {tags}
+                          </span>
+                        </a>
+                        <a href="#" className="block mt-3">
+                          <p className="text-xl font-semibold text-gray-900 line-clamp-2 dark:text-white">
+                            {title}
+                          </p>
+                          <p className="mt-3 text-base text-gray-500 line-clamp-3 dark:text-white">
+                            {fragment}
+                          </p>
+                        </a>
+                      </div>
+                      <div className="flex items-center mt-6">
+                        <div className="flex-shrink-0">
+                          <a href="#">
+                            <span className="sr-only">Brenna Goyette</span>
+                            <Image
+                              priority
+                              src={authorimg}
+                              alt={title}
+                              height={40}
+                              width={40}
+                              className="w-10 h-10 rounded-full"
+                              placeholder="blur"
+                              blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                                shimmer(200, 400)
+                              )}`}
+                            />
+                          </a>
+                        </div>
+                        <div className="ml-3">
+                          <p className="text-sm font-medium text-gray-900 dark:text-white">
+                            <a href="#" className="hover:underline">
+                              {author}
+                            </a>
+                          </p>
+                          <div className="flex space-x-1 text-sm text-gray-500 dark:text-white">
+                            <time datetime="2020-03-10">
+                              <Date dateString={date} />
+                            </time>
+                            <span aria-hidden="true">·</span>
+                            <span>4 min read</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </Link>
-          ))}
+                </a>
+              </Link>
+            )
+          )}
         </div>
       </section>
       <SectionService />

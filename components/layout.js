@@ -1,6 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import MyNav from './mainNav';
+import MyFooter from './mainFooter';
+import KbarMenu from './kbarMenu';
+
+import { ChevronLeftIcon } from '@heroicons/react/solid';
 
 export const name = 'Eduardo Calvo';
 
@@ -36,20 +40,28 @@ export default function Layout({ children, home }) {
         />{' '}
       </Head>
       <div className="bg-white dark:bg-gray-900 bg-custom-gradient">
+        <KbarMenu />
         <main className="container mx-auto">
           {home ? <MyNav home /> : <MyNav />}
           {children}
           {!home && (
-            <Link href="/">
-              <a
-                type="button"
-                className="w-auto px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in rounded-lg shadow-md bg-primary-600 hover:bg-primary-700 focus:ring-primary-500 focus:ring-offset-primary-200 focus:outline-none focus:ring-2 focus:ring-offset-2 "
-              >
-                ← Volver
-              </a>
-            </Link>
+            <div className="flex justify-center my-10">
+              <Link href="/">
+                <a
+                  type="button"
+                  className="inline-flex items-center justify-center px-4 py-2 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                >
+                  <ChevronLeftIcon
+                    className="w-5 h-5 mr-3 -ml-1"
+                    aria-hidden="true"
+                  />
+                  Volver
+                </a>
+              </Link>
+            </div>
           )}
         </main>
+        <MyFooter />
       </div>
       <script src="/js/custom.js"></script>
     </div>
