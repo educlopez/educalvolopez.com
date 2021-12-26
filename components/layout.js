@@ -1,16 +1,16 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import MyNav from './mainNav';
-import MyFooter from './mainFooter';
-import KbarMenu from './kbarMenu';
+import Head from 'next/head'
+import Link from 'next/link'
+import MyNav from './mainNav'
+import MyFooter from './mainFooter'
+import KbarMenu from './kbarMenu'
 
-import { ChevronLeftIcon } from '@heroicons/react/solid';
+import { ChevronLeftIcon } from '@heroicons/react/solid'
 
-export const name = 'Eduardo Calvo';
+export const name = 'Eduardo Calvo'
 
-export const siteTitle = 'Eduardo Calvo - Portfolio';
+export const siteTitle = 'Eduardo Calvo - Portfolio'
 
-export default function Layout({ children, home }) {
+export default function Layout ({ children, home }) {
   return (
     <div>
       <Head>
@@ -65,5 +65,5 @@ export default function Layout({ children, home }) {
       </div>
       <script src="/js/custom.js"></script>
     </div>
-  );
+  )
 }

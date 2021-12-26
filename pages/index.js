@@ -1,20 +1,20 @@
-import Head from 'next/head';
-import Layout, { siteTitle, name } from '../components/layout';
-import Image from 'next/image';
-import { getSortedPostsData } from '../lib/posts';
-import Link from 'next/link';
-import Date from '../components/date';
-import { getCurrentTime } from '../components/currentTime';
-import SectionService from '../components/sectionService';
-import SpotifyPlaying from '../components/spotifyPlaying';
+import Head from 'next/head'
+import Layout, { siteTitle } from '../components/layout'
+import Image from 'next/image'
+import { getSortedPostsData } from '../lib/posts'
+import Link from 'next/link'
+import Date from '../components/date'
+import { getCurrentTime } from '../components/currentTime'
+import SectionService from '../components/sectionService'
+import SpotifyPlaying from '../components/spotifyPlaying'
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+export async function getStaticProps () {
+  const allPostsData = getSortedPostsData()
   return {
     props: {
-      allPostsData,
-    },
-  };
+      allPostsData
+    }
+  }
 }
 const shimmer = (w, h) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -28,20 +28,20 @@ const shimmer = (w, h) => `
   <rect width="${w}" height="${h}" fill="#333" />
   <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
   <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
-</svg>`;
+</svg>`
 
 const toBase64 = (str) =>
   typeof window === 'undefined'
     ? Buffer.from(str).toString('base64')
-    : window.btoa(str);
+    : window.btoa(str)
 
-export default function Home({ allPostsData }) {
+export default function Home ({ allPostsData }) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      {/*<div className="header-background"></div>*/}
+      {/* <div className="header-background"></div> */}
       <div className="flex flex-col my-32 space-y-10 md:flex-row md:space-x-96 md:space-y-0">
         <div className="flex-1 text-center md:text-left">
           <div className="sm:text-center lg:text-left">
@@ -65,7 +65,7 @@ export default function Home({ allPostsData }) {
                 k
               </kbd>
             </a>
-            {/*<div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+            {/* <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="">
                 <a
                   href="#"
@@ -82,7 +82,7 @@ export default function Home({ allPostsData }) {
                   Live demo
                 </a>
               </div>
-            </div>*/}
+            </div> */}
           </div>
         </div>
         <div className="flex-1 text-center md:text-right">
@@ -97,11 +97,11 @@ export default function Home({ allPostsData }) {
         </div>
       </div>
       <section className="relative mx-auto max-w-7xl">
-        <div class="text-center">
-          <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+        <div className="text-center">
+          <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-4xl">
             From the blog
           </h2>
-          <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4 dark:text-white">
+          <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4 dark:text-white">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
             libero labore natus atque, ducimus sed.
           </p>
@@ -128,8 +128,8 @@ export default function Home({ allPostsData }) {
                     </div>
                     <div className="flex flex-col justify-between flex-1 p-6">
                       <div className="flex-1">
-                        <a href="#" class="inline-block">
-                          <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-pink-100 text-pink-800">
+                        <a href="#" className="inline-block">
+                          <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-pink-100 text-pink-800">
                             {tags}
                           </span>
                         </a>
@@ -167,7 +167,7 @@ export default function Home({ allPostsData }) {
                             </a>
                           </p>
                           <div className="flex space-x-1 text-sm text-gray-500 dark:text-white">
-                            <time datetime="2020-03-10">
+                            <time dateTime="2020-03-10">
                               <Date dateString={date} />
                             </time>
                             <span aria-hidden="true">·</span>
@@ -185,5 +185,5 @@ export default function Home({ allPostsData }) {
       </section>
       <SectionService />
     </Layout>
-  );
+  )
 }

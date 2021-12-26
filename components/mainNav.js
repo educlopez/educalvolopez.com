@@ -1,43 +1,43 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Component, Fragment } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Popover, Transition } from '@headlessui/react';
+import { Fragment } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Popover, Transition } from '@headlessui/react'
 import {
   ChartBarIcon,
   CursorClickIcon,
   MenuIcon,
-  XIcon,
-} from '@heroicons/react/outline';
-import { ChevronDownIcon } from '@heroicons/react/solid';
+  XIcon
+} from '@heroicons/react/outline'
+import { ChevronDownIcon } from '@heroicons/react/solid'
 
-import DarkSwitch from './darkSwitch.js';
+import DarkSwitch from './darkSwitch.js'
 
 const solutions = [
   {
-    name: 'Analytics',
+    name: 'Diseño',
     description:
       'Get a better understanding of where your traffic is coming from.',
     href: '#',
-    icon: ChartBarIcon,
+    icon: ChartBarIcon
   },
   {
-    name: 'Engagement',
+    name: 'Progrmación',
     description: 'Speak directly to your customers in a more meaningful way.',
     href: '#',
-    icon: CursorClickIcon,
-  },
-];
-/*const callsToAction = [
+    icon: CursorClickIcon
+  }
+]
+/* const callsToAction = [
   { name: 'Watch Demo', href: '#', icon: PlayIcon },
   { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-];*/
+]; */
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
+function classNames (...classes) {
+  return classes.filter(Boolean).join(' ')
 }
 
-export default function MyNav({ home }) {
+export default function MyNav ({ home }) {
   return (
     <Popover className="relative bg-transparent">
       <div className="max-w-full">
@@ -45,28 +45,30 @@ export default function MyNav({ home }) {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <span className="sr-only">Edu Calvo</span>
             <div className="w-auto h-8 sm:h-10">
-              {home ? (
-                <Image
-                  priority
-                  className="rounded-full"
-                  src="/images/memoji_me_principal.jpeg"
-                  height={44}
-                  width={44}
-                  alt="foto Edu"
-                />
-              ) : (
-                <Link href="/">
-                  <a>
+              {home
+                ? (
                     <Image
                       priority
-                      src="/images/logo_edu.svg"
+                      className="rounded-full"
+                      src="/images/memoji_me_principal.jpeg"
                       height={44}
                       width={44}
-                      alt="logo Edu"
+                      alt="foto Edu"
                     />
-                  </a>
-                </Link>
-              )}
+                  )
+                : (
+                    <Link href="/">
+                      <a>
+                        <Image
+                          priority
+                          src="/images/logo_edu.svg"
+                          height={44}
+                          width={44}
+                          alt="logo Edu"
+                        />
+                      </a>
+                    </Link>
+                  )}
             </div>
           </div>
           <div className="fixed z-50 right-10 bottom-10 md:hidden">
@@ -81,7 +83,7 @@ export default function MyNav({ home }) {
           <Popover.Group as="nav" className="hidden space-x-10 md:flex">
             <Popover className="relative">
               {({ open }) => (
-                <>
+                <div>
                   <Popover.Button
                     className={classNames(
                       open
@@ -90,7 +92,7 @@ export default function MyNav({ home }) {
                       'group bg-transparent rounded-md inline-flex items-center text-base font-medium hover:text-primary-500 focus:outline-none'
                     )}
                   >
-                    <span>Solutions</span>
+                    <span>Soluciones</span>
                     <ChevronDownIcon
                       className={classNames(
                         open
@@ -101,7 +103,6 @@ export default function MyNav({ home }) {
                       aria-hidden="true"
                     />
                   </Popover.Button>
-
                   <Transition
                     as={Fragment}
                     enter="transition ease-out duration-200"
@@ -135,26 +136,10 @@ export default function MyNav({ home }) {
                             </a>
                           ))}
                         </div>
-                        {/*<div className="px-5 py-5 space-y-6 bg-gray-50 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
-                          {callsToAction.map((item) => (
-                            <div key={item.name} className="flow-root">
-                              <a
-                                href={item.href}
-                                className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 rounded-md hover:bg-gray-100"
-                              >
-                                <item.icon
-                                  className="flex-shrink-0 w-6 h-6 text-gray-400"
-                                  aria-hidden="true"
-                                />
-                                <span className="ml-3">{item.name}</span>
-                              </a>
-                            </div>
-                          ))}
-                          </div>*/}
                       </div>
                     </Popover.Panel>
                   </Transition>
-                </>
+                </div>
               )}
             </Popover>
 
@@ -239,5 +224,5 @@ export default function MyNav({ home }) {
         </Popover.Panel>
       </Transition>
     </Popover>
-  );
+  )
 }
