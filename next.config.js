@@ -1,10 +1,10 @@
 module.exports = {
   swcMinify: true,
   images: {
-    domains: ['images.unsplash.com']
+    domains: ["images.unsplash.com", "ui.gallery"],
   },
   i18n: {
-    locales: ['es', 'en'],
-    defaultLocale: 'es'
-  }
-}
+    locales: ["es", "en"],
+    defaultLocale: "es",
+  },
+};

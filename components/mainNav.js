@@ -61,7 +61,7 @@ export default function MyNav ({ home }) {
                       <a>
                         <Image
                           priority
-                          src="/images/logo_edu.svg"
+                          src="/assets/general/logo_edu.svg"
                           height={44}
                           width={44}
                           alt="logo Edu"

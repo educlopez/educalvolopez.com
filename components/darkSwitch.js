@@ -15,20 +15,20 @@ export default function DarkSwitch () {
 
     if (currentTheme === 'dark') {
       return (
-        <SunIcon
-          className="w-5 h-5"
-          role="button"
-          onClick={() => setTheme('light')}
-        />
-      )
-    } else {
-      return (
         <MoonIcon
           className="w-5 h-5"
           role="button"
-          onClick={() => setTheme('dark')}
+          onClick={() => setTheme("light")}
         />
-      )
+      );
+    } else {
+      return (
+        <SunIcon
+          className="w-5 h-5"
+          role="button"
+          onClick={() => setTheme("dark")}
+        />
+      );
     }
   }
   return (
