@@ -16,13 +16,13 @@ export default function DarkSwitchFloatNav() {
     if (currentTheme === "dark") {
       return (
         <div onClick={() => setTheme("light")}>
-          <img src="assets/general/night.png" />
+          <img src="assets/general/moon.png" />
         </div>
       );
     } else {
       return (
         <div onClick={() => setTheme("dark")}>
-          <img src="assets/general/day.png" />
+          <img src="assets/general/sun.png" />
         </div>
       );
     }

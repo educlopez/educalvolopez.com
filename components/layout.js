@@ -9,7 +9,9 @@ export default function Layout({ preview, children }) {
       <Meta />
       <div className="bg-white dark:bg-gray-900 bg-custom-gradient">
         <KbarMenu />
-        <main className="container px-5 mx-auto">{children}</main>
+        <main className="container px-5 py-16 mx-auto">
+          {children}
+        </main>
         <MyFloatNav />
         <MyFooter />
       </div>

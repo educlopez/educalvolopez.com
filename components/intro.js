@@ -2,7 +2,7 @@ import SpotifyPlaying from "../components/spotifyPlaying";
 
 export default function Intro() {
   return (
-    <div className="flex flex-col items-center pt-16 mb-16 md:flex-row md:justify-between md:mb-12">
+    <section className="relative flex flex-col items-center mx-auto mb-16 md:flex-row md:justify-between md:mb-12 max-w-7xl">
       <div className="flex-1 text-center md:text-left">
         <div className="sm:text-center lg:text-left">
           <h1 className="text-3xl font-normal tracking-tight text-black dark:text-white sm:text-5xl md:text-4xl">
@@ -48,6 +48,6 @@ export default function Intro() {
       <div className="flex-1 text-center md:text-right">
         <SpotifyPlaying />
       </div>
-    </div>
+    </section>
   );
 }
