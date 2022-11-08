@@ -56,9 +56,9 @@ export function ArticleLayout({
                 </h1>
                 <time
                   dateTime={meta.date}
-                  className="flex items-center order-first text-base text-slate-400 dark:text-slate-500"
+                  className="flex items-center order-first text-base text-slate-900 dark:text-slate-500"
                 >
-                  <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
+                  <span className="h-4 w-0.5 rounded-full bg-slate-900 dark:bg-zinc-500" />
                   <span className="ml-3">{formatDate(meta.date)}</span>
                 </time>
               </header>

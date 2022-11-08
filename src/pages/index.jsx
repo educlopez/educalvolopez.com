@@ -57,11 +57,11 @@ function BriefcaseIcon(props) {
     >
       <path
         d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-slate-100 stroke-zinc-400 dark:fill-slate-100/10 dark:stroke-zinc-500"
+        className="fill-slate-900/10 stroke-slate-900 dark:fill-slate-100/10 dark:stroke-slate-500"
       />
       <path
         d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
+        className="stroke-slate-900 dark:stroke-slate-500"
       />
     </svg>
   )
@@ -175,7 +175,7 @@ function Resume() {
   ]
 
   return (
-    <div className="p-6 border rounded-2xl border-zinc-100 dark:border-zinc-700/40">
+    <div className="p-6 border bg-white/20 dark:bg-slate-900/50 rounded-2xl border-zinc-100 dark:border-zinc-700/40 backdrop-blur">
       <h2 className="flex text-sm font-semibold text-slate-900 dark:text-slate-100">
         <BriefcaseIcon className="flex-none w-6 h-6" />
         <span className="ml-3">Trabajo</span>
@@ -188,16 +188,16 @@ function Resume() {
             </div>
             <dl className="flex flex-wrap flex-auto gap-x-2">
               <dt className="sr-only">Company</dt>
-              <dd className="flex-none w-full text-sm font-medium text-slate-900 dark:text-slate-100">
+              <dd className="flex-none w-full text-sm font-medium text-slate-900 dark:text-white">
                 {role.company}
               </dd>
               <dt className="sr-only">Role</dt>
-              <dd className="text-xs text-slate-500 dark:text-slate-400">
+              <dd className="text-xs text-slate-800 dark:text-slate-400">
                 {role.title}
               </dd>
               <dt className="sr-only">Date</dt>
               <dd
-                className="ml-auto text-xs text-slate-400 dark:text-slate-500"
+                className="ml-auto text-xs text-slate-700 dark:text-slate-400"
                 aria-label={`${role.start.label ?? role.start} until ${
                   role.end.label ?? role.end
                 }`}
