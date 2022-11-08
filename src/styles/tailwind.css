@@ -1,0 +1,19 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import './prism.css';
+@import 'tailwindcss/utilities';
+
+.bg-custom-gradient {
+    background-image: url("../images/gradient.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+
+.floatnav {
+    background: rgba(22, 22, 22, 0.1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(25px);
+    border-radius: 20px;
+    z-index: 10;
+}
