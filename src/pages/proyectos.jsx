@@ -1,49 +1,49 @@
 import Image from 'next/image'
 import Head from 'next/head'
-
+import Clients from '@/components/Clients'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoTantra from '@/images/logos/tantra.svg'
+import logoJane from '@/images/logos/jane.svg'
+import logoAneto from '@/images/logos/aneto.svg'
+import logoDentaid from '@/images/logos/dentaid.svg'
+import logoNet2phone from '@/images/logos/net2phone.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Sms Net2phone',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+      'Panel de usuario para el envio y gestión de sms para la empresa Net2phone',
+    link: { href: 'https://sms.net2phone.es/login', label: 'sms.net2phone.es' },
+    logo: logoNet2phone,
   },
   {
-    name: 'Animaginary',
+    name: 'Tantra Spain',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      'Website con catalogo aunto gestionable por el cliente',
+    link: { href: 'https://tantraspain.com/', label: 'tantraspain.com' },
+    logo: logoTantra,
   },
   {
-    name: 'HelioStream',
+    name: 'Aneto',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'Tienda online de caldos',
+    link: { href: '', label: 'proximamente' },
+    logo: logoAneto,
   },
   {
-    name: 'cosmOS',
+    name: 'Janeworld',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+      'Tienda online de productos de bebes',
+    link: { href: 'https://janeworld.com/', label: 'janeworld.com' },
+    logo: logoJane,
   },
   {
-    name: 'OpenShuttle',
+    name: 'Dentaid',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'Tienda online de productos para el cuidado dental',
+    link: { href: 'https://www.dentaidcomprasonline.pe/', label: 'dentaidcomprasonline.pe' },
+    logo: logoDentaid,
   },
 ]
 
@@ -62,15 +62,15 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Spencer Sharp</title>
+        <title>Proyectos - Eduardo Calvo</title>
         <meta
           name="description"
-          content="Things I’ve made trying to put my dent in the universe."
+          content="Cosas que he hecho durante mi carrera."
         />
       </Head>
       <SimpleLayout
-        title="Things I’ve made trying to put my dent in the universe."
-        intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+        title="Cosas que he hecho tratando de hacer mella en el universo."
+        intro="¿No sabes por dónde empezar? He trabajado en montones de pequeños proyectos a lo largo de los años, pero estos son los que más me enorgullecen. Muchos de ellos son privados y no podré publicarlos a continuación."
       >
         <ul
           role="list"
@@ -86,17 +86,18 @@ export default function Projects() {
                   unoptimized
                 />
               </div>
-              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+              <h2 className="mt-6 text-base font-semibold text-slate-800 dark:text-slate-100">
                 <Card.Link href={project.link.href}>{project.name}</Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 flex mt-6 text-sm font-medium transition text-zinc-400 group-hover:text-teal-500 dark:text-zinc-200">
+              <p className="relative z-10 flex mt-6 text-sm font-medium transition text-slate-400 group-hover:text-amber-500 dark:text-slate-200">
                 <LinkIcon className="flex-none w-6 h-6" />
                 <span className="ml-2">{project.link.label}</span>
               </p>
             </Card>
           ))}
         </ul>
+        <Clients />
       </SimpleLayout>
     </>
   )

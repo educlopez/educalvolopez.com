@@ -10,16 +10,16 @@ import {
   GitHubIcon,
   LinkedInIcon,
 } from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
+import portraitImage from '@/images/portrait.png'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="flex text-sm font-medium transition group text-zinc-800 hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="flex text-sm font-medium transition group text-slate-800 hover:text-amber-500 dark:text-slate-200 dark:hover:text-amber-500"
       >
-        <Icon className="flex-none w-6 h-6 transition fill-zinc-500 group-hover:fill-teal-500" />
+        <Icon className="flex-none w-6 h-6 transition fill-zinc-500 group-hover:fill-amber-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -41,10 +41,10 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About - Spencer Sharp</title>
+        <title>About - Eduardo Calvo</title>
         <meta
           name="description"
-          content="I’m Spencer Sharp. I live in New York City, where I design the future."
+          content="Soy Eduardo Calvo, vivo en Madrid en donde diseño y creo webs."
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
@@ -60,59 +60,41 @@ export default function About() {
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I’m Spencer Sharp. I live in New York City, where I design the
-              future.
+            <h1 className="text-4xl font-bold tracking-tight text-slate-800 dark:text-slate-100 sm:text-5xl">
+              Soy Eduardo Calvo, vivo en Madrid en donde diseño y creo webs.
             </h1>
-            <div className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
+            <div className="mt-6 text-base space-y-7 text-slate-600 dark:text-slate-400">
               <p>
-                I’ve loved making things for as long as I can remember, and
-                wrote my first program when I was 6 years old, just two weeks
-                after my mom brought home the brand new Macintosh LC 550 that I
-                taught myself to type on.
+              Soy diseñador web y maquetador desde mi primer año de estudios de diseño gráfico en la universidad ESNE. En los últimos nueve años, he trabajado en muchos tipos de proyectos diferentes, como ecommerce, paneles de usuario y páginas de aterrizaje.
               </p>
               <p>
-                The only thing I loved more than computers as a kid was space.
-                When I was 8, I climbed the 40-foot oak tree at the back of our
-                yard while wearing my older sister’s motorcycle helmet, counted
-                down from three, and jumped — hoping the tree was tall enough
-                that with just a bit of momentum I’d be able to get to orbit.
+              Me encanta lo que hago porque me permite utilizar mi creatividad y mis habilidades en la comunicación visual, así como en la resolución de problemas. Ha sido un viaje increíble que me ha llevado a donde estoy hoy.
               </p>
               <p>
-                I spent the next few summers indoors working on a rocket design,
-                while I recovered from the multiple surgeries it took to fix my
-                badly broken legs. It took nine iterations, but when I was 15 I
-                sent my dad’s Blackberry into orbit and was able to transmit a
-                photo back down to our family computer from space.
-              </p>
-              <p>
-                Today, I’m the founder of Planetaria, where we’re working on
-                civilian space suits and manned shuttle kits you can assemble at
-                home so that the next generation of kids really <em>can</em>{' '}
-                make it to orbit — from the comfort of their own backyards.
+              Tengo un gran conocimiento de lo que se necesita para crear grandes interfaces de usuario y diseños que funcionen bien en cualquier dispositivo, desde ordenadores de sobremesa hasta teléfonos móviles. He trabajado con clientes de todo el mundo en proyectos que van desde pequeñas empresas hasta grandes corporaciones.
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="#" icon={TwitterIcon}>
-                Follow on Twitter
+              <SocialLink href="https://twitter.com/educlopez93" icon={TwitterIcon}>
+                Seguir en Twitter
               </SocialLink>
-              <SocialLink href="#" icon={InstagramIcon} className="mt-4">
-                Follow on Instagram
+              <SocialLink href="https://instagram.com/educlopez93" icon={InstagramIcon} className="mt-4">
+                Seguir en Instagram
               </SocialLink>
-              <SocialLink href="#" icon={GitHubIcon} className="mt-4">
-                Follow on GitHub
+              <SocialLink href="https://github.com/educlopez" icon={GitHubIcon} className="mt-4">
+                Seguir en GitHub
               </SocialLink>
-              <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
-                Follow on LinkedIn
+              <SocialLink href="https://linkedin.com/in/educlopez" icon={LinkedInIcon} className="mt-4">
+                Seguir en LinkedIn
               </SocialLink>
               <SocialLink
-                href="mailto:spencer@planetaria.tech"
+                href="mailto:educalvolopez@gmail.com"
                 icon={MailIcon}
                 className="pt-8 mt-8 border-t border-zinc-100 dark:border-zinc-700/40"
               >
-                spencer@planetaria.tech
+                educalvolopez@gmail.com
               </SocialLink>
             </ul>
           </div>
