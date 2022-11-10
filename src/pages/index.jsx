@@ -234,6 +234,10 @@ export default function Home({ articles }) {
           name="description"
           content="Hola soy Eduardo, diseñador UI/UX y Frontend en Madrid."
         />
+        <meta
+          property="og:image"
+          content="http://localhost:3000/api/og?title=Eduardo Calvo - Diseñador UI/UX & Frontend"
+        />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">

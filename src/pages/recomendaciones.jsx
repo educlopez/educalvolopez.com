@@ -81,23 +81,12 @@ export default function Uses() {
               Blog de notas para todo. Finanzas, proyectos, moodboards, etc.
             </Tool>
             <Tool title="Raycast" href="https://www.raycast.com/">
-              Barra de comandos para el mac bitaminada y con plugins muy utiles.
+              Barra de comandos para el mac vitaminada y con plugins muy utiles.
             </Tool>
             <Tool title="Slack" href="https://slack.com/intl/es-es">
               Productividad o distración pero Slack ayuda mucho al trabajo en remoto.
             </Tool>
           </ToolsSection>
-          <ToolsSection title="Ocio">
-          <Tool title="Notion" href="https://notion.com/">
-            Blog de notas para todo. Finanzas, proyectos, moodboards, etc.
-          </Tool>
-          <Tool title="Raycast" href="https://www.raycast.com/">
-            Barra de comandos para el mac bitaminada y con plugins muy utiles.
-          </Tool>
-          <Tool title="Slack" href="https://slack.com/intl/es-es">
-            Productividad o distración pero Slack ayuda mucho al trabajo en remoto.
-          </Tool>
-        </ToolsSection>
         </div>
       </SimpleLayout>
     </>
