@@ -26,8 +26,7 @@ export function Footer() {
                 <NavLink href="/recomendaciones">Recomendaciones</NavLink>
               </div>
               <p className="text-sm text-slate-400 dark:text-slate-500">
-                &copy; {new Date().getFullYear()} Eduardo Calvo. All rights
-                reserved.
+                &copy; {new Date().getFullYear()} Eduardo Calvo. Todos los derechos reservados.
               </p>
             </div>
           </Container.Inner>

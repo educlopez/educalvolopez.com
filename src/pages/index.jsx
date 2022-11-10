@@ -140,7 +140,7 @@ function Resume() {
       logo: logoCinetic,
       start: '2021',
       end: {
-        label: 'Present',
+        label: 'Presente',
         dateTime: new Date().getFullYear(),
       },
     },
