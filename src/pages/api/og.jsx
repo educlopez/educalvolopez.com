@@ -1,6 +1,6 @@
 import { ImageResponse } from "@vercel/og"
 import Image from "next/image"
-
+import avatarImage from '@/images/avatar.png'
 export const config = {
   runtime: "experimental-edge"
 }
@@ -18,50 +18,73 @@ export default function handler(req) {
     return new ImageResponse(
       (
         <div
+        style={{
+          display: 'flex',
+          height: '100%',
+          width: '100%',
+          alignItems: 'center',
+          justifyContent: 'center',
+          letterSpacing: '-.02em',
+          fontWeight: 700,
+          background: 'black',
+          backgroundImage: 'url(https://educalvolopez.com/_next/static/media/gradient.5ffab1f3.svg)',
+          backgroundSize: '100% 200%',
+          backgroundRepeat: 'repeat',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div
           style={{
-            backgroundColor: "black",
-            backgroundSize: "150px 150px",
-            height: "100%",
-            width: "100%",
-            display: "flex",
-            textAlign: "center",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-            flexWrap: "nowrap"
+            left: 42,
+            top: 42,
+            position: 'absolute',
+            display: 'flex',
+            alignItems: 'center',
           }}
         >
-          <div
+          <span
             style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              justifyItems: "center"
+              width: 24,
+              height: 24,
+              borderRadius: '40px',
+              background: 'white',
+            }}
+          />
+          <span
+            style={{
+              marginLeft: 8,
+              fontSize: 20,
+              color: 'white',
             }}
           >
-            <img
-              alt="Vercel"
-              height={200}
-              src="data:image/svg+xml,%3Csvg width='116' height='100' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M57.5 0L115 100H0L57.5 0z' /%3E%3C/svg%3E"
-              style={{ margin: "0 30px" }}
-              width={232}
-            />
-          </div>
-          <div
-            style={{
-              fontSize: 60,
-              fontStyle: "normal",
-              letterSpacing: "-0.025em",
-              color: "white",
-              marginTop: 30,
-              padding: "0 120px",
-              lineHeight: 1.4,
-              whiteSpace: "pre-wrap"
-            }}
-          >
-            {title}
-          </div>
+            educalvolopez.com
+          </span>
         </div>
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            padding: '20px 50px',
+            margin: '0 42px',
+            fontSize: 40,
+            width: 'auto',
+            maxWidth: 550,
+            textAlign: 'center',
+            color: 'white',
+            lineHeight: 1.4,
+          }}
+        >
+        <img
+        alt="Vercel"
+        height={100}
+        src="https://educalvolopez.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.af29b138.png&w=128&q=75"
+        style={{ margin: '30px', borderRadius:'100%' }}
+      />
+          {title}
+        </div>
+      </div>
+
       ),
       {
         width: 1200,

@@ -67,6 +67,10 @@ export default function Projects() {
           name="description"
           content="Cosas que he hecho durante mi carrera."
         />
+        <meta
+          property="og:image"
+          content="https://educalvolopez.com/api/og?title=Proyectos - Eduardo Calvo"
+        />
       </Head>
       <SimpleLayout
         title="Cosas que he hecho tratando de hacer mella en el universo."

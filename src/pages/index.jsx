@@ -236,7 +236,7 @@ export default function Home({ articles }) {
         />
         <meta
           property="og:image"
-          content="http://localhost:3000/api/og?title=Eduardo Calvo - Diseñador UI/UX & Frontend"
+          content="https://educalvolopez.com/api/og?title=Eduardo Calvo - Diseñador UI/UX & Frontend"
         />
       </Head>
       <Container className="mt-9">

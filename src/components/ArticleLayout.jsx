@@ -37,7 +37,7 @@ export function ArticleLayout({
         <meta name="description" content={meta.description} />
         <meta
           property="og:image"
-          content={`http://localhost:3000/api/og?title="${meta.title} - Eduardo Calvo`}
+          content={`https://educalvolopez.com/api/og?title="${meta.title} - Eduardo Calvo`}
         />
       </Head>
       <Container className="mt-16 lg:mt-32">

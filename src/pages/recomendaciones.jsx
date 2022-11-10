@@ -34,6 +34,10 @@ export default function Uses() {
           name="description"
           content="El software que uso, los dispositivos que amo y otras cosas que recomiendo."
         />
+        <meta
+          property="og:image"
+          content="https://educalvolopez.com/api/og?title=Recomendaciones - Eduardo Calvo"
+        />
       </Head>
       <SimpleLayout
         title="El software que uso, los dispositivos que amo y otras cosas que recomiendo."
