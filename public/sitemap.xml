@@ -1,0 +1,28 @@
+<xml version="1.0" encoding="UTF-8">
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <url>
+            <loc>https://educalvolopez.com/</loc>
+            <lastmod>2022-11-11</lastmod>
+        </url>
+        <url>
+            <loc>https://educalvolopez.com/about</loc>
+            <lastmod>2022-11-11</lastmod>
+        </url>
+        <url>
+            <loc>https://educalvolopez.com/articles</loc>
+            <lastmod>2022-11-11</lastmod>
+        </url>
+        <url>
+            <loc>https://educalvolopez.com/articles/temas-y-plugins-recomendados-para-vscode</loc>
+            <lastmod>2022-11-11</lastmod>
+        </url>
+        <url>
+            <loc>https://educalvolopez.com/proyectos</loc>
+            <lastmod>2022-11-11</lastmod>
+        </url>
+        <url>
+            <loc>https://educalvolopez.com/recomendaciones</loc>
+            <lastmod>2022-11-11</lastmod>
+        </url>
+    </urlset>
+</xml>
