@@ -5,3 +5,5 @@ Disallow: /accounts
 # Allow all crawlers
 User-agent: *
 Allow: /
+User-agent: *
+Sitemap: https://educalvolopez.com/sitemap.xml
