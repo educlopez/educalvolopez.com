@@ -47,6 +47,13 @@ export default function ArticlesIndex({ articles }) {
           property="og:image"
           content="https://educalvolopez.com/api/og?title=Blog - Eduardo Calvo"
         />
+        <meta property="og:title" content="Blog - Eduardo Calvo" />
+        <meta
+          property="og:description"
+          content="Cuando no estoy programando, puedes encontrarme escribiendo sobre diseño de interfaces, programación y hobbies. Si quieres saber más sobre mí, echa un vistazo a mi perfil de LinkedIn."
+        />
+        <meta property="og:URL" content="https://educalvolopez.com/blog" />
+        <meta property="og:type" content="website" />
       </Head>
       <SimpleLayout
         title="Escribiendo sobre diseño de interfaces, programación y hobbies."

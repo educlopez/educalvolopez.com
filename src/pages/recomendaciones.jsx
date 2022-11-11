@@ -38,6 +38,13 @@ export default function Uses() {
           property="og:image"
           content="https://educalvolopez.com/api/og?title=Recomendaciones - Eduardo Calvo"
         />
+        <meta property="og:title" content="Recomendaciones - Eduardo Calvo" />
+        <meta
+          property="og:description"
+          content="l software que uso, los dispositivos que amo y otras cosas que recomiendo."
+        />
+        <meta property="og:URL" content="https://educalvolopez.com/recomendaciones" />
+        <meta property="og:type" content="website" />
       </Head>
       <SimpleLayout
         title="El software que uso, los dispositivos que amo y otras cosas que recomiendo."
@@ -46,16 +53,16 @@ export default function Uses() {
         <div className="space-y-20">
           <ToolsSection title="Workstation">
             <Tool title="16” MacBook Pro, M1 Max, 16GB RAM (2021)" href="https://amzn.to/3hp6Dxj">
-              Lo utilizo todos los dias para programar, diseñar y para uso personal. Un must have.
+            Utilizo este ordenador todos los días para programar, diseñar y para uso personal. Su diseño es bonito y funcional. La duración de la batería es excelente y me encantan los teclados retroiluminados.
             </Tool>
             <Tool title="Ipad Air 4º 64gb (2020)" href="https://amzn.to/3zWYZ3B">
-              Lo utilizo como pantalla secundaria del MacBook, y para usar procreate y mejorar la productividad en el trabajo.
+            Lo uso como pantalla secundaria para el MacBook y para usar procreate y mejorar la productividad en el trabajo. El iPad Air 4th es extremadamente fácil de usar y disfruto viendo películas en él o escuchando música.
             </Tool>
             <Tool title="LG 27UL650-W - Monitor 27 pulgadas 4K UHD" href="https://amzn.to/3zWCgER">
-              Pantalla complementaria para el MacBook, muy buenos colores para trabjar igual que si estuviese diseñando solo con el portatil.
+            El LG 27UL650-W es un gran monitor, con una resolución 4K UHD y una excelente reproducción del color. La pantalla es compatible con el MacBook Pro (modelo de 15 pulgadas), pero se verá muy bien en cualquier otro lugar.
             </Tool>
             <Tool title="Logitech K380 Teclado Inalámbrico" href="https://amzn.to/3EbTrVs">
-              Perfecto para el uso multidispositivo en mi espacio de trabajo. Muy buen precio.
+            Gran teclado para trabajar en casa, de viaje o en cualquier lugar de trabajo. Funciona con una gran variedad de dispositivos y ordenadores, lo que lo hace muy flexible.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Herramientas de desarrollo">
@@ -63,32 +70,32 @@ export default function Uses() {
               Atom, sublime text, phpstorm... descansan en paz en mi recuerdo ya que llego visual studio y me cambio la vida.
             </Tool>
             <Tool title="Lando" href="https://docs.lando.dev/">
-              Lando = levanta run proyecto en local en 1 min.
+              Lando = levantar un proyecto en local en 1 min.
             </Tool>
             <Tool title="Docker" href="https://www.docker.com/">
               Llevo años usando Docker, antes para levantar Laravel rapidamente y ahora lo uso por Lando para levantar los ecommerce de la empresa.
             </Tool>
             <Tool title="Table plus" href="https://tableplus.com/">
-              Gestor de Base de datos sin el que no puedo vivir.
+            El gestor de bases de datos es muy útil, y lo uso desde hace mucho tiempo porque es cómodo y fácil de usar.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Diseño">
             <Tool title="Figma" href="https://www.figma.com/">
-              Llevo utilizando Figma unos años como sustituto de Sketch y me tiene enamorado. Muy intuitivo y sobre todo productivo.
+            Para mí, Figma no sólo está en lo más alto de la lista. Es la mejor herramienta con la que me he topado en mi carrera libre y profesional.  Su flujo de trabajo intuitivo, su interfaz sencilla y sus bellos gráficos son lo que hacen que sea un placer utilizarla.
             </Tool>
             <Tool title="Sketch" href="https://www.sketch.com/">
-              Ya no uso tanto Sketch como antes pero sige siendo una herramienta super recomendable. Muy parecida a Figma.
+              Ya no uso tanto Sketch como antes pero sigue siendo una herramienta super recomendable. Muy parecida a Figma.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Productividad">
             <Tool title="Notion" href="https://notion.com/">
-              Blog de notas para todo. Finanzas, proyectos, moodboards, etc.
+            Sea lo que sea en lo que estés trabajando, la aplicación Notion es tu amiga. Organiza tus pensamientos e ideas con nuestra plataforma basada en plantillas, que te permite reunir rápidamente ideas para publicaciones de blog, crear tableros de estado de ánimo y hacer una lluvia de ideas creativas. Creada para los creativos.
             </Tool>
             <Tool title="Raycast" href="https://www.raycast.com/">
-              Barra de comandos para el mac vitaminada y con plugins muy utiles.
+            Se trata de una barra de comandos que puede utilizar para lanzar cualquier comando en su entorno de escritorio. Proporciona acceso a una serie de útiles complementos y accesos directos para realizar operaciones comunes
             </Tool>
             <Tool title="Slack" href="https://slack.com/intl/es-es">
-              Productividad o distración pero Slack ayuda mucho al trabajo en remoto.
+              Productividad o distración pero Slack ayuda mucho al trabajo en remoto permitiendote comunicarte con tus compañeros de proyecto.
             </Tool>
           </ToolsSection>
         </div>

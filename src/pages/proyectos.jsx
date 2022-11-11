@@ -65,15 +65,22 @@ export default function Projects() {
         <title>Proyectos - Eduardo Calvo</title>
         <meta
           name="description"
-          content="Cosas que he hecho durante mi carrera."
+          content="Proyectos que he realizado durante mi carrera."
         />
         <meta
           property="og:image"
           content="https://educalvolopez.com/api/og?title=Proyectos - Eduardo Calvo"
         />
+        <meta property="og:title" content="Proyectos - Eduardo Calvo" />
+        <meta
+          property="og:description"
+          content="Proyectos que he realizado durante mi carrera."
+        />
+        <meta property="og:URL" content="https://educalvolopez.com/proyectos" />
+        <meta property="og:type" content="website" />
       </Head>
       <SimpleLayout
-        title="Cosas que he hecho tratando de hacer mella en el universo."
+        title="Proyectos que he realizado durante mi carrera."
         intro="¿No sabes por dónde empezar? He trabajado en montones de pequeños proyectos a lo largo de los años, pero estos son los que más me enorgullecen. Muchos de ellos son privados y no podré publicarlos a continuación."
       >
         <ul
