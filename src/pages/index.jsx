@@ -20,6 +20,7 @@ import logoPapayagroup from '@/images/logos/papayagroup.svg'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
+import  Weather from '@/components/Weather'
 
 function MailIcon(props) {
   return (
@@ -286,6 +287,7 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
+            <Weather/>
             <Resume />
           </div>
         </div>

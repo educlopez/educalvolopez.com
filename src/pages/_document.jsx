@@ -1,4 +1,4 @@
-import { Head, Html, Main, NextScript } from 'next/document'
+import { Head, Html, Main, NextScript } from 'next/document';
 
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -33,7 +33,7 @@ const modeScript = `
     disableTransitionsTemporarily()
     updateMode()
   }
-`
+`;
 
 export default function Document() {
   return (
@@ -50,11 +50,12 @@ export default function Document() {
           type="application/feed+json"
           href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.json`}
         />
+        <meta name="robots" content="all" />
       </Head>
-      <body className="flex flex-col h-full bg-slate-100 dark:bg-black bg-custom-gradient">
+      <body className="flex flex-col h-full bg-custom-gradient bg-slate-100 dark:bg-black">
         <Main />
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }
