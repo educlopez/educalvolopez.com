@@ -9,6 +9,14 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'openweathermap.org',
+      },
+    ],
+  },
 }
 
 const withMDX = nextMDX({
