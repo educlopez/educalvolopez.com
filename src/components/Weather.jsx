@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-const API_KEY = 'ec34bea48f81cf943602ee678aa365db'
+const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API;
 
 function Weather() {
   const [weather, setWeather] = useState(null)
