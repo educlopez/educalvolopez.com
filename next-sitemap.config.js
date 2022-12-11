@@ -1,9 +1,9 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
     siteUrl: process.env.SITE_URL,
-    changefreq: 'daily',
+    changefreq: 'weekly',
     priority: 0.7,
     generateRobotsTxt: true,
-    exclude: ['/sinpublicar'],
+    exclude: ['/sinpublicar/*'],
     sitemapSize: 7000,
-  }
+}
