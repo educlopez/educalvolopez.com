@@ -65,7 +65,7 @@ export default function Uses() {
             Gran teclado para trabajar en casa, de viaje o en cualquier lugar de trabajo. Funciona con una gran variedad de dispositivos y ordenadores, lo que lo hace muy flexible.
             </Tool>
           </ToolsSection>
-          <ToolsSection title="Herramientas de desarrollo">
+          <ToolsSection title="Desarrollo">
             <Tool title="Visual studio code" href="https://code.visualstudio.com/?wt.mc_id=DX_841432">
               Atom, sublime text, phpstorm... descansan en paz en mi recuerdo ya que llego visual studio y me cambio la vida.
             </Tool>
