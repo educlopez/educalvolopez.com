@@ -50,7 +50,7 @@ export default function About() {
         />
         <meta
         property="og:image"
-        content="https://educalvolopez.com/api/og?title=About - Eduardo Calvo"
+        content="https://educalvolopez.com/api/og?title=About-Eduardo-Calvo"
       />
       <meta property="og:title" content="About - Eduardo Calvo" />
       <meta
