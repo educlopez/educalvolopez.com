@@ -75,7 +75,7 @@ export default function handler(req) {
             lineHeight: 1.4,
           }}
         >
-        <img
+        <Image
         alt="Vercel"
         height={100}
         src="https://educalvolopez.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.af29b138.png&w=128&q=75"
