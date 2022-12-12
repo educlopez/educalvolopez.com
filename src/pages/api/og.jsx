@@ -1,6 +1,5 @@
 import { ImageResponse } from "@vercel/og"
-import Image from "next/image"
-import avatarImage from '@/images/avatar.png'
+
 export const config = {
   runtime: "experimental-edge"
 }
@@ -9,7 +8,6 @@ export default function handler(req) {
   try {
     const { searchParams } = new URL(req.url)
 
-    // ?title=<title>
     const hasTitle = searchParams.has("title")
     const title = hasTitle
       ? searchParams.get("title")?.slice(0, 100)
@@ -75,12 +73,6 @@ export default function handler(req) {
             lineHeight: 1.4,
           }}
         >
-        <Image
-        alt="Vercel"
-        height={100}
-        src="https://educalvolopez.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.af29b138.png&w=128&q=75"
-        style={{ margin: '30px', borderRadius:'100%' }}
-      />
           {title}
         </div>
       </div>
