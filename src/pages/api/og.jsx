@@ -27,7 +27,7 @@ export default function handler(req) {
           letterSpacing: '-.02em',
           fontWeight: 700,
           background: 'black',
-          backgroundImage: 'url(https://educalvolopez.com/_next/static/media/gradient.5ffab1f3.svg)',
+          backgroundImage: 'url(https://educalvolopez.com/gradient.svg)',
           backgroundSize: '100% 200%',
           backgroundRepeat: 'repeat',
           backgroundPosition: 'center',
