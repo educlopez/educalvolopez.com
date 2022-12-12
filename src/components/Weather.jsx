@@ -16,14 +16,14 @@ function Weather() {
 
   if (!weather) {
     return (
-      <div className="relative flex items-center justify-between px-6 py-3 border bg-white/20 dark:bg-slate-900/50 rounded-2xl border-zinc-100 dark:border-zinc-700/40 backdrop-blur">
+      <div className="relative flex items-center justify-between px-6 py-3 border bg-white/20 dark:bg-slate-900/50 rounded-2xl border-zinc-100/30 dark:border-zinc-700/40 backdrop-blur">
           <p className='text-xs text-slate-800 dark:text-slate-400'>Cargando tiempo...</p>
       </div>
       )
     }
 
   return (
-    <div className="relative flex items-center justify-between px-6 py-3 border bg-white/20 dark:bg-slate-900/50 rounded-2xl border-zinc-100 dark:border-zinc-700/40 backdrop-blur">
+    <div className="relative flex items-center justify-between px-6 py-3 border bg-white/20 dark:bg-slate-900/50 rounded-2xl border-zinc-100/30 dark:border-zinc-700/40 backdrop-blur">
       <h2 className="flex text-xs font-semibold text-slate-900 dark:text-slate-100 ">{weather.name}, {weather.sys.country}</h2>
       <div className='flex items-center py-1 pr-3 rounded-full bg-white/20 dark:bg-slate-900/50'>
         <Image

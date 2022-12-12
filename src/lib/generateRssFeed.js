@@ -14,7 +14,7 @@ export async function generateRssFeed() {
 
   let feed = new Feed({
     title: author.name,
-    description: 'Your blog description',
+    description: ' Soy Eduardo, soy diseñador web y maquetador con sede en Madrid. <br></br>Trabajo actualmente en Cinetic Digital y como Freelance.',
     author,
     id: siteUrl,
     link: siteUrl,

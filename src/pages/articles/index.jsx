@@ -20,7 +20,15 @@ function Article({ article }) {
         >
           {formatDate(article.date)}
         </Card.Eyebrow>
-        <Card.Description>{article.description}</Card.Description>
+        <Card.Description>
+          {article.description}
+          <br></br>
+          {article.tags.map((tag) => (
+            <a href="#" key={tag} className="inline-block before:content-['#'] text-slate-800 dark:text-slate-400">
+              <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-slate-800 dark:text-slate-400">{tag}</span>
+            </a>
+          ))}
+        </Card.Description>
         <Card.Cta>Leer artículo</Card.Cta>
       </Card>
       <Card.Eyebrow
@@ -59,7 +67,7 @@ export default function ArticlesIndex({ articles }) {
         title="Escribiendo sobre diseño de interfaces, programación y hobbies."
         intro="Cuando no estoy programando, puedes encontrarme escribiendo sobre diseño de interfaces, programación y hobbies. Si quieres saber más sobre mí, echa un vistazo a mi perfil de LinkedIn."
       >
-        <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+        <div className="md:border-l md:border-zinc-100/30 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex flex-col max-w-3xl space-y-16">
             {articles.map((article) => (
               <Article key={article.slug} article={article} />

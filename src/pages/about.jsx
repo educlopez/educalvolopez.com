@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
 
+import { Reviews } from '@/components/Reviews'
+
 import { Container } from '@/components/Container'
 import {
   TwitterIcon,
@@ -74,7 +76,7 @@ export default function About() {
             <h1 className="text-4xl font-bold tracking-tight text-slate-800 dark:text-slate-100 sm:text-5xl">
               Soy Eduardo Calvo, vivo en Madrid en donde diseño y creo webs.
             </h1>
-            <div className="mt-6 text-base space-y-7 text-slate-600 dark:text-slate-400">
+            <div className="mt-6 text-base space-y-7 text-slate-700 dark:text-slate-400">
               <p>
               Soy diseñador web y maquetador desde mi primer año de estudios de diseño gráfico en la universidad ESNE. En los últimos nueve años, he trabajado en muchos tipos de proyectos diferentes, como ecommerce, paneles de usuario y páginas de aterrizaje.
               </p>
@@ -103,13 +105,14 @@ export default function About() {
               <SocialLink
                 href="mailto:educalvolopez@gmail.com"
                 icon={MailIcon}
-                className="pt-8 mt-8 border-t border-zinc-100 dark:border-zinc-700/40"
+                className="pt-8 mt-8 border-t border-zinc-100/30 dark:border-zinc-700/40"
               >
                 educalvolopez@gmail.com
               </SocialLink>
             </ul>
           </div>
         </div>
+        <Reviews/>
       </Container>
     </>
   )

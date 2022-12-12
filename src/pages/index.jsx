@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
-import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
@@ -22,28 +21,6 @@ import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
 import  Weather from '@/components/Weather'
 
-function MailIcon(props) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-slate-100 stroke-zinc-400 dark:fill-slate-100/10 dark:stroke-zinc-500"
-      />
-      <path
-        d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
-      />
-    </svg>
-  )
-}
 
 function BriefcaseIcon(props) {
   return (
@@ -90,7 +67,15 @@ function Article({ article }) {
       <Card.Eyebrow as="time" dateTime={article.date} decorate>
         {formatDate(article.date)}
       </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
+      <Card.Description>
+        {article.description}
+        <br></br>
+        {article.tags.map((tag) => (
+          <a href="#" key={tag} className="inline-block before:content-['#'] text-slate-800 dark:text-slate-400">
+            <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-slate-800 dark:text-slate-400">{tag}</span>
+          </a>
+        ))}
+      </Card.Description>
       <Card.Cta>Leer artículo</Card.Cta>
     </Card>
   )
@@ -101,35 +86,6 @@ function SocialLink({ icon: Icon, ...props }) {
     <Link className="p-1 -m-1 group" {...props}>
       <Icon className="w-6 h-6 transition fill-slate-500 group-hover:fill-slate-600 dark:fill-slate-400 dark:group-hover:fill-slate-300" />
     </Link>
-  )
-}
-
-function Newsletter() {
-  return (
-    <form
-      action="/thank-you"
-      className="p-6 border rounded-2xl border-zinc-100 dark:border-zinc-700/40"
-    >
-      <h2 className="flex text-sm font-semibold text-slate-900 dark:text-slate-100">
-        <MailIcon className="flex-none w-6 h-6" />
-        <span className="ml-3">Estar al día</span>
-      </h2>
-      <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-      Reciba una notificación cuando publique algo nuevo y cancele su suscripción en cualquier momento.
-      </p>
-      <div className="flex mt-6">
-        <input
-          type="email"
-          placeholder="Email"
-          aria-label="Email"
-          required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-slate-400 focus:border-amber-500 focus:outline-none focus:ring-4 focus:ring-amber-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-slate-200 dark:placeholder:text-slate-500 dark:focus:border-amber-400 dark:focus:ring-amber-400/10 sm:text-sm"
-        />
-        <Button type="submit" className="flex-none ml-4">
-          Unirse
-        </Button>
-      </div>
-    </form>
   )
 }
 
@@ -176,7 +132,7 @@ function Resume() {
   ]
 
   return (
-    <div className="p-6 border bg-white/20 dark:bg-slate-900/50 rounded-2xl border-zinc-100 dark:border-zinc-700/40 backdrop-blur">
+    <div className="p-6 border bg-white/20 dark:bg-slate-900/50 rounded-2xl border-zinc-100/30 dark:border-zinc-700/40 backdrop-blur">
       <h2 className="flex text-sm font-semibold text-slate-900 dark:text-slate-100">
         <BriefcaseIcon className="flex-none w-6 h-6" />
         <span className="ml-3">Trabajo</span>
@@ -229,11 +185,11 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>
-          Eduardo Calvo - Diseñador UI/UX & Frontend
+          Eduardo Calvo - Diseñador Web & Maquetador
         </title>
         <meta
           name="description"
-          content="Hola soy Eduardo, diseñador UI/UX y Frontend en Madrid."
+          content=" Soy Eduardo, soy diseñador web y maquetador con sede en Madrid. <br></br>Trabajo actualmente en Cinetic Digital y como Freelance."
         />
         <meta
           property="og:image"
@@ -248,12 +204,9 @@ export default function Home({ articles }) {
         <meta property="og:type" content="website" />
       </Head>
       <Container className="mt-9">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-slate-800 dark:text-slate-100 sm:text-5xl">
-          Eduardo Calvo - Diseñador UI/UX & Frontend
-          </h1>
-          <p className="mt-6 text-base text-slate-600 dark:text-slate-400">
-          Hola soy Eduardo, diseñador UI/UX y Frontend en Madrid.
+        <div className="max-w-xl">
+          <p className="mt-6 text-base text-slate-700 dark:text-slate-400">
+            Soy Eduardo, soy diseñador web y maquetador con sede en Madrid. <br></br>Trabajo actualmente en Cinetic Digital y como Freelance.
           </p>
           <div className="flex gap-6 mt-6">
             <SocialLink

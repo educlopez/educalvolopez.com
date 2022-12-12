@@ -115,7 +115,7 @@ function MobileNavigation(props) {
               <Popover.Button aria-label="Close menu" className="p-1 -m-1">
                 <CloseIcon className="w-6 h-6 text-slate-500 dark:text-slate-400" />
               </Popover.Button>
-              <h2 className="text-sm font-medium text-slate-600 dark:text-slate-400">
+              <h2 className="text-sm font-medium text-slate-700 dark:text-slate-400">
                 Menu
               </h2>
             </div>
@@ -379,11 +379,19 @@ export function Header() {
                       transform: 'var(--avatar-border-transform)',
                     }}
                   />
-                  <Avatar
-                    large
-                    className="block w-16 h-16 origin-left"
-                    style={{ transform: 'var(--avatar-image-transform)' }}
-                  />
+                  <div className='inline-flex items-center'>
+                    <Avatar
+                      large
+                      className="block w-16 h-16 origin-left"
+                      style={{ transform: 'var(--avatar-image-transform)' }}
+                    />
+                    <span className="items-center hidden px-2 py-0 ml-2 text-xs font-semibold border rounded-md pointer-events-auto sm:inline-flex bg-white/20 dark:bg-slate-900/50 border-zinc-200 dark:border-zinc-700/40 backdrop-blur text-slate-900 dark:text-slate-100">
+                      <svg className="mr-1.5 h-2 w-2 text-lime-400" fill="currentColor" viewBox="0 0 8 8">
+                        <circle cx="4" cy="4" r="3" />
+                      </svg>
+                      Disponible para nuevos proyectos
+                    </span>
+                  </div>
                 </div>
               </div>
             </Container>

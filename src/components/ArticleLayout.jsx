@@ -47,7 +47,7 @@ export function ArticleLayout({
               <button
                 type="button"
                 onClick={() => router.back()}
-                aria-label="Go back to articles"
+                aria-label="Ir atrás al blog"
                 className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0"
               >
                 <ArrowLeftIcon className="w-4 h-4 transition stroke-zinc-500 group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
@@ -66,6 +66,13 @@ export function ArticleLayout({
                   <span className="ml-3">{formatDate(meta.date)}</span>
                 </time>
               </header>
+              <div className='inline-flex gap-2 mt-4'>
+                {meta.tags.map((tag) => (
+                  <a href="#" key={tag} className="inline-block before:content-['#'] text-slate-800 dark:text-slate-400">
+                  <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-slate-800 dark:text-slate-400">{tag}</span>
+                  </a>
+                ))}
+              </div>
               <Prose className="mt-8">{children}</Prose>
             </article>
           </div>
