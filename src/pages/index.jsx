@@ -193,12 +193,12 @@ export default function Home({ articles }) {
         />
         <meta
           property="og:image"
-          content="https://educalvolopez.com/api/og?title=Eduardo-Calvo-diseñador-web-y-maquetador"
+          content="https://educalvolopez.com/api/og?title=Eduardo Calvo - Diseñador UI/UX & Frontend"
         />
-        <meta property="og:title" content="Eduardo Calvo - Diseñador web y maquetador" />
+        <meta property="og:title" content="Eduardo Calvo - Diseñador UI/UX & Frontend" />
         <meta
           property="og:description"
-          content="Hola soy Eduardo, diseñador web y maquetador en Madrid."
+          content="Hola soy Eduardo, diseñador UI/UX y Frontend en Madrid."
         />
         <meta property="og:URL" content="https://educalvolopez.com" />
         <meta property="og:type" content="website" />
