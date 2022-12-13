@@ -51,17 +51,17 @@ export default function ArticlesIndex({ articles }) {
           name="description"
           content="Cuando no estoy programando, puedes encontrarme escribiendo sobre diseño de interfaces, programación y hobbies. Si quieres saber más sobre mí, echa un vistazo a mi perfil de LinkedIn."
         />
-        <meta
-          property="og:image"
-          content="https://educalvolopez.com/api/og?title=Blog - Eduardo Calvo"
-        />
-        <meta property="og:title" content="Blog - Eduardo Calvo" />
-        <meta
-          property="og:description"
-          content="Cuando no estoy programando, puedes encontrarme escribiendo sobre diseño de interfaces, programación y hobbies. Si quieres saber más sobre mí, echa un vistazo a mi perfil de LinkedIn."
-        />
-        <meta property="og:URL" content="https://educalvolopez.com/blog" />
-        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://educalvolopez.com/articles"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Blog - Eduardo Calvo"/>
+        <meta property="og:description" content="Cuando no estoy programando, puedes encontrarme escribiendo sobre diseño de interfaces, programación y hobbies. Si quieres saber más sobre mí, echa un vistazo a mi perfil de LinkedIn."/>
+        <meta property="og:image" content="https://educalvolopez.com/api/og?title=Blog - Eduardo Calvo"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:domain" content="educalvolopez.com"/>
+        <meta property="twitter:url" content="https://educalvolopez.com/articles"/>
+        <meta name="twitter:title" content="Blog - Eduardo Calvo"/>
+        <meta name="twitter:description" content="Cuando no estoy programando, puedes encontrarme escribiendo sobre diseño de interfaces, programación y hobbies. Si quieres saber más sobre mí, echa un vistazo a mi perfil de LinkedIn."/>
+        <meta name="twitter:image" content="https://educalvolopez.com/api/og?title=Blog - Eduardo Calvo"/>
       </Head>
       <SimpleLayout
         title="Escribiendo sobre diseño de interfaces, programación y hobbies."

@@ -48,17 +48,16 @@ export default function About() {
           name="description"
           content="Soy Eduardo Calvo, vivo en Madrid en donde diseño y creo webs."
         />
-        <meta
-        property="og:image"
-        content="https://educalvolopez.com/api/og?title=About - Eduardo Calvo"
-      />
-      <meta property="og:title" content="About - Eduardo Calvo" />
-      <meta
-        property="og:description"
-        content="Soy Eduardo Calvo, vivo en Madrid en donde diseño y creo webs."
-      />
-      <meta property="og:URL" content="https://educalvolopez.com/about" />
-      <meta property="og:type" content="website" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="About - Eduardo Calvo"/>
+        <meta property="og:description" content="Soy Eduardo Calvo, vivo en Madrid en donde diseño y creo webs."/>
+        <meta property="og:image" content="https://educalvolopez.com/api/og?title=About - Eduardo Calvo"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:domain" content="educalvolopez.com"/>
+        <meta property="twitter:url" content="https://educalvolopez.com/about"/>
+        <meta name="twitter:title" content="About - Eduardo Calvo"/>
+        <meta name="twitter:description" content="Soy Eduardo Calvo, vivo en Madrid en donde diseño y creo webs."/>
+        <meta name="twitter:image" content="https://educalvolopez.com/api/og?title=About - Eduardo Calvo"/>
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">

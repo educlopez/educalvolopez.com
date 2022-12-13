@@ -189,19 +189,23 @@ export default function Home({ articles }) {
         </title>
         <meta
           name="description"
-          content=" Soy Eduardo, soy diseñador web y maquetador con sede en Madrid. <br></br>Trabajo actualmente en Cinetic Digital y como Freelance."
+          content=" Soy Eduardo, soy diseñador web y maquetador con sede en Madrid."
         />
-        <meta
-          property="og:image"
-          content="https://educalvolopez.com/api/og?title=Eduardo Calvo - Diseñador UI/UX & Frontend"
-        />
-        <meta property="og:title" content="Eduardo Calvo - Diseñador UI/UX & Frontend" />
-        <meta
-          property="og:description"
-          content="Hola soy Eduardo, diseñador UI/UX y Frontend en Madrid."
-        />
-        <meta property="og:URL" content="https://educalvolopez.com" />
+
+        <meta property="og:url" content="https://educalvolopez.com" />
         <meta property="og:type" content="website" />
+        <meta property="og:title" content="Eduardo Calvo - Diseñador web y maquetador" />
+        <meta property="og:description" content="Soy Eduardo, soy diseñador web y maquetador con sede en Madrid." />
+        <meta property="og:image" content="https://educalvolopez.com/api/og?title=Eduardo Calvo - Diseñador web y maquetador" />
+
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="educalvolopez.com" />
+        <meta property="twitter:url" content="https://educalvolopez.com" />
+        <meta name="twitter:title" content="Eduardo Calvo - Diseñador web y maquetador" />
+        <meta name="twitter:description" content="Soy Eduardo, soy diseñador web y maquetador con sede en Madrid." />
+        <meta name="twitter:image" content="https://educalvolopez.com/api/og?title=Eduardo Calvo - Diseñador web y maquetador" />
+
       </Head>
       <Container className="mt-9">
         <div className="max-w-xl">

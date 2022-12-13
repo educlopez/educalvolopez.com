@@ -36,7 +36,7 @@ const reviews = [
     id: 6,
     author: "Linkedin",
     title: "Linkedin",
-    body: "Proximamente más"
+    body: "Próximamente más"
   },
 ]
 

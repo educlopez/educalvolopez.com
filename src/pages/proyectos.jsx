@@ -28,7 +28,7 @@ const projects = [
     name: 'Aneto',
     description:
       'Tienda online de caldos',
-    link: { href: '', label: 'proximamente' },
+    link: { href: '', label: 'próximamente' },
     logo: logoAneto,
   },
   {
@@ -67,17 +67,17 @@ export default function Projects() {
           name="description"
           content="Proyectos que he realizado durante mi carrera."
         />
-        <meta
-          property="og:image"
-          content="https://educalvolopez.com/api/og?title=Proyectos - Eduardo Calvo"
-        />
-        <meta property="og:title" content="Proyectos - Eduardo Calvo" />
-        <meta
-          property="og:description"
-          content="Proyectos que he realizado durante mi carrera."
-        />
-        <meta property="og:URL" content="https://educalvolopez.com/proyectos" />
-        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://educalvolopez.com/proyectos"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Proyectos - Eduardo Calvo"/>
+        <meta property="og:description" content="Proyectos que he realizado durante mi carrera."/>
+        <meta property="og:image" content="https://educalvolopez.com/api/og?title=Proyectos - Eduardo Calvo"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:domain" content="educalvolopez.com"/>
+        <meta property="twitter:url" content="https://educalvolopez.com/proyectos"/>
+        <meta name="twitter:title" content="Proyectos - Eduardo Calvo"/>
+        <meta name="twitter:description" content="Proyectos que he realizado durante mi carrera."/>
+        <meta name="twitter:image" content="https://educalvolopez.com/api/og?title=Proyectos - Eduardo Calvo"/>
       </Head>
       <SimpleLayout
         title="Proyectos que he realizado durante mi carrera."

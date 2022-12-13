@@ -34,17 +34,17 @@ export default function Uses() {
           name="description"
           content="El software que uso, los dispositivos que amo y otras cosas que recomiendo."
         />
-        <meta
-          property="og:image"
-          content="https://educalvolopez.com/api/og?title=Recomendaciones - Eduardo Calvo"
-        />
-        <meta property="og:title" content="Recomendaciones - Eduardo Calvo" />
-        <meta
-          property="og:description"
-          content="l software que uso, los dispositivos que amo y otras cosas que recomiendo."
-        />
-        <meta property="og:URL" content="https://educalvolopez.com/recomendaciones" />
-        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://educalvolopez.com/recomendaciones"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Recomendaciones - Eduardo Calvo"/>
+        <meta property="og:description" content="El software que uso, los dispositivos que amo y otras cosas que recomiendo."/>
+        <meta property="og:image" content="https://educalvolopez.com/api/og?title=Recomendaciones - Eduardo Calvo"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:domain" content="educalvolopez.com"/>
+        <meta property="twitter:url" content="https://educalvolopez.com/recomendaciones"/>
+        <meta name="twitter:title" content="Recomendaciones - Eduardo Calvo"/>
+        <meta name="twitter:description" content="El software que uso, los dispositivos que amo y otras cosas que recomiendo."/>
+        <meta name="twitter:image" content="https://educalvolopez.com/api/og?title=Recomendaciones - Eduardo Calvo"/>
       </Head>
       <SimpleLayout
         title="El software que uso, los dispositivos que amo y otras cosas que recomiendo."
