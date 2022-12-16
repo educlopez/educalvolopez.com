@@ -185,7 +185,7 @@ function ToolsSectionGrid({ children, title }) {
 function Toollist({ title, href, children }) {
   return (
     <Card as="li">
-      <Card.Title as="h3" href={href}>
+      <Card.Title as="h3" href={href} rel="noopener noreferrer" target="_blank">
         {title}
       </Card.Title>
       <Card.Description>{children}</Card.Description>
@@ -197,7 +197,7 @@ function Toolgrid({ title, href, img, children }) {
     <li className="relative">
       <div className="block w-full p-3 overflow-hidden rounded-lg bg-white/20 dark:bg-slate-900/50 border-zinc-100/30 dark:border-zinc-700/40 backdrop-blur group aspect-w-10 aspect-h-7 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
         <Image  src={img} alt={title} width={70} height={70} className="object-cover mx-auto pointer-events-none group-hover:opacity-75" />
-        <Link href={href} type="button" className="absolute inset-0 focus:outline-none">
+        <Link href={href} type="button" className="absolute inset-0 focus:outline-none" rel="noopener noreferrer" target="_blank">
           <span className="sr-only">Ver {title}</span>
         </Link>
         <p className="block my-2 text-sm font-medium text-center truncate pointer-events-none text-slate-800 dark:text-slate-100">{children}</p>

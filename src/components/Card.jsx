@@ -36,10 +36,10 @@ Card.Link = function CardLink({ children, ...props }) {
   )
 }
 
-Card.Title = function CardTitle({ as: Component = 'h2', href, children }) {
+Card.Title = function CardTitle({ as: Component = 'h2', href, target, children, rel }) {
   return (
     <Component className="text-base font-semibold tracking-tight text-slate-800 dark:text-slate-100">
-      {href ? <Card.Link href={href}>{children}</Card.Link> : children}
+      {href ? <Card.Link href={href} target={target} rel={rel}>{children}</Card.Link> : children}
     </Component>
   )
 }

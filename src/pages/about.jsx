@@ -19,6 +19,7 @@ function SocialLink({ className, href, children, icon: Icon }) {
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
+        rel="noopener noreferrer" target="_blank"
         className="flex text-sm font-medium transition group text-slate-700 dark:text-slate-400 "
       >
         <Icon className="flex-none w-6 h-6 transition fill-slate-700 group-hover:fill-slate-600 dark:fill-slate-400 dark:group-hover:fill-slate-300" />

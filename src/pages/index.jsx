@@ -215,21 +215,25 @@ export default function Home({ articles }) {
           <div className="flex gap-6 mt-6">
             <SocialLink
               href="https://twitter.com/educlopez93"
+              rel="noopener noreferrer" target="_blank"
               aria-label="Follow on Twitter"
               icon={TwitterIcon}
             />
             <SocialLink
               href="https://instagram.com/educlopez93"
+              rel="noopener noreferrer" target="_blank"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
             <SocialLink
               href="https://github.com/educlopez"
+              rel="noopener noreferrer" target="_blank"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
               href="https://linkedin.com/in/educlopez"
+              rel="noopener noreferrer" target="_blank"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
