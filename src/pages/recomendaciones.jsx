@@ -263,7 +263,16 @@ export default function Uses() {
         intro="Las cosas que uso para crear webs, mantenerme productivo o comprar para engañarme y pensar que estoy siendo productivo cuando en realidad solo estoy procrastinando. Aquí hay una gran lista de todas mis cosas favoritas."
       >
         <div className="flex items-center justify-center gap-4 px-4 py-2 my-16 border w-fit rounded-3xl bg-white/20 dark:bg-slate-900/50 border-zinc-100/30 dark:border-zinc-700/40 backdrop-blur">
-          <p className='text-base text-slate-700 dark:text-slate-400'>Listado</p>
+          <Switch
+            onClick={() => {
+              setView('list');
+              setEnabled(false);
+            }}
+            className={classNames(
+              !enabled ? 'text-amber-600' : 'text-slate-700 dark:text-slate-400','text-base'
+          )}>
+              Listado
+          </Switch>
           <Switch
             checked={enabled}
             onChange={() => {
@@ -332,7 +341,16 @@ export default function Uses() {
               </span>
             </span>
           </Switch>
-          <p className='text-base text-slate-700 dark:text-slate-400'>Cuadricula</p>
+          <Switch
+            onClick={() => {
+              setView('grid');
+              setEnabled(true);
+            }}
+            className={classNames(
+            enabled ? 'text-amber-600' : 'text-slate-700 dark:text-slate-400','text-base'
+            )}>
+              Cuadricula
+          </Switch>
         </div>
         {view === 'list' ? (
           <div className="space-y-20">
