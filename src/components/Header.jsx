@@ -96,7 +96,7 @@ function MobileNavigation(props) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Popover.Overlay className="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80" />
+          <Popover.Overlay className="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-zinc-900/80" />
         </Transition.Child>
         <Transition.Child
           as={Fragment}
