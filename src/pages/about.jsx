@@ -19,10 +19,10 @@ function SocialLink({ className, href, children, icon: Icon }) {
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="flex text-sm font-medium transition group text-slate-800 hover:text-amber-500 dark:text-slate-200 dark:hover:text-amber-500"
+        className="flex text-sm font-medium transition group text-slate-700 dark:text-slate-400 "
       >
-        <Icon className="flex-none w-6 h-6 transition fill-zinc-500 group-hover:fill-amber-500" />
-        <span className="ml-4">{children}</span>
+        <Icon className="flex-none w-6 h-6 transition fill-slate-700 group-hover:fill-slate-600 dark:fill-slate-400 dark:group-hover:fill-slate-300" />
+        <span className="ml-4 group-hover:text-slate-600 dark:group-hover:text-slate-300">{children}</span>
       </Link>
     </li>
   )

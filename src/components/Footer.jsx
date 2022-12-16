@@ -31,7 +31,7 @@ export function Footer() {
               </svg>
               Disponible para nuevos proyectos
             </span>
-              <p className="text-sm text-center text-slate-400 dark:text-slate-500 sm:text-left">
+              <p className="text-sm text-center text-slate-800 dark:text-slate-200 sm:text-left">
                 &copy; {new Date().getFullYear()} Eduardo Calvo. Todos los derechos reservados.
               </p>
             </div>

@@ -84,7 +84,7 @@ function Article({ article }) {
 function SocialLink({ icon: Icon, ...props }) {
   return (
     <Link className="p-1 -m-1 group" {...props}>
-      <Icon className="w-6 h-6 transition fill-slate-500 group-hover:fill-slate-600 dark:fill-slate-400 dark:group-hover:fill-slate-300" />
+      <Icon className="w-6 h-6 transition fill-slate-700 group-hover:fill-slate-600 dark:fill-slate-400 dark:group-hover:fill-slate-300" />
     </Link>
   )
 }

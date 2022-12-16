@@ -44,7 +44,7 @@ const clients = [
 export default function Clients() {
     return (
 
-        <div className="bg-white/20 dark:bg-slate-900/50 rounded-2xl border-zinc-100 dark:border-zinc-700/40 backdrop-blur">
+        <div className="bg-white/20 dark:bg-slate-900/50 rounded-2xl border-zinc-100/30 dark:border-zinc-700/40 backdrop-blur">
       <div className="px-5 mx-auto my-16 max-w-7xl">
         <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
           <div>
