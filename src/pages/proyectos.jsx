@@ -1,13 +1,13 @@
-import Image from 'next/image'
-import Head from 'next/head'
-import Clients from '@/components/Clients'
-import { Card } from '@/components/Card'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import logoTantra from '@/images/logos/tantra.svg'
-import logoJane from '@/images/logos/jane.svg'
-import logoAneto from '@/images/logos/aneto.svg'
-import logoDentaid from '@/images/logos/dentaid.svg'
-import logoNet2phone from '@/images/logos/net2phone.svg'
+import Image from 'next/image';
+import Head from 'next/head';
+import Clients from '@/components/Clients';
+import { Card } from '@/components/Card';
+import { SimpleLayout } from '@/components/SimpleLayout';
+import logoTantra from '@/images/logos/tantra.svg';
+import logoJane from '@/images/logos/jane.svg';
+import logoAneto from '@/images/logos/aneto.svg';
+import logoDentaid from '@/images/logos/dentaid.svg';
+import logoNet2phone from '@/images/logos/net2phone.svg';
 
 const projects = [
   {
@@ -15,37 +15,36 @@ const projects = [
     description:
       'Panel de usuario para el envio y gestión de sms para la empresa Net2phone',
     link: { href: 'https://sms.net2phone.es/login', label: 'sms.net2phone.es' },
-    logo: logoNet2phone,
+    logo: logoNet2phone
   },
   {
     name: 'Tantra Spain',
-    description:
-      'Website con catalogo aunto gestionable por el cliente',
+    description: 'Website con catalogo aunto gestionable por el cliente',
     link: { href: 'https://tantraspain.com/', label: 'tantraspain.com' },
-    logo: logoTantra,
+    logo: logoTantra
   },
   {
     name: 'Aneto',
-    description:
-      'Tienda online de caldos',
+    description: 'Tienda online de caldos',
     link: { href: '', label: 'próximamente' },
-    logo: logoAneto,
+    logo: logoAneto
   },
   {
     name: 'Janeworld',
-    description:
-      'Tienda online de productos de bebes',
+    description: 'Tienda online de productos de bebes',
     link: { href: 'https://janeworld.com/', label: 'janeworld.com' },
-    logo: logoJane,
+    logo: logoJane
   },
   {
     name: 'Dentaid',
-    description:
-      'Tienda online de productos para el cuidado dental',
-    link: { href: 'https://www.dentaidcomprasonline.pe/', label: 'dentaidcomprasonline.pe' },
-    logo: logoDentaid,
-  },
-]
+    description: 'Tienda online de productos para el cuidado dental',
+    link: {
+      href: 'https://www.dentaidcomprasonline.pe/',
+      label: 'dentaidcomprasonline.pe'
+    },
+    logo: logoDentaid
+  }
+];
 
 function LinkIcon(props) {
   return (
@@ -55,7 +54,7 @@ function LinkIcon(props) {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
 export default function Projects() {
@@ -67,17 +66,32 @@ export default function Projects() {
           name="description"
           content="Proyectos que he realizado durante mi carrera."
         />
-        <meta property="og:url" content="https://educalvolopez.com/proyectos"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Proyectos - Eduardo Calvo"/>
-        <meta property="og:description" content="Proyectos que he realizado durante mi carrera."/>
-        <meta property="og:image" content="https://educalvolopez.com/api/og?title=Proyectos - Eduardo Calvo"/>
-        <meta name="twitter:card" content="summary_large_image"/>
-        <meta property="twitter:domain" content="educalvolopez.com"/>
-        <meta property="twitter:url" content="https://educalvolopez.com/proyectos"/>
-        <meta name="twitter:title" content="Proyectos - Eduardo Calvo"/>
-        <meta name="twitter:description" content="Proyectos que he realizado durante mi carrera."/>
-        <meta name="twitter:image" content="https://educalvolopez.com/api/og?title=Proyectos - Eduardo Calvo"/>
+        <meta property="og:url" content="https://educalvolopez.com/proyectos" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Proyectos - Eduardo Calvo" />
+        <meta
+          property="og:description"
+          content="Proyectos que he realizado durante mi carrera."
+        />
+        <meta
+          property="og:image"
+          content="https://educalvolopez.com/api/og?title=Proyectos - Eduardo Calvo"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="educalvolopez.com" />
+        <meta
+          property="twitter:url"
+          content="https://educalvolopez.com/proyectos"
+        />
+        <meta name="twitter:title" content="Proyectos - Eduardo Calvo" />
+        <meta
+          name="twitter:description"
+          content="Proyectos que he realizado durante mi carrera."
+        />
+        <meta
+          name="twitter:image"
+          content="https://educalvolopez.com/api/og?title=Proyectos - Eduardo Calvo"
+        />
       </Head>
       <SimpleLayout
         title="Proyectos que he realizado durante mi carrera."
@@ -97,11 +111,11 @@ export default function Projects() {
                   unoptimized
                 />
               </div>
-              <h2 className="mt-6 text-base font-semibold text-slate-800 dark:text-slate-100">
+              <h2 className="mt-6 text-base font-semibold text-zinc-900 dark:text-white">
                 <Card.Link href={project.link.href}>{project.name}</Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 flex mt-6 text-sm font-medium transition text-slate-900 group-hover:text-amber-500 dark:text-slate-200">
+              <p className="relative z-10 flex mt-6 text-sm font-medium transition text-zinc-900 group-hover:text-amber-500 dark:text-zinc-200">
                 <LinkIcon className="flex-none w-6 h-6" />
                 <span className="ml-2">{project.link.label}</span>
               </p>
@@ -111,5 +125,5 @@ export default function Projects() {
         <Clients />
       </SimpleLayout>
     </>
-  )
+  );
 }

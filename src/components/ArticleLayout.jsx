@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-import { Container } from '@/components/Container'
-import { formatDate } from '@/lib/formatDate'
-import { Prose } from '@/components/Prose'
+import { Container } from '@/components/Container';
+import { formatDate } from '@/lib/formatDate';
+import { Prose } from '@/components/Prose';
 
 function ArrowLeftIcon(props) {
   return (
@@ -15,19 +15,19 @@ function ArrowLeftIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
 export function ArticleLayout({
   children,
   meta,
   isRssFeed = false,
-  previousPathname,
+  previousPathname
 }) {
-  let router = useRouter()
+  let router = useRouter();
 
   if (isRssFeed) {
-    return children
+    return children;
   }
 
   return (
@@ -39,16 +39,25 @@ export function ArticleLayout({
           property="og:image"
           content={`https://educalvolopez.com/api/og?title="${meta.title} - Eduardo Calvo`}
         />
-        <meta property="og:url" content={`https://educalvolopez.com/articles/${meta.slug}`}/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content={`${meta.title} - Eduardo Calvo`}/>
-        <meta property="og:description" content={meta.description}/>
-        <meta name="twitter:card" content="summary_large_image"/>
-        <meta property="twitter:domain" content="educalvolopez.com"/>
-        <meta property="twitter:url" content="{`https://educalvolopez.com/articles/${article.slug}`}"/>
+        <meta
+          property="og:url"
+          content={`https://educalvolopez.com/articles/${meta.slug}`}
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${meta.title} - Eduardo Calvo`} />
+        <meta property="og:description" content={meta.description} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="educalvolopez.com" />
+        <meta
+          property="twitter:url"
+          content="{`https://educalvolopez.com/articles/${article.slug}`}"
+        />
         <meta name="twitter:title" content={`${meta.title} - Eduardo Calvo`} />
-        <meta name="twitter:description" content={meta.description}/>
-        <meta name="twitter:image" content={`https://educalvolopez.com/api/og?title="${meta.title} - Eduardo Calvo`}/>
+        <meta name="twitter:description" content={meta.description} />
+        <meta
+          name="twitter:image"
+          content={`https://educalvolopez.com/api/og?title="${meta.title} - Eduardo Calvo`}
+        />
       </Head>
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
@@ -65,21 +74,27 @@ export function ArticleLayout({
             )}
             <article>
               <header className="flex flex-col">
-                <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-800 dark:text-slate-100 sm:text-5xl">
+                <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
                   {meta.title}
                 </h1>
                 <time
                   dateTime={meta.date}
-                  className="flex items-center order-first text-base text-slate-900 dark:text-slate-500"
+                  className="flex items-center order-first text-base text-zinc-600 dark:text-zinc-400"
                 >
-                  <span className="h-4 w-0.5 rounded-full bg-slate-900 dark:bg-zinc-500" />
+                  <span className="h-4 w-0.5 rounded-full bg-zinc-900 dark:bg-zinc-500" />
                   <span className="ml-3">{formatDate(meta.date)}</span>
                 </time>
               </header>
-              <div className='inline-flex gap-2 mt-4'>
+              <div className="inline-flex gap-2 mt-4">
                 {meta.tags.map((tag) => (
-                  <a href="#" key={tag} className="inline-block before:content-['#'] text-slate-800 dark:text-slate-400">
-                  <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-slate-800 dark:text-slate-400">{tag}</span>
+                  <a
+                    href="#"
+                    key={tag}
+                    className="inline-block text-zinc-600 before:content-['#'] dark:text-zinc-400"
+                  >
+                    <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+                      {tag}
+                    </span>
                   </a>
                 ))}
               </div>
@@ -89,5 +104,5 @@ export function ArticleLayout({
         </div>
       </Container>
     </>
-  )
+  );
 }

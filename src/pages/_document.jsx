@@ -52,7 +52,7 @@ export default function Document() {
         />
         <meta name="robots" content="all" />
       </Head>
-      <body className="flex flex-col h-full bg-custom-gradient bg-slate-100 dark:bg-zinc-900">
+      <body className="flex flex-col h-full antialiased bg-white bg-custom-gradient dark:bg-zinc-900">
         <Main />
         <NextScript />
       </body>

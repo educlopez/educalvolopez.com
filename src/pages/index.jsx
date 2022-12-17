@@ -1,26 +1,25 @@
-import Image from 'next/image'
-import Head from 'next/head'
-import Link from 'next/link'
+import Image from 'next/image';
+import Head from 'next/head';
+import Link from 'next/link';
 
-import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
-import { Container } from '@/components/Container'
+import { Button } from '@/components/Button';
+import { Card } from '@/components/Card';
+import { Container } from '@/components/Container';
 import {
   TwitterIcon,
   InstagramIcon,
   GitHubIcon,
-  LinkedInIcon,
-} from '@/components/SocialIcons'
-import logoTantra from '@/images/logos/tantra.svg'
-import logoBdo from '@/images/logos/bdo.svg'
-import logoAdraba from '@/images/logos/adraba.svg'
-import logoCinetic from '@/images/logos/cineticdigital.svg'
-import logoPapayagroup from '@/images/logos/papayagroup.svg'
-import { generateRssFeed } from '@/lib/generateRssFeed'
-import { getAllArticles } from '@/lib/getAllArticles'
-import { formatDate } from '@/lib/formatDate'
-import  Weather from '@/components/Weather'
-
+  LinkedInIcon
+} from '@/components/SocialIcons';
+import logoTantra from '@/images/logos/tantra.svg';
+import logoBdo from '@/images/logos/bdo.svg';
+import logoAdraba from '@/images/logos/adraba.svg';
+import logoCinetic from '@/images/logos/cineticdigital.svg';
+import logoPapayagroup from '@/images/logos/papayagroup.svg';
+import { generateRssFeed } from '@/lib/generateRssFeed';
+import { getAllArticles } from '@/lib/getAllArticles';
+import { formatDate } from '@/lib/formatDate';
+import Weather from '@/components/Weather';
 
 function BriefcaseIcon(props) {
   return (
@@ -35,14 +34,14 @@ function BriefcaseIcon(props) {
     >
       <path
         d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-slate-900/10 stroke-slate-900 dark:fill-slate-100/10 dark:stroke-slate-500"
+        className="fill-zinc-900/10 stroke-zinc-900 dark:fill-zinc-100/10 dark:stroke-white"
       />
       <path
         d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
-        className="stroke-slate-900 dark:stroke-slate-500"
+        className="stroke-zinc-900 dark:stroke-white"
       />
     </svg>
-  )
+  );
 }
 
 function ArrowDownIcon(props) {
@@ -55,7 +54,7 @@ function ArrowDownIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
 function Article({ article }) {
@@ -71,22 +70,28 @@ function Article({ article }) {
         {article.description}
         <br></br>
         {article.tags.map((tag) => (
-          <a href="#" key={tag} className="inline-block before:content-['#'] text-slate-800 dark:text-slate-400">
-            <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-slate-800 dark:text-slate-400">{tag}</span>
+          <a
+            href="#"
+            key={tag}
+            className="inline-block text-zinc-600 before:content-['#'] dark:text-zinc-400"
+          >
+            <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+              {tag}
+            </span>
           </a>
         ))}
       </Card.Description>
       <Card.Cta>Leer artículo</Card.Cta>
     </Card>
-  )
+  );
 }
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
     <Link className="p-1 -m-1 group" {...props}>
-      <Icon className="w-6 h-6 transition fill-slate-700 group-hover:fill-slate-600 dark:fill-slate-400 dark:group-hover:fill-slate-300" />
+      <Icon className="w-6 h-6 transition fill-zinc-600 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
-  )
+  );
 }
 
 function Resume() {
@@ -98,42 +103,42 @@ function Resume() {
       start: '2021',
       end: {
         label: 'Presente',
-        dateTime: new Date().getFullYear(),
-      },
+        dateTime: new Date().getFullYear()
+      }
     },
     {
       company: 'Ádraba',
       title: 'Diseñador Gráfico y Desarrollador Web',
       logo: logoAdraba,
       start: '2018',
-      end: '2021',
+      end: '2021'
     },
     {
       company: 'Tantra',
       title: 'Diseñador Gráfico y maquetador web',
       logo: logoTantra,
       start: '2015',
-      end: '2019',
+      end: '2019'
     },
     {
       company: 'BDO',
       title: 'Diseñador en Marketing y comunicación',
       logo: logoBdo,
       start: '2016',
-      end: '2017',
+      end: '2017'
     },
     {
       company: 'Papaya Group',
       title: 'Diseñador Gráfico',
       logo: logoPapayagroup,
       start: '2014',
-      end: '2014',
-    },
-  ]
+      end: '2014'
+    }
+  ];
 
   return (
-    <div className="p-6 border bg-white/20 dark:bg-slate-900/50 rounded-2xl border-zinc-100/30 dark:border-zinc-700/40 backdrop-blur">
-      <h2 className="flex text-sm font-semibold text-slate-900 dark:text-slate-100">
+    <div className="p-6 border rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="flex-none w-6 h-6" />
         <span className="ml-3">Trabajo</span>
       </h2>
@@ -145,16 +150,16 @@ function Resume() {
             </div>
             <dl className="flex flex-wrap flex-auto gap-x-2">
               <dt className="sr-only">Company</dt>
-              <dd className="flex-none w-full text-sm font-medium text-slate-900 dark:text-white">
+              <dd className="flex-none w-full text-sm font-medium text-zinc-900 dark:text-white">
                 {role.company}
               </dd>
               <dt className="sr-only">Role</dt>
-              <dd className="text-xs text-slate-800 dark:text-slate-400">
+              <dd className="text-xs text-zinc-600 dark:text-zinc-400">
                 {role.title}
               </dd>
               <dt className="sr-only">Date</dt>
               <dd
-                className="ml-auto text-xs text-slate-700 dark:text-slate-400"
+                className="ml-auto text-xs text-zinc-600 dark:text-zinc-400"
                 aria-label={`${role.start.label ?? role.start} until ${
                   role.end.label ?? role.end
                 }`}
@@ -171,22 +176,24 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="eduardo_calvo_lopez_curriculum_vitae.pdf" variant="secondary" className="w-full mt-6 group" target="_blank">
+      <Button
+        href="eduardo_calvo_lopez_curriculum_vitae.pdf"
+        variant="secondary"
+        className="w-full mt-6 group"
+        target="_blank"
+      >
         Descargar CV
         <ArrowDownIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
     </div>
-  )
+  );
 }
-
 
 export default function Home({ articles }) {
   return (
     <>
       <Head>
-        <title>
-          Eduardo Calvo - Diseñador Web & Maquetador
-        </title>
+        <title>Eduardo Calvo - Diseñador Web & Maquetador</title>
         <meta
           name="description"
           content=" Soy Eduardo, soy diseñador web y maquetador con sede en Madrid."
@@ -194,46 +201,67 @@ export default function Home({ articles }) {
 
         <meta property="og:url" content="https://educalvolopez.com" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Eduardo Calvo - Diseñador web y maquetador" />
-        <meta property="og:description" content="Soy Eduardo, soy diseñador web y maquetador con sede en Madrid." />
-        <meta property="og:image" content="https://educalvolopez.com/api/og?title=Eduardo Calvo - Diseñador web y maquetador" />
-
+        <meta
+          property="og:title"
+          content="Eduardo Calvo - Diseñador web y maquetador"
+        />
+        <meta
+          property="og:description"
+          content="Soy Eduardo, soy diseñador web y maquetador con sede en Madrid."
+        />
+        <meta
+          property="og:image"
+          content="https://educalvolopez.com/api/og?title=Eduardo Calvo - Diseñador web y maquetador"
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="educalvolopez.com" />
         <meta property="twitter:url" content="https://educalvolopez.com" />
-        <meta name="twitter:title" content="Eduardo Calvo - Diseñador web y maquetador" />
-        <meta name="twitter:description" content="Soy Eduardo, soy diseñador web y maquetador con sede en Madrid." />
-        <meta name="twitter:image" content="https://educalvolopez.com/api/og?title=Eduardo Calvo - Diseñador web y maquetador" />
-
+        <meta
+          name="twitter:title"
+          content="Eduardo Calvo - Diseñador web y maquetador"
+        />
+        <meta
+          name="twitter:description"
+          content="Soy Eduardo, soy diseñador web y maquetador con sede en Madrid."
+        />
+        <meta
+          name="twitter:image"
+          content="https://educalvolopez.com/api/og?title=Eduardo Calvo - Diseñador web y maquetador"
+        />
       </Head>
       <Container className="mt-9">
         <div className="max-w-xl">
-          <p className="mt-6 text-base text-slate-700 dark:text-slate-400">
-            Soy Eduardo, soy diseñador web y maquetador con sede en Madrid. <br></br>Trabajo actualmente en Cinetic Digital y como Freelance.
+          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            Soy Eduardo, soy diseñador web y maquetador con sede en Madrid.{' '}
+            <br></br>Trabajo actualmente en Cinetic Digital y como Freelance.
           </p>
           <div className="flex gap-6 mt-6">
             <SocialLink
               href="https://twitter.com/educlopez93"
-              rel="noopener noreferrer" target="_blank"
+              rel="noopener noreferrer"
+              target="_blank"
               aria-label="Follow on Twitter"
               icon={TwitterIcon}
             />
             <SocialLink
               href="https://instagram.com/educlopez93"
-              rel="noopener noreferrer" target="_blank"
+              rel="noopener noreferrer"
+              target="_blank"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
             <SocialLink
               href="https://github.com/educlopez"
-              rel="noopener noreferrer" target="_blank"
+              rel="noopener noreferrer"
+              target="_blank"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
               href="https://linkedin.com/in/educlopez"
-              rel="noopener noreferrer" target="_blank"
+              rel="noopener noreferrer"
+              target="_blank"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
@@ -248,25 +276,25 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Weather/>
+            <Weather />
             <Resume />
           </div>
         </div>
       </Container>
     </>
-  )
+  );
 }
 
 export async function getStaticProps() {
   if (process.env.NODE_ENV === 'production') {
-    await generateRssFeed()
+    await generateRssFeed();
   }
 
   return {
     props: {
       articles: (await getAllArticles())
         .slice(0, 4)
-        .map(({ component, ...meta }) => meta),
-    },
-  }
+        .map(({ component, ...meta }) => meta)
+    }
+  };
 }

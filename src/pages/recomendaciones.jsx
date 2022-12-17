@@ -9,30 +9,30 @@ import { Switch } from '@headlessui/react';
 
 //Images
 //Workstation
-import imgMacbook from '@/images/icons/macbook-pro.png'
-import imgIpadair from '@/images/icons/ipad-air.png'
-import imgLgmonitor from '@/images/icons/lg-monitor.png'
-import imgLogitechteclado from '@/images/icons/logitech-teclado.png'
+import imgMacbook from '@/images/icons/macbook-pro.png';
+import imgIpadair from '@/images/icons/ipad-air.png';
+import imgLgmonitor from '@/images/icons/lg-monitor.png';
+import imgLogitechteclado from '@/images/icons/logitech-teclado.png';
 //Dev
-import imgVscode from '@/images/icons/vscode.png'
-import imgNextjs from '@/images/icons/nextjs.png'
-import imgVercel from '@/images/icons/vercel.png'
-import imgTailwind from '@/images/icons/tailwind.png'
-import imgLando from '@/images/icons/lando.png'
-import imgBootstrap from '@/images/icons/bootstrap.png'
-import imgDocker from '@/images/icons/docker.png'
-import imgTableplus from '@/images/icons/tableplus.png'
+import imgVscode from '@/images/icons/vscode.png';
+import imgNextjs from '@/images/icons/nextjs.png';
+import imgVercel from '@/images/icons/vercel.png';
+import imgTailwind from '@/images/icons/tailwind.png';
+import imgLando from '@/images/icons/lando.png';
+import imgBootstrap from '@/images/icons/bootstrap.png';
+import imgDocker from '@/images/icons/docker.png';
+import imgTableplus from '@/images/icons/tableplus.png';
 //Design
-import imgFigma from '@/images/icons/figma.png'
-import imgSketch from '@/images/icons/sketch.png'
+import imgFigma from '@/images/icons/figma.png';
+import imgSketch from '@/images/icons/sketch.png';
 //Productivity
-import imgArc from '@/images/icons/arc.png'
-import imgNotion from '@/images/icons/notion.png'
-import imgRaycast from '@/images/icons/raycast.png'
-import imgSlack from '@/images/icons/slack.png'
-import img1Password from '@/images/icons/1password.png'
-import imgSetapp from '@/images/icons/setapp.png'
-import imgTransmit from '@/images/icons/transmit.png'
+import imgArc from '@/images/icons/arc.png';
+import imgNotion from '@/images/icons/notion.png';
+import imgRaycast from '@/images/icons/raycast.png';
+import imgSlack from '@/images/icons/slack.png';
+import img1Password from '@/images/icons/1password.png';
+import imgSetapp from '@/images/icons/setapp.png';
+import imgTransmit from '@/images/icons/transmit.png';
 
 const stacks = [
   {
@@ -40,14 +40,14 @@ const stacks = [
     title: '16” MacBook Pro, M1 Max, 16GB RAM (2021)',
     link: 'https://amzn.to/3hp6Dxj',
     info: 'Utilizo este ordenador todos los días para programar, diseñar y para uso personal. Su diseño es bonito y funcional. La duración de la batería es excelente y me encantan los teclados retroiluminados.',
-    img: imgMacbook,
+    img: imgMacbook
   },
   {
     type: 'workstation',
     title: 'Ipad Air 4º 64gb (2020)',
     link: 'https://amzn.to/3zWYZ3B',
     info: 'Lo uso como pantalla secundaria para el MacBook y para usar procreate y mejorar la productividad en el trabajo. El iPad Air 4th es extremadamente fácil de usar y disfruto viendo películas en él o escuchando música.',
-    img: imgIpadair,
+    img: imgIpadair
   },
   {
     type: 'workstation',
@@ -199,15 +199,19 @@ function ToolsSection({ children, ...props }) {
 }
 function ToolsSectionGrid({ children, title }) {
   return (
-    <section className='md:border-l md:border-zinc-100/30 md:pl-6 md:dark:border-zinc-700/40'>
-      <h2 className='text-sm font-semibold text-slate-800 dark:text-slate-100'>{title}</h2>
-      <ul role="list" className="grid grid-cols-3 mt-5 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-8 xl:gap-x-8">
+    <section className="md:border-l md:border-zinc-900/10 md:pl-6 md:dark:border-white/10">
+      <h2 className="text-sm font-semibold text-zinc-900 dark:text-white">
+        {title}
+      </h2>
+      <ul
+        role="list"
+        className="grid grid-cols-3 mt-5 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-8 xl:gap-x-8"
+      >
         {children}
       </ul>
     </section>
   );
 }
-
 
 function Toollist({ title, href, children }) {
   return (
@@ -222,15 +226,28 @@ function Toollist({ title, href, children }) {
 function Toolgrid({ title, href, img, children }) {
   return (
     <li className="relative">
-      <div className="block w-full p-3 overflow-hidden rounded-lg bg-white/20 dark:bg-slate-900/50 border-zinc-100/30 dark:border-zinc-700/40 backdrop-blur group aspect-w-10 aspect-h-7 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-        <Image  src={img} alt={title} width={70} height={70} className="object-cover mx-auto pointer-events-none group-hover:opacity-75" />
-        <Link href={href} type="button" className="absolute inset-0 focus:outline-none" rel="noopener noreferrer" target="_blank">
+      <div className="block w-full p-3 overflow-hidden border rounded-lg aspect-w-10 aspect-h-7 group border-zinc-900/10 bg-white/10 backdrop-blur-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur">
+        <Image
+          src={img}
+          alt={title}
+          width={70}
+          height={70}
+          className="object-cover mx-auto pointer-events-none group-hover:opacity-75"
+        />
+        <Link
+          href={href}
+          type="button"
+          className="absolute inset-0 focus:outline-none"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <span className="sr-only">Ver {title}</span>
         </Link>
-        <p className="block my-2 text-sm font-medium text-center truncate pointer-events-none text-slate-800 dark:text-slate-100">{children}</p>
+        <p className="block my-2 text-sm font-medium text-center truncate pointer-events-none text-zinc-900 dark:text-white">
+          {children}
+        </p>
       </div>
     </li>
-
   );
 }
 function classNames(...classes) {
@@ -288,16 +305,18 @@ export default function Uses() {
         title="El software que uso, los dispositivos que amo y otras cosas que recomiendo."
         intro="Las cosas que uso para crear webs, mantenerme productivo o comprar para engañarme y pensar que estoy siendo productivo cuando en realidad solo estoy procrastinando. Aquí hay una gran lista de todas mis cosas favoritas."
       >
-        <div className="flex items-center justify-center gap-4 px-4 py-2 my-16 border w-fit rounded-3xl bg-white/20 dark:bg-slate-900/50 border-zinc-100/30 dark:border-zinc-700/40 backdrop-blur">
+        <div className="flex items-center justify-center gap-4 px-4 py-2 my-16 border dark:backdrop-blurbackdrop-blur w-fit rounded-3xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20">
           <Switch
             onClick={() => {
               setView('list');
               setEnabled(false);
             }}
             className={classNames(
-              !enabled ? 'text-amber-600' : 'text-slate-700 dark:text-slate-400','text-base'
-          )}>
-              Listado
+              !enabled ? 'text-amber-600' : 'text-zinc-600 dark:text-zinc-400',
+              'text-base'
+            )}
+          >
+            Listado
           </Switch>
           <Switch
             checked={enabled}
@@ -373,9 +392,11 @@ export default function Uses() {
               setEnabled(true);
             }}
             className={classNames(
-            enabled ? 'text-amber-600' : 'text-slate-700 dark:text-slate-400','text-base'
-            )}>
-              Cuadricula
+              enabled ? 'text-amber-600' : 'text-zinc-600 dark:text-zinc-400',
+              'text-base'
+            )}
+          >
+            Cuadricula
           </Switch>
         </div>
         {view === 'list' ? (
@@ -433,7 +454,8 @@ export default function Uses() {
                   title={stack.title}
                   href={stack.link}
                   key={stack.title}
-                  img={stack.img}>
+                  img={stack.img}
+                >
                   {stack.title}
                 </Toolgrid>
               ))}
@@ -444,7 +466,8 @@ export default function Uses() {
                   title={stack.title}
                   href={stack.link}
                   key={stack.title}
-                  img={stack.img}>
+                  img={stack.img}
+                >
                   {stack.title}
                 </Toolgrid>
               ))}
@@ -455,7 +478,8 @@ export default function Uses() {
                   title={stack.title}
                   href={stack.link}
                   key={stack.title}
-                  img={stack.img}>
+                  img={stack.img}
+                >
                   {stack.title}
                 </Toolgrid>
               ))}
@@ -466,7 +490,8 @@ export default function Uses() {
                   title={stack.title}
                   href={stack.link}
                   key={stack.title}
-                  img={stack.img}>
+                  img={stack.img}
+                >
                   {stack.title}
                 </Toolgrid>
               ))}
