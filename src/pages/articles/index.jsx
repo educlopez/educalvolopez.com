@@ -57,6 +57,7 @@ export default function ArticlesIndex({ articles }) {
           name="description"
           content="Cuando no estoy programando, puedes encontrarme escribiendo sobre diseño de interfaces, programación y hobbies. Si quieres saber más sobre mí, echa un vistazo a mi perfil de LinkedIn."
         />
+        <meta name="keywords" content="diseño de interfaces, programación, hobbies, escritura, perfil LinkedIn" />
         <meta property="og:url" content="https://educalvolopez.com/articles" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Blog - Eduardo Calvo" />

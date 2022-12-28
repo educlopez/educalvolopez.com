@@ -198,7 +198,7 @@ export default function Home({ articles }) {
           name="description"
           content=" Soy Eduardo, soy diseñador web y maquetador con sede en Madrid."
         />
-
+        <meta name="keywords" content="diseñador web, maquetador, Madrid, Cinetic Digital, Freelance, portfolio" />
         <meta property="og:url" content="https://educalvolopez.com" />
         <meta property="og:type" content="website" />
         <meta

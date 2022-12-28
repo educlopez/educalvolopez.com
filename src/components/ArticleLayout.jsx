@@ -35,6 +35,7 @@ export function ArticleLayout({
       <Head>
         <title>{`${meta.title} - Eduardo Calvo`}</title>
         <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
         <meta
           property="og:image"
           content={`https://educalvolopez.com/api/og?title="${meta.title} - Eduardo Calvo`}

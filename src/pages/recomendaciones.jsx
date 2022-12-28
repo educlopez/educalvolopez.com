@@ -271,6 +271,7 @@ export default function Uses() {
           name="description"
           content="El software que uso, los dispositivos que amo y otras cosas que recomiendo."
         />
+        <meta name="keywords" content="diseñador web, maquetador, Madrid, Cinetic Digital, Freelance, portfolio" />
         <meta
           property="og:url"
           content="https://educalvolopez.com/recomendaciones"
