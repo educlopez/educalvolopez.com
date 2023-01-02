@@ -36,7 +36,7 @@ export function Footer() {
                 Disponible para nuevos proyectos
               </span>
               <p className="text-sm text-center text-zinc-600 dark:text-zinc-400 sm:text-left">
-                &copy; {new Date().getFullYear()} Eduardo Calvo. Todos los
+                &copy; {new Date().getFullYear()} Edu Calvo. Todos los
                 derechos reservados.
               </p>
             </div>

@@ -52,7 +52,7 @@ export default function ArticlesIndex({ articles }) {
   return (
     <>
       <Head>
-        <title>Blog - Eduardo Calvo</title>
+        <title>Blog - Edu Calvo</title>
         <meta
           name="description"
           content="Cuando no estoy programando, puedes encontrarme escribiendo sobre diseño de interfaces, programación y hobbies. Si quieres saber más sobre mí, echa un vistazo a mi perfil de LinkedIn."
@@ -60,14 +60,14 @@ export default function ArticlesIndex({ articles }) {
         <meta name="keywords" content="diseño de interfaces, programación, hobbies, escritura, perfil LinkedIn" />
         <meta property="og:url" content="https://educalvolopez.com/articles" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Blog - Eduardo Calvo" />
+        <meta property="og:title" content="Blog - Edu Calvo" />
         <meta
           property="og:description"
           content="Cuando no estoy programando, puedes encontrarme escribiendo sobre diseño de interfaces, programación y hobbies. Si quieres saber más sobre mí, echa un vistazo a mi perfil de LinkedIn."
         />
         <meta
           property="og:image"
-          content="https://educalvolopez.com/api/og?title=Blog - Eduardo Calvo"
+          content="https://educalvolopez.com/api/og?title=Blog - Edu Calvo"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="educalvolopez.com" />
@@ -75,14 +75,14 @@ export default function ArticlesIndex({ articles }) {
           property="twitter:url"
           content="https://educalvolopez.com/articles"
         />
-        <meta name="twitter:title" content="Blog - Eduardo Calvo" />
+        <meta name="twitter:title" content="Blog - Edu Calvo" />
         <meta
           name="twitter:description"
           content="Cuando no estoy programando, puedes encontrarme escribiendo sobre diseño de interfaces, programación y hobbies. Si quieres saber más sobre mí, echa un vistazo a mi perfil de LinkedIn."
         />
         <meta
           name="twitter:image"
-          content="https://educalvolopez.com/api/og?title=Blog - Eduardo Calvo"
+          content="https://educalvolopez.com/api/og?title=Blog - Edu Calvo"
         />
       </Head>
       <SimpleLayout

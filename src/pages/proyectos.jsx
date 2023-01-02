@@ -61,7 +61,7 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Proyectos - Eduardo Calvo</title>
+        <title>Proyectos - Edu Calvo</title>
         <meta
           name="description"
           content="Proyectos que he realizado durante mi carrera."
@@ -69,14 +69,14 @@ export default function Projects() {
         <meta name="keywords" content="proyectos de carrera, colaboración con grandes marcas, ayuda a pequeños negocios, calidad en trabajo" />
         <meta property="og:url" content="https://educalvolopez.com/proyectos" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Proyectos - Eduardo Calvo" />
+        <meta property="og:title" content="Proyectos - Edu Calvo" />
         <meta
           property="og:description"
           content="Proyectos que he realizado durante mi carrera."
         />
         <meta
           property="og:image"
-          content="https://educalvolopez.com/api/og?title=Proyectos - Eduardo Calvo"
+          content="https://educalvolopez.com/api/og?title=Proyectos - Edu Calvo"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="educalvolopez.com" />
@@ -84,14 +84,14 @@ export default function Projects() {
           property="twitter:url"
           content="https://educalvolopez.com/proyectos"
         />
-        <meta name="twitter:title" content="Proyectos - Eduardo Calvo" />
+        <meta name="twitter:title" content="Proyectos - Edu Calvo" />
         <meta
           name="twitter:description"
           content="Proyectos que he realizado durante mi carrera."
         />
         <meta
           name="twitter:image"
-          content="https://educalvolopez.com/api/og?title=Proyectos - Eduardo Calvo"
+          content="https://educalvolopez.com/api/og?title=Proyectos - Edu Calvo"
         />
       </Head>
       <SimpleLayout

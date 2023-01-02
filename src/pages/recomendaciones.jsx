@@ -266,7 +266,7 @@ export default function Uses() {
   return (
     <>
       <Head>
-        <title>Recomendaciones - Eduardo Calvo</title>
+        <title>Recomendaciones - Edu Calvo</title>
         <meta
           name="description"
           content="El software que uso, los dispositivos que amo y otras cosas que recomiendo."
@@ -277,14 +277,14 @@ export default function Uses() {
           content="https://educalvolopez.com/recomendaciones"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Recomendaciones - Eduardo Calvo" />
+        <meta property="og:title" content="Recomendaciones - Edu Calvo" />
         <meta
           property="og:description"
           content="El software que uso, los dispositivos que amo y otras cosas que recomiendo."
         />
         <meta
           property="og:image"
-          content="https://educalvolopez.com/api/og?title=Recomendaciones - Eduardo Calvo"
+          content="https://educalvolopez.com/api/og?title=Recomendaciones - Edu Calvo"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="educalvolopez.com" />
@@ -292,14 +292,14 @@ export default function Uses() {
           property="twitter:url"
           content="https://educalvolopez.com/recomendaciones"
         />
-        <meta name="twitter:title" content="Recomendaciones - Eduardo Calvo" />
+        <meta name="twitter:title" content="Recomendaciones - Edu Calvo" />
         <meta
           name="twitter:description"
           content="El software que uso, los dispositivos que amo y otras cosas que recomiendo."
         />
         <meta
           name="twitter:image"
-          content="https://educalvolopez.com/api/og?title=Recomendaciones - Eduardo Calvo"
+          content="https://educalvolopez.com/api/og?title=Recomendaciones - Edu Calvo"
         />
       </Head>
       <SimpleLayout

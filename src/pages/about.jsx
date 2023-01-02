@@ -47,21 +47,21 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About - Eduardo Calvo</title>
+        <title>About - Edu Calvo</title>
         <meta
           name="description"
-          content="Soy Eduardo Calvo, vivo en Madrid en donde diseño y creo webs."
+          content="Soy Edu Calvo, vivo en Madrid en donde diseño y creo webs."
         />
         <meta name="keywords" content="Diseñador web, maquetador, creatividad, habilidades de comunicación visual, resolución de problemas, interfaces de usuario, diseños responsive, clientes globales, empresas pequeñas y grandes corporaciones" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="About - Eduardo Calvo" />
+        <meta property="og:title" content="About - Edu Calvo" />
         <meta
           property="og:description"
-          content="Soy Eduardo Calvo, vivo en Madrid en donde diseño y creo webs."
+          content="Soy Edu Calvo, vivo en Madrid en donde diseño y creo webs."
         />
         <meta
           property="og:image"
-          content="https://educalvolopez.com/api/og?title=About - Eduardo Calvo"
+          content="https://educalvolopez.com/api/og?title=About - Edu Calvo"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="educalvolopez.com" />
@@ -69,14 +69,14 @@ export default function About() {
           property="twitter:url"
           content="https://educalvolopez.com/about"
         />
-        <meta name="twitter:title" content="About - Eduardo Calvo" />
+        <meta name="twitter:title" content="About - Edu Calvo" />
         <meta
           name="twitter:description"
-          content="Soy Eduardo Calvo, vivo en Madrid en donde diseño y creo webs."
+          content="Soy Edu Calvo, vivo en Madrid en donde diseño y creo webs."
         />
         <meta
           name="twitter:image"
-          content="https://educalvolopez.com/api/og?title=About - Eduardo Calvo"
+          content="https://educalvolopez.com/api/og?title=About - Edu Calvo"
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
@@ -93,7 +93,7 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
-              Soy Eduardo Calvo, vivo en Madrid en donde diseño y creo webs.
+              Soy Edu Calvo, vivo en Madrid en donde diseño y creo webs.
             </h1>
             <div className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
               <p>

@@ -20,7 +20,6 @@ import { generateRssFeed } from '@/lib/generateRssFeed';
 import { getAllArticles } from '@/lib/getAllArticles';
 import { formatDate } from '@/lib/formatDate';
 import Weather from '@/components/Weather';
-
 function BriefcaseIcon(props) {
   return (
     <svg
@@ -193,17 +192,17 @@ export default function Home({ articles }) {
   return (
     <>
       <Head>
-        <title>Eduardo Calvo - Diseñador Web & Maquetador</title>
+        <title>Edu Calvo - Diseñador Web & Maquetador</title>
         <meta
           name="description"
           content=" Soy Eduardo, soy diseñador web y maquetador con sede en Madrid."
         />
-        <meta name="keywords" content="diseñador web, maquetador, Madrid, Cinetic Digital, Freelance, portfolio" />
+        <meta name="keywords" content="diseñador web, maquetador, Madrid, Cinetic Digital, Freelance, portfolio, edu, calvo" />
         <meta property="og:url" content="https://educalvolopez.com" />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Eduardo Calvo - Diseñador web y maquetador"
+          content="Edu Calvo - Diseñador web y maquetador"
         />
         <meta
           property="og:description"
@@ -211,7 +210,7 @@ export default function Home({ articles }) {
         />
         <meta
           property="og:image"
-          content="https://educalvolopez.com/api/og?title=Eduardo Calvo - Diseñador web y maquetador"
+          content="https://educalvolopez.com/api/og?title=Edu Calvo - Diseñador web y maquetador"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -219,7 +218,7 @@ export default function Home({ articles }) {
         <meta property="twitter:url" content="https://educalvolopez.com" />
         <meta
           name="twitter:title"
-          content="Eduardo Calvo - Diseñador web y maquetador"
+          content="Edu Calvo - Diseñador web y maquetador"
         />
         <meta
           name="twitter:description"
@@ -227,13 +226,14 @@ export default function Home({ articles }) {
         />
         <meta
           name="twitter:image"
-          content="https://educalvolopez.com/api/og?title=Eduardo Calvo - Diseñador web y maquetador"
+          content="https://educalvolopez.com/api/og?title=Edu Calvo - Diseñador web y maquetador"
         />
       </Head>
       <Container className="mt-9">
         <div className="max-w-xl">
+          <h1 className="sr-only">Edu Calvo</h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Soy Eduardo, soy diseñador web y maquetador con sede en Madrid.{' '}
+            Soy Edu Calvo, soy diseñador web y maquetador con sede en Madrid.{' '}
             <br></br>Trabajo actualmente en Cinetic Digital y como Freelance.
           </p>
           <div className="flex gap-6 mt-6">

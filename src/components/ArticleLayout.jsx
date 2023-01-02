@@ -33,19 +33,19 @@ export function ArticleLayout({
   return (
     <>
       <Head>
-        <title>{`${meta.title} - Eduardo Calvo`}</title>
+        <title>{`${meta.title} - Edu Calvo`}</title>
         <meta name="description" content={meta.description} />
         <meta name="keywords" content={meta.keywords} />
         <meta
           property="og:image"
-          content={`https://educalvolopez.com/api/og?title="${meta.title} - Eduardo Calvo`}
+          content={`https://educalvolopez.com/api/og?title="${meta.title} - Edu Calvo`}
         />
         <meta
           property="og:url"
           content={`https://educalvolopez.com/articles/${meta.slug}`}
         />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={`${meta.title} - Eduardo Calvo`} />
+        <meta property="og:title" content={`${meta.title} - Edu Calvo`} />
         <meta property="og:description" content={meta.description} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="educalvolopez.com" />
@@ -53,11 +53,11 @@ export function ArticleLayout({
           property="twitter:url"
           content="{`https://educalvolopez.com/articles/${article.slug}`}"
         />
-        <meta name="twitter:title" content={`${meta.title} - Eduardo Calvo`} />
+        <meta name="twitter:title" content={`${meta.title} - Edu Calvo`} />
         <meta name="twitter:description" content={meta.description} />
         <meta
           name="twitter:image"
-          content={`https://educalvolopez.com/api/og?title="${meta.title} - Eduardo Calvo`}
+          content={`https://educalvolopez.com/api/og?title="${meta.title} - Edu Calvo`}
         />
       </Head>
       <Container className="mt-16 lg:mt-32">
