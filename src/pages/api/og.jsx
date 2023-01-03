@@ -15,6 +15,7 @@ export default function handler(req) {
 
     return new ImageResponse(
       (
+
         <div
         style={{
           display: 'flex',
@@ -33,54 +34,62 @@ export default function handler(req) {
       >
         <div
           style={{
-            left: 42,
-            top: 42,
-            position: 'absolute',
             display: 'flex',
-            alignItems: 'center',
-          }}
-        >
-          <span
-            style={{
-              width: 24,
-              height: 24,
-              borderRadius: '40px',
-              background: 'white',
-            }}
-          />
-          <span
-            style={{
-              marginLeft: 8,
-              fontSize: 20,
-              color: 'white',
-            }}
-          >
-            educalvolopez.com
-          </span>
-        </div>
-        <div
-          style={{
-            display: 'flex',
+            flexDirection:'column',
             flexWrap: 'wrap',
-            justifyContent: 'center',
-            padding: '20px 50px',
+            justifyContent: 'flex-start',
+            padding: '20px 20px 20px 80px',
             margin: '0 42px',
-            fontSize: 40,
-            width: 'auto',
-            maxWidth: 550,
-            textAlign: 'center',
+            fontSize: 50,
+            width: '50%',
+            textAlign: 'left',
             color: 'white',
             lineHeight: 1.4,
           }}
         >
-          {title}
+
+          <img src="https://educalvolopez.com/avatar.png"
+            style={{
+              height: '60px',
+              width:'60px',
+              objectFit:'cover',
+              borderRadius: '100%',
+              marginBottom: '10px'
+            }}
+          />
+
+         <span>{title}</span>
+         <span
+          style={{
+               fontWeight: 300,
+               fontSize: '26px',
+            }}
+        >
+          educalvolopez.com
+        </span>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            height: '100%',
+            width: '50%'
+          }}
+        >
+          <img src="https://educalvolopez.com/img-og.avif"
+            style={{
+              height: '100%',
+              width:'100%',
+              objectFit:'cover'
+            }}
+          />
         </div>
       </div>
 
       ),
       {
         width: 1200,
-        height: 630
+        height: 600
       }
     )
   } catch (e) {
