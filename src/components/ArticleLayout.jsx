@@ -38,7 +38,7 @@ export function ArticleLayout({
         <meta name="keywords" content={meta.keywords} />
         <meta
           property="og:image"
-          content={`https://educalvolopez.com/api/og?title=${meta.title} - Edu Calvo`}
+          content={`https://educalvolopez.com/api/og?title=${meta.title}`}
         />
         <meta
           property="og:url"
@@ -57,7 +57,7 @@ export function ArticleLayout({
         <meta name="twitter:description" content={meta.description} />
         <meta
           name="twitter:image"
-          content={`https://educalvolopez.com/api/og?title=${meta.title} - Edu Calvo`}
+          content={`https://educalvolopez.com/api/og?title=${meta.title}`}
         />
       </Head>
       <Container className="mt-16 lg:mt-32">

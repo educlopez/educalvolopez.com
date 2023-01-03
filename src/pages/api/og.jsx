@@ -40,11 +40,9 @@ export default function handler(req) {
             justifyContent: 'flex-start',
             padding: '20px 20px 20px 80px',
             margin: '0 42px',
-            fontSize: 50,
             width: '50%',
             textAlign: 'left',
             color: 'white',
-            lineHeight: 1.4,
           }}
         >
 
@@ -54,15 +52,22 @@ export default function handler(req) {
               width:'60px',
               objectFit:'cover',
               borderRadius: '100%',
-              marginBottom: '10px'
+              marginBottom: '20px'
             }}
           />
 
-         <span>{title}</span>
+          <span
+            style={{
+              fontSize: 38,
+              lineHeight: 1.2,
+            }}
+          >
+            {title}
+          </span>
          <span
           style={{
-               fontWeight: 300,
-               fontSize: '26px',
+               fontSize: '20px',
+               marginTop: '20px'
             }}
         >
           educalvolopez.com

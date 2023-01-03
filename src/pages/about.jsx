@@ -61,7 +61,7 @@ export default function About() {
         />
         <meta
           property="og:image"
-          content="https://educalvolopez.com/api/og?title=About - Edu Calvo"
+          content="https://educalvolopez.com/api/og?title=Sobre Edu Calvo"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="educalvolopez.com" />
@@ -76,7 +76,7 @@ export default function About() {
         />
         <meta
           name="twitter:image"
-          content="https://educalvolopez.com/api/og?title=About - Edu Calvo"
+          content="https://educalvolopez.com/api/og?title=Sobre Edu Calvo"
         />
       </Head>
       <Container className="mt-16 sm:mt-32">

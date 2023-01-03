@@ -76,7 +76,7 @@ export default function Projects() {
         />
         <meta
           property="og:image"
-          content="https://educalvolopez.com/api/og?title=Proyectos - Edu Calvo"
+          content="https://educalvolopez.com/api/og?title=Proyectos"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="educalvolopez.com" />
@@ -91,7 +91,7 @@ export default function Projects() {
         />
         <meta
           name="twitter:image"
-          content="https://educalvolopez.com/api/og?title=Proyectos - Edu Calvo"
+          content="https://educalvolopez.com/api/og?title=Proyectos"
         />
       </Head>
       <SimpleLayout

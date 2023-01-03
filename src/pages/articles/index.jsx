@@ -67,7 +67,7 @@ export default function ArticlesIndex({ articles }) {
         />
         <meta
           property="og:image"
-          content="https://educalvolopez.com/api/og?title=Blog - Edu Calvo"
+          content="https://educalvolopez.com/api/og?title=Blog"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="educalvolopez.com" />
@@ -82,7 +82,7 @@ export default function ArticlesIndex({ articles }) {
         />
         <meta
           name="twitter:image"
-          content="https://educalvolopez.com/api/og?title=Blog - Edu Calvo"
+          content="https://educalvolopez.com/api/og?title=Blog"
         />
       </Head>
       <SimpleLayout
