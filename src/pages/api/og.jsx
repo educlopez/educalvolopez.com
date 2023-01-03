@@ -76,7 +76,7 @@ export default function handler(req) {
             width: '50%'
           }}
         >
-          <img src="https://educalvolopez.com/img-og.avif"
+          <img src="https://educalvolopez.com/img-og.jpg"
             style={{
               height: '100%',
               width:'100%',
