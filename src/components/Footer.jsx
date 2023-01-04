@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import NowPlaying from '@/components/NowPlaying';
 import { Container } from '@/components/Container';
 
 function NavLink({ href, children }) {
@@ -35,10 +35,7 @@ export function Footer() {
                 </svg>
                 Disponible para nuevos proyectos
               </span>
-              <p className="text-sm text-center text-zinc-600 dark:text-zinc-400 sm:text-left">
-                &copy; {new Date().getFullYear()} Edu Calvo. Todos los
-                derechos reservados.
-              </p>
+              <NowPlaying />
             </div>
           </Container.Inner>
         </div>
