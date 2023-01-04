@@ -326,7 +326,7 @@ export default function Uses() {
               setEnabled(!enabled);
             }}
             className={classNames(
-              enabled ? 'bg-amber-600' : 'bg-gray-200',
+              enabled ? 'bg-amber-600' : 'bg-gray-200 dark:bg-zinc-700',
               'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2'
             )}
           >
@@ -352,7 +352,7 @@ export default function Uses() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-3 h-3 text-gray-400"
+                  className="w-3 h-3 text-gray-400 dark:text-zinc-700"
                 >
                   <path
                     strokeLinecap="round"
