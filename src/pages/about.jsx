@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
 import clsx from 'clsx';
-
+import { EnvelopeIcon } from '@heroicons/react/24/solid';
 import { Reviews } from '@/components/Reviews';
 
 import { Container } from '@/components/Container';
@@ -32,16 +32,6 @@ function SocialLink({ className, href, children, icon: Icon }) {
   );
 }
 
-function MailIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
-      />
-    </svg>
-  );
-}
 
 export default function About() {
   return (
@@ -149,7 +139,7 @@ export default function About() {
               </SocialLink>
               <SocialLink
                 href="mailto:educalvolopez@gmail.com"
-                icon={MailIcon}
+                icon={EnvelopeIcon}
                 className="pt-8 mt-8 border-t border-zinc-900/10 dark:border-white/10"
               >
                 educalvolopez@gmail.com
