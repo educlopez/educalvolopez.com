@@ -3,64 +3,16 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Popover, Transition } from '@headlessui/react';
 import clsx from 'clsx';
-
+import { XMarkIcon, SunIcon, MoonIcon } from '@heroicons/react/24/outline';
+import {ChevronDownIcon} from '@heroicons/react/24/solid';
 import { Container } from '@/components/Container';
 import avatarImage from '@/images/avatar.png';
 import { Fragment, useEffect, useRef } from 'react';
 
-function CloseIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function ChevronDownIcon(props) {
-  return (
-    <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
-      <path
-        d="M1.75 1.75 4 4.25l2.25-2.5"
-        fill="none"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function SunIcon(props) {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" {...props}>
-      <path d="M12.5 10a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z" />
-      <path
-        strokeLinecap="round"
-        d="M10 5.5v-1M13.182 6.818l.707-.707M14.5 10h1M13.182 13.182l.707.707M10 15.5v-1M6.11 13.889l.708-.707M4.5 10h1M6.11 6.111l.708.707"
-      />
-    </svg>
-  );
-}
-
-function MoonIcon(props) {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" {...props}>
-      <path d="M15.224 11.724a5.5 5.5 0 0 1-6.949-6.949 5.5 5.5 0 1 0 6.949 6.949Z" />
-    </svg>
-  );
-}
-
-function MobileNavItem({ href, children }) {
+function MobileNavItem({ href, children, target, rel }) {
   return (
     <li>
-      <Popover.Button as={Link} href={href} className="block py-2">
+      <Popover.Button as={Link} href={href} className="block py-2" target={target} rel={rel}>
         {children}
       </Popover.Button>
     </li>
@@ -72,7 +24,7 @@ function MobileNavigation(props) {
     <Popover {...props}>
       <Popover.Button className="flex items-center px-4 py-2 text-sm font-medium border rounded-full group border-zinc-900/10 bg-white/10 text-zinc-600 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur">
         Menu
-        <ChevronDownIcon className="w-2 h-auto ml-3 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
+        <ChevronDownIcon className="w-3 h-auto ml-3 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
@@ -101,7 +53,7 @@ function MobileNavigation(props) {
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="p-1 -m-1">
-                <CloseIcon className="w-6 h-6 text-zinc-500 dark:text-zinc-400" />
+                <XMarkIcon className="w-6 h-6 text-zinc-500 dark:text-zinc-400" />
               </Popover.Button>
               <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
                 Menu
@@ -112,9 +64,8 @@ function MobileNavigation(props) {
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href="/articles">Blog</MobileNavItem>
                 <MobileNavItem href="/proyectos">Proyectos</MobileNavItem>
-                <MobileNavItem href="/recomendaciones">
-                  Recomendaciones
-                </MobileNavItem>
+                <MobileNavItem href="/recomendaciones">Recomendaciones</MobileNavItem>
+                <MobileNavItem href="https://shop.educalvolopez.com"  target="_blank" rel="noopener noreferrer">Tienda</MobileNavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -124,12 +75,13 @@ function MobileNavigation(props) {
   );
 }
 
-function NavItem({ href, children }) {
+function NavItem({ href, children, target, rel }) {
   let isActive = useRouter().pathname === href;
 
   return (
     <li>
       <Link
+        target={target} rel={rel}
         href={href}
         className={clsx(
           'relative block px-3 py-2 transition',
@@ -155,6 +107,7 @@ function DesktopNavigation(props) {
         <NavItem href="/articles">Blog</NavItem>
         <NavItem href="/proyectos">Proyectos</NavItem>
         <NavItem href="/recomendaciones">Recomendaciones</NavItem>
+        <NavItem href="https://shop.educalvolopez.com" target="_blank" rel="noopener noreferrer">Tienda</NavItem>
       </ul>
     </nav>
   );
@@ -189,8 +142,8 @@ function ModeToggle() {
       className="px-2 py-2 transition border rounded-full group border-zinc-900/10 bg-white/10 text-zinc-600 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur"
       onClick={toggleMode}
     >
-      <SunIcon className="w-5 h-5 stroke-zinc-900 dark:hidden" />
-      <MoonIcon className="hidden w-5 h-5 stroke-white dark:block" />
+      <SunIcon className="w-4 h-4 stroke-zinc-900 dark:hidden" />
+      <MoonIcon className="hidden w-4 h-4 stroke-white dark:block" />
     </button>
   );
 }
