@@ -32,7 +32,6 @@ function SocialLink({ className, href, children, icon: Icon }) {
   );
 }
 
-
 export default function About() {
   return (
     <>
@@ -42,7 +41,10 @@ export default function About() {
           name="description"
           content="Soy Edu Calvo, vivo en Madrid en donde diseño y creo webs."
         />
-        <meta name="keywords" content="Diseñador web, maquetador, creatividad, habilidades de comunicación visual, resolución de problemas, interfaces de usuario, diseños responsive, clientes globales, empresas pequeñas y grandes corporaciones" />
+        <meta
+          name="keywords"
+          content="Diseñador web, maquetador, creatividad, habilidades de comunicación visual, resolución de problemas, interfaces de usuario, diseños responsive, clientes globales, empresas pequeñas y grandes corporaciones"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="About - Edu Calvo" />
         <meta

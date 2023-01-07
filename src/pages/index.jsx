@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
-import { BriefcaseIcon,ArrowDownIcon } from '@heroicons/react/24/outline';
+import { BriefcaseIcon, ArrowDownIcon } from '@heroicons/react/24/outline';
 import { Button } from '@/components/Button';
 import { Card } from '@/components/Card';
 import { Container } from '@/components/Container';
@@ -162,7 +162,10 @@ export default function Home({ articles }) {
           name="description"
           content=" Soy Eduardo, soy diseñador web y maquetador con sede en Madrid."
         />
-        <meta name="keywords" content="diseñador web, maquetador, Madrid, Cinetic Digital, Freelance, portfolio, edu, calvo" />
+        <meta
+          name="keywords"
+          content="diseñador web, maquetador, Madrid, Cinetic Digital, Freelance, portfolio, edu, calvo"
+        />
         <meta property="og:url" content="https://educalvolopez.com" />
         <meta property="og:type" content="website" />
         <meta
