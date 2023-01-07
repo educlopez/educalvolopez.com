@@ -3,6 +3,6 @@ export function formatDate(dateString) {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
-    timeZone: 'UTC',
-  })
+    timeZone: 'UTC'
+  });
 }

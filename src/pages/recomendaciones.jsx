@@ -271,7 +271,10 @@ export default function Uses() {
           name="description"
           content="El software que uso, los dispositivos que amo y otras cosas que recomiendo."
         />
-        <meta name="keywords" content="software recomendado, dispositivos tecnológicos, productividad, herramientas de creación de sitios web, procrastinación" />
+        <meta
+          name="keywords"
+          content="software recomendado, dispositivos tecnológicos, productividad, herramientas de creación de sitios web, procrastinación"
+        />
         <meta
           property="og:url"
           content="https://educalvolopez.com/recomendaciones"

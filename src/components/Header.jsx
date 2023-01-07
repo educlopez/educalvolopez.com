@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { Popover, Transition } from '@headlessui/react';
 import clsx from 'clsx';
 import { XMarkIcon, SunIcon, MoonIcon } from '@heroicons/react/24/outline';
-import {ChevronDownIcon} from '@heroicons/react/24/solid';
+import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { Container } from '@/components/Container';
 import avatarImage from '@/images/avatar.png';
 import { Fragment, useEffect, useRef } from 'react';
@@ -12,7 +12,13 @@ import { Fragment, useEffect, useRef } from 'react';
 function MobileNavItem({ href, children, target, rel }) {
   return (
     <li>
-      <Popover.Button as={Link} href={href} className="block py-2" target={target} rel={rel}>
+      <Popover.Button
+        as={Link}
+        href={href}
+        className="block py-2"
+        target={target}
+        rel={rel}
+      >
         {children}
       </Popover.Button>
     </li>
@@ -64,8 +70,16 @@ function MobileNavigation(props) {
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href="/articles">Blog</MobileNavItem>
                 <MobileNavItem href="/proyectos">Proyectos</MobileNavItem>
-                <MobileNavItem href="/recomendaciones">Recomendaciones</MobileNavItem>
-                <MobileNavItem href="https://shop.educalvolopez.com"  target="_blank" rel="noopener noreferrer">Tienda</MobileNavItem>
+                <MobileNavItem href="/recomendaciones">
+                  Recomendaciones
+                </MobileNavItem>
+                <MobileNavItem
+                  href="https://shop.educalvolopez.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tienda
+                </MobileNavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -81,7 +95,8 @@ function NavItem({ href, children, target, rel }) {
   return (
     <li>
       <Link
-        target={target} rel={rel}
+        target={target}
+        rel={rel}
         href={href}
         className={clsx(
           'relative block px-3 py-2 transition',
@@ -107,7 +122,13 @@ function DesktopNavigation(props) {
         <NavItem href="/articles">Blog</NavItem>
         <NavItem href="/proyectos">Proyectos</NavItem>
         <NavItem href="/recomendaciones">Recomendaciones</NavItem>
-        <NavItem href="https://shop.educalvolopez.com" target="_blank" rel="noopener noreferrer">Tienda</NavItem>
+        <NavItem
+          href="https://shop.educalvolopez.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Tienda
+        </NavItem>
       </ul>
     </nav>
   );

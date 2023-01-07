@@ -55,7 +55,10 @@ export default function Projects() {
           name="description"
           content="Proyectos que he realizado durante mi carrera."
         />
-        <meta name="keywords" content="proyectos de carrera, colaboración con grandes marcas, ayuda a pequeños negocios, calidad en trabajo" />
+        <meta
+          name="keywords"
+          content="proyectos de carrera, colaboración con grandes marcas, ayuda a pequeños negocios, calidad en trabajo"
+        />
         <meta property="og:url" content="https://educalvolopez.com/proyectos" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Proyectos - Edu Calvo" />
