@@ -350,13 +350,10 @@ export function Header() {
                       style={{ transform: 'var(--avatar-image-transform)' }}
                     />
                     <span className="items-center hidden px-2 py-0 ml-2 text-xs font-semibold border rounded-md pointer-events-auto border-zinc-200 bg-white/10 text-zinc-900 backdrop-blur dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-100 sm:inline-flex">
-                      <svg
-                        className="mr-1.5 h-2 w-2 text-lime-400"
-                        fill="currentColor"
-                        viewBox="0 0 8 8"
-                      >
-                        <circle cx="4" cy="4" r="3" />
-                      </svg>
+                      <span class="mr-1.5 flex h-3 w-3 items-center">
+                        <span class="absolute  inline-flex h-2 w-2 animate-ping rounded-full bg-lime-400 opacity-75"></span>
+                        <span class="relative inline-flex h-2 w-2 rounded-full bg-lime-400"></span>
+                      </span>
                       Disponible para nuevos proyectos
                     </span>
                   </div>
