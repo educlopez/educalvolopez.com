@@ -10,7 +10,8 @@ import {
   TwitterIcon,
   InstagramIcon,
   GitHubIcon,
-  LinkedInIcon
+  LinkedInIcon,
+  ReadcvIcon
 } from '@/components/SocialIcons';
 import portraitImage from '@/images/portrait.png';
 
@@ -138,6 +139,13 @@ export default function About() {
                 className="mt-4"
               >
                 Seguir en LinkedIn
+              </SocialLink>
+              <SocialLink
+                href="https://read.cv/educlopez"
+                icon={ReadcvIcon}
+                className="mt-4"
+              >
+                CV online
               </SocialLink>
               <SocialLink
                 href="mailto:educalvolopez@gmail.com"

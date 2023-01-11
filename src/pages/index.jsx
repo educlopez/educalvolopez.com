@@ -9,7 +9,8 @@ import {
   TwitterIcon,
   InstagramIcon,
   GitHubIcon,
-  LinkedInIcon
+  LinkedInIcon,
+  ReadcvIcon
 } from '@/components/SocialIcons';
 import logoTantra from '@/images/logos/tantra.svg';
 import logoBdo from '@/images/logos/bdo.svg';
@@ -140,15 +141,27 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button
-        href="eduardo_calvo_lopez_curriculum_vitae.pdf"
-        variant="secondary"
-        className="w-full mt-6 group"
-        target="_blank"
-      >
-        Descargar CV
-        <ArrowDownIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
+      <div className="flex gap-4">
+        <Button
+          href="https://read.cv/educlopez"
+          variant="secondary"
+          className="w-full mt-6 group"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <ReadcvIcon className="w-6 h-6 transition fill-zinc-400 group-active:fill-zinc-600 dark:group-hover:fill-zinc-50 dark:group-active:fill-zinc-50" />
+          Cv online
+        </Button>
+        <Button
+          href="eduardo_calvo_lopez_curriculum_vitae.pdf"
+          variant="secondary"
+          className="w-full mt-6 group"
+          target="_blank"
+        >
+          Descargar Cv
+          <ArrowDownIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        </Button>
+      </div>
     </div>
   );
 }
