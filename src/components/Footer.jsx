@@ -36,9 +36,9 @@ export function Footer() {
                 <NavLink href="/rss/feed.xml">Rss</NavLink>
               </div>
               <span className="inline-flex items-center px-2 py-0 ml-2 text-xs font-semibold border rounded-md pointer-events-auto border-zinc-200 bg-white/10 text-zinc-900 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-100 dark:backdrop-blur sm:hidden">
-                <span class="mr-1.5 flex h-3 w-3 items-center">
-                  <span class="absolute  inline-flex h-2 w-2 animate-ping rounded-full bg-lime-400 opacity-75"></span>
-                  <span class="relative inline-flex h-2 w-2 rounded-full bg-lime-400"></span>
+                <span className="mr-1.5 flex h-3 w-3 items-center">
+                  <span className="absolute inline-flex w-2 h-2 rounded-full opacity-75 animate-ping bg-lime-400"></span>
+                  <span className="relative inline-flex w-2 h-2 rounded-full bg-lime-400"></span>
                 </span>
                 Disponible para nuevos proyectos
               </span>

@@ -25,7 +25,7 @@ function Weather() {
   }
 
   return (
-    <div className="relative flex items-center justify-between px-6 py-3 border rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur">
+    <div className="relative flex flex-col items-center justify-between px-6 py-3 border rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur md:flex-row">
       <h2 className="flex text-xs font-semibold text-zinc-900 dark:text-zinc-100 ">
         {weather.name}, {weather.sys.country}
       </h2>

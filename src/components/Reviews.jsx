@@ -35,8 +35,8 @@ const reviews = [
   {
     id: 6,
     author: 'Linkedin',
-    title: 'Linkedin',
-    body: 'Próximamente más'
+    title: 'Email',
+    body: '¡Si has trabajado conmigo y quieres compartir tu experiencia, escríbeme un testimonio en LinkedIn o enviámelo por email a educalvolopez@gmail.com! ¡Me encantaría escuchar tus comentarios!'
   }
 ];
 
