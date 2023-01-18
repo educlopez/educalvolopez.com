@@ -1,4 +1,6 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image';
+import coverImg from './cover-img.png';
 
 export const meta = {
   author: 'Edu Calvo',
@@ -11,6 +13,8 @@ export const meta = {
 }
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
+
+<Image className="w-full rounded-md" src={coverImg} alt="Nextjs y Tailwind" />
 
 ¡Hola! En este artículo, te hablaré sobre ChatGPT, un modelo de lenguaje desarrollado por OpenAI.
 
