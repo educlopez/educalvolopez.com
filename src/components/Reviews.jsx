@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useRef } from 'react';
 import clsx from 'clsx';
-
+import { motion } from 'framer-motion'
+import { FADE_IN_ANIMATION_CARD } from '@/lib/constants';
 const reviews = [
   {
     id: 1,
@@ -42,12 +43,13 @@ const reviews = [
 
 function Review({ title, body, author, className, ...props }) {
   return (
-    <figure
+    <motion.figure
       className={clsx(
         'rounded-3xl border border-zinc-900/10 bg-white/10  p-6 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur',
         className
       )}
       {...props}
+      {...FADE_IN_ANIMATION_CARD}
     >
       <blockquote className="text-zinc-900 dark:text-zinc-100">
         <p className="text-sm font-semibold leading-6 before:content-['“'] after:content-['”']">
@@ -57,7 +59,7 @@ function Review({ title, body, author, className, ...props }) {
       <figcaption className="mt-3 text-sm text-zinc-600 dark:text-zinc-400">
         {author} - {title}
       </figcaption>
-    </figure>
+    </motion.figure>
   );
 }
 

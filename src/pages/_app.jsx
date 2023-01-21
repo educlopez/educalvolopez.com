@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import CommandMenu from '@/components/CommandBar';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
+import { motion } from 'framer-motion';
 
 import '@/styles/tailwind.css';
 import 'focus-visible';
@@ -26,7 +27,21 @@ export default function App({ Component, pageProps, router }) {
         <Header />
         <main>
           <CommandMenu />
-          <Component previousPathname={previousPathname} {...pageProps} />
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            animate="show"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              show: {
+                transition: {
+                  staggerChildren: 0.15,
+                },
+              },
+            }}>
+            <Component previousPathname={previousPathname} {...pageProps} />
+          </motion.div>
           <Analytics />
         </main>
         <Footer />

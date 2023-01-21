@@ -6,7 +6,11 @@ import { SimpleLayout } from '@/components/SimpleLayout';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Switch } from '@headlessui/react';
-
+import { motion } from 'framer-motion';
+import {
+  FADE_IN_ANIMATION_CARD_HOVER,
+  FADE_DOWN_ANIMATION_VARIANTS
+} from '@/lib/constants';
 //Images
 //Workstation
 import imgMacbook from '@/images/icons/macbook-pro.png';
@@ -226,7 +230,10 @@ function Toollist({ title, href, children }) {
 function Toolgrid({ title, href, img, children }) {
   return (
     <li className="relative">
-      <div className="block w-full p-3 overflow-hidden border rounded-lg aspect-w-10 aspect-h-7 group border-zinc-900/10 bg-white/10 backdrop-blur-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur">
+      <motion.div
+        className="block w-full p-3 overflow-hidden border rounded-lg aspect-w-10 aspect-h-7 group border-zinc-900/10 bg-white/10 backdrop-blur-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur"
+        {...FADE_IN_ANIMATION_CARD_HOVER}
+      >
         <Image
           src={img}
           alt={title}
@@ -246,7 +253,7 @@ function Toolgrid({ title, href, img, children }) {
         <p className="block my-2 text-sm font-medium text-center truncate pointer-events-none text-zinc-900 dark:text-white">
           {children}
         </p>
-      </div>
+      </motion.div>
     </li>
   );
 }
@@ -309,7 +316,11 @@ export default function Uses() {
         title="El software que uso, los dispositivos que amo y otras cosas que recomiendo."
         intro="Las cosas que uso para crear webs, mantenerme productivo o comprar para engañarme y pensar que estoy siendo productivo cuando en realidad solo estoy procrastinando. Aquí hay una gran lista de todas mis cosas favoritas."
       >
-        <div className="flex items-center justify-center gap-4 px-4 py-2 my-16 border dark:backdrop-blurbackdrop-blur w-fit rounded-3xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20">
+        <motion.div
+          className="flex items-center justify-center gap-4 px-4 py-2 my-16 border dark:backdrop-blurbackdrop-blur w-fit rounded-3xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20"
+          variants={FADE_DOWN_ANIMATION_VARIANTS}
+          layout
+        >
           <Switch
             onClick={() => {
               setView('list');
@@ -402,7 +413,7 @@ export default function Uses() {
           >
             Cuadricula
           </Switch>
-        </div>
+        </motion.div>
         {view === 'list' ? (
           <div className="space-y-20">
             <ToolsSection title="Workstation">

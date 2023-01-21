@@ -21,6 +21,11 @@ import { generateRssFeed } from '@/lib/generateRssFeed';
 import { getAllArticles } from '@/lib/getAllArticles';
 import { formatDate } from '@/lib/formatDate';
 import Weather from '@/components/Weather';
+import { motion } from 'framer-motion';
+import {
+  FADE_IN_ANIMATION_CARD,
+  FADE_DOWN_ANIMATION_VARIANTS
+} from '@/lib/constants';
 
 function Article({ article }) {
   return (
@@ -102,7 +107,10 @@ function Resume() {
   ];
 
   return (
-    <div className="p-6 border rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur">
+    <motion.div
+      className="p-6 border rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur"
+      variants={FADE_DOWN_ANIMATION_VARIANTS}
+    >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="flex-none w-6 h-6" />
         <span className="ml-3">Trabajo</span>
@@ -162,7 +170,7 @@ function Resume() {
           <ArrowDownIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -211,7 +219,10 @@ export default function Home({ articles }) {
         />
       </Head>
       <Container className="mt-9">
-        <div className="max-w-xl">
+        <motion.div
+          className="max-w-xl"
+          variants={FADE_DOWN_ANIMATION_VARIANTS}
+        >
           <h1 className="sr-only">Edu Calvo</h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             Soy Edu Calvo, soy diseñador web y maquetador con sede en Madrid.{' '}
@@ -247,7 +258,7 @@ export default function Home({ articles }) {
               icon={LinkedInIcon}
             />
           </div>
-        </div>
+        </motion.div>
       </Container>
       <Container className="mt-24 md:mt-28">
         <div className="grid max-w-xl grid-cols-1 mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
@@ -257,7 +268,9 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Weather />
+            <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS}>
+              <Weather />
+            </motion.div>
             <Resume />
           </div>
         </div>

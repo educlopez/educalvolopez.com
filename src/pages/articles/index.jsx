@@ -5,6 +5,11 @@ import { SimpleLayout } from '@/components/SimpleLayout';
 import { getAllArticles } from '@/lib/getAllArticles';
 import { formatDate } from '@/lib/formatDate';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
+import {
+  FADE_DOWN_ANIMATION_VARIANTS
+} from '@/lib/constants';
+
 function Article({ article }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
@@ -96,7 +101,10 @@ export default function ArticlesIndex({ articles }) {
         title="Escribiendo sobre diseño de interfaces, programación y hobbies."
         intro={`Cuando no estoy programando, puedes encontrarme escribiendo sobre diseño de interfaces, programación y hobbies, actualmente he escrito ${articles.length} artículos. Si quieres saber más sobre mí, echa un vistazo a mi perfil de LinkedIn.`}
       >
-        <div className="md:border-l md:border-zinc-900/10 md:pl-6 md:dark:border-white/10">
+        <motion.div
+          className="md:border-l md:border-zinc-900/10 md:pl-6 md:dark:border-white/10"
+          variants={FADE_DOWN_ANIMATION_VARIANTS}
+        >
           <div className="flex flex-col max-w-3xl space-y-16">
             <div className="relative w-full mb-4">
               <input
@@ -104,9 +112,9 @@ export default function ArticlesIndex({ articles }) {
                 type="text"
                 onChange={(e) => setSearchValue(e.target.value)}
                 placeholder="Buscar artículos"
-                className="block w-full px-4 py-2 border rounded-full border-zinc-900/10 bg-white/10 text-zinc-600 backdrop-blur-sm hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur dark:hover:text-white placeholder:text-zinc-600 placeholder:dark:text-zinc-300"
+                className="block w-full px-4 py-2 border rounded-full border-zinc-900/10 bg-white/10 text-zinc-600 backdrop-blur-sm placeholder:text-zinc-600 hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur placeholder:dark:text-zinc-300 dark:hover:text-white"
               />
-              <MagnifyingGlassIcon className="absolute w-5 h-5 text-zinc-900 right-3 top-3 dark:text-zinc-300"/>
+              <MagnifyingGlassIcon className="absolute w-5 h-5 right-3 top-3 text-zinc-900 dark:text-zinc-300" />
             </div>
             <Suspense fallback={null}>
               {!filteredBlogPosts.length && (
@@ -119,7 +127,7 @@ export default function ArticlesIndex({ articles }) {
               ))}
             </Suspense>
           </div>
-        </div>
+        </motion.div>
       </SimpleLayout>
     </>
   );

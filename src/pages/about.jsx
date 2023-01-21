@@ -4,8 +4,12 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import { EnvelopeIcon } from '@heroicons/react/24/solid';
 import { Reviews } from '@/components/Reviews';
-
+import Balancer from 'react-wrap-balancer';
 import { Container } from '@/components/Container';
+import { motion } from 'framer-motion';
+import {
+  FADE_DOWN_ANIMATION_VARIANTS
+} from '@/lib/constants';
 import {
   TwitterIcon,
   InstagramIcon,
@@ -74,7 +78,10 @@ export default function About() {
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-          <div className="lg:pl-20">
+          <motion.div
+            className="lg:pl-20"
+            variants={FADE_DOWN_ANIMATION_VARIANTS}
+          >
             <div className="max-w-xs px-2.5 lg:max-w-none">
               <Image
                 src={portraitImage}
@@ -83,12 +90,21 @@ export default function About() {
                 className="object-cover aspect-square rotate-3 rounded-2xl bg-zinc-100 dark:bg-zinc-800"
               />
             </div>
-          </div>
+          </motion.div>
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
-              Soy Edu Calvo, vivo en Madrid en donde diseño y creo webs.
-            </h1>
-            <div className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400">
+            <motion.h1
+              className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl"
+              variants={FADE_DOWN_ANIMATION_VARIANTS}
+            >
+              <Balancer>
+                {' '}
+                Soy Edu Calvo, vivo en Madrid en donde diseño y creo webs.
+              </Balancer>
+            </motion.h1>
+            <motion.div
+              className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400"
+              variants={FADE_DOWN_ANIMATION_VARIANTS}
+            >
               <p>
                 Soy diseñador web y maquetador desde mi primer año de estudios
                 de diseño gráfico en la universidad ESNE. En los últimos nueve
@@ -109,9 +125,12 @@ export default function About() {
                 proyectos que van desde pequeñas empresas hasta grandes
                 corporaciones.
               </p>
-            </div>
+            </motion.div>
           </div>
-          <div className="lg:pl-20">
+          <motion.div
+            className="lg:pl-20"
+            variants={FADE_DOWN_ANIMATION_VARIANTS}
+          >
             <ul role="list">
               <SocialLink
                 href="https://twitter.com/educlopez93"
@@ -155,7 +174,7 @@ export default function About() {
                 educalvolopez@gmail.com
               </SocialLink>
             </ul>
-          </div>
+          </motion.div>
         </div>
         <Reviews />
       </Container>

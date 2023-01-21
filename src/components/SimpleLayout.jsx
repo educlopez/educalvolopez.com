@@ -1,15 +1,24 @@
 import { Container } from '@/components/Container';
+import Balancer from 'react-wrap-balancer';
+import { motion } from 'framer-motion';
+import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
 
 export function SimpleLayout({ title, intro, children }) {
   return (
     <Container className="mt-16 sm:mt-32">
       <header className="max-w-full">
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
-          {title}
-        </h1>
-        <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          {intro}
-        </p>
+        <motion.h1
+          className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl"
+          variants={FADE_DOWN_ANIMATION_VARIANTS}
+        >
+          <Balancer>{title}</Balancer>
+        </motion.h1>
+        <motion.p
+          className="mt-6 text-base text-zinc-600 dark:text-zinc-400"
+          variants={FADE_DOWN_ANIMATION_VARIANTS}
+        >
+          <Balancer>{intro}</Balancer>
+        </motion.p>
       </header>
       <div className="mt-16 sm:mt-20">{children}</div>
     </Container>

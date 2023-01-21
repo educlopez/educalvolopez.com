@@ -1,13 +1,17 @@
 import Link from 'next/link';
 import clsx from 'clsx';
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
+import {
+  motion
+} from 'framer-motion';
+import { FADE_IN_ANIMATION_CARD_HOVER } from '@/lib/constants'
 
 export function Card({ as: Component = 'div', className, children }) {
   return (
     <Component
       className={clsx(className, 'group relative flex flex-col items-start')}
     >
-      {children}
+      <motion.div {...FADE_IN_ANIMATION_CARD_HOVER}>{children}</motion.div>
     </Component>
   );
 }
@@ -15,7 +19,7 @@ export function Card({ as: Component = 'div', className, children }) {
 Card.Link = function CardLink({ children, ...props }) {
   return (
     <>
-      <div className="absolute z-0 transition scale-95 border opacity-0 -inset-y-6 -inset-x-4 border-zinc-900/10 bg-white/10 group-hover:scale-100 group-hover:opacity-100 dark:border-white/10 dark:bg-zinc-900/20 sm:-inset-x-6 sm:rounded-2xl" />
+      <div className="absolute z-0 transition scale-95 border opacity-0 group-hover:opacity-100 -inset-y-6 -inset-x-4 border-zinc-900/10 bg-white/10 dark:border-white/10 dark:bg-zinc-900/20 sm:-inset-x-6 sm:rounded-2xl" />
       <Link {...props}>
         <span className="absolute z-20 -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
