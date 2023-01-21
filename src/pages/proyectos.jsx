@@ -8,7 +8,11 @@ import logoJane from '@/images/logos/jane.svg';
 import logoAneto from '@/images/logos/aneto.svg';
 import logoDentaid from '@/images/logos/dentaid.svg';
 import logoNet2phone from '@/images/logos/net2phone.svg';
+import projectMovielist from '@/images/projects/cover-project-movielist.png';
+import projectTalkworld from '@/images/projects/cover-project-talworld.png';
 import { LinkIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
+import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants';
 const projects = [
   {
     name: 'Sms Net2phone',
@@ -45,6 +49,40 @@ const projects = [
     logo: logoDentaid
   }
 ];
+const sideprojects = [
+  {
+    name: 'Movie List',
+    description: 'Website usando la api de TMDB con Nextjs y Tailwind',
+    link:
+      {
+        href: 'https://movielist.educalvolopez.com/',
+        label: 'Movie List'
+      },
+    github:
+      {
+        href: 'https://github.com/educlopez/movie-list',
+        label: 'Github'
+      },
+    img: projectMovielist
+  },
+  {
+    name: 'Talk World',
+    description: 'Website usando Tailwind, Supabase y Remix',
+    link:
+      {
+        href: 'https://talkworld.educalvolopez.com/',
+        label: 'Talk World'
+      },
+    github:
+      {
+        href: 'https://github.com/educlopez/supabase-remix-talkworld-chat',
+        label: 'Github'
+      },
+    img: projectTalkworld
+  }
+];
+
+
 
 export default function Projects() {
   return (
@@ -90,6 +128,46 @@ export default function Projects() {
         title="Proyectos que he realizado durante mi carrera."
         intro="¿No sabes por dónde empezar? He trabajado en montones de pequeños proyectos a lo largo de los años, pero estos son los que más me enorgullecen. Muchos de ellos son privados y no podré publicarlos a continuación."
       >
+        <motion.h2
+          className="mb-10 text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-2xl"
+          variants={FADE_DOWN_ANIMATION_VARIANTS}
+        >
+          Side Projects
+        </motion.h2>
+        <ul
+          role="list"
+          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {sideprojects.map((sideproject) => (
+            <Card as="li" key={sideproject.name}>
+              <div className="relative z-10 flex items-center justify-center w-full bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                <Image
+                  src={sideproject.img}
+                  alt=""
+                  className="w-full sm:rounded-2xl"
+                  unoptimized
+                />
+              </div>
+              <h2 className="mt-6 text-base font-semibold text-zinc-900 dark:text-white">
+                <Card.Link href={sideproject.link.href}>
+                  {sideproject.name}
+                </Card.Link>
+              </h2>
+              <Card.Description>{sideproject.description}</Card.Description>
+
+              <p className="relative z-10 flex items-center mt-6 text-sm font-medium transition text-zinc-900 group-hover:text-amber-500 dark:text-zinc-200">
+                <LinkIcon className="flex-none w-4 h-4" />
+                <span className="ml-2">{sideproject.link.label}</span>
+              </p>
+            </Card>
+          ))}
+        </ul>
+        <motion.h2
+          className="mt-16 mb-10 text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-2xl"
+          variants={FADE_DOWN_ANIMATION_VARIANTS}
+        >
+          Proyectos
+        </motion.h2>
         <ul
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"

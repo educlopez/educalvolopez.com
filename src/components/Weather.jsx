@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-
 const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API;
 
 function Weather() {
@@ -16,7 +15,9 @@ function Weather() {
 
   if (!weather) {
     return (
-      <div className="relative flex items-center justify-between px-6 py-3 border rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur">
+      <div
+        className="relative flex items-center justify-between px-6 py-3 border rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur"
+      >
         <p className="text-xs text-zinc-600 dark:text-zinc-400">
           Cargando tiempo...
         </p>
@@ -25,7 +26,9 @@ function Weather() {
   }
 
   return (
-    <div className="relative flex flex-col items-center justify-between px-6 py-3 border rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur md:flex-row">
+    <div
+      className="relative flex flex-col items-center justify-between px-6 py-3 border rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur md:flex-row"
+    >
       <h2 className="flex text-xs font-semibold text-zinc-900 dark:text-zinc-100 ">
         {weather.name}, {weather.sys.country}
       </h2>

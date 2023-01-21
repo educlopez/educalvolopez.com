@@ -4,6 +4,11 @@ import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { Container } from '@/components/Container';
 import { formatDate } from '@/lib/formatDate';
 import { Prose } from '@/components/Prose';
+import Balancer from 'react-wrap-balancer';
+import { motion } from 'framer-motion'
+import {
+  FADE_DOWN_ANIMATION_VARIANTS,
+} from '@/lib/constants';
 
 export function ArticleLayout({
   children,
@@ -62,31 +67,39 @@ export function ArticleLayout({
             )}
             <article>
               <header className="flex flex-col">
-                <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
-                  {meta.title}
-                </h1>
-                <time
+                <motion.h1
+                  className="mt-6 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl"
+                  variants={FADE_DOWN_ANIMATION_VARIANTS}
+                >
+                  <Balancer>{meta.title}</Balancer>
+                </motion.h1>
+
+                <motion.time
                   dateTime={meta.date}
                   className="flex items-center order-first text-base text-zinc-600 dark:text-zinc-400"
+                  variants={FADE_DOWN_ANIMATION_VARIANTS}
                 >
                   <span className="h-4 w-0.5 rounded-full bg-zinc-900 dark:bg-zinc-500" />
                   <span className="ml-3">{formatDate(meta.date)}</span>
-                </time>
+                </motion.time>
               </header>
               <div className="inline-flex gap-2 mt-4">
                 {meta.tags.map((tag) => (
-                  <a
+                  <motion.a
                     href="#"
                     key={tag}
                     className="inline-block text-zinc-600 before:content-['#'] dark:text-zinc-400"
+                    variants={FADE_DOWN_ANIMATION_VARIANTS}
                   >
                     <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-zinc-600 dark:text-zinc-400">
                       {tag}
                     </span>
-                  </a>
+                  </motion.a>
                 ))}
               </div>
-              <Prose className="mt-8">{children}</Prose>
+              <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS}>
+                <Prose className="mt-8">{children}</Prose>
+              </motion.div>
             </article>
           </div>
         </div>

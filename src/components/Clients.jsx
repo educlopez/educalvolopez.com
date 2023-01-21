@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { Card } from '@/components/Card';
-import { SimpleLayout } from '@/components/SimpleLayout';
+import { motion } from 'framer-motion';
+import { FADE_IN_ANIMATION_CARD } from '@/lib/constants';
 
 import logoTantra from '@/images/logos/logo-tantra.svg';
 import logoUam from '@/images/logos/logo-uam.svg';
@@ -43,7 +43,7 @@ const clients = [
 ];
 export default function Clients() {
   return (
-    <div className="rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur">
+    <motion.div className="rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur" {...FADE_IN_ANIMATION_CARD}>
       <div className="px-5 mx-auto my-16 max-w-7xl">
         <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
           <div>
@@ -76,6 +76,6 @@ export default function Clients() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

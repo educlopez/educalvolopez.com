@@ -8,6 +8,8 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import { Container } from '@/components/Container';
 import avatarImage from '@/images/avatar.png';
 import { Fragment, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { FADE_IN_ANIMATION_CARD } from '@/lib/constants';
 
 function MobileNavItem({ href, children, target, rel }) {
   return (
@@ -314,12 +316,13 @@ export function Header() {
 
   return (
     <>
-      <header
+      <motion.header
         className="relative z-50 flex flex-col pointer-events-none"
         style={{
           height: 'var(--header-height)',
           marginBottom: 'var(--header-mb)'
         }}
+        {...FADE_IN_ANIMATION_CARD}
       >
         {isHomePage && (
           <>
@@ -391,7 +394,7 @@ export function Header() {
             </div>
           </Container>
         </div>
-      </header>
+      </motion.header>
       {isHomePage && <div style={{ height: 'var(--content-offset)' }} />}
     </>
   );

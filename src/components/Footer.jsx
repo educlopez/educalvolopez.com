@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import NowPlaying from '@/components/NowPlaying';
 import { Container } from '@/components/Container';
+import { motion } from 'framer-motion';
+import { FADE_IN_ANIMATION_CARD } from '@/lib/constants';
 function NavLink({ href, children, target, rel }) {
   return (
     <Link
@@ -16,7 +18,7 @@ function NavLink({ href, children, target, rel }) {
 
 export function Footer() {
   return (
-    <footer className="mt-32">
+    <motion.footer className="mt-32" {...FADE_IN_ANIMATION_CARD}>
       <Container.Outer>
         <div className="pt-10 pb-16 border-t border-zinc-900/10 dark:border-white/10">
           <Container.Inner>
@@ -47,6 +49,6 @@ export function Footer() {
           </Container.Inner>
         </div>
       </Container.Outer>
-    </footer>
+    </motion.footer>
   );
 }
