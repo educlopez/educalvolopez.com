@@ -1,42 +1,25 @@
-# Spotlight
+# Next.js Portfolio with Tailwind
+This is a portfolio website built with Next.js and Tailwind CSS. It features a Spotify integration that displays the user's recently played tracks and a weather section that displays the current weather for a specified location.
 
-Spotlight is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+## Getting Started
+1. Clone the repository: git clone https://github.com/educlopez/nextjs-portfolio-tailwind.git
+2. Install dependencies: `npm install`
+3. Create an `.env` file in the root of the project and add the following variables:
 
-## Getting started
-
-To get started with this template, first install the npm dependencies:
-
-```bash
-npm install
+```env
+SITE_URL=
+NEXT_PUBLIC_SITE_URL=
+# Spotify
+SPOTIFY_CLIENT_ID=
+SPOTIFY_CLIENT_SECRET=
+SPOTIFY_REFRESH_TOKEN=
+# Weather
+NEXT_PUBLIC_WEATHER_API=
 ```
 
-Next, create a `.env.local` file in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to your site's public URL:
-
-```
-NEXT_PUBLIC_SITE_URL=https://example.com
-```
-
-Next, run the development server:
-
-```bash
-npm run dev
-```
-
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
-
-## Customizing
-
-You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
-
-## License
-
-This site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license).
-
-## Learn more
-
-To learn more about the technologies used in this site template, see the following resources:
-
-- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
-- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
-- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
-- [MDX](https://mdxjs.com) - the MDX documentation
+4. The `SITE_URL` variable is used to specify the base URL of the website.
+5. The `NEXT_PUBLIC_SITE_URL` variable is used to specify the public URL of the website.
+6. The `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, and `SPOTIFY_REFRESH_TOKEN` variables are used to authenticate with the Spotify API. You will need to create a Spotify developer account and create an app to obtain these values.
+7. The `NEXT_PUBLIC_WEATHER_API` variable is used to specify the API key for the weather API used in the project.
+9. Run the development server: npm run dev
+10. Visit `http://localhost:3000` in your browser to see the website.
