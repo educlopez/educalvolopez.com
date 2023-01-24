@@ -1,4 +1,4 @@
-# Next.js Portfolio with Tailwind
+# Next.js Portfolio with Tailwind and Frame Motion
 This is a portfolio website built with Next.js and Tailwind CSS. It features a Spotify integration that displays the user's recently played tracks and a weather section that displays the current weather for a specified location.
 
 ## Getting Started
