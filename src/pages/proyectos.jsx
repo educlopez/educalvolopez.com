@@ -12,7 +12,7 @@ import logoNet2phone from '@/images/logos/net2phone.svg';
 
 import projectMovielist from '@/images/projects/cover-project-movielist.png';
 import projectTalkworld from '@/images/projects/cover-project-talkworld.png';
-import projectTictactoe from '@/images/projects/cover-project-tictactoe.png';
+import projectGamedev from '@/images/projects/cover-project-gamedev.png';
 import projectChefhere from '@/images/projects/cover-project-chefhere.png';
 
 import { LinkIcon } from '@heroicons/react/24/outline';
@@ -82,17 +82,17 @@ const sideprojects = [
     img: projectTalkworld
   },
   {
-    name: 'Tic Tac Toe',
-    description: 'Juego de Tic Tac Toe usando Tailwind y Nextjs',
+    name: 'Game Dev',
+    description: 'Plataforma con distintos juegos usando Nextjs y Tailwind',
     link: {
-      href: 'https://tictactoe.educalvolopez.com/',
-      label: 'Tic Tac Toe'
+      href: 'https://gamedev.educalvolopez.com/',
+      label: 'Game Dev'
     },
     github: {
-      href: 'https://github.com/educlopez/tic-tac-toe',
+      href: 'https://github.com/educlopez/gamedev',
       label: 'Github'
     },
-    img: projectTictactoe
+    img: projectGamedev
   },
   {
     name: 'Chef:here',
