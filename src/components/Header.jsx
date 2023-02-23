@@ -352,13 +352,6 @@ export function Header() {
                       className="block w-16 h-16 origin-left"
                       style={{ transform: 'var(--avatar-image-transform)' }}
                     />
-                    <span className="items-center hidden px-2 py-0 ml-2 text-xs font-semibold border rounded-md pointer-events-auto border-zinc-200 bg-white/10 text-zinc-900 backdrop-blur dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-100 sm:inline-flex">
-                      <span className="mr-1.5 flex h-3 w-3 items-center">
-                        <span className="absolute inline-flex w-2 h-2 rounded-full opacity-75 animate-ping bg-lime-400"></span>
-                        <span className="relative inline-flex w-2 h-2 rounded-full bg-lime-400"></span>
-                      </span>
-                      Disponible para nuevos proyectos
-                    </span>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-import { ArticleLayout } from '@/components/ArticleLayout'
+import { ArticleLayout } from '@/components/ArticleLayout';
 import Image from 'next/image';
 import coverImg from './cover-img.png';
 
@@ -8,13 +8,20 @@ export const meta = {
   title: 'Temas y plugins recomendados para vscode',
   tags: ['Productividad', 'Diseño', 'Desarrollo', 'Software'],
   slug: 'temas-y-plugins-recomendados-para-vscode',
-  keywords: 'plugins, temas, Visual Studio Code, VSCode, workflow, desarrollo, productividad, código, errores, sangría, importaciones, librerías, módulos',
-  description: '¡Optimiza tu workflow de desarrollo con estos plugins y temas de Visual Studio Code! Descubre mis favoritos y cómo pueden ayudarte a hacer más trabajo en menos tiempo.'
-}
+  keywords:
+    'plugins, temas, Visual Studio Code, VSCode, workflow, desarrollo, productividad, código, errores, sangría, importaciones, librerías, módulos',
+  description:
+    '¡Optimiza tu workflow de desarrollo con estos plugins y temas de Visual Studio Code! Descubre mis favoritos y cómo pueden ayudarte a hacer más trabajo en menos tiempo.'
+};
 
-export default (props) => <ArticleLayout meta={meta} {...props} />
+export default (props) => <ArticleLayout meta={meta} {...props} />;
 
-<Image className="w-full rounded-md" src={coverImg} alt="Nextjs y Tailwind" />
+<Image
+  className="w-full rounded-md"
+  src={coverImg}
+  alt="Temas y plugins recomendados para vscode"
+  priority
+/>
 
 ¡Hola! Si te gusta optimizar tu workflow y hacer tu trabajo de manera más eficiente, entonces este artículo es para ti. A continuación, comparto mis plugins y temas de Visual Studio Code (VSCode) favoritos que me han ayudado a ahorrar tiempo y mejorar mi productividad.
 

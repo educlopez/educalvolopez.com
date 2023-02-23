@@ -1,6 +1,6 @@
-import { ArticleLayout } from '@/components/ArticleLayout'
-import Image from 'next/image'
-import coverImg from './cover-img.png'
+import { ArticleLayout } from '@/components/ArticleLayout';
+import Image from 'next/image';
+import coverImg from './cover-img.png';
 
 export const meta = {
   author: 'Edu Calvo',
@@ -8,13 +8,20 @@ export const meta = {
   title: 'Convencional Commits',
   slug: 'convencional-commits',
   tags: ['Desarrollo'],
-  keywords: 'Convencional Commits, Git, mensajes de commit, proceso de integración, despliegue de código, prefijos, funcionalidades, correcciones de errores, título corto, descripción detallada, colaboración, trabajo en equipo, gestión de código',
-  description: 'Los Convencional Commits facilitan la gestión de código al mejorar la lectura y comprensión del historial de cambios y el proceso de integración y despliegue. Utilizan prefijos y descripciones para clasificar cambios y mejorar la colaboración en equipo.'
-}
+  keywords:
+    'Convencional Commits, Git, mensajes de commit, proceso de integración, despliegue de código, prefijos, funcionalidades, correcciones de errores, título corto, descripción detallada, colaboración, trabajo en equipo, gestión de código',
+  description:
+    'Los Convencional Commits facilitan la gestión de código al mejorar la lectura y comprensión del historial de cambios y el proceso de integración y despliegue. Utilizan prefijos y descripciones para clasificar cambios y mejorar la colaboración en equipo.'
+};
 
-export default (props) => <ArticleLayout meta={meta} {...props} />
+export default (props) => <ArticleLayout meta={meta} {...props} />;
 
-<Image className="w-full rounded-md" src={coverImg} alt="Convencional Commits Cover"/>
+<Image
+  className="w-full rounded-md"
+  src={coverImg}
+  alt="Convencional Commits Cover"
+  priority
+/>
 
 Los Convencional Commits son una forma estandarizada de escribir los mensajes de commit en Git. Esta práctica tiene como objetivo facilitar la lectura y comprensión del historial de cambios realizados en un proyecto, así como hacer más sencillo el proceso de integración y despliegue de código.
 

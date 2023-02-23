@@ -224,7 +224,17 @@ export default function Home({ articles }) {
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
           <h1 className="sr-only">Edu Calvo</h1>
+          <p>
+            <span className="items-center hidden px-2 py-0 text-xs font-semibold border rounded-md pointer-events-auto border-zinc-200 bg-white/10 text-zinc-900 backdrop-blur dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-100 sm:inline-flex">
+              <span className="mr-1.5 flex h-3 w-3 items-center">
+                <span className="absolute inline-flex w-2 h-2 rounded-full opacity-75 animate-ping bg-lime-400"></span>
+                <span className="relative inline-flex w-2 h-2 rounded-full bg-lime-400"></span>
+              </span>
+              Disponible para nuevos proyectos
+            </span>
+          </p>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+
             Soy Edu Calvo, soy diseñador web y maquetador con sede en Madrid.{' '}
             <br></br>Trabajo actualmente en Cinetic Digital y como Freelance.
           </p>

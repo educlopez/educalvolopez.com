@@ -1,4 +1,4 @@
-import { ArticleLayout } from '@/components/ArticleLayout'
+import { ArticleLayout } from '@/components/ArticleLayout';
 import Image from 'next/image';
 import coverImg from './cover-img.png';
 
@@ -8,13 +8,20 @@ export const meta = {
   title: 'Chatgpt aliado o enemigo',
   slug: 'chatgpt-aliado-o-enemigo',
   tags: ['IA'],
-  keywords: 'ChatGPT, modelo de lenguaje, OpenAI, conversaciones en línea, texto humano, temas, estilos de conversación, ciencia ficción, formalidad, recordar conversaciones, herramienta, imitar lenguaje humano, sitio web oficial, probar ChatGPT, divertirse conversando',
-  description: 'Conoce ChatGPT, el modelo de lenguaje desarrollado por OpenAI capaz de mantener conversaciones y adaptarse a diferentes temas y estilos de conversación. Prueba ChatGPT en su sitio web oficial y diviértete conversando con él.'
-}
+  keywords:
+    'ChatGPT, modelo de lenguaje, OpenAI, conversaciones en línea, texto humano, temas, estilos de conversación, ciencia ficción, formalidad, recordar conversaciones, herramienta, imitar lenguaje humano, sitio web oficial, probar ChatGPT, divertirse conversando',
+  description:
+    'Conoce ChatGPT, el modelo de lenguaje desarrollado por OpenAI capaz de mantener conversaciones y adaptarse a diferentes temas y estilos de conversación. Prueba ChatGPT en su sitio web oficial y diviértete conversando con él.'
+};
 
-export default (props) => <ArticleLayout meta={meta} {...props} />
+export default (props) => <ArticleLayout meta={meta} {...props} />;
 
-<Image className="w-full rounded-md" src={coverImg} alt="Nextjs y Tailwind" />
+<Image
+  className="w-full rounded-md"
+  src={coverImg}
+  alt="chatgpt aliado o enemigo"
+  priority
+/>
 
 ¡Hola! En este artículo, te hablaré sobre ChatGPT, un modelo de lenguaje desarrollado por OpenAI.
 

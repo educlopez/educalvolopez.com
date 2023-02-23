@@ -11,7 +11,7 @@ export function Card({ as: Component = 'div', className, children }) {
     <Component
       className={clsx(className, 'group relative flex flex-col items-start')}
     >
-      <motion.div {...FADE_IN_ANIMATION_CARD_HOVER}>{children}</motion.div>
+      <motion.div {...FADE_IN_ANIMATION_CARD_HOVER} className="p-2">{children}</motion.div>
     </Component>
   );
 }

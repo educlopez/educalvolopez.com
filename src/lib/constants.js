@@ -24,7 +24,7 @@ export const FADE_IN_ANIMATION_CARD_HOVER = {
   initial: { opacity: 0, y: -10 },
   whileInView: { opacity: 1, y: 0 },
   transition: { duration: 0.5 },
-  whileHover: { scale: 1.05 },
-  whileTap: { scale: 0.95 },
+  whileHover: { scale: 1.05},
+  whileTap: { scale: 0.95},
   viewport: { once: true }
 };

@@ -17,7 +17,12 @@ export const meta = {
 
 export default (props) => <ArticleLayout meta={meta} {...props} />;
 
-<Image className="w-full rounded-md" src={coverImg} alt="Nextjs y Tailwind" />
+<Image
+  className="w-full rounded-md"
+  src={coverImg}
+  alt="Nextjs y Tailwind"
+  priority
+/>
 
 En el mundo de la programación, la reutilización de código es clave para aumentar la eficiencia y reducir la complejidad de nuestros proyectos. Una forma de lograr esto es mediante la creación de componentes reutilizables. En este artículo, veremos cómo crear componentes reutilizables utilizando Tailwind y Next.js.
 

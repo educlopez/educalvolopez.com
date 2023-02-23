@@ -1,20 +1,28 @@
-import { ArticleLayout } from '@/components/ArticleLayout'
-import Image from 'next/image'
-import coverImg from './cover-img.png'
+import { ArticleLayout } from '@/components/ArticleLayout';
+import Image from 'next/image';
+import coverImg from './cover-img.png';
 
 export const meta = {
   author: 'Edu Calvo',
   date: '2023-01-03',
-  title: 'Sistemas de Diseño: Cómo Utilizarlos para Mejorar la Experiencia de tus Clientes',
+  title:
+    'Sistemas de Diseño: Cómo Utilizarlos para Mejorar la Experiencia de tus Clientes',
   slug: 'sistemas-de-diseno-para-freelance',
   tags: ['Diseño', 'Freelance'],
-  keywords: 'sistemas de diseño, freelance, clientes, experiencia, principios, elementos visuales, coherencia, guía de estilo, necesidades, preferencias, objetivos de marketing, consistencia, reconocimiento, tiempo, esfuerzo',
-  description: 'En este artículo, se explica cómo utilizar un sistema de diseño como freelance para mejorar la experiencia de tus clientes y entregar proyectos de alta calidad. Se incluyen consejos sobre cómo comunicar claramente tu sistema de diseño a tus clientes y cómo asegurarte de que cumpla con sus objetivos de marketing'
-}
+  keywords:
+    'sistemas de diseño, freelance, clientes, experiencia, principios, elementos visuales, coherencia, guía de estilo, necesidades, preferencias, objetivos de marketing, consistencia, reconocimiento, tiempo, esfuerzo',
+  description:
+    'En este artículo, se explica cómo utilizar un sistema de diseño como freelance para mejorar la experiencia de tus clientes y entregar proyectos de alta calidad. Se incluyen consejos sobre cómo comunicar claramente tu sistema de diseño a tus clientes y cómo asegurarte de que cumpla con sus objetivos de marketing'
+};
 
-export default (props) => <ArticleLayout meta={meta} {...props} />
+export default (props) => <ArticleLayout meta={meta} {...props} />;
 
-<Image className="w-full rounded-md" src={coverImg} alt="Convencional Commits Cover"/>
+<Image
+  className="w-full rounded-md"
+  src={coverImg}
+  alt="Convencional Commits Cover"
+  priority
+/>
 
 Como freelance, es importante tener un sistema de diseño sólido para asegurar que cumplas con las expectativas de tus clientes y entregues proyectos de alta calidad. Pero, ¿qué es un sistema de diseño y cómo puedes utilizarlo para mejorar la experiencia de tus clientes?
 
