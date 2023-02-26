@@ -209,7 +209,7 @@ function ToolsSectionGrid({ children, title }) {
       </h2>
       <ul
         role="list"
-        className="grid grid-cols-3 mt-5 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-8 xl:gap-x-8"
+        className="mt-5 grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-8 xl:gap-x-8"
       >
         {children}
       </ul>
@@ -231,7 +231,7 @@ function Toolgrid({ title, href, img, children }) {
   return (
     <li className="relative">
       <motion.div
-        className="block w-full p-3 overflow-hidden border rounded-lg aspect-w-10 aspect-h-7 group border-zinc-900/10 bg-white/10 backdrop-blur-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur"
+        className="aspect-w-10 aspect-h-7 group block w-full overflow-hidden rounded-lg border border-zinc-900/10 bg-white/10 p-3 backdrop-blur-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur"
         {...FADE_IN_ANIMATION_CARD_HOVER}
       >
         <Image
@@ -239,7 +239,7 @@ function Toolgrid({ title, href, img, children }) {
           alt={title}
           width={70}
           height={70}
-          className="object-cover mx-auto pointer-events-none group-hover:opacity-75"
+          className="pointer-events-none mx-auto object-cover group-hover:opacity-75"
         />
         <Link
           href={href}
@@ -250,7 +250,7 @@ function Toolgrid({ title, href, img, children }) {
         >
           <span className="sr-only">Ver {title}</span>
         </Link>
-        <p className="block my-2 text-sm font-medium text-center truncate pointer-events-none text-zinc-900 dark:text-white">
+        <p className="pointer-events-none my-2 block truncate text-center text-sm font-medium text-zinc-900 dark:text-white">
           {children}
         </p>
       </motion.div>
@@ -317,7 +317,7 @@ export default function Uses() {
         intro="Las cosas que uso para crear webs, mantenerme productivo o comprar para engañarme y pensar que estoy siendo productivo cuando en realidad solo estoy procrastinando. Aquí hay una gran lista de todas mis cosas favoritas."
       >
         <motion.div
-          className="flex items-center justify-center gap-4 px-4 py-2 my-16 border dark:backdrop-blurbackdrop-blur w-fit rounded-3xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20"
+          className="dark:backdrop-blurbackdrop-blur my-16 flex w-fit items-center justify-center gap-4 rounded-3xl border border-zinc-900/10 bg-white/10 px-4 py-2 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
           layout
         >
@@ -366,7 +366,7 @@ export default function Uses() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-3 h-3 text-gray-400 dark:text-zinc-700"
+                  className="h-3 w-3 text-gray-400 dark:text-zinc-700"
                 >
                   <path
                     strokeLinecap="round"
@@ -390,7 +390,7 @@ export default function Uses() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-3 h-3 text-amber-600"
+                  className="h-3 w-3 text-amber-600"
                 >
                   <path
                     strokeLinecap="round"

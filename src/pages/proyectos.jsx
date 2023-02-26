@@ -166,7 +166,7 @@ export default function Projects() {
         >
           {sideprojects.map((sideproject) => (
             <Card as="li" key={sideproject.name}>
-              <div className="relative z-10 flex items-center justify-center w-full bg-white shadow-md rounded-xl shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <div className="relative z-10 flex w-full items-center justify-center rounded-xl bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image
                   src={sideproject.img}
                   alt={sideproject.name}
@@ -185,8 +185,8 @@ export default function Projects() {
               </h2>
               <Card.Description>{sideproject.description}</Card.Description>
 
-              <p className="relative z-10 flex items-center mt-6 text-sm font-medium transition text-zinc-900 group-hover:text-amber-500 dark:text-zinc-200">
-                <LinkIcon className="flex-none w-4 h-4" />
+              <p className="relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-900 transition group-hover:text-amber-500 dark:text-zinc-200">
+                <LinkIcon className="h-4 w-4 flex-none" />
                 <span className="ml-2">{sideproject.link.label}</span>
               </p>
             </Card>
@@ -204,11 +204,11 @@ export default function Projects() {
         >
           {projects.map((project) => (
             <Card as="li" key={project.name}>
-              <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image
                   src={project.logo}
                   alt={project.name}
-                  className="w-8 h-8"
+                  className="h-8 w-8"
                   unoptimized
                 />
               </div>
@@ -222,8 +222,8 @@ export default function Projects() {
                 </Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 flex items-center mt-6 text-sm font-medium transition text-zinc-900 group-hover:text-amber-500 dark:text-zinc-200">
-                <LinkIcon className="flex-none w-4 h-4" />
+              <p className="relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-900 transition group-hover:text-amber-500 dark:text-zinc-200">
+                <LinkIcon className="h-4 w-4 flex-none" />
                 <span className="ml-2">{project.link.label}</span>
               </p>
             </Card>

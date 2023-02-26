@@ -43,14 +43,17 @@ const clients = [
 ];
 export default function Clients() {
   return (
-    <motion.div className="rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur" {...FADE_IN_ANIMATION_CARD}>
-      <div className="px-5 mx-auto my-16 max-w-7xl">
+    <motion.div
+      className="rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur"
+      {...FADE_IN_ANIMATION_CARD}
+    >
+      <div className="mx-auto my-16 max-w-7xl px-5">
         <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-2xl">
               ¿Quieres saber con quién he trabajado?
             </h2>
-            <p className="max-w-3xl mt-3 text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="mt-3 max-w-3xl text-sm text-zinc-600 dark:text-zinc-400">
               He tenido la oportunidad de trabajar con grandes marcas como Banco
               Sabadell, Janè y Aneto, pero también he colaborado con negocios
               más pequeños como tiendas de ropa o talleres de coches.
@@ -63,7 +66,7 @@ export default function Clients() {
           <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
             {clients.map((client) => (
               <div
-                className="flex justify-center col-span-1 px-8 py-8"
+                className="col-span-1 flex justify-center px-8 py-8"
                 key={client.name}
               >
                 <Image

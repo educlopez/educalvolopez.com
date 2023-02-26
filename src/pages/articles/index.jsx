@@ -6,9 +6,7 @@ import { getAllArticles } from '@/lib/getAllArticles';
 import { formatDate } from '@/lib/formatDate';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
-import {
-  FADE_DOWN_ANIMATION_VARIANTS
-} from '@/lib/constants';
+import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants';
 
 function Article({ article }) {
   return (
@@ -34,7 +32,7 @@ function Article({ article }) {
               key={tag}
               className="inline-block text-zinc-600  before:content-['#'] dark:text-zinc-400 "
             >
-              <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+              <span className="mt-2 mr-2 inline-flex items-center text-xs font-medium text-zinc-600 dark:text-zinc-400">
                 {tag}
               </span>
             </a>
@@ -45,7 +43,7 @@ function Article({ article }) {
       <Card.Eyebrow
         as="time"
         dateTime={article.date}
-        className="hidden mt-1 md:block"
+        className="mt-1 hidden md:block"
       >
         {formatDate(article.date)}
       </Card.Eyebrow>
@@ -105,16 +103,16 @@ export default function ArticlesIndex({ articles }) {
           className="md:border-l md:border-zinc-900/10 md:pl-6 md:dark:border-white/10"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
-          <div className="flex flex-col max-w-3xl space-y-16">
-            <div className="relative w-full mb-4">
+          <div className="flex max-w-3xl flex-col space-y-16">
+            <div className="relative mb-4 w-full">
               <input
                 aria-label="Buscar artículos"
                 type="text"
                 onChange={(e) => setSearchValue(e.target.value)}
                 placeholder="Buscar artículos"
-                className="block w-full px-4 py-2 border rounded-full border-zinc-900/10 bg-white/10 text-zinc-600 backdrop-blur-sm placeholder:text-zinc-600 hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur placeholder:dark:text-zinc-300 dark:hover:text-white"
+                className="block w-full rounded-full border border-zinc-900/10 bg-white/10 px-4 py-2 text-zinc-600 backdrop-blur-sm placeholder:text-zinc-600 hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur placeholder:dark:text-zinc-300 dark:hover:text-white"
               />
-              <MagnifyingGlassIcon className="absolute w-5 h-5 right-3 top-3 text-zinc-900 dark:text-zinc-300" />
+              <MagnifyingGlassIcon className="absolute right-3 top-3 h-5 w-5 text-zinc-900 dark:text-zinc-300" />
             </div>
             <Suspense fallback={null}>
               {!filteredBlogPosts.length && (

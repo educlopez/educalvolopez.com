@@ -22,10 +22,7 @@ import { getAllArticles } from '@/lib/getAllArticles';
 import { formatDate } from '@/lib/formatDate';
 import Weather from '@/components/Weather';
 import { motion } from 'framer-motion';
-import {
-  FADE_IN_ANIMATION_CARD,
-  FADE_DOWN_ANIMATION_VARIANTS
-} from '@/lib/constants';
+import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants';
 
 function Article({ article }) {
   return (
@@ -45,7 +42,7 @@ function Article({ article }) {
             key={tag}
             className="inline-block text-zinc-600 before:content-['#'] dark:text-zinc-400"
           >
-            <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+            <span className="mt-2 mr-2 inline-flex items-center text-xs font-medium text-zinc-600 dark:text-zinc-400">
               {tag}
             </span>
           </a>
@@ -58,8 +55,8 @@ function Article({ article }) {
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link className="p-1 -m-1 group" {...props}>
-      <Icon className="w-6 h-6 transition fill-zinc-600 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    <Link className="group -m-1 p-1" {...props}>
+      <Icon className="h-6 w-6 fill-zinc-600 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   );
 }
@@ -107,23 +104,20 @@ function Resume() {
   ];
 
   return (
-    <motion.div
-      className="p-6 border rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur"
-      variants={FADE_DOWN_ANIMATION_VARIANTS}
-    >
+    <div className="rounded-2xl border border-zinc-900/10 bg-white/10 p-6 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="flex-none w-6 h-6" />
+        <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Trabajo</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
-            <div className="relative flex items-center justify-center flex-none w-10 h-10 mt-1 rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
               <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
             </div>
-            <dl className="flex flex-wrap flex-auto gap-x-2">
+            <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
-              <dd className="flex-none w-full text-sm font-medium text-zinc-900 dark:text-white">
+              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-white">
                 {role.company}
               </dd>
               <dt className="sr-only">Role</dt>
@@ -153,24 +147,24 @@ function Resume() {
         <Button
           href="https://read.cv/educlopez"
           variant="secondary"
-          className="w-full mt-6 group"
+          className="group mt-6 w-full"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <ReadcvIcon className="w-6 h-6 transition fill-zinc-400 group-active:fill-zinc-600 dark:group-hover:fill-zinc-50 dark:group-active:fill-zinc-50" />
+          <ReadcvIcon className="h-6 w-6 fill-zinc-400 transition group-active:fill-zinc-600 dark:group-hover:fill-zinc-50 dark:group-active:fill-zinc-50" />
           Cv online
         </Button>
         <Button
           href="eduardo_calvo_lopez_curriculum_vitae.pdf"
           variant="secondary"
-          className="w-full mt-6 group"
+          className="group mt-6 w-full"
           target="_blank"
         >
           Descargar Cv
-          <ArrowDownIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+          <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
         </Button>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -225,20 +219,19 @@ export default function Home({ articles }) {
         >
           <h1 className="sr-only">Edu Calvo</h1>
           <p>
-            <span className="items-center hidden px-2 py-0 text-xs font-semibold border rounded-md pointer-events-auto border-zinc-200 bg-white/10 text-zinc-900 backdrop-blur dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-100 sm:inline-flex">
+            <span className="pointer-events-auto hidden items-center rounded-md border border-zinc-200 bg-white/10 px-2 py-0 text-xs font-semibold text-zinc-900 backdrop-blur dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-100 sm:inline-flex">
               <span className="mr-1.5 flex h-3 w-3 items-center">
-                <span className="absolute inline-flex w-2 h-2 rounded-full opacity-75 animate-ping bg-lime-400"></span>
-                <span className="relative inline-flex w-2 h-2 rounded-full bg-lime-400"></span>
+                <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-lime-400 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-lime-400"></span>
               </span>
               Disponible para nuevos proyectos
             </span>
           </p>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-
             Soy Edu Calvo, soy diseñador web y maquetador con sede en Madrid.{' '}
             <br></br>Trabajo actualmente en Cinetic Digital y como Freelance.
           </p>
-          <div className="flex gap-6 mt-6">
+          <div className="mt-6 flex gap-6">
             <SocialLink
               href="https://twitter.com/educlopez93"
               rel="noopener noreferrer"
@@ -271,19 +264,22 @@ export default function Home({ articles }) {
         </motion.div>
       </Container>
       <Container className="mt-24 md:mt-28">
-        <div className="grid max-w-xl grid-cols-1 mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
+        <motion.div
+          className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
+          variants={FADE_DOWN_ANIMATION_VARIANTS}
+        >
           <div className="flex flex-col gap-16">
             {articles.map((article) => (
               <Article key={article.slug} article={article} />
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <motion.div variants={FADE_DOWN_ANIMATION_VARIANTS}>
+            <div>
               <Weather />
-            </motion.div>
+            </div>
             <Resume />
           </div>
-        </div>
+        </motion.div>
       </Container>
     </>
   );

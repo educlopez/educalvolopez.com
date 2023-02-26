@@ -20,10 +20,10 @@ export default function NowPlaying() {
       ) : (
         <SignalSlashIcon className="h-6 stroke-zinc-700 dark:stroke-zinc-300" />
       )}
-      <div className="inline-flex flex-col w-full max-w-full truncate">
+      <div className="inline-flex w-full max-w-full flex-col truncate">
         {data?.songUrl ? (
           <a
-            className="font-medium text-gray-800 truncate capsize max-w-max dark:text-gray-200"
+            className="capsize max-w-max truncate font-medium text-gray-800 dark:text-gray-200"
             href={data.songUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -31,11 +31,11 @@ export default function NowPlaying() {
             {data.title}
           </a>
         ) : (
-          <p className="font-medium capsize text-zinc-800 dark:text-zinc-200">
+          <p className="capsize font-medium text-zinc-800 dark:text-zinc-200">
             Sin reproducir
           </p>
         )}
-        <p className="truncate capsize max-w-max text-zinc-500 dark:text-zinc-300">
+        <p className="capsize max-w-max truncate text-zinc-500 dark:text-zinc-300">
           {data?.artist ?? 'Spotify'}
         </p>
       </div>

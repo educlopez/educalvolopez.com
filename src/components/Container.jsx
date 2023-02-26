@@ -22,7 +22,7 @@ const InnerContainer = forwardRef(function InnerContainer(
       className={clsx('relative px-4 sm:px-8 lg:px-12', className)}
       {...props}
     >
-      <div className="max-w-full mx-auto">{children}</div>
+      <div className="mx-auto max-w-full">{children}</div>
     </div>
   );
 });

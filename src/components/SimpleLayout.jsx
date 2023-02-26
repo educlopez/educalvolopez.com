@@ -1,7 +1,7 @@
 import { Container } from '@/components/Container';
 import Balancer from 'react-wrap-balancer';
 import { motion } from 'framer-motion';
-import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
+import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants';
 
 export function SimpleLayout({ title, intro, children }) {
   return (

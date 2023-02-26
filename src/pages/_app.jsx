@@ -36,10 +36,11 @@ export default function App({ Component, pageProps, router }) {
               hidden: {},
               show: {
                 transition: {
-                  staggerChildren: 0.15,
-                },
-              },
-            }}>
+                  staggerChildren: 0.15
+                }
+              }
+            }}
+          >
             <Component previousPathname={previousPathname} {...pageProps} />
           </motion.div>
           <Analytics />

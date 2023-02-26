@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import clsx from 'clsx';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 import { FADE_IN_ANIMATION_CARD } from '@/lib/constants';
 const reviews = [
   {
@@ -103,7 +103,7 @@ function ReviewGrid() {
   return (
     <div
       ref={containerRef}
-      className="relative grid items-start grid-cols-1 gap-8 overflow-hidden sm:mt-10 md:grid-cols-2 lg:grid-cols-3"
+      className="relative grid grid-cols-1 items-start gap-8 overflow-hidden sm:mt-10 md:grid-cols-2 lg:grid-cols-3"
     >
       <ReviewColumn
         reviews={[...columns[0], ...columns[2].flat(), ...columns[1]]}

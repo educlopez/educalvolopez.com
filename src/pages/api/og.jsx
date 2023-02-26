@@ -91,7 +91,6 @@ export default function handler(req) {
           </div>
         </div>
       ),
-
       {
         width: 1200,
         height: 600
