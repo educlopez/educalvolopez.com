@@ -1,4 +1,4 @@
-import { CommandBar, useCommandBar } from '@haydenbleasel/command-bar';
+import { CommandBar, useCommandBar } from '@beskar-labs/command-bar';
 
 export default function CommandMenu() {
   const commandBar = useCommandBar();
