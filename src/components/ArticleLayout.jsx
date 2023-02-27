@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/compat/router';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { Container } from '@/components/Container';
 import { formatDate } from '@/lib/formatDate';
@@ -14,7 +14,7 @@ export function ArticleLayout({
   isRssFeed = false,
   previousPathname
 }) {
-  let router = useRouter();
+  const router = useRouter();
 
   if (isRssFeed) {
     return children;
