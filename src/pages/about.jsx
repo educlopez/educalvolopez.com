@@ -84,7 +84,7 @@ export default function About() {
             <div className="max-w-xs px-2.5 lg:max-w-none">
               <Image
                 src={portraitImage}
-                alt="Edurne Calvo López - Diseñadora web y frontend"
+                alt="Edurne Calvo López - Diseñador web y frontend"
                 sizes="(min-width: 1024px) 32rem, 20rem"
                 placeholder="blur"
                 className="object-cover aspect-square rotate-3 rounded-2xl bg-zinc-100 dark:bg-zinc-800"

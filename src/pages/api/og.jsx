@@ -4,7 +4,13 @@ export const config = {
   runtime: 'edge',
 }
 
-export default function handler(req) {
+const font = fetch(
+  new URL('/public/fonts/inter-bold.ttf', import.meta.url)
+).then((res) => res.arrayBuffer())
+
+export default async function handler(req) {
+  const { searchParams } = req.nextUrl
+  const fontData = await font
   try {
     const { searchParams } = new URL(req.url)
 
@@ -17,83 +23,43 @@ export default function handler(req) {
       (
         <div
           style={{
-            display: 'flex',
             height: '100%',
             width: '100%',
-            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
             justifyContent: 'center',
-            letterSpacing: '-.02em',
-            fontWeight: 700,
-            background: 'black',
-            backgroundImage: 'url(https://educalvolopez.com/gradient.svg)',
-            backgroundSize: '100% 200%',
-            backgroundRepeat: 'repeat',
-            backgroundPosition: 'center',
+            backgroundImage: 'url(https://educalvolopez.com/og-bg.png)',
           }}
         >
           <div
             style={{
+              marginLeft: 190,
+              marginRight: 190,
               display: 'flex',
-              flexDirection: 'column',
-              flexWrap: 'wrap',
-              justifyContent: 'flex-start',
-              padding: '20px 20px 20px 80px',
-              margin: '0 42px',
-              width: '50%',
-              textAlign: 'left',
+              fontSize: 130,
+              fontFamily: 'Inter',
+              letterSpacing: '-0.05em',
+              fontStyle: 'normal',
               color: 'white',
+              lineHeight: '120px',
+              whiteSpace: 'pre-wrap',
             }}
           >
-            <img
-              src="https://educalvolopez.com/avatar.png"
-              style={{
-                height: '60px',
-                width: '60px',
-                objectFit: 'cover',
-                borderRadius: '100%',
-                marginBottom: '20px',
-              }}
-            />
-
-            <span
-              style={{
-                fontSize: 38,
-                lineHeight: 1.2,
-              }}
-            >
-              {title}
-            </span>
-            <span
-              style={{
-                fontSize: '20px',
-                marginTop: '20px',
-              }}
-            >
-              educalvolopez.com
-            </span>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              height: '100%',
-              width: '50%',
-            }}
-          >
-            <img
-              src="https://educalvolopez.com/img-og.jpg"
-              style={{
-                height: '100%',
-                width: '100%',
-                objectFit: 'cover',
-              }}
-            />
+            {title}
           </div>
         </div>
       ),
       {
-        width: 1200,
-        height: 600,
+        width: 1920,
+        height: 1080,
+        fonts: [
+          {
+            name: 'Inter',
+            data: fontData,
+            style: 'normal',
+          },
+        ],
       }
     )
   } catch (e) {
