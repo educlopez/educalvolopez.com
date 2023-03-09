@@ -1,6 +1,7 @@
-import { ArticleLayout } from '@/components/ArticleLayout';
-import Image from 'next/image';
-import coverImg from './cover-img.png';
+import Image from 'next/image'
+
+import { ArticleLayout } from '@/components/ArticleLayout'
+import coverImg from './cover-img.png'
 
 export const meta = {
   author: 'Edu Calvo',
@@ -11,15 +12,16 @@ export const meta = {
   keywords:
     'plugins, temas, Visual Studio Code, VSCode, workflow, desarrollo, productividad, código, errores, sangría, importaciones, librerías, módulos',
   description:
-    '¡Optimiza tu workflow de desarrollo con estos plugins y temas de Visual Studio Code! Descubre mis favoritos y cómo pueden ayudarte a hacer más trabajo en menos tiempo.'
-};
+    '¡Optimiza tu workflow de desarrollo con estos plugins y temas de Visual Studio Code! Descubre mis favoritos y cómo pueden ayudarte a hacer más trabajo en menos tiempo.',
+}
 
-export default (props) => <ArticleLayout meta={meta} {...props} />;
+export default (props) => <ArticleLayout meta={meta} {...props} />
 
 <Image
   className="w-full rounded-md"
   src={coverImg}
   alt="Temas y plugins recomendados para vscode"
+  placeholder="blur"
   priority
 />
 

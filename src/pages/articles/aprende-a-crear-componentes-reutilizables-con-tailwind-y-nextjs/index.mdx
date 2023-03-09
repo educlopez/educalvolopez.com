@@ -1,7 +1,8 @@
-import { ArticleLayout } from '@/components/ArticleLayout';
-import Image from 'next/image';
-import coverImg from './cover-img.png';
-import Link from 'next/link';
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { ArticleLayout } from '@/components/ArticleLayout'
+import coverImg from './cover-img.png'
 
 export const meta = {
   author: 'Edu Calvo',
@@ -12,15 +13,16 @@ export const meta = {
   keywords:
     'componentes reutilizables Tailwind Next.js, botón reutilizable, imagen de perfil reutilizable , personalización con Tailwind',
   description:
-    'Aprende cómo crear componentes reutilizables de alta calidad utilizando Tailwind y Next.js para tu aplicación web. A través de los ejemplos de botón y imagen de perfil, veremos cómo crear componentes reutilizables con estas herramientas y cómo personalizarlos para satisfacer tus necesidades.'
-};
+    'Aprende cómo crear componentes reutilizables de alta calidad utilizando Tailwind y Next.js para tu aplicación web. A través de los ejemplos de botón y imagen de perfil, veremos cómo crear componentes reutilizables con estas herramientas y cómo personalizarlos para satisfacer tus necesidades.',
+}
 
-export default (props) => <ArticleLayout meta={meta} {...props} />;
+export default (props) => <ArticleLayout meta={meta} {...props} />
 
 <Image
   className="w-full rounded-md"
   src={coverImg}
   alt="Nextjs y Tailwind"
+  placeholder="blur"
   priority
 />
 
@@ -37,7 +39,7 @@ Un botón es un componente muy común en cualquier aplicación web, y es probabl
 Para crear nuestro botón reutilizable, primero debemos crear un nuevo archivo llamado "Button.js" en nuestra carpeta de componentes. En este archivo, escribiremos nuestro componente de botón, utilizando Tailwind para aplicar estilos.
 
 ```jsx
-import React from 'react';
+import React from 'react'
 
 const Button = ({ children, className }) => {
   return (
@@ -46,10 +48,10 @@ const Button = ({ children, className }) => {
     >
       {children}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
 ```
 
 En este código, estamos utilizando varias clases de Tailwind para estilizar nuestro botón. Por ejemplo, la clase "bg-blue-500" especifica que el fondo del botón debe ser de color azul, mientras que la clase "hover:bg-blue-700" especifica que el fondo del botón debe cambiar a un color más oscuro cuando el usuario pase el cursor sobre él.
@@ -59,21 +61,21 @@ Además, estamos utilizando una propiedad llamada "className" para permitir que 
 Para utilizar nuestro botón reutilizable en una página, simplemente importamos el componente y lo utilizamos como si fuera cualquier otro componente de React.
 
 ```jsx
-import Button from './components/Button';
+import Button from './components/Button'
 
 const MyPage = () => {
   return (
     <div>
       <Button>Hola, soy un botón</Button>
     </div>
-  );
-};
+  )
+}
 ```
 
 En este ejemplo, estamos utilizando nuestro botón reutilizable con el texto "Hola, soy un botón" dentro de él. También podemos utilizarlo con clases adicionales para personalizarlo según las necesidades de cada página.
 
 ```jsx
-import Button from './components/Button';
+import Button from './components/Button'
 
 const MyPage = () => {
   return (
@@ -81,8 +83,8 @@ const MyPage = () => {
       <Button className="mx-2">Hola, soy un botón</Button>
       <Button className="bg-red-500">Hola, soy otro botón</Button>
     </div>
-  );
-};
+  )
+}
 ```
 
 En este ejemplo, estamos utilizando nuestro botón reutilizable con una clase adicional "mx-2" para añadir un margen horizontal, y también estamos utilizando una clase "bg-red-500" para cambiar el color del fondo del botón.
@@ -94,13 +96,13 @@ Otro componente común en aplicaciones web es una imagen de perfil, y es probabl
 Para crear nuestra imagen de perfil reutilizable, primero debemos crear un nuevo archivo llamado "Avatar.js" en nuestra carpeta de componentes. En este archivo, escribiremos nuestro componente de imagen de perfil, utilizando Tailwind para aplicar estilos.
 
 ```jsx
-import React from 'react';
+import React from 'react'
 
 const Avatar = ({ src, className }) => {
-  return <img src={src} className={`h-12 w-12 rounded-full ${className}`} />;
-};
+  return <img src={src} className={`h-12 w-12 rounded-full ${className}`} />
+}
 
-export default Avatar;
+export default Avatar
 ```
 
 En este código, estamos utilizando varias clases de Tailwind para estilizar nuestra imagen de perfil. Por ejemplo, la clase "w-12 h-12" especifica que el ancho y alto de la imagen deben ser de 12px, mientras que la clase "rounded-full" especifica que los bordes de la imagen deben ser redondos.
@@ -110,21 +112,21 @@ Además, estamos utilizando una propiedad llamada "src" para especificar la URL 
 Para utilizar nuestra imagen de perfil reutilizable en una página, simplemente importamos el componente y lo utilizamos como si fuera cualquier otro componente de React.
 
 ```jsx
-import Avatar from './components/Avatar';
+import Avatar from './components/Avatar'
 
 const MyPage = () => {
   return (
     <div>
       <Avatar src="https://via.placeholder.com/150" />
     </div>
-  );
-};
+  )
+}
 ```
 
 En este ejemplo, estamos utilizando nuestra imagen de perfil reutilizable con una imagen de ejemplo de "**[https://via.placeholder.com/150](https://via.placeholder.com/150)**". También podemos utilizarlo con clases adicionales para personalizarlo según las necesidades de cada página.
 
 ```jsx
-import Avatar from './components/Avatar';
+import Avatar from './components/Avatar'
 
 const MyPage = () => {
   return (
@@ -135,8 +137,8 @@ const MyPage = () => {
         className="border border-gray-500"
       />
     </div>
-  );
-};
+  )
+}
 ```
 
 En este ejemplo, estamos utilizando nuestra imagen de perfil reutilizable con una clase adicional "mx-2" para añadir un margen horizontal, y también estamos utilizando una clase "border border-gray-500" para añadir un borde gris a la imagen.

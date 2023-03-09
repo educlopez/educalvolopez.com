@@ -1,21 +1,22 @@
-import Image from 'next/image';
-import Head from 'next/head';
-import Link from 'next/link';
-import clsx from 'clsx';
-import { EnvelopeIcon } from '@heroicons/react/24/solid';
-import { Reviews } from '@/components/Reviews';
-import Balancer from 'react-wrap-balancer';
-import { Container } from '@/components/Container';
-import { motion } from 'framer-motion';
-import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants';
+import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
+import portraitImage from '@/images/portrait.png'
+import { EnvelopeIcon } from '@heroicons/react/24/solid'
+import clsx from 'clsx'
+import { motion } from 'framer-motion'
+import Balancer from 'react-wrap-balancer'
+
+import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
+import { Container } from '@/components/Container'
+import { Reviews } from '@/components/Reviews'
 import {
-  TwitterIcon,
-  InstagramIcon,
   GitHubIcon,
+  InstagramIcon,
   LinkedInIcon,
-  ReadcvIcon
-} from '@/components/SocialIcons';
-import portraitImage from '@/images/portrait.png';
+  ReadcvIcon,
+  TwitterIcon,
+} from '@/components/SocialIcons'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -24,15 +25,15 @@ function SocialLink({ className, href, children, icon: Icon }) {
         href={href}
         rel="noopener noreferrer"
         target="_blank"
-        className="group flex text-sm font-medium text-zinc-600 transition dark:text-zinc-400 "
+        className="flex text-sm font-medium transition group text-zinc-600 dark:text-zinc-400 "
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-700 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+        <Icon className="flex-none w-6 h-6 transition fill-zinc-700 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
         <span className="ml-4 group-hover:text-zinc-600 dark:group-hover:text-zinc-300">
           {children}
         </span>
       </Link>
     </li>
-  );
+  )
 }
 
 export default function About() {
@@ -83,9 +84,10 @@ export default function About() {
             <div className="max-w-xs px-2.5 lg:max-w-none">
               <Image
                 src={portraitImage}
-                alt=""
+                alt="Edurne Calvo López - Diseñadora web y frontend"
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                placeholder="blur"
+                className="object-cover aspect-square rotate-3 rounded-2xl bg-zinc-100 dark:bg-zinc-800"
               />
             </div>
           </motion.div>
@@ -100,7 +102,7 @@ export default function About() {
               </Balancer>
             </motion.h1>
             <motion.div
-              className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400"
+              className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400"
               variants={FADE_DOWN_ANIMATION_VARIANTS}
             >
               <p>
@@ -167,7 +169,7 @@ export default function About() {
               <SocialLink
                 href="mailto:educalvolopez@gmail.com"
                 icon={EnvelopeIcon}
-                className="mt-8 border-t border-zinc-900/10 pt-8 dark:border-white/10"
+                className="pt-8 mt-8 border-t border-zinc-900/10 dark:border-white/10"
               >
                 educalvolopez@gmail.com
               </SocialLink>
@@ -177,5 +179,5 @@ export default function About() {
         <Reviews />
       </Container>
     </>
-  );
+  )
 }

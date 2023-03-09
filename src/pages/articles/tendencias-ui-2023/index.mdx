@@ -1,11 +1,12 @@
-import { ArticleLayout } from '@/components/ArticleLayout'
 import Image from 'next/image'
-import typoGiant from './typo-giant.png'
-import motionDesign from './motion-design.png'
+
+import { ArticleLayout } from '@/components/ArticleLayout'
 import cleanDesign from './clean-design.png'
-import softGradient from './soft-gradient.png'
 import darkUi from './dark-ui.png'
 import hightContrast from './hight-contrast.png'
+import motionDesign from './motion-design.png'
+import softGradient from './soft-gradient.png'
+import typoGiant from './typo-giant.png'
 
 export const meta = {
   author: 'Edu Calvo',
@@ -13,8 +14,10 @@ export const meta = {
   title: 'Tendencias UI para este 2023',
   slug: 'tendencias-ui-2023',
   tags: ['Diseño'],
-  keywords: 'UI, tendencias, diseño en movimiento, diseño limpio, degradados suaves, multicolores, alto contraste, monocromía, interfaces de usuario, animaciones, transiciones, paleta de colores, diseños simples, atractivas visualmente, degradados, gradientes, colores planos, contraste alto, monocromátic',
-  description: 'Conoce las tendencias en interfaz de usuario (UI) para el 2023, incluyendo diseño en movimiento, diseño limpio y minimalista, degradados suaves y multicolores y alto contraste y monocromía'
+  keywords:
+    'UI, tendencias, diseño en movimiento, diseño limpio, degradados suaves, multicolores, alto contraste, monocromía, interfaces de usuario, animaciones, transiciones, paleta de colores, diseños simples, atractivas visualmente, degradados, gradientes, colores planos, contraste alto, monocromátic',
+  description:
+    'Conoce las tendencias en interfaz de usuario (UI) para el 2023, incluyendo diseño en movimiento, diseño limpio y minimalista, degradados suaves y multicolores y alto contraste y monocromía',
 }
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
@@ -29,7 +32,12 @@ A continuación, te presento algunas de las tendencias más interesantes en cuan
 
 ## Diseño en movimiento
 
-<Image className="w-full rounded-md" src={motionDesign} alt="Diseño en movimiento"/>
+<Image
+  className="w-full rounded-md"
+  src={motionDesign}
+  alt="Diseño en movimiento"
+  placeholder="blur"
+/>
 
 Una de las tendencias más importantes en UI para el 2023 será el uso del diseño en movimiento. Esto significa que cada vez veremos más interfaces de usuario que utilizan animaciones y transiciones suaves para guiar a los usuarios a través de la aplicación o sitio web.
 
@@ -41,7 +49,12 @@ En resumen, el uso del diseño en movimiento seguirá siendo una tendencia impor
 
 ## Diseño limpio
 
-<Image className="w-full rounded-md" src={cleanDesign} alt="Diseño Limpio"/>
+<Image
+  className="w-full rounded-md"
+  src={cleanDesign}
+  alt="Diseño Limpio"
+  placeholder="blur"
+/>
 
 Otra tendencia importante en UI para el 2023 será el diseño limpio y minimalista. Esto se refiere a interfaces de usuario que utilizan una paleta de colores reducida y diseños simples y sin adornos innecesarios.
 
@@ -50,7 +63,13 @@ El objetivo de este enfoque es hacer que la interfaz sea fácil de entender y us
 Un ejemplo de esto es una aplicación de lista de tareas, en la cual el diseño utiliza colores claros y simples, y solo muestra la información esencial para el usuario, como las tareas pendientes y las fechas de vencimiento. Esto hace que la interfaz sea fácil de usar y entender, y al mismo tiempo, se ve atractiva.
 
 ## Degradados suaves y multicolores
-<Image className="w-full rounded-md" src={softGradient} alt="Degradados suaves y multicolores"/>
+
+<Image
+  className="w-full rounded-md"
+  src={softGradient}
+  alt="Degradados suaves y multicolores"
+  placeholder="blur"
+/>
 
 Otra tendencia en UI para el 2023 será el uso de degradados suaves y multicolores. Esto se refiere al uso de colores suaves y gradientes en la interfaz de usuario para crear un aspecto más dinámico y atractivo.
 
@@ -58,7 +77,12 @@ Por ejemplo, en lugar de utilizar colores planos y simples, se podrían utilizar
 
 ## Alto contraste y monocromia
 
-<Image className="w-full rounded-md" src={hightContrast} alt="Alto contraste y monocromia"/>
+<Image
+  className="w-full rounded-md"
+  src={hightContrast}
+  alt="Alto contraste y monocromia"
+  placeholder="blur"
+/>
 
 Por otro lado, la monocromía también seguirá siendo una tendencia importante en UI para el 2023. Esto se refiere al uso de un solo color, o de una paleta de colores muy reducida, en la interfaz de usuario.
 
@@ -66,7 +90,12 @@ Esto ayuda a crear diseños limpios y minimalistas, y a enfatizar ciertos elemen
 
 ## Interfaces oscuras
 
-<Image className="w-full rounded-md" src={darkUi} alt="Interfaces oscuras"/>
+<Image
+  className="w-full rounded-md"
+  src={darkUi}
+  alt="Interfaces oscuras"
+  placeholder="blur"
+/>
 
 Otra tendencia en UI para el 2023 será el uso de interfaces oscuras. Una interfaz oscura es aquella que utiliza una paleta de colores principalmente oscura, en lugar de una paleta de colores principalmente clara.
 
@@ -76,7 +105,12 @@ En segundo lugar, las interfaces oscuras también pueden ser más atractivas vis
 
 ## Tipografías gigantes
 
-<Image className="w-full rounded-md" src={typoGiant} alt="Tipografía gigante"/>
+<Image
+  className="w-full rounded-md"
+  src={typoGiant}
+  alt="Tipografía gigante"
+  placeholder="blur"
+/>
 
 Por último, otra tendencia en UI para el 2023 será el uso de tipografías gigantes. Esto se refiere al uso de fuentes de texto de gran tamaño en la interfaz de usuario, lo que permite que el texto sea fácil de leer y destaque en la pantalla.
 

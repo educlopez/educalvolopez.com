@@ -1,16 +1,14 @@
-import Head from 'next/head';
+import Head from 'next/head'
+import { motion } from 'framer-motion'
 
-import { Card } from '@/components/Card';
-import { Container } from '@/components/Container';
-
-import { generateRssFeed } from '@/lib/generateRssFeed';
-import { getAllArticles } from '@/lib/getAllArticles';
-import { formatDate } from '@/lib/formatDate';
-import Weather from '@/components/Weather';
-import { motion } from 'framer-motion';
-import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants';
-import Resume from '@/components/Resume';
-import SocialLinks from '@/components/SocialLinks';
+import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
+import { formatDate } from '@/lib/formatDate'
+import { generateRssFeed } from '@/lib/generateRssFeed'
+import { getAllArticles } from '@/lib/getAllArticles'
+import { Card } from '@/components/Card'
+import { Container } from '@/components/Container'
+import Resume from '@/components/Resume'
+import SocialLinks from '@/components/SocialLinks'
 
 function Article({ article }) {
   return (
@@ -30,7 +28,7 @@ function Article({ article }) {
             key={tag}
             className="inline-block text-zinc-600 before:content-['#'] dark:text-zinc-400"
           >
-            <span className="mt-2 mr-2 inline-flex items-center text-xs font-medium text-zinc-600 dark:text-zinc-400">
+            <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-zinc-600 dark:text-zinc-400">
               {tag}
             </span>
           </a>
@@ -38,7 +36,7 @@ function Article({ article }) {
       </Card.Description>
       <Card.Cta>Leer artículo</Card.Cta>
     </Card>
-  );
+  )
 }
 
 export default function Home({ articles }) {
@@ -92,10 +90,10 @@ export default function Home({ articles }) {
         >
           <h1 className="sr-only">Edu Calvo</h1>
           <p>
-            <span className="pointer-events-auto hidden items-center rounded-md border border-zinc-200 bg-white/10 px-2 py-0 text-xs font-semibold text-zinc-900 backdrop-blur dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-100 sm:inline-flex">
+            <span className="items-center hidden px-2 py-0 text-xs font-semibold border rounded-md pointer-events-auto border-zinc-200 bg-white/10 text-zinc-900 backdrop-blur dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-100 sm:inline-flex">
               <span className="mr-1.5 flex h-3 w-3 items-center">
-                <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-lime-400 opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-lime-400"></span>
+                <span className="absolute inline-flex w-2 h-2 rounded-full opacity-75 animate-ping bg-lime-400"></span>
+                <span className="relative inline-flex w-2 h-2 rounded-full bg-lime-400"></span>
               </span>
               Disponible para nuevos proyectos
             </span>
@@ -110,7 +108,7 @@ export default function Home({ articles }) {
       </Container>
       <Container className="mt-24 md:mt-28">
         <motion.div
-          className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
+          className="grid max-w-xl grid-cols-1 mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
           <div className="flex flex-col gap-16">
@@ -119,25 +117,24 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Weather />
             <Resume />
           </div>
         </motion.div>
       </Container>
     </>
-  );
+  )
 }
 
 export async function getStaticProps() {
   if (process.env.NODE_ENV === 'production') {
-    await generateRssFeed();
+    await generateRssFeed()
   }
 
   return {
     props: {
       articles: (await getAllArticles())
         .slice(0, 3)
-        .map(({ component, ...meta }) => meta)
-    }
-  };
+        .map(({ component, ...meta }) => meta),
+    },
+  }
 }

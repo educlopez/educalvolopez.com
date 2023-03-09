@@ -1,45 +1,47 @@
-import { useRef } from 'react';
-import clsx from 'clsx';
-import { motion } from 'framer-motion';
-import { FADE_IN_ANIMATION_CARD } from '@/lib/constants';
+import { useRef } from 'react'
+import clsx from 'clsx'
+import { motion } from 'framer-motion'
+
+import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
+
 const reviews = [
   {
     id: 1,
     author: 'Eva García',
     title: 'CEO en Tantra Fashion',
-    body: 'Eduardo es una persona con gran capacidad de adaptación y trabajo en equipo, y resolución de problemas. Tiene una gran conocimiento de las nuevas tecnologias, diseño, ecommerce y todo lo relativo al mundo online. Un placer trabajar contigo y estamos en contacto'
+    body: 'Eduardo es una persona con gran capacidad de adaptación y trabajo en equipo, y resolución de problemas. Tiene una gran conocimiento de las nuevas tecnologias, diseño, ecommerce y todo lo relativo al mundo online. Un placer trabajar contigo y estamos en contacto',
   },
   {
     id: 2,
     author: 'Javier Pozuelo',
     title: 'Desarrollo de software',
-    body: 'Eduardo es un profesional totalmente capaz de enfrentarse a cualquier reto, todo lo que hace lo lleva a cabo metódica, seria y profesionalmente, siempre ha dado la talla en los proyectos en los que hemos trabajado juntos y cada vez con una complejidad superior al anterior. Sin duda es la persona adecuada para llevar a cabo las tareas de las que él está cualificado.'
+    body: 'Eduardo es un profesional totalmente capaz de enfrentarse a cualquier reto, todo lo que hace lo lleva a cabo metódica, seria y profesionalmente, siempre ha dado la talla en los proyectos en los que hemos trabajado juntos y cada vez con una complejidad superior al anterior. Sin duda es la persona adecuada para llevar a cabo las tareas de las que él está cualificado.',
   },
   {
     id: 3,
     author: 'Madeley Zahonero',
     title: 'Diseñadora gráfica y web',
-    body: 'Edu es un compañero excelente, tiene muchos conocimientos técnicos, se nota que es inquieto y le gusta esta a la última en tendencias y herramientas de trabajo. Además no le importa compartir esos conocimientos y experiencia con sus compañeros, ¡siempre está dispuesto a echarte una mano! Es un placer y una suerte trabajar con él, me ha aportado mucho. '
+    body: 'Edu es un compañero excelente, tiene muchos conocimientos técnicos, se nota que es inquieto y le gusta esta a la última en tendencias y herramientas de trabajo. Además no le importa compartir esos conocimientos y experiencia con sus compañeros, ¡siempre está dispuesto a echarte una mano! Es un placer y una suerte trabajar con él, me ha aportado mucho. ',
   },
   {
     id: 4,
     author: 'María Paz Muñoz',
     title: 'Product Manager',
-    body: 'Un compañero servicial y muy trabajador además de resolutivo. Inquieto, buscando siempre cosas nuevas para aprender y transmitiendo sus conocimientos a todo el equipo. ¡Un lujo trabajar con él!'
+    body: 'Un compañero servicial y muy trabajador además de resolutivo. Inquieto, buscando siempre cosas nuevas para aprender y transmitiendo sus conocimientos a todo el equipo. ¡Un lujo trabajar con él!',
   },
   {
     id: 5,
     author: 'Jonathan García',
     title: 'CEO en Net2phone España',
-    body: 'De la mano de Eduardo Calvo no solo encontraras soluciones innovadoras, un gran diseñador con útiles conocimientos de back. Tendrá un profesional coherente, con propuesta razonables y muchas ganas de trabajar, asimilando el proyecto como propio. Mi mas sincera recomendación.'
+    body: 'De la mano de Eduardo Calvo no solo encontraras soluciones innovadoras, un gran diseñador con útiles conocimientos de back. Tendrá un profesional coherente, con propuesta razonables y muchas ganas de trabajar, asimilando el proyecto como propio. Mi mas sincera recomendación.',
   },
   {
     id: 6,
     author: 'Linkedin',
     title: 'Email',
-    body: '¡Si has trabajado conmigo y quieres compartir tu experiencia, escríbeme un testimonio en LinkedIn o enviámelo por email a educalvolopez@gmail.com! ¡Me encantaría escuchar tus comentarios!'
-  }
-];
+    body: '¡Si has trabajado conmigo y quieres compartir tu experiencia, escríbeme un testimonio en LinkedIn o enviámelo por email a educalvolopez@gmail.com! ¡Me encantaría escuchar tus comentarios!',
+  },
+]
 
 function Review({ title, body, author, className, ...props }) {
   return (
@@ -60,26 +62,26 @@ function Review({ title, body, author, className, ...props }) {
         {author} - {title}
       </figcaption>
     </motion.figure>
-  );
+  )
 }
 
 function splitArray(array, numParts) {
-  let result = [];
+  let result = []
   for (let i = 0; i < array.length; i++) {
-    let index = i % numParts;
+    let index = i % numParts
     if (!result[index]) {
-      result[index] = [];
+      result[index] = []
     }
-    result[index].push(array[i]);
+    result[index].push(array[i])
   }
-  return result;
+  return result
 }
 
 function ReviewColumn({
   className,
   reviews,
   reviewClassName = () => {},
-  msPerPixel = 0
+  msPerPixel = 0,
 }) {
   return (
     <div className={clsx('space-y-8 py-4', className)}>
@@ -92,18 +94,18 @@ function ReviewColumn({
         />
       ))}
     </div>
-  );
+  )
 }
 
 function ReviewGrid() {
-  let containerRef = useRef();
-  let columns = splitArray(reviews, 3);
-  columns = [columns[0], columns[1], splitArray(columns[2], 2)];
+  let containerRef = useRef()
+  let columns = splitArray(reviews, 3)
+  columns = [columns[0], columns[1], splitArray(columns[2], 2)]
 
   return (
     <div
       ref={containerRef}
-      className="relative grid grid-cols-1 items-start gap-8 overflow-hidden sm:mt-10 md:grid-cols-2 lg:grid-cols-3"
+      className="relative grid items-start grid-cols-1 gap-8 overflow-hidden sm:mt-10 md:grid-cols-2 lg:grid-cols-3"
     >
       <ReviewColumn
         reviews={[...columns[0], ...columns[2].flat(), ...columns[1]]}
@@ -130,7 +132,7 @@ function ReviewGrid() {
         msPerPixel={10}
       />
     </div>
-  );
+  )
 }
 
 export function Reviews() {
@@ -148,5 +150,5 @@ export function Reviews() {
       </h2>
       <ReviewGrid />
     </section>
-  );
+  )
 }

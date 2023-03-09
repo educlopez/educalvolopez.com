@@ -1,98 +1,97 @@
-import Image from 'next/image';
-import Head from 'next/head';
-import Clients from '@/components/Clients';
-import { Card } from '@/components/Card';
-import { SimpleLayout } from '@/components/SimpleLayout';
+import Head from 'next/head'
+import Image from 'next/image'
+import logoAneto from '@/images/logos/aneto.svg'
+import logoDentaid from '@/images/logos/dentaid.svg'
+import logoJane from '@/images/logos/jane.svg'
+import logoNet2phone from '@/images/logos/net2phone.svg'
+import logoTantra from '@/images/logos/tantra.svg'
+import projectChefhere from '@/images/projects/cover-project-chefhere.png'
+import projectGamedev from '@/images/projects/cover-project-gamedev.png'
+import projectMovielist from '@/images/projects/cover-project-movielist.png'
+import projectTalkworld from '@/images/projects/cover-project-talkworld.png'
+import { LinkIcon } from '@heroicons/react/24/outline'
+import { motion } from 'framer-motion'
 
-import logoTantra from '@/images/logos/tantra.svg';
-import logoJane from '@/images/logos/jane.svg';
-import logoAneto from '@/images/logos/aneto.svg';
-import logoDentaid from '@/images/logos/dentaid.svg';
-import logoNet2phone from '@/images/logos/net2phone.svg';
+import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
+import { Card } from '@/components/Card'
+import Clients from '@/components/Clients'
+import { SimpleLayout } from '@/components/SimpleLayout'
 
-import projectMovielist from '@/images/projects/cover-project-movielist.png';
-import projectTalkworld from '@/images/projects/cover-project-talkworld.png';
-import projectGamedev from '@/images/projects/cover-project-gamedev.png';
-import projectChefhere from '@/images/projects/cover-project-chefhere.png';
-
-import { LinkIcon } from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
-import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants';
 const projects = [
   {
     name: 'Sms Net2phone',
     description:
       'Panel de usuario para el envio y gestión de sms para la empresa Net2phone',
     link: { href: 'https://sms.net2phone.es/login', label: 'sms.net2phone.es' },
-    logo: logoNet2phone
+    logo: logoNet2phone,
   },
   {
     name: 'Tantra Spain',
     description: 'Website con catalogo aunto gestionable por el cliente',
     link: { href: 'https://tantraspain.com/', label: 'tantraspain.com' },
-    logo: logoTantra
+    logo: logoTantra,
   },
   {
     name: 'Aneto',
     description: 'Tienda online de caldos',
     link: { href: 'https://tiendaneto.com/es/', label: 'tiendaneto.com' },
-    logo: logoAneto
+    logo: logoAneto,
   },
   {
     name: 'Janeworld',
     description: 'Tienda online de productos de bebes',
     link: { href: 'https://janeworld.com/', label: 'janeworld.com' },
-    logo: logoJane
+    logo: logoJane,
   },
   {
     name: 'Dentaid & Waterpike',
     description: 'Tiendas online de productos para el cuidado dental',
     link: {
       href: 'https://www.dentaidcomprasonline.pe/',
-      label: 'dentaidcomprasonline.pe'
+      label: 'dentaidcomprasonline.pe',
     },
-    logo: logoDentaid
-  }
-];
+    logo: logoDentaid,
+  },
+]
 const sideprojects = [
   {
     name: 'Movie List',
     description: 'Website usando la api de TMDB con Nextjs y Tailwind',
     link: {
       href: 'https://movielist.educalvolopez.com/',
-      label: 'Movie List'
+      label: 'Movie List',
     },
     github: {
       href: 'https://github.com/educlopez/movie-list',
-      label: 'Github'
+      label: 'Github',
     },
-    img: projectMovielist
+    img: projectMovielist,
   },
   {
     name: 'Talk World',
     description: 'Website usando Tailwind, Supabase y Remix',
     link: {
       href: 'https://talkworld.educalvolopez.com/',
-      label: 'Talk World'
+      label: 'Talk World',
     },
     github: {
       href: 'https://github.com/educlopez/supabase-remix-talkworld-chat',
-      label: 'Github'
+      label: 'Github',
     },
-    img: projectTalkworld
+    img: projectTalkworld,
   },
   {
     name: 'Game Dev',
     description: 'Plataforma con distintos juegos usando Nextjs y Tailwind',
     link: {
       href: 'https://gamedev.educalvolopez.com/',
-      label: 'Game Dev'
+      label: 'Game Dev',
     },
     github: {
       href: 'https://github.com/educlopez/gamedev',
-      label: 'Github'
+      label: 'Github',
     },
-    img: projectGamedev
+    img: projectGamedev,
   },
   {
     name: 'Chef:here',
@@ -100,15 +99,15 @@ const sideprojects = [
       'Generador de recetas con la Api de Co:here usando Tailwind y Nextjs',
     link: {
       href: 'https://chefhere.educalvolopez.com/',
-      label: 'Chefhere'
+      label: 'Chefhere',
     },
     github: {
       href: 'https://github.com/educlopez/chefhere-ai-cohere',
-      label: 'Github'
+      label: 'Github',
     },
-    img: projectChefhere
-  }
-];
+    img: projectChefhere,
+  },
+]
 
 export default function Projects() {
   return (
@@ -166,10 +165,11 @@ export default function Projects() {
         >
           {sideprojects.map((sideproject) => (
             <Card as="li" key={sideproject.name}>
-              <div className="relative z-10 flex w-full items-center justify-center rounded-xl bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <div className="relative z-10 flex items-center justify-center w-full bg-white shadow-md rounded-xl shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image
                   src={sideproject.img}
                   alt={sideproject.name}
+                  placeholder="blur"
                   className="w-full rounded-xl"
                   unoptimized
                 />
@@ -185,8 +185,8 @@ export default function Projects() {
               </h2>
               <Card.Description>{sideproject.description}</Card.Description>
 
-              <p className="relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-900 transition group-hover:text-amber-500 dark:text-zinc-200">
-                <LinkIcon className="h-4 w-4 flex-none" />
+              <p className="relative z-10 flex items-center mt-6 text-sm font-medium transition text-zinc-900 group-hover:text-amber-500 dark:text-zinc-200">
+                <LinkIcon className="flex-none w-4 h-4" />
                 <span className="ml-2">{sideproject.link.label}</span>
               </p>
             </Card>
@@ -204,11 +204,11 @@ export default function Projects() {
         >
           {projects.map((project) => (
             <Card as="li" key={project.name}>
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image
                   src={project.logo}
                   alt={project.name}
-                  className="h-8 w-8"
+                  className="w-8 h-8"
                   unoptimized
                 />
               </div>
@@ -222,8 +222,8 @@ export default function Projects() {
                 </Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-900 transition group-hover:text-amber-500 dark:text-zinc-200">
-                <LinkIcon className="h-4 w-4 flex-none" />
+              <p className="relative z-10 flex items-center mt-6 text-sm font-medium transition text-zinc-900 group-hover:text-amber-500 dark:text-zinc-200">
+                <LinkIcon className="flex-none w-4 h-4" />
                 <span className="ml-2">{project.link.label}</span>
               </p>
             </Card>
@@ -232,5 +232,5 @@ export default function Projects() {
         <Clients />
       </SimpleLayout>
     </>
-  );
+  )
 }

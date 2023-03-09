@@ -1,8 +1,9 @@
-import Link from 'next/link';
-import clsx from 'clsx';
-import { ChevronRightIcon } from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
-import { FADE_IN_ANIMATION_CARD_HOVER } from '@/lib/constants';
+import Link from 'next/link'
+import { ChevronRightIcon } from '@heroicons/react/24/outline'
+import clsx from 'clsx'
+import { motion } from 'framer-motion'
+
+import { FADE_IN_ANIMATION_CARD_HOVER } from '@/lib/constants'
 
 export function Card({ as: Component = 'div', className, children }) {
   return (
@@ -13,27 +14,27 @@ export function Card({ as: Component = 'div', className, children }) {
         {children}
       </motion.div>
     </Component>
-  );
+  )
 }
 
 Card.Link = function CardLink({ children, ...props }) {
   return (
     <>
-      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 border border-zinc-900/10 bg-white/10 opacity-0 transition group-hover:opacity-100 dark:border-white/10 dark:bg-zinc-900/20 sm:-inset-x-6 sm:rounded-2xl" />
+      <div className="absolute z-0 transition scale-95 border opacity-0 -inset-y-6 -inset-x-4 border-zinc-900/10 bg-white/10 group-hover:opacity-100 dark:border-white/10 dark:bg-zinc-900/20 sm:-inset-x-6 sm:rounded-2xl" />
       <Link {...props}>
-        <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+        <span className="absolute z-20 -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
       </Link>
     </>
-  );
-};
+  )
+}
 
 Card.Title = function CardTitle({
   as: Component = 'h2',
   href,
   target,
   children,
-  rel
+  rel,
 }) {
   return (
     <Component className="text-base font-semibold tracking-tight text-zinc-900 dark:text-white">
@@ -45,28 +46,28 @@ Card.Title = function CardTitle({
         children
       )}
     </Component>
-  );
-};
+  )
+}
 
 Card.Description = function CardDescription({ children }) {
   return (
     <p className="relative z-10 mt-2 text-sm text-zinc-900 dark:text-white">
       {children}
     </p>
-  );
-};
+  )
+}
 
 Card.Cta = function CardCta({ children }) {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 mt-4 flex items-center text-sm font-medium text-amber-500"
+      className="relative z-10 flex items-center mt-4 text-sm font-medium text-amber-500"
     >
       {children}
-      <ChevronRightIcon className="ml-1 h-3 w-3 stroke-current" />
+      <ChevronRightIcon className="w-3 h-3 ml-1 stroke-current" />
     </div>
-  );
-};
+  )
+}
 
 Card.Eyebrow = function CardEyebrow({
   as: Component = 'p',
@@ -94,5 +95,5 @@ Card.Eyebrow = function CardEyebrow({
       )}
       {children}
     </Component>
-  );
-};
+  )
+}

@@ -1,76 +1,75 @@
-import { Fragment, useState, useEffect } from 'react';
-import { Combobox, Dialog, Transition } from '@headlessui/react';
-
+import { Fragment, useEffect, useState } from 'react'
+import { Combobox, Dialog, Transition } from '@headlessui/react'
 import {
-  UserCircleIcon,
-  HomeModernIcon,
   BriefcaseIcon,
+  HomeModernIcon,
   NewspaperIcon,
-  SparklesIcon
-} from '@heroicons/react/24/outline';
+  SparklesIcon,
+  UserCircleIcon,
+} from '@heroicons/react/24/outline'
 
 const projects = [
   { id: 1, name: 'Website Redesign', url: '#' },
-  { id: 2, name: 'Otro', url: '#' }
+  { id: 2, name: 'Otro', url: '#' },
   // More projects...
-];
-const recent = [projects[0]];
+]
+const recent = [projects[0]]
 const quickActions = [
   {
     name: 'Inicio',
     icon: HomeModernIcon,
     shortcut: 'I',
-    url: '/'
+    url: '/',
   },
   {
     name: 'Saber más sobre mi',
     icon: UserCircleIcon,
     shortcut: 'N',
-    url: '/about'
+    url: '/about',
   },
   { name: 'Ir al blog', icon: NewspaperIcon, shortcut: 'F', url: '/articles' },
   {
     name: 'Ver proyectos',
     icon: BriefcaseIcon,
     shortcut: 'H',
-    url: '/proyectos'
+    url: '/proyectos',
   },
   {
     name: 'Recomendaciones',
     icon: SparklesIcon,
     shortcut: 'L',
-    url: '/recomendaciones'
-  }
-];
+    url: '/recomendaciones',
+  },
+]
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(' ')
 }
 
 export default function CommandMenu() {
-  const [query, setQuery] = useState('');
-  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState('')
+  const [open, setOpen] = useState(false)
 
   /* A hook that is listening for a keydown event. */
   useEffect(() => {
     function onkeydown(event) {
       if (event.key == 'k' && (event.metaKey || event.ctrlKey)) {
-        setOpen(!open);
+        setOpen(!open)
       }
     }
-    window.addEventListener('keydown', onkeydown);
+    window.addEventListener('keydown', onkeydown)
     return () => {
-      window.removeEventListener('keydown', onkeydown);
-    };
-  }, [open]);
+      window.removeEventListener('keydown', onkeydown)
+    }
+  }, [open])
 
   /* Filtering the projects array by the query. */
   const filteredProjects =
     query === ''
       ? []
       : projects.filter((project) => {
-          return project.name.toLowerCase().includes(query.toLowerCase());
-        });
+          return project.name.toLowerCase().includes(query.toLowerCase())
+        })
 
   return (
     <Transition.Root
@@ -89,10 +88,10 @@ export default function CommandMenu() {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-25 transition-opacity" />
+          <div className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-25" />
         </Transition.Child>
 
-        <div className="fixed inset-0 z-10 overflow-y-auto p-4 sm:p-6 md:p-20">
+        <div className="fixed inset-0 z-10 p-4 overflow-y-auto sm:p-6 md:p-20">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -102,7 +101,7 @@ export default function CommandMenu() {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <Dialog.Panel className="mx-auto max-w-2xl transform divide-y divide-zinc-700 divide-opacity-10 overflow-hidden rounded-xl border-zinc-900/10 bg-white/80 p-6 shadow-2xl ring-1 ring-black ring-opacity-5 backdrop-blur-sm backdrop-filter transition-all dark:divide-zinc-700 dark:border-white/10 dark:bg-zinc-900/80 dark:backdrop-blur">
+            <Dialog.Panel className="max-w-2xl p-6 mx-auto overflow-hidden transition-all transform divide-y shadow-2xl divide-zinc-700 divide-opacity-10 rounded-xl border-zinc-900/10 bg-white/80 ring-1 ring-black ring-opacity-5 backdrop-blur-sm backdrop-filter dark:divide-zinc-700 dark:border-white/10 dark:bg-zinc-900/80 dark:backdrop-blur">
               <Combobox onChange={(item) => (window.location = item.url)}>
                 {/*  <div className="relative">
                   <MagnifyingGlassIcon
@@ -119,7 +118,7 @@ export default function CommandMenu() {
                 {(query === '' || filteredProjects.length > 0) && (
                   <Combobox.Options
                     static
-                    className="max-h-80 scroll-py-2 divide-y divide-gray-100 overflow-y-auto"
+                    className="overflow-y-auto divide-y divide-gray-100 max-h-80 scroll-py-2"
                   >
                     {/*<li className="p-2">
                       {query === '' && (
@@ -192,7 +191,7 @@ export default function CommandMenu() {
                                     )}
                                     aria-hidden="true"
                                   />
-                                  <span className="ml-3 flex-auto truncate">
+                                  <span className="flex-auto ml-3 truncate">
                                     {action.name}
                                   </span>
                                   {/* <span
@@ -235,5 +234,5 @@ export default function CommandMenu() {
         </div>
       </Dialog>
     </Transition.Root>
-  );
+  )
 }

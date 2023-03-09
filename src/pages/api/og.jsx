@@ -1,17 +1,17 @@
-import { ImageResponse } from '@vercel/og';
+import { ImageResponse } from '@vercel/og'
 
 export const config = {
-  runtime: 'edge'
-};
+  runtime: 'edge',
+}
 
 export default function handler(req) {
   try {
-    const { searchParams } = new URL(req.url);
+    const { searchParams } = new URL(req.url)
 
-    const hasTitle = searchParams.has('title');
+    const hasTitle = searchParams.has('title')
     const title = hasTitle
       ? searchParams.get('title')?.slice(0, 100)
-      : 'My default title';
+      : 'My default title'
 
     return new ImageResponse(
       (
@@ -28,7 +28,7 @@ export default function handler(req) {
             backgroundImage: 'url(https://educalvolopez.com/gradient.svg)',
             backgroundSize: '100% 200%',
             backgroundRepeat: 'repeat',
-            backgroundPosition: 'center'
+            backgroundPosition: 'center',
           }}
         >
           <div
@@ -41,7 +41,7 @@ export default function handler(req) {
               margin: '0 42px',
               width: '50%',
               textAlign: 'left',
-              color: 'white'
+              color: 'white',
             }}
           >
             <img
@@ -51,14 +51,14 @@ export default function handler(req) {
                 width: '60px',
                 objectFit: 'cover',
                 borderRadius: '100%',
-                marginBottom: '20px'
+                marginBottom: '20px',
               }}
             />
 
             <span
               style={{
                 fontSize: 38,
-                lineHeight: 1.2
+                lineHeight: 1.2,
               }}
             >
               {title}
@@ -66,7 +66,7 @@ export default function handler(req) {
             <span
               style={{
                 fontSize: '20px',
-                marginTop: '20px'
+                marginTop: '20px',
               }}
             >
               educalvolopez.com
@@ -77,7 +77,7 @@ export default function handler(req) {
               display: 'flex',
               justifyContent: 'flex-end',
               height: '100%',
-              width: '50%'
+              width: '50%',
             }}
           >
             <img
@@ -85,7 +85,7 @@ export default function handler(req) {
               style={{
                 height: '100%',
                 width: '100%',
-                objectFit: 'cover'
+                objectFit: 'cover',
               }}
             />
           </div>
@@ -93,13 +93,13 @@ export default function handler(req) {
       ),
       {
         width: 1200,
-        height: 600
+        height: 600,
       }
-    );
+    )
   } catch (e) {
-    console.log(`${e.message}`);
+    console.log(`${e.message}`)
     return new Response(`Failed to generate the image`, {
-      status: 500
-    });
+      status: 500,
+    })
   }
 }

@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 
 export function Prose({ children, className }) {
   return (
@@ -10,5 +10,5 @@ export function Prose({ children, className }) {
     >
       {children}
     </div>
-  );
+  )
 }

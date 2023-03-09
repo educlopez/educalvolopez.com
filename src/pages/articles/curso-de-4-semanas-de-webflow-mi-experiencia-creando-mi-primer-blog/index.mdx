@@ -1,8 +1,9 @@
-import { ArticleLayout } from '@/components/ArticleLayout';
-import Image from 'next/image';
-import coverImg from './cover-img.png';
-import websiteImg from './website-img.png';
-import Link from 'next/link';
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { ArticleLayout } from '@/components/ArticleLayout'
+import coverImg from './cover-img.png'
+import websiteImg from './website-img.png'
 
 export const meta = {
   author: 'Edu Calvo',
@@ -13,12 +14,18 @@ export const meta = {
   keywords:
     'Webflow, Adplist, curso, diseño web, componentes, CMS, sitio web, habilidades, blog, recetas saludables',
   description:
-    'Descubre cómo el curso de 4 semanas de Adplist sobre Webflow te permite aprender habilidades valiosas en el mundo del diseño web. Aprende sobre componentes, CMS y la interfaz de Webflow y cómo aplicarlos a tu proyecto.'
-};
+    'Descubre cómo el curso de 4 semanas de Adplist sobre Webflow te permite aprender habilidades valiosas en el mundo del diseño web. Aprende sobre componentes, CMS y la interfaz de Webflow y cómo aplicarlos a tu proyecto.',
+}
 
-export default (props) => <ArticleLayout meta={meta} {...props} />;
+export default (props) => <ArticleLayout meta={meta} {...props} />
 
-<Image className="w-full rounded-md" src={coverImg} alt="Webflow" priority />
+<Image
+  className="w-full rounded-md"
+  src={coverImg}
+  alt="Webflow"
+  priority
+  placeholder="blur"
+/>
 
 El curso de 4 semanas de Adplist sobre Webflow me permitió desarrollar habilidades que nunca antes había tenido. En este artículo, comparto mi experiencia y conocimientos sobre cómo crear un sitio web en Webflow y cómo aplicarlos a tu proyecto.
 
@@ -37,7 +44,12 @@ Gracias a todo lo que aprendí en el curso de Webflow, pude crear mi primer blog
   target="_blank"
   rel="noopener noreferrer"
 >
-  <Image className="w-full rounded-md" src={websiteImg} alt="Bites and bowls" />
+  <Image
+    className="w-full rounded-md"
+    src={websiteImg}
+    alt="Bites and bowls"
+    placeholder="blur"
+  />
 </Link>
 
 En resumen, el curso de 4 semanas de Adplist sobre Webflow es una excelente oportunidad para aprender habilidades valiosas en el mundo del diseño web. Con este curso, adquirí habilidades en el uso de componentes, el manejo del CMS y la interfaz de Webflow. Recomiendo encarecidamente este curso para cualquier persona que busque mejorar sus habilidades de diseño web y crear sitios web atractivos y funcionales.

@@ -1,6 +1,7 @@
-import { ArticleLayout } from '@/components/ArticleLayout';
-import Image from 'next/image';
-import coverImg from './cover-img.png';
+import Image from 'next/image'
+
+import { ArticleLayout } from '@/components/ArticleLayout'
+import coverImg from './cover-img.png'
 
 export const meta = {
   author: 'Edu Calvo',
@@ -11,15 +12,16 @@ export const meta = {
   keywords:
     'ChatGPT, modelo de lenguaje, OpenAI, conversaciones en línea, texto humano, temas, estilos de conversación, ciencia ficción, formalidad, recordar conversaciones, herramienta, imitar lenguaje humano, sitio web oficial, probar ChatGPT, divertirse conversando',
   description:
-    'Conoce ChatGPT, el modelo de lenguaje desarrollado por OpenAI capaz de mantener conversaciones y adaptarse a diferentes temas y estilos de conversación. Prueba ChatGPT en su sitio web oficial y diviértete conversando con él.'
-};
+    'Conoce ChatGPT, el modelo de lenguaje desarrollado por OpenAI capaz de mantener conversaciones y adaptarse a diferentes temas y estilos de conversación. Prueba ChatGPT en su sitio web oficial y diviértete conversando con él.',
+}
 
-export default (props) => <ArticleLayout meta={meta} {...props} />;
+export default (props) => <ArticleLayout meta={meta} {...props} />
 
 <Image
   className="w-full rounded-md"
   src={coverImg}
   alt="chatgpt aliado o enemigo"
+  placeholder="blur"
   priority
 />
 

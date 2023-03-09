@@ -1,22 +1,23 @@
-import Link from 'next/link';
+import Link from 'next/link'
+
 import {
-  TwitterIcon,
-  InstagramIcon,
   GitHubIcon,
-  LinkedInIcon
-} from '@/components/SocialIcons';
+  InstagramIcon,
+  LinkedInIcon,
+  TwitterIcon,
+} from '@/components/SocialIcons'
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-600 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    <Link className="p-1 -m-1 group" {...props}>
+      <Icon className="w-6 h-6 transition fill-zinc-600 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
-  );
+  )
 }
 
 export default function SocialLinks({}) {
   return (
-    <div className="mt-6 flex gap-6">
+    <div className="flex gap-6 mt-6">
       <SocialLink
         href="https://twitter.com/educlopez93"
         rel="noopener noreferrer"
@@ -46,5 +47,5 @@ export default function SocialLinks({}) {
         icon={LinkedInIcon}
       />
     </div>
-  );
+  )
 }
