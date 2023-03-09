@@ -5,7 +5,7 @@ export const config = {
 }
 
 const font = fetch(
-  new URL('../../public/fonts/inter-bold.ttf', import.meta.url)
+  new URL('../../public/fonts/Inter-Bold.ttf', import.meta.url)
 ).then((res) => res.arrayBuffer())
 
 export default async function handler(req) {
