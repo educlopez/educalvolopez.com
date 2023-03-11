@@ -4,13 +4,14 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import avatarImage from '@/images/avatar.png'
 import { Popover, Transition } from '@headlessui/react'
-import { MoonIcon, SunIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 
 import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
 import { Container } from '@/components/Container'
+import ThemeToggle from '@/components/ThemeToggle'
 
 function MobileNavItem({ href, children, target, rel }) {
   return (
@@ -134,41 +135,6 @@ function DesktopNavigation(props) {
         </NavItem>
       </ul>
     </nav>
-  )
-}
-
-function ModeToggle() {
-  function disableTransitionsTemporarily() {
-    document.documentElement.classList.add('[&_*]:!transition-none')
-    window.setTimeout(() => {
-      document.documentElement.classList.remove('[&_*]:!transition-none')
-    }, 0)
-  }
-
-  function toggleMode() {
-    disableTransitionsTemporarily()
-
-    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = document.documentElement.classList.toggle('dark')
-
-    if (isDarkMode === isSystemDarkMode) {
-      delete window.localStorage.isDarkMode
-    } else {
-      window.localStorage.isDarkMode = isDarkMode
-    }
-  }
-
-  return (
-    <button
-      type="button"
-      aria-label="Toggle dark mode"
-      className="px-2 py-2 transition border rounded-full group border-zinc-900/10 bg-white/10 text-zinc-600 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur"
-      onClick={toggleMode}
-    >
-      <SunIcon className="w-4 h-4 stroke-zinc-900 dark:hidden" />
-      <MoonIcon className="hidden w-4 h-4 stroke-white dark:block" />
-    </button>
   )
 }
 
@@ -383,7 +349,7 @@ export function Header() {
               </div>
               <div className="flex justify-end md:flex-1">
                 <div className="pointer-events-auto">
-                  <ModeToggle />
+                  <ThemeToggle />
                 </div>
               </div>
             </div>

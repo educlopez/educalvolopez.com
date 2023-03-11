@@ -47,7 +47,7 @@ export default function About() {
         />
         <meta
           name="keywords"
-          content="Diseñador web, maquetador, creatividad, habilidades de comunicación visual, resolución de problemas, interfaces de usuario, diseños responsive, clientes globales, empresas pequeñas y grandes corporaciones"
+          content="Diseñador web,frontend, maquetador, creatividad, habilidades de comunicación visual, resolución de problemas, interfaces de usuario, diseños responsive, clientes globales, empresas pequeñas y grandes corporaciones"
         />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="About - Edu Calvo" />
@@ -106,8 +106,8 @@ export default function About() {
               variants={FADE_DOWN_ANIMATION_VARIANTS}
             >
               <p>
-                Soy diseñador web y maquetador desde mi primer año de estudios
-                de diseño gráfico en la universidad ESNE. En los últimos nueve
+                Soy diseñador web y frontend desde mi primer año de estudios de
+                diseño gráfico en la universidad ESNE. En los últimos nueve
                 años, he trabajado en muchos tipos de proyectos diferentes, como
                 ecommerce, paneles de usuario y páginas de aterrizaje.
               </p>

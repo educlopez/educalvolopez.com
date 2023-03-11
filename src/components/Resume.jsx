@@ -13,7 +13,7 @@ export default function Resume() {
   let resume = [
     {
       company: 'Cinetic Digital',
-      title: 'Diseñador Gráfico y Maquetador Web',
+      title: 'Diseñador Web y Frontend',
       logo: logoCinetic,
       start: '2021',
       end: {
@@ -30,7 +30,7 @@ export default function Resume() {
     },
     {
       company: 'Tantra',
-      title: 'Diseñador Gráfico y maquetador web',
+      title: 'Diseñador Gráfico y Maquetador web',
       logo: logoTantra,
       start: '2015',
       end: '2019',

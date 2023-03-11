@@ -43,28 +43,28 @@ export default function Home({ articles }) {
   return (
     <>
       <Head>
-        <title>Edu Calvo - Diseñador Web & Maquetador</title>
+        <title>Edu Calvo - Diseñador Web & Frontend</title>
         <meta
           name="description"
-          content=" Soy Eduardo, soy diseñador web y maquetador con sede en Madrid."
+          content=" Soy Eduardo, soy diseñador web y Frontend con sede en Madrid."
         />
         <meta
           name="keywords"
-          content="diseñador web, maquetador, Madrid, Cinetic Digital, Freelance, portfolio, edu, calvo"
+          content="diseñador web, frontend, maquetador, Madrid, Cinetic Digital, Freelance, portfolio, edu, calvo"
         />
         <meta property="og:url" content="https://educalvolopez.com" />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Edu Calvo - Diseñador web y maquetador"
+          content="Edu Calvo - Diseñador web y Frontend"
         />
         <meta
           property="og:description"
-          content="Soy Eduardo, soy diseñador web y maquetador con sede en Madrid."
+          content="Soy Eduardo, soy diseñador web y Frontend con sede en Madrid."
         />
         <meta
           property="og:image"
-          content="https://educalvolopez.com/api/og?title=Edu Calvo - Diseñador web y maquetador"
+          content="https://educalvolopez.com/api/og?title=Edu Calvo - Diseñador web y Frontend"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -72,15 +72,15 @@ export default function Home({ articles }) {
         <meta property="twitter:url" content="https://educalvolopez.com" />
         <meta
           name="twitter:title"
-          content="Edu Calvo - Diseñador web y maquetador"
+          content="Edu Calvo - Diseñador web y Frontend"
         />
         <meta
           name="twitter:description"
-          content="Soy Eduardo, soy diseñador web y maquetador con sede en Madrid."
+          content="Soy Eduardo, soy diseñador web y Frontend con sede en Madrid."
         />
         <meta
           name="twitter:image"
-          content="https://educalvolopez.com/api/og?title=Edu Calvo - Diseñador web y maquetador"
+          content="https://educalvolopez.com/api/og?title=Edu Calvo - Diseñador web y Frontend"
         />
       </Head>
       <Container className="mt-9">
@@ -99,7 +99,7 @@ export default function Home({ articles }) {
             </span>
           </p>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Soy Edu Calvo, soy diseñador web y maquetador con sede en Madrid.
+            Soy Edu Calvo, soy diseñador web y frontend con sede en Madrid.
             <br></br>
             Trabajo actualmente en Cinetic Digital y como Freelance.
           </p>
