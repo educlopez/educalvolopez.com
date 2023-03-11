@@ -23,7 +23,7 @@ export default function ThemeToggle() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex px-2 py-2 transition border rounded-full group border-zinc-900/10 bg-white/10 text-zinc-600 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur">
+        <Menu.Button className="inline-flex px-3 py-3 transition border rounded-full md:px-2 md:py-2 group border-zinc-900/10 bg-white/10 text-zinc-600 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur">
           <SunIcon className="w-4 h-4 stroke-zinc-900 dark:hidden" />
           <MoonIcon className="hidden w-4 h-4 stroke-white dark:block" />
           <span className="sr-only">Toggle theme</span>
