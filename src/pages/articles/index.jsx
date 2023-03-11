@@ -54,8 +54,12 @@ function Article({ article }) {
 
 export default function ArticlesIndex({ articles }) {
   const [searchValue, setSearchValue] = useState('')
-  const filteredBlogPosts = articles.filter((article) =>
-    article.title.toLowerCase().includes(searchValue.toLowerCase())
+  const filteredBlogPosts = articles.filter(
+    (article) =>
+      article.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+      article.tags.some((tag) =>
+        tag.toLowerCase().includes(searchValue.toLowerCase())
+      )
   )
   return (
     <>
@@ -107,10 +111,10 @@ export default function ArticlesIndex({ articles }) {
           <div className="flex flex-col max-w-3xl space-y-16">
             <div className="relative w-full mb-4">
               <input
-                aria-label="Buscar artículos"
+                aria-label="Buscar artículos por título o tema"
                 type="text"
                 onChange={(e) => setSearchValue(e.target.value)}
-                placeholder="Buscar artículos"
+                placeholder="Buscar artículos por título o tema"
                 className="block w-full px-4 py-2 border rounded-full border-zinc-900/10 bg-white/10 text-zinc-600 backdrop-blur-sm placeholder:text-zinc-600 hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur placeholder:dark:text-zinc-300 dark:hover:text-white"
               />
               <MagnifyingGlassIcon className="absolute w-5 h-5 right-3 top-3 text-zinc-900 dark:text-zinc-300" />
@@ -119,7 +123,7 @@ export default function ArticlesIndex({ articles }) {
             <Suspense fallback={null}>
               {!filteredBlogPosts.length && (
                 <p className="mb-4 text-gray-600 dark:text-gray-400">
-                  No posts found.
+                  No se han encontrado artículos.
                 </p>
               )}
               {filteredBlogPosts.map((article) => (
