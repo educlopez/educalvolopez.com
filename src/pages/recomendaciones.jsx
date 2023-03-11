@@ -14,6 +14,7 @@ import imgLogitechteclado from '@/images/icons/logitech-teclado.png'
 import imgMacbook from '@/images/icons/macbook-pro.png'
 import imgNextjs from '@/images/icons/nextjs.png'
 import imgNotion from '@/images/icons/notion.png'
+import imgOzone from '@/images/icons/ozone.png'
 import imgRaycast from '@/images/icons/raycast.png'
 import imgSetapp from '@/images/icons/setapp.png'
 import imgSketch from '@/images/icons/sketch.png'
@@ -182,6 +183,13 @@ const stacks = [
     info: 'Utilizo Transmit como gestor FTP porque es una aplicación fácil de usar y potente que me permite transferir archivos de forma rápida y segura entre mi ordenador y servidores web. También me ofrece una amplia variedad de opciones de configuración y personalización, lo que me permite adaptarlo a mis necesidades específicas de transferencia de archivos. Además, Transmit es compatible con una gran variedad de protocolos de transferencia de archivos, lo que me permite conectarme a una amplia variedad de servidores.',
     img: imgTransmit,
   },
+  {
+    type: 'workstation',
+    title: 'Keywoard Ozone Tactical',
+    link: 'https://amzn.to/3yvGQsy',
+    info: 'Mi teclado principal este 2023, es un teclado mecánico con switches rojos, es muy cómodo y tiene un diseño muy bonito. Lo uso para programar y para jugar. ',
+    img: imgOzone,
+  },
 ]
 
 function filterStacks(stacks, type) {
@@ -205,7 +213,7 @@ function ToolsSectionGrid({ children, title }) {
       </h2>
       <ul
         role="list"
-        className="grid grid-cols-3 mt-5 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-8 xl:gap-x-8"
+        className="grid grid-cols-3 mt-5 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-6 xl:gap-x-8"
       >
         {children}
       </ul>

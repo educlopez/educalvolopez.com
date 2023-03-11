@@ -1,18 +1,17 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import logoAneto from '@/images/logos/aneto.svg'
 import logoDentaid from '@/images/logos/dentaid.svg'
 import logoJane from '@/images/logos/jane.svg'
 import logoNet2phone from '@/images/logos/net2phone.svg'
 import logoTantra from '@/images/logos/tantra.svg'
-import projectChefhere from '@/images/projects/cover-project-chefhere.png'
-import projectGamedev from '@/images/projects/cover-project-gamedev.png'
-import projectMovielist from '@/images/projects/cover-project-movielist.png'
-import projectTalkworld from '@/images/projects/cover-project-talkworld.png'
 import { LinkIcon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
 
 import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
+import { getPinnedRepos } from '@/lib/github'
+import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import Clients from '@/components/Clients'
 import { SimpleLayout } from '@/components/SimpleLayout'
@@ -21,31 +20,34 @@ const projects = [
   {
     name: 'Sms Net2phone',
     description:
-      'Panel de usuario para el envio y gestión de sms para la empresa Net2phone',
+      'Dashboard en Laravel para el envío y gestión de sms para la empresa Net2phone',
     link: { href: 'https://sms.net2phone.es/login', label: 'sms.net2phone.es' },
     logo: logoNet2phone,
   },
   {
     name: 'Tantra Spain',
-    description: 'Website con catalogo aunto gestionable por el cliente',
+    description:
+      'Website en laravel con catálogo auto gestionable por el cliente',
     link: { href: 'https://tantraspain.com/', label: 'tantraspain.com' },
     logo: logoTantra,
   },
   {
     name: 'Aneto',
-    description: 'Tienda online de caldos',
+    description:
+      'Tienda online de caldos realizada en Prestashop para la empresa Aneto ',
     link: { href: 'https://tiendaneto.com/es/', label: 'tiendaneto.com' },
     logo: logoAneto,
   },
   {
     name: 'Janeworld',
-    description: 'Tienda online de productos de bebes',
+    description:
+      'Multitienda online de productos de bebes realziada en Prestashop',
     link: { href: 'https://janeworld.com/', label: 'janeworld.com' },
     logo: logoJane,
   },
   {
     name: 'Dentaid & Waterpike',
-    description: 'Tiendas online de productos para el cuidado dental',
+    description: 'Tiendas online de productos para el cuidado dental ',
     link: {
       href: 'https://www.dentaidcomprasonline.pe/',
       label: 'dentaidcomprasonline.pe',
@@ -53,63 +55,8 @@ const projects = [
     logo: logoDentaid,
   },
 ]
-const sideprojects = [
-  {
-    name: 'Movie List',
-    description: 'Website usando la api de TMDB con Nextjs y Tailwind',
-    link: {
-      href: 'https://movielist.educalvolopez.com/',
-      label: 'Movie List',
-    },
-    github: {
-      href: 'https://github.com/educlopez/movie-list',
-      label: 'Github',
-    },
-    img: projectMovielist,
-  },
-  {
-    name: 'Talk World',
-    description: 'Website usando Tailwind, Supabase y Remix',
-    link: {
-      href: 'https://talkworld.educalvolopez.com/',
-      label: 'Talk World',
-    },
-    github: {
-      href: 'https://github.com/educlopez/supabase-remix-talkworld-chat',
-      label: 'Github',
-    },
-    img: projectTalkworld,
-  },
-  {
-    name: 'Game Dev',
-    description: 'Plataforma con distintos juegos usando Nextjs y Tailwind',
-    link: {
-      href: 'https://gamedev.educalvolopez.com/',
-      label: 'Game Dev',
-    },
-    github: {
-      href: 'https://github.com/educlopez/gamedev',
-      label: 'Github',
-    },
-    img: projectGamedev,
-  },
-  {
-    name: 'Chef:here',
-    description:
-      'Generador de recetas con la Api de Co:here usando Tailwind y Nextjs',
-    link: {
-      href: 'https://chefhere.educalvolopez.com/',
-      label: 'Chefhere',
-    },
-    github: {
-      href: 'https://github.com/educlopez/chefhere-ai-cohere',
-      label: 'Github',
-    },
-    img: projectChefhere,
-  },
-]
 
-export default function Projects() {
+export default function Projects({ pinnedRepos }) {
   return (
     <>
       <Head>
@@ -163,35 +110,58 @@ export default function Projects() {
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {sideprojects.map((sideproject) => (
-            <Card as="li" key={sideproject.name}>
+          {pinnedRepos.map((repo) => (
+            <Card as="li" key={repo.name}>
               <div className="relative z-10 flex items-center justify-center w-full bg-white shadow-md rounded-xl shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image
-                  src={sideproject.img}
-                  alt={sideproject.name}
-                  placeholder="blur"
+                  src={repo.openGraphImageUrl}
+                  alt={repo.name}
+                  width={323}
+                  height={162}
                   className="w-full rounded-xl"
                   unoptimized
                 />
               </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-900 dark:text-white">
                 <Card.Link
-                  href={sideproject.link.href}
+                  href={repo.url}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {sideproject.name}
+                  {repo.name}
                 </Card.Link>
               </h2>
-              <Card.Description>{sideproject.description}</Card.Description>
-
-              <p className="relative z-10 flex items-center mt-6 text-sm font-medium transition text-zinc-900 group-hover:text-amber-500 dark:text-zinc-200">
-                <LinkIcon className="flex-none w-4 h-4" />
-                <span className="ml-2">{sideproject.link.label}</span>
-              </p>
+              <Card.Description>
+                <span className="line-clamp-2">{repo.description}</span>
+              </Card.Description>
+              <div className="flex gap-4 ">
+                <Button className="z-50 w-full mt-6 group" variant="secondary">
+                  <Link
+                    href={repo.url}
+                    className="flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <LinkIcon className="flex-none w-4 h-4" />
+                    <span className="ml-2">Github</span>
+                  </Link>
+                </Button>
+                <Button className="z-50 w-full mt-6 group" variant="secondary">
+                  <Link
+                    href={repo.homepageUrl}
+                    className="flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <LinkIcon className="flex-none w-4 h-4" />{' '}
+                    <span className="ml-2">Website</span>
+                  </Link>
+                </Button>
+              </div>
             </Card>
           ))}
         </ul>
+
         <motion.h2
           className="mt-16 mb-10 text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-2xl"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
@@ -222,10 +192,19 @@ export default function Projects() {
                 </Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 flex items-center mt-6 text-sm font-medium transition text-zinc-900 group-hover:text-amber-500 dark:text-zinc-200">
-                <LinkIcon className="flex-none w-4 h-4" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
+              <div className="flex gap-4 ">
+                <Button className="z-50 w-full mt-6 group" variant="secondary">
+                  <Link
+                    href={project.link.href}
+                    className="flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <LinkIcon className="flex-none w-4 h-4" />
+                    <span className="ml-2">{project.link.label}</span>
+                  </Link>
+                </Button>
+              </div>
             </Card>
           ))}
         </ul>
@@ -233,4 +212,14 @@ export default function Projects() {
       </SimpleLayout>
     </>
   )
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      pinnedRepos: (await getPinnedRepos()).sort(
+        (a, b) => b.stargazerCount - a.stargazerCount
+      ),
+    },
+  }
 }

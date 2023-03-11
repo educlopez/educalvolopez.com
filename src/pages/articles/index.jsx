@@ -11,7 +11,7 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 
 function Article({ article }) {
   return (
-    <article className="md:grid md:grid-cols-4 md:items-baseline">
+    <motion.article className="md:grid md:grid-cols-4 md:items-baseline" layout>
       <Card className="md:col-span-3">
         <Card.Title href={`/articles/${article.slug}`}>
           {article.title}
@@ -48,7 +48,7 @@ function Article({ article }) {
       >
         {formatDate(article.date)}
       </Card.Eyebrow>
-    </article>
+    </motion.article>
   )
 }
 
@@ -115,6 +115,7 @@ export default function ArticlesIndex({ articles }) {
               />
               <MagnifyingGlassIcon className="absolute w-5 h-5 right-3 top-3 text-zinc-900 dark:text-zinc-300" />
             </div>
+
             <Suspense fallback={null}>
               {!filteredBlogPosts.length && (
                 <p className="mb-4 text-gray-600 dark:text-gray-400">

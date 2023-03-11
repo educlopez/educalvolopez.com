@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
 import { Container } from '@/components/Container'
-import NowPlaying from '@/components/NowPlaying'
+import { SpotifyPlayer } from '@/components/NowPlaying'
 
 function NavLink({ href, children, target, rel }) {
   return (
@@ -46,7 +46,7 @@ export function Footer() {
                 </span>
                 Disponible para nuevos proyectos
               </span>
-              <NowPlaying />
+              <SpotifyPlayer />
             </div>
           </Container.Inner>
         </div>
