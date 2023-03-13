@@ -4,10 +4,9 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import avatarImage from '@/images/avatar.png'
 import { Popover, Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
-import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
+import { ChevronDown, X } from 'lucide-react'
 
 import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
 import { Container } from '@/components/Container'
@@ -34,7 +33,7 @@ function MobileNavigation(props) {
     <Popover {...props}>
       <Popover.Button className="flex items-center px-4 py-2 text-sm font-medium border rounded-full group border-zinc-900/10 bg-white/10 text-zinc-600 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur">
         Menu
-        <ChevronDownIcon className="w-3 h-auto ml-3 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
+        <ChevronDown className="w-3 h-auto ml-3 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
@@ -63,7 +62,7 @@ function MobileNavigation(props) {
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="p-1 -m-1">
-                <XMarkIcon className="w-6 h-6 text-zinc-500 dark:text-zinc-400" />
+                <X className="w-6 h-6 text-zinc-500 dark:text-zinc-400" />
               </Popover.Button>
               <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
                 Menu
@@ -105,8 +104,8 @@ function NavItem({ href, children, target, rel }) {
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
-            ? 'text-amber-500 dark:text-amber-400'
-            : 'hover:text-amber-500 dark:hover:text-amber-400'
+            ? 'text-amber-600 dark:text-amber-400'
+            : 'hover:text-amber-600 dark:hover:text-amber-400'
         )}
       >
         {children}
@@ -121,7 +120,7 @@ function NavItem({ href, children, target, rel }) {
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex px-3 text-sm font-medium transition border rounded-full border-zinc-900/10 bg-white/10 text-zinc-600 backdrop-blur-sm hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur dark:hover:text-white">
+      <ul className="flex px-3 text-sm font-medium transition border rounded-full border-zinc-900/10 bg-white/50 text-zinc-700 backdrop-blur-sm hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur dark:hover:text-white">
         <NavItem href="/about">About</NavItem>
         <NavItem href="/articles">Blog</NavItem>
         <NavItem href="/proyectos">Proyectos</NavItem>

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/compat/router'
 import Head from 'next/head'
-import { ArrowLeftIcon } from '@heroicons/react/24/outline'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useSpring } from 'framer-motion'
+import { ArrowLeft } from 'lucide-react'
 import Balancer from 'react-wrap-balancer'
 
 import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
@@ -15,6 +15,13 @@ export function ArticleLayout({
   isRssFeed = false,
   previousPathname,
 }) {
+  const { scrollYProgress } = useScroll()
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  })
+
   const router = useRouter()
 
   if (isRssFeed) {
@@ -61,10 +68,14 @@ export function ArticleLayout({
                 aria-label="Ir atrás al blog"
                 className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0"
               >
-                <ArrowLeftIcon className="w-4 h-4 transition stroke-zinc-500 group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
+                <ArrowLeft className="w-4 h-4 transition stroke-zinc-500 group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
               </button>
             )}
             <article>
+              <motion.div
+                className="fixed top-0 left-0 right-0 z-50 h-1 progress-bar bg-amber-600 dark:bg-amber-500"
+                style={{ scaleX }}
+              />
               <header className="flex flex-col">
                 <motion.h1
                   className="mt-6 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl"

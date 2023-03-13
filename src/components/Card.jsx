@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
+import { ChevronsRight } from 'lucide-react'
 
 import { FADE_IN_ANIMATION_CARD_HOVER } from '@/lib/constants'
 
@@ -61,10 +61,10 @@ Card.Cta = function CardCta({ children }) {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 flex items-center mt-4 text-sm font-medium text-amber-500"
+      className="relative z-10 flex items-center mt-4 text-sm font-medium text-amber-600 dark:text-amber-500"
     >
       {children}
-      <ChevronRightIcon className="w-3 h-3 ml-1 stroke-current" />
+      <ChevronsRight className="w-3 h-3 ml-1 stroke-current" />
     </div>
   )
 }

@@ -12,7 +12,6 @@
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@headlessui/react": "1.7.13",
-    "@heroicons/react": "2.0.16",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
     "@mdx-js/loader": "2.3.0",
     "@mdx-js/react": "2.3.0",
@@ -27,6 +26,7 @@
     "feed": "4.2.2",
     "focus-visible": "5.2.0",
     "framer-motion": "10.2.3",
+    "lucide-react": "^0.125.0",
     "next": "13.2.3",
     "next-sitemap": "4.0.5",
     "next-themes": "^0.2.1",

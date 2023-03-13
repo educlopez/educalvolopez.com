@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import logoAneto from '@/images/logos/aneto.svg'
-import logoDentaid from '@/images/logos/dentaid.svg'
-import logoJane from '@/images/logos/jane.svg'
-import logoNet2phone from '@/images/logos/net2phone.svg'
-import logoTantra from '@/images/logos/tantra.svg'
-import { LinkIcon } from '@heroicons/react/24/outline'
+import logoAneto from '@/images/logos/circle/aneto.svg'
+import logoDentaid from '@/images/logos/circle/dentaid.svg'
+import logoJane from '@/images/logos/circle/jane.svg'
+import logoNet2phone from '@/images/logos/circle/net2phone.svg'
+import logoTantra from '@/images/logos/circle/tantra.svg'
 import { motion } from 'framer-motion'
+import { Link2 } from 'lucide-react'
 
 import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
 import { getPinnedRepos } from '@/lib/github'
@@ -135,25 +135,25 @@ export default function Projects({ pinnedRepos }) {
                 <span className="line-clamp-2">{repo.description}</span>
               </Card.Description>
               <div className="flex gap-4 ">
-                <Button className="z-50 w-full mt-6 group" variant="secondary">
+                <Button className="z-40 w-full mt-6 group" variant="solid">
                   <Link
                     href={repo.url}
                     className="flex items-center"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <LinkIcon className="flex-none w-4 h-4" />
+                    <Link2 className="flex-none w-4 h-4" />
                     <span className="ml-2">Github</span>
                   </Link>
                 </Button>
-                <Button className="z-50 w-full mt-6 group" variant="secondary">
+                <Button className="z-40 w-full mt-6 group" variant="solid">
                   <Link
                     href={repo.homepageUrl}
                     className="flex items-center"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <LinkIcon className="flex-none w-4 h-4" />{' '}
+                    <Link2 className="flex-none w-4 h-4" />{' '}
                     <span className="ml-2">Website</span>
                   </Link>
                 </Button>
@@ -193,14 +193,14 @@ export default function Projects({ pinnedRepos }) {
               </h2>
               <Card.Description>{project.description}</Card.Description>
               <div className="flex gap-4 ">
-                <Button className="z-50 w-full mt-6 group" variant="secondary">
+                <Button className="z-40 w-full mt-6 group" variant="solid">
                   <Link
                     href={project.link.href}
                     className="flex items-center"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <LinkIcon className="flex-none w-4 h-4" />
+                    <Link2 className="flex-none w-4 h-4" />
                     <span className="ml-2">{project.link.label}</span>
                   </Link>
                 </Button>

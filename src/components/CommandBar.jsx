@@ -1,12 +1,6 @@
 import { Fragment, useEffect, useState } from 'react'
 import { Combobox, Dialog, Transition } from '@headlessui/react'
-import {
-  BriefcaseIcon,
-  HomeModernIcon,
-  NewspaperIcon,
-  SparklesIcon,
-  UserCircleIcon,
-} from '@heroicons/react/24/outline'
+import { Briefcase, Home, Newspaper, Star, User } from 'lucide-react'
 
 const projects = [
   { id: 1, name: 'Website Redesign', url: '#' },
@@ -17,26 +11,26 @@ const recent = [projects[0]]
 const quickActions = [
   {
     name: 'Inicio',
-    icon: HomeModernIcon,
+    icon: Home,
     shortcut: 'I',
     url: '/',
   },
   {
     name: 'Saber más sobre mi',
-    icon: UserCircleIcon,
+    icon: User,
     shortcut: 'N',
     url: '/about',
   },
-  { name: 'Ir al blog', icon: NewspaperIcon, shortcut: 'F', url: '/articles' },
+  { name: 'Ir al blog', icon: Newspaper, shortcut: 'F', url: '/articles' },
   {
     name: 'Ver proyectos',
-    icon: BriefcaseIcon,
+    icon: Briefcase,
     shortcut: 'H',
     url: '/proyectos',
   },
   {
     name: 'Recomendaciones',
-    icon: SparklesIcon,
+    icon: Star,
     shortcut: 'L',
     url: '/recomendaciones',
   },

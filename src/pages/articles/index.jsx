@@ -1,7 +1,7 @@
 import { Suspense, useState } from 'react'
 import Head from 'next/head'
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
+import { Search } from 'lucide-react'
 
 import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
 import { formatDate } from '@/lib/formatDate'
@@ -117,7 +117,7 @@ export default function ArticlesIndex({ articles }) {
                 placeholder="Buscar artículos por título o tema"
                 className="block w-full px-4 py-2 border rounded-full border-zinc-900/10 bg-white/10 text-zinc-600 backdrop-blur-sm placeholder:text-zinc-600 hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur placeholder:dark:text-zinc-300 dark:hover:text-white"
               />
-              <MagnifyingGlassIcon className="absolute w-5 h-5 right-3 top-3 text-zinc-900 dark:text-zinc-300" />
+              <Search className="absolute w-5 h-5 right-3 top-3 text-zinc-900 dark:text-zinc-300" />
             </div>
 
             <Suspense fallback={null}>

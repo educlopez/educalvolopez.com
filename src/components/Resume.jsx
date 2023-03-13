@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import logoAdraba from '@/images/logos/adraba.svg'
-import logoBdo from '@/images/logos/bdo.svg'
-import logoCinetic from '@/images/logos/cineticdigital.svg'
-import logoPapayagroup from '@/images/logos/papayagroup.svg'
-import logoTantra from '@/images/logos/tantra.svg'
-import { ArrowDownIcon, BriefcaseIcon } from '@heroicons/react/24/outline'
+import logoAdraba from '@/images/logos/circle/adraba.svg'
+import logoBdo from '@/images/logos/circle/bdo.svg'
+import logoCinetic from '@/images/logos/circle/cineticdigital.svg'
+import logoPapayagroup from '@/images/logos/circle/papayagroup.svg'
+import logoTantra from '@/images/logos/circle/tantra.svg'
+import { Briefcase, Download } from 'lucide-react'
 
 import { Button } from '@/components/Button'
 import { ReadcvIcon } from '@/components/SocialIcons'
@@ -54,7 +54,7 @@ export default function Resume() {
   return (
     <div className="p-6 border rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="flex-none w-6 h-6" />
+        <Briefcase className="flex-none w-6 h-6" />
         <span className="ml-3">Trabajo</span>
       </h2>
       <ol className="mt-6 space-y-4">
@@ -99,22 +99,22 @@ export default function Resume() {
       <div className="flex gap-4">
         <Button
           href="https://read.cv/educlopez"
-          variant="secondary"
+          variant="solid"
           className="w-full mt-6 group"
           target="_blank"
           rel="noopener noreferrer"
         >
           <ReadcvIcon className="w-6 h-6 transition fill-zinc-400 group-active:fill-zinc-600 dark:group-hover:fill-zinc-50 dark:group-active:fill-zinc-50" />
-          Cv online
+          Read.cv
         </Button>
         <Button
           href="eduardo_calvo_lopez_curriculum_vitae.pdf"
-          variant="secondary"
+          variant="solid"
           className="w-full mt-6 group"
           target="_blank"
         >
-          Descargar Cv
-          <ArrowDownIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+          <Download className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+          Descargar cv
         </Button>
       </div>
     </div>

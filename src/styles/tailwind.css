@@ -70,3 +70,21 @@
 [data-rehype-pretty-code-title] + pre {
   @apply mt-0 rounded-t-none border-t-0;
 }
+.transform-gpu {
+  transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1)
+    scaleY(1);
+}
+@layer utilities {
+  .shadow-button-light {
+    box-shadow: 0 0 #0000, 0 0 #0000, inset 0px 1px 0px 0px #fff,
+      0px 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 1px 0px 0px rgba(0, 0, 0, 0.08),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.04), 0px 3px 3px 0px rgba(0, 0, 0, 0.02),
+      0px 4px 4px 0px rgba(0, 0, 0, 0.01);
+  }
+  .shadow-button-dark {
+    box-shadow: 0 0 #0000, 0 0 #0000, inset 0px 1px 0px 0px #27272a,
+      0px 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 1px 0px 0px rgba(0, 0, 0, 0.08),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.04), 0px 3px 3px 0px rgba(0, 0, 0, 0.02),
+      0px 4px 4px 0px rgba(0, 0, 0, 0.01);
+  }
+}
