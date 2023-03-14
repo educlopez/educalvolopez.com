@@ -74,12 +74,12 @@ export default function Resume() {
                 {role.company}
               </dd>
               <dt className="sr-only">Role</dt>
-              <dd className="text-xs text-zinc-600 dark:text-zinc-400">
+              <dd className="text-xs text-zinc-600 dark:text-zinc-300">
                 {role.title}
               </dd>
               <dt className="sr-only">Date</dt>
               <dd
-                className="ml-auto text-xs text-zinc-600 dark:text-zinc-400"
+                className="ml-auto text-xs text-zinc-600 dark:text-zinc-300"
                 aria-label={`${role.start.label ?? role.start} until ${
                   role.end.label ?? role.end
                 }`}
