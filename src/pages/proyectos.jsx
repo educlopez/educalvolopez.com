@@ -139,7 +139,7 @@ export default function Projects({ pinnedRepos }) {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <GitHubIcon className="flex-none w-4 h-4 fill-white" />
+                    <GitHubIcon className="flex-none w-4 h-4 dark:fill-white fill-zinc-900" />
                     <span className="ml-2">Github</span>
                   </Link>
                 </Button>
