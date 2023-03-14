@@ -28,7 +28,7 @@ const projects = [
   {
     name: 'Tantra Spain',
     description:
-      'Website en laravel con catálogo auto gestionable por el cliente',
+      'Website en Laravel con catálogo auto gestionable por el cliente',
     link: { href: 'https://tantraspain.com/', label: 'tantraspain.com' },
     logo: logoTantra,
   },
@@ -42,7 +42,7 @@ const projects = [
   {
     name: 'Janeworld',
     description:
-      'Multitienda online de productos de bebes realziada en Prestashop',
+      'Multitienda online de productos de bebés realizada en Prestashop',
     link: { href: 'https://janeworld.com/', label: 'janeworld.com' },
     logo: logoJane,
   },
@@ -58,6 +58,46 @@ const projects = [
 ]
 
 export default function Projects({ pinnedRepos }) {
+  const sideprojects = pinnedRepos.map((repo, index) => {
+    let descriptionEs = ''
+    switch (index % 6) {
+      case 0:
+        descriptionEs =
+          'Sitio web en NextJS y Tailwind, uso de la API de TMDB para mostrar diferentes colecciones de películas y series. El proyecto todavía está en desarrollo'
+        break
+      case 1:
+        descriptionEs =
+          'Portafolio hecho con NextJS, Tailwindcss, MDX y varios experimentos'
+        break
+      case 2:
+        descriptionEs =
+          'Proyecto realizado con remix.run y usando Suppabase para crear un chat. Para los estilos, se está utilizando Tailwindcss.'
+        break
+      case 3:
+        descriptionEs =
+          'Gamedev es un proyecto donde agregaré minijuegos a medida que aprenda React, Nextjs, y posiblemente migraré de JavaScript a TypeScript. Todos los comentarios y consejos para mejorar el código son bienvenidos.'
+        break
+      case 4:
+        descriptionEs =
+          'Generador de recetas con co:here, pasando ciertos parametros el prompt se completa y devuelve una receta con los ingredientes y pasos a seguir'
+        break
+      case 5:
+        descriptionEs =
+          '¡Descubre su guardarropa como nunca antes con Wardrobeme! Sube una imagen de tu ropa y deja que la api de cloudinary detecte elementos y colores individuales en la imagen.'
+        break
+      default:
+        break
+    }
+
+    return {
+      name: repo.name,
+      openGraphImageUrl: repo.openGraphImageUrl,
+      description: repo.description,
+      url: repo.url,
+      homepageUrl: repo.homepageUrl,
+      miCampo: descriptionEs,
+    }
+  })
   return (
     <>
       <Head>
@@ -111,7 +151,7 @@ export default function Projects({ pinnedRepos }) {
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {pinnedRepos.map((repo) => (
+          {sideprojects.map((repo) => (
             <Card as="li" key={repo.name}>
               <div className="relative z-10 flex items-center justify-center w-full bg-white shadow-md rounded-xl shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image
@@ -124,12 +164,16 @@ export default function Projects({ pinnedRepos }) {
                 />
               </div>
               <h2 className="z-10 mt-6 text-base font-semibold text-zinc-900 dark:text-white">
-                <Link href={repo.url} target="_blank" rel="noopener noreferrer">
+                <Card.Link
+                  href={repo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {repo.name}
-                </Link>
+                </Card.Link>
               </h2>
               <Card.Description>
-                <span className="line-clamp-2">{repo.description}</span>
+                <span className="line-clamp-2">{repo.miCampo}</span>
               </Card.Description>
               <div className="z-30 flex gap-4">
                 <Button className="z-40 w-full mt-6 group" variant="solid">
