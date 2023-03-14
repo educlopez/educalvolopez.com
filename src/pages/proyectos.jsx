@@ -15,6 +15,7 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import Clients from '@/components/Clients'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import { GitHubIcon } from '@/components/SocialIcons'
 
 const projects = [
   {
@@ -122,34 +123,30 @@ export default function Projects({ pinnedRepos }) {
                   unoptimized
                 />
               </div>
-              <h2 className="mt-6 text-base font-semibold text-zinc-900 dark:text-white">
-                <Card.Link
-                  href={repo.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              <h2 className="z-10 mt-6 text-base font-semibold text-zinc-900 dark:text-white">
+                <Link href={repo.url} target="_blank" rel="noopener noreferrer">
                   {repo.name}
-                </Card.Link>
+                </Link>
               </h2>
               <Card.Description>
                 <span className="line-clamp-2">{repo.description}</span>
               </Card.Description>
-              <div className="flex gap-4 ">
+              <div className="z-30 flex gap-4">
                 <Button className="z-40 w-full mt-6 group" variant="solid">
                   <Link
                     href={repo.url}
-                    className="flex items-center"
+                    className="z-50 flex items-center"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Link2 className="flex-none w-4 h-4" />
+                    <GitHubIcon className="flex-none w-4 h-4 fill-white" />
                     <span className="ml-2">Github</span>
                   </Link>
                 </Button>
                 <Button className="z-40 w-full mt-6 group" variant="solid">
                   <Link
                     href={repo.homepageUrl}
-                    className="flex items-center"
+                    className="z-50 flex items-center"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -196,7 +193,7 @@ export default function Projects({ pinnedRepos }) {
                 <Button className="z-40 w-full mt-6 group" variant="solid">
                   <Link
                     href={project.link.href}
-                    className="flex items-center"
+                    className="z-50 flex items-center"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -20,32 +20,28 @@ import {
 function SocialLink({ className, href, children, icon: Icon, outline }) {
   return (
     <li className={clsx(className, 'flex')}>
-      <div className="relative group">
-        <div className="absolute z-10 flex items-center justify-center w-full h-full transition-all translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
-          <p className="font-semibold cursor-pointer text-zinc-700 dark:text-white">
-            {children}
-          </p>
-          <div className="relative flex items-center group">
-            <ArrowUpRight className="absolute w-4 h-4 transition-all opacity-0 group-hover:translate-x-1 group-hover:opacity-100" />
+      <Link href={href} rel="noopener noreferrer" target="_blank" className="">
+        <div className="relative group">
+          <div className="absolute z-10 flex items-center justify-center w-full h-full transition-all translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+            <p className="font-semibold cursor-pointer text-zinc-700 dark:text-white">
+              {children}
+            </p>
+            <div className="relative flex items-center group">
+              <ArrowUpRight className="absolute w-4 h-4 transition-all opacity-0 group-hover:translate-x-1 group-hover:opacity-100" />
+            </div>
+          </div>
+          <div className="flex text-sm font-medium transition-all group text-zinc-600 dark:text-zinc-400 group-hover:opacity-20 group-hover:blur-sm sm:h-7 blur-0 grayscale-0">
+            {outline ? (
+              <Icon className="flex-none w-6 h-6 transition outline-zinc-700 group-hover:outline-zinc-600 dark:outline-zinc-400 dark:group-hover:outline-zinc-300" />
+            ) : (
+              <Icon className="flex-none w-6 h-6 transition fill-zinc-700 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+            )}
+            <span className="ml-4 group-hover:text-zinc-600 dark:group-hover:text-zinc-300">
+              {children}
+            </span>
           </div>
         </div>
-
-        <Link
-          href={href}
-          rel="noopener noreferrer"
-          target="_blank"
-          className="flex text-sm font-medium transition-all group text-zinc-600 dark:text-zinc-400 group-hover:opacity-20 group-hover:blur-sm sm:h-7 blur-0 grayscale-0"
-        >
-          {outline ? (
-            <Icon className="flex-none w-6 h-6 transition outline-zinc-700 group-hover:outline-zinc-600 dark:outline-zinc-400 dark:group-hover:outline-zinc-300" />
-          ) : (
-            <Icon className="flex-none w-6 h-6 transition fill-zinc-700 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-          )}
-          <span className="ml-4 group-hover:text-zinc-600 dark:group-hover:text-zinc-300">
-            {children}
-          </span>
-        </Link>
-      </div>
+      </Link>
     </li>
   )
 }
