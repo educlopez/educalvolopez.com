@@ -41,7 +41,7 @@ export default function SocialLinks({}) {
           </div>
         </div>
         <SocialLink
-          href="https://instagram.com/educlopez93"
+          href="https://instagram.com/edui_design/"
           rel="noopener noreferrer"
           target="_blank"
           aria-label="Follow on Instagram"

@@ -144,7 +144,7 @@ export default function About() {
                 Seguir en Twitter
               </SocialLink>
               <SocialLink
-                href="https://instagram.com/educlopez93"
+                href="https://instagram.com/edui_design/"
                 icon={InstagramIcon}
                 className="mt-4"
               >
