@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
 import useSWR from 'swr'
 
 import fetcher from '@/lib/fetcher'
@@ -43,7 +42,6 @@ Song.Album = function SongAlbum({ album, albumImageUrl }) {
       height="64"
       alt={album}
       src={albumImageUrl}
-      unoptimized
       className="object-cover rounded-md aspect-square"
     />
   )
