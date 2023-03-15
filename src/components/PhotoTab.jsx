@@ -1,8 +1,8 @@
 import { Fragment } from 'react'
 import Image from 'next/image'
-import arenImage from '@/images/aren.png'
-import asturiasImage from '@/images/asturias.png'
-import portraitImage from '@/images/portrait.png'
+import arenImage from '@/images/aren.jpg'
+import asturiasImage from '@/images/asturias.jpg'
+import portraitImage from '@/images/portrait.jpg'
 import { Tab } from '@headlessui/react'
 import { Dog, Map as MapIcon, User } from 'lucide-react'
 

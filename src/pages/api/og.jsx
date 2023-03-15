@@ -28,7 +28,7 @@ export default async function handler(req) {
             flexDirection: 'column',
             alignItems: 'flex-start',
             justifyContent: 'center',
-            backgroundImage: 'url(https://educalvolopez.com/og-bg.png)',
+            backgroundImage: 'url(https://educalvolopez.com/og-bg.jpg)',
           }}
         >
           <div
