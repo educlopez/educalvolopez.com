@@ -439,8 +439,7 @@ export default function Uses() {
           >
             Cuadricula
           </Switch>
-
-          <div className="flex items-center justify-center gap-3 pl-3 border-l-[1px] felx-col text-zinc-600 dark:text-zinc-400 border-zinc-300/30">
+          <div className="flex items-start md:items-center justify-center gap-3 pl-3 border-l-[1px] flex-col md:flex-row text-zinc-600 dark:text-zinc-400 border-zinc-300/30">
             <div className="grid items-center grid-flow-col gap-1">
               <div className="inline-flex items-center px-1 py-1 text-xs font-semibold rounded-full pointer-events-auto bg-zinc-100/40 backdrop-blur dark:border dark:border-white/10 dark:bg-zinc-900/20">
                 <div className="flex items-center justify-center w-3 h-3">
