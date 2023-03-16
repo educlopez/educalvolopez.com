@@ -32,6 +32,7 @@ import {
   FADE_IN_ANIMATION_CARD_HOVER,
 } from '@/lib/constants'
 import { Card } from '@/components/Card'
+import { Pill } from '@/components/Pill'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
@@ -42,6 +43,7 @@ const stacks = [
     link: 'https://amzn.to/3hp6Dxj',
     info: 'Utilizo este ordenador todos los días para programar, diseñar y para uso personal. Su diseño es bonito y funcional. La duración de la batería es excelente y me encantan los teclados retroiluminados.',
     img: imgMacbook,
+    pills: [{ name: 'affiliate' }],
   },
   {
     type: 'workstation',
@@ -49,6 +51,7 @@ const stacks = [
     link: 'https://amzn.to/3zWYZ3B',
     info: 'Lo uso como pantalla secundaria para el MacBook y para usar procreate y mejorar la productividad en el trabajo. El iPad Air 4th es extremadamente fácil de usar y disfruto viendo películas en él o escuchando música.',
     img: imgIpadair,
+    pills: [{ name: 'affiliate' }],
   },
   {
     type: 'workstation',
@@ -56,6 +59,7 @@ const stacks = [
     link: 'https://amzn.to/3zWCgER',
     info: 'El LG 27UL650-W es un gran monitor, con una resolución 4K UHD y una excelente reproducción del color. La pantalla es compatible con el MacBook Pro (modelo de 15 pulgadas), pero se verá muy bien en cualquier otro lugar.',
     img: imgLgmonitor,
+    pills: [{ name: 'affiliate' }],
   },
   {
     type: 'workstation',
@@ -63,6 +67,7 @@ const stacks = [
     link: 'https://amzn.to/3EbTrVs',
     info: 'Gran teclado para trabajar en casa, de viaje o en cualquier lugar de trabajo. Funciona con una gran variedad de dispositivos y ordenadores, lo que lo hace muy flexible.',
     img: imgLogitechteclado,
+    pills: [{ name: 'affiliate' }],
   },
   {
     type: 'developer',
@@ -175,6 +180,7 @@ const stacks = [
     link: 'https://go.setapp.com/invite/vti9ximz',
     info: 'Utilizo Setapp porque es una plataforma de suscripción que me permite acceder a una amplia variedad de aplicaciones de productividad y creatividad de forma fácil y conveniente. No tengo que preocuparme por comprar y descargar cada aplicación individualmente ni por pagar licencias separadas.',
     img: imgSetapp,
+    pills: [{ name: 'affiliate' }],
   },
   {
     type: 'developer',
@@ -189,6 +195,7 @@ const stacks = [
     link: 'https://amzn.to/3yvGQsy',
     info: 'Mi teclado principal este 2023, es un teclado mecánico con switches rojos, es muy cómodo y tiene un diseño muy bonito. Lo uso para programar y para jugar. ',
     img: imgOzone,
+    pills: [{ name: 'affiliate' }, { name: 'new' }],
   },
 ]
 
@@ -221,9 +228,16 @@ function ToolsSectionGrid({ children, title }) {
   )
 }
 
-function Toollist({ title, href, children }) {
+function Toollist({ title, href, children, pills }) {
   return (
     <Card as="li">
+      {pills && (
+        <div className="inline-flex flex-wrap gap-2 mb-2">
+          {pills.map((pill) => (
+            <Pill key={pill.name} variant={pill.name} />
+          ))}
+        </div>
+      )}
       <Card.Title as="h3" href={href} rel="noopener noreferrer" target="_blank">
         {title}
       </Card.Title>
@@ -231,7 +245,7 @@ function Toollist({ title, href, children }) {
     </Card>
   )
 }
-function Toolgrid({ title, href, img, children }) {
+function Toolgrid({ title, href, img, children, pills }) {
   return (
     <li className="relative">
       <motion.div
@@ -258,6 +272,13 @@ function Toolgrid({ title, href, img, children }) {
         <p className="block my-2 text-sm font-medium text-center truncate pointer-events-none text-zinc-900 dark:text-white">
           {children}
         </p>
+        {pills && (
+          <div className="absolute inline-flex items-center justify-between gap-2 inset-x-1 top-1 ">
+            {pills.map((pill) => (
+              <Pill key={pill.name} variant={pill.name} />
+            ))}
+          </div>
+        )}
       </motion.div>
     </li>
   )
@@ -427,6 +448,7 @@ export default function Uses() {
                   title={stack.title}
                   href={stack.link}
                   key={stack.title}
+                  pills={stack.pills}
                 >
                   {stack.info}
                 </Toollist>
@@ -438,6 +460,7 @@ export default function Uses() {
                   title={stack.title}
                   href={stack.link}
                   key={stack.title}
+                  pills={stack.pills}
                 >
                   {stack.info}
                 </Toollist>
@@ -449,6 +472,7 @@ export default function Uses() {
                   title={stack.title}
                   href={stack.link}
                   key={stack.title}
+                  pills={stack.pills}
                 >
                   {stack.info}
                 </Toollist>
@@ -460,6 +484,7 @@ export default function Uses() {
                   title={stack.title}
                   href={stack.link}
                   key={stack.title}
+                  pills={stack.pills}
                 >
                   {stack.info}
                 </Toollist>
@@ -475,6 +500,7 @@ export default function Uses() {
                   href={stack.link}
                   key={stack.title}
                   img={stack.img}
+                  pills={stack.pills}
                 >
                   {stack.title}
                 </Toolgrid>
@@ -487,6 +513,7 @@ export default function Uses() {
                   href={stack.link}
                   key={stack.title}
                   img={stack.img}
+                  pills={stack.pills}
                 >
                   {stack.title}
                 </Toolgrid>
@@ -499,6 +526,7 @@ export default function Uses() {
                   href={stack.link}
                   key={stack.title}
                   img={stack.img}
+                  pills={stack.pills}
                 >
                   {stack.title}
                 </Toolgrid>
@@ -511,6 +539,7 @@ export default function Uses() {
                   href={stack.link}
                   key={stack.title}
                   img={stack.img}
+                  pills={stack.pills}
                 >
                   {stack.title}
                 </Toolgrid>
