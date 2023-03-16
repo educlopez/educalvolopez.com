@@ -3,30 +3,31 @@ import clsx from 'clsx'
 const variantStyles = {
   new: [
     {
-      style:
-        'bg-emerald-100/50 text-emerald-700 ring-1 ring-inset ring-emerald-700/90 hover:text-emerald-900 hover:ring-emerald-900 dark:bg-emerald-400/10 dark:text-emerald-400  dark:ring-emerald-400/20 dark:hover:bg-emerald-400/10 dark:hover:text-emerald-300 dark:hover:ring-emerald-300',
+      style: 'bg-red-500',
       name: 'nuevo',
     },
   ],
   affiliate: [
     {
-      style:
-        'bg-amber-100/50  text-amber-700 ring-1 ring-inset ring-amber-700/90 hover:text-amber-900 hover:ring-amber-900 dark:bg-amber-400/10 dark:text-amber-400  dark:ring-amber-400/20 dark:hover:bg-amber-400/10 dark:hover:text-amber-300 dark:hover:ring-amber-300',
+      style: 'bg-orange-400 animate-none',
       name: 'afiliado',
     },
   ],
 }
 
-export function Pill({ variant = 'new', className, ...props }) {
-  className = clsx(
-    'transition flex-inline select-none items-center justify-center rounded-full py-1 px-3  text-[9px] font-semibold uppercase tracking-wide',
-    variantStyles[variant][0].style,
-    className
-  )
+export function Pill({ variant = 'new', className }) {
+  className = clsx(variantStyles[variant][0].style)
 
   return (
-    <span className={className} {...props}>
-      {variantStyles[variant][0].name}
-    </span>
+    <div className="items-center hidden px-1 py-1 text-xs font-semibold rounded-full pointer-events-auto bg-zinc-100/40 text-zinc-900 backdrop-blur dark:border dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-100 sm:inline-flex">
+      <div className="flex items-center justify-center w-3 h-3">
+        <span
+          className={`absolute inline-flex w-2 h-2 rounded-full opacity-75 animate-ping  ${className}`}
+        ></span>
+        <span
+          className={`relative inline-flex w-2 h-2 rounded-full ${className}`}
+        ></span>
+      </div>
+    </div>
   )
 }
