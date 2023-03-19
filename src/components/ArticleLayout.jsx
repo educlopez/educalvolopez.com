@@ -40,7 +40,7 @@ export function ArticleLayout({
         />
         <meta
           property="og:url"
-          content={`https://educalvolopez.com/articles/${meta.slug}`}
+          content={`https://educalvolopez.com/blog/${meta.slug}`}
         />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={`${meta.title} - Edu Calvo`} />
@@ -49,7 +49,7 @@ export function ArticleLayout({
         <meta property="twitter:domain" content="educalvolopez.com" />
         <meta
           property="twitter:url"
-          content={`https://educalvolopez.com/articles/${meta.slug}`}
+          content={`https://educalvolopez.com/blog/${meta.slug}`}
         />
         <meta name="twitter:title" content={`${meta.title} - Edu Calvo`} />
         <meta name="twitter:description" content={meta.description} />

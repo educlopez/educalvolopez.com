@@ -21,7 +21,7 @@ const quickActions = [
     shortcut: 'N',
     url: '/about',
   },
-  { name: 'Ir al blog', icon: Newspaper, shortcut: 'F', url: '/articles' },
+  { name: 'Ir al blog', icon: Newspaper, shortcut: 'F', url: '/blog' },
   {
     name: 'Ver proyectos',
     icon: Briefcase,

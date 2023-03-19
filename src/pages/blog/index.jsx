@@ -13,9 +13,7 @@ function Article({ article }) {
   return (
     <motion.article className="md:grid md:grid-cols-4 md:items-baseline" layout>
       <Card className="md:col-span-3">
-        <Card.Title href={`/articles/${article.slug}`}>
-          {article.title}
-        </Card.Title>
+        <Card.Title href={`/blog/${article.slug}`}>{article.title}</Card.Title>
         <Card.Eyebrow
           as="time"
           dateTime={article.date}
@@ -73,7 +71,7 @@ export default function ArticlesIndex({ articles }) {
           name="keywords"
           content="diseño de interfaces, programación, hobbies, escritura, perfil LinkedIn"
         />
-        <meta property="og:url" content="https://educalvolopez.com/articles" />
+        <meta property="og:url" content="https://educalvolopez.com/blog" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Blog - Edu Calvo" />
         <meta
@@ -86,10 +84,7 @@ export default function ArticlesIndex({ articles }) {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="educalvolopez.com" />
-        <meta
-          property="twitter:url"
-          content="https://educalvolopez.com/articles"
-        />
+        <meta property="twitter:url" content="https://educalvolopez.com/blog" />
         <meta name="twitter:title" content="Blog - Edu Calvo" />
         <meta
           name="twitter:description"
