@@ -8,7 +8,7 @@ import { getAllArticles } from '@/lib/getAllArticles'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import Resume from '@/components/Resume'
-import SocialLinks from '@/components/SocialLinks'
+import { SocialLinks } from '@/components/SocialLinks'
 
 function Article({ article }) {
   return (

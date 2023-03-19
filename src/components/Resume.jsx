@@ -1,56 +1,11 @@
 import Image from 'next/image'
-import logoAdraba from '@/images/logos/circle/adraba.svg'
-import logoBdo from '@/images/logos/circle/bdo.svg'
-import logoCinetic from '@/images/logos/circle/cineticdigital.svg'
-import logoPapayagroup from '@/images/logos/circle/papayagroup.svg'
-import logoTantra from '@/images/logos/circle/tantra.svg'
+import { resume } from '@/data/resume'
 import { Briefcase, Download } from 'lucide-react'
 
 import { Button } from '@/components/Button'
 import { ReadcvIcon } from '@/components/SocialIcons'
 
 export default function Resume() {
-  let resume = [
-    {
-      company: 'Cinetic Digital',
-      title: 'Diseñador Web y Frontend',
-      logo: logoCinetic,
-      start: '2021',
-      end: {
-        label: 'Presente',
-        dateTime: new Date().getFullYear(),
-      },
-    },
-    {
-      company: 'Ádraba',
-      title: 'Diseñador Gráfico y Desarrollador Web',
-      logo: logoAdraba,
-      start: '2018',
-      end: '2021',
-    },
-    {
-      company: 'Tantra',
-      title: 'Diseñador Gráfico y Maquetador web',
-      logo: logoTantra,
-      start: '2015',
-      end: '2019',
-    },
-    {
-      company: 'BDO',
-      title: 'Diseñador en Marketing y comunicación',
-      logo: logoBdo,
-      start: '2016',
-      end: '2017',
-    },
-    {
-      company: 'Papaya Group',
-      title: 'Diseñador Gráfico',
-      logo: logoPapayagroup,
-      start: '2014',
-      end: '2014',
-    },
-  ]
-
   return (
     <div className="p-6 border rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
