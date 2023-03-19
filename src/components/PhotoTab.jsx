@@ -54,7 +54,7 @@ export function Phototab() {
             <AnimatePresence>
               {hoveredIndex === index && (
                 <motion.span
-                  className="absolute inset-0 transition-colors bg-zinc-500/30 rounded-2xl "
+                  className="absolute inset-0 transition-colors bg-zinc-500/30 dark:bg-zinc-900/30 rounded-2xl "
                   layoutId="hoverBackground"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1, transition: { duration: 0.15 } }}
@@ -68,7 +68,7 @@ export function Phototab() {
             {index === selectedIndex && (
               <motion.div
                 layoutId="activeBackground"
-                className="absolute inset-0 bg-zinc-100"
+                className="absolute inset-0 bg-zinc-100 dark:bg-zinc-800"
                 initial={{ borderRadius: 16 }}
               />
             )}
