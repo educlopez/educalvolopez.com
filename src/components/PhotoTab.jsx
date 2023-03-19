@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import arenImage from '@/images/aren.jpg'
 import asturiasImage from '@/images/asturias.jpg'
 import portraitImage from '@/images/portrait.jpg'
 import { Tab } from '@headlessui/react'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Dog, Map as MapIcon, User } from 'lucide-react'
 import { useDebouncedCallback } from 'use-debounce'
 
@@ -28,7 +28,7 @@ const tabs = [
 
 export function Phototab() {
   let [selectedIndex, setSelectedIndex] = useState(0)
-
+  let [hoveredIndex, setHoveredIndex] = useState(null)
   let onChange = useDebouncedCallback(
     (selectedIndex) => {
       setSelectedIndex(selectedIndex)
@@ -47,8 +47,24 @@ export function Phototab() {
         {tabs.map((tab, index) => (
           <div
             key={index}
-            className="relative transition-colors rounded-2xl hover:bg-zinc-700/30"
+            className="relative "
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
+            <AnimatePresence>
+              {hoveredIndex === index && (
+                <motion.span
+                  className="absolute inset-0 transition-colors bg-zinc-500/30 rounded-2xl "
+                  layoutId="hoverBackground"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 0.15 } }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.15, delay: 0.2 },
+                  }}
+                />
+              )}
+            </AnimatePresence>
             {index === selectedIndex && (
               <motion.div
                 layoutId="activeBackground"
