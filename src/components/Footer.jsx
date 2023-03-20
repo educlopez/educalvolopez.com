@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { footerLinks } from '@/data/footer'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
 import { Container } from '@/components/Container'
@@ -26,18 +28,16 @@ export function Footer() {
           <Container.Inner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <div className="flex flex-wrap justify-center gap-6 text-sm font-medium text-zinc-700 dark:text-zinc-300 md:justify-start ">
-                <NavLink href="/about">About</NavLink>
-                <NavLink href="/blog">Blog</NavLink>
-                <NavLink href="/proyectos">Proyectos</NavLink>
-                <NavLink href="/recomendaciones">Recomendaciones</NavLink>
-                <NavLink
-                  href="https://shop.educalvolopez.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tienda
-                </NavLink>
-                <NavLink href="/rss/feed.xml">Rss</NavLink>
+                {footerLinks.map((link) => (
+                  <NavLink
+                    key={link.href}
+                    href={link.href}
+                    target={link.target === '_blank' ? '_blank' : 'self '}
+                    rel={link.target === '_blank' ? 'noopener noreferrer' : ''}
+                  >
+                    {link.label}
+                  </NavLink>
+                ))}
               </div>
               <span className="inline-flex items-center px-2 py-0 ml-2 text-xs font-semibold border rounded-md pointer-events-auto border-zinc-200 bg-white/10 text-zinc-900 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-100 dark:backdrop-blur sm:hidden">
                 <span className="mr-1.5 flex h-3 w-3 items-center">

@@ -19,7 +19,7 @@ export default function Resume() {
               <Image
                 src={role.logo}
                 alt={role.title}
-                className="h-7 w-7"
+                className="w-10 h-10"
                 unoptimized
               />
             </div>
@@ -59,7 +59,7 @@ export default function Resume() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <ReadcvIcon className="w-6 h-6 transition fill-zinc-400 group-active:fill-zinc-600 dark:group-hover:fill-zinc-50 dark:group-active:fill-zinc-50" />
+          <ReadcvIcon className="w-6 h-6 transition fill-zinc-600 dark:fill-zinc-600 group-active:fill-zinc-900 group-hover:fill-zinc-900 dark:group-hover:fill-zinc-100 dark:group-active:fill-zinc-50" />
           Read.cv
         </Button>
         <Button
@@ -68,7 +68,7 @@ export default function Resume() {
           className="w-full mt-6 group"
           target="_blank"
         >
-          <Download className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+          <Download className="w-4 h-4 transition stroke-zinc-600 dark:stroke-zinc-600 group-active:stroke-zinc-900 group-hover:stroke-zinc-900 dark:group-hover:stroke-zinc-100 dark:group-active:stroke-zinc-50" />
           Descargar cv
         </Button>
       </div>

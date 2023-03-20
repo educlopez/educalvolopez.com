@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import { projects } from '@/data/projects'
 import { motion } from 'framer-motion'
 import { Link2 } from 'lucide-react'
@@ -132,27 +131,25 @@ export default function Projects({ pinnedRepos }) {
                 <span className="line-clamp-2">{repo.miCampo}</span>
               </Card.Description>
               <div className="z-30 flex gap-4">
-                <Button className="z-40 w-full mt-6 group" variant="solid">
-                  <Link
-                    href={repo.url}
-                    className="z-50 flex items-center"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <GitHubIcon className="flex-none w-4 h-4 dark:fill-white fill-zinc-900" />
-                    <span className="ml-2">Github</span>
-                  </Link>
+                <Button
+                  className="z-40 flex items-center w-full mt-6 group"
+                  href={repo.url}
+                  variant="solid"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GitHubIcon className="w-4 h-4 transition fill-zinc-600 dark:fill-zinc-600 group-active:fill-zinc-900 group-hover:fill-zinc-900 dark:group-hover:fill-zinc-100 dark:group-active:fill-zinc-50" />
+                  <span className="ml-2">Github</span>
                 </Button>
-                <Button className="z-40 w-full mt-6 group" variant="solid">
-                  <Link
-                    href={repo.homepageUrl}
-                    className="z-50 flex items-center"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Link2 className="flex-none w-4 h-4" />{' '}
-                    <span className="ml-2">Website</span>
-                  </Link>
+                <Button
+                  className="z-40 flex items-center w-full mt-6 group"
+                  href={repo.homepageUrl}
+                  variant="solid"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Link2 className="w-4 h-4 transition stroke-zinc-600 dark:stroke-zinc-600 group-active:stroke-zinc-900 group-hover:stroke-zinc-900 dark:group-hover:stroke-zinc-100 dark:group-active:stroke-zinc-50" />{' '}
+                  <span className="ml-2">Website</span>
                 </Button>
               </div>
             </Card>
@@ -175,7 +172,7 @@ export default function Projects({ pinnedRepos }) {
                 <Image
                   src={project.logo}
                   alt={project.name}
-                  className="w-8 h-8"
+                  className="w-12 h-12"
                   unoptimized
                 />
               </div>
@@ -190,16 +187,15 @@ export default function Projects({ pinnedRepos }) {
               </h2>
               <Card.Description>{project.description}</Card.Description>
               <div className="flex gap-4 ">
-                <Button className="z-40 w-full mt-6 group" variant="solid">
-                  <Link
-                    href={project.link.href}
-                    className="z-50 flex items-center"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Link2 className="flex-none w-4 h-4" />
-                    <span className="ml-2">{project.link.label}</span>
-                  </Link>
+                <Button
+                  className="z-40 flex items-center w-full mt-6 group"
+                  href={project.link.href}
+                  variant="solid"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Link2 className="w-4 h-4 transition stroke-zinc-600 dark:stroke-zinc-600 group-active:stroke-zinc-900 group-hover:stroke-zinc-900 dark:group-hover:stroke-zinc-100 dark:group-active:stroke-zinc-50" />
+                  <span className="ml-2">{project.link.label}</span>
                 </Button>
               </div>
             </Card>
