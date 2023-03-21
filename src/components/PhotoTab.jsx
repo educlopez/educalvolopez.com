@@ -38,12 +38,12 @@ export function Phototab() {
   )
   return (
     <Tab.Group
-      className="relative"
+      className="relative overflow-hidden group"
       as="div"
       selectedIndex={selectedIndex}
       onChange={onChange}
     >
-      <Tab.List className="absolute left-0 right-0 flex flex-row items-center justify-between w-40 px-3 py-2 mx-auto text-sm font-medium transition border rounded-full lef-0 bottom-2 border-zinc-900/10 bg-white/50 text-zinc-700 backdrop-blur-sm hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur dark:hover:text-white">
+      <Tab.List className="absolute left-0 right-0 flex flex-row items-center justify-between w-40 px-3 py-2 mx-auto text-sm font-medium transition border rounded-full md:translate-y-20 md:group-hover:-translate-y-4 lef-0 bottom-2 border-zinc-900/10 bg-white/50 text-zinc-700 backdrop-blur-sm hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur dark:hover:text-white ring-1 ring-zinc-100/70">
         {tabs.map((tab, index) => (
           <div
             key={index}

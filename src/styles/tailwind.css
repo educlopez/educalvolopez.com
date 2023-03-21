@@ -2,11 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.bg-custom-gradient {
-  background-image: url('../images/gradient.svg');
-  background-repeat: no-repeat;
-  background-position: top center;
-}
 ::selection {
   background-color: rgba(245, 158, 11, 0.7);
   color: #fefefe;

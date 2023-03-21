@@ -1,11 +1,12 @@
-import { Fragment, useEffect, useRef } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { generalLinks } from '@/data/links'
 import avatarImage from '@/images/avatar.jpg'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDown, X } from 'lucide-react'
 
 import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
@@ -70,19 +71,22 @@ function MobileNavigation(props) {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 text-base divide-y divide-zinc-100 text-zinc-600 dark:divide-zinc-100/5 dark:text-zinc-400">
-                <MobileNavItem href="/about">About</MobileNavItem>
-                <MobileNavItem href="/blog">Blog</MobileNavItem>
-                <MobileNavItem href="/proyectos">Proyectos</MobileNavItem>
-                <MobileNavItem href="/recomendaciones">
-                  Recomendaciones
-                </MobileNavItem>
-                <MobileNavItem
-                  href="https://shop.educalvolopez.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tienda
-                </MobileNavItem>
+                {generalLinks.map((link, index) => {
+                  if (index !== 5) {
+                    return (
+                      <MobileNavItem
+                        key={index}
+                        href={link.href}
+                        target={link.target}
+                        rel={
+                          link.target === '_blank' ? 'noopener noreferrer' : ''
+                        }
+                      >
+                        {link.label}
+                      </MobileNavItem>
+                    )
+                  }
+                })}
               </ul>
             </nav>
           </Popover.Panel>
@@ -92,7 +96,7 @@ function MobileNavigation(props) {
   )
 }
 
-function NavItem({ href, children, target, rel }) {
+function NavItem({ href, children, target, rel, onMouseEnter, onMouseLeave }) {
   let isActive = useRouter().pathname === href
 
   return (
@@ -102,11 +106,13 @@ function NavItem({ href, children, target, rel }) {
         rel={rel}
         href={href}
         className={clsx(
-          'relative block px-3 py-2 transition',
+          'relative block px-3  transition',
           isActive
             ? 'text-amber-600 dark:text-amber-400'
             : 'hover:text-amber-600 dark:hover:text-amber-400'
         )}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
       >
         {children}
         {isActive && (
@@ -118,20 +124,43 @@ function NavItem({ href, children, target, rel }) {
 }
 
 function DesktopNavigation(props) {
+  let [hoveredIndex, setHoveredIndex] = useState(null)
   return (
     <nav {...props}>
-      <ul className="flex px-3 text-sm font-medium transition border rounded-full border-zinc-900/10 bg-white/50 text-zinc-700 backdrop-blur-sm hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur dark:hover:text-white">
-        <NavItem href="/about">About</NavItem>
-        <NavItem href="/blog">Blog</NavItem>
-        <NavItem href="/proyectos">Proyectos</NavItem>
-        <NavItem href="/recomendaciones">Recomendaciones</NavItem>
-        <NavItem
-          href="https://shop.educalvolopez.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Tienda
-        </NavItem>
+      <ul className="flex px-3 py-2 text-sm font-medium transition border rounded-full border-zinc-900/10 bg-white/50 text-zinc-700 backdrop-blur-sm hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur dark:hover:text-white">
+        {generalLinks.map((link, index) => {
+          if (index !== 5) {
+            return (
+              <NavItem
+                key={index}
+                href={link.href}
+                target={link.target}
+                rel={link.target === '_blank' ? 'noopener noreferrer' : ''}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {link.label}
+                <AnimatePresence>
+                  {hoveredIndex === index && (
+                    <motion.span
+                      className="absolute inset-0 transition-colors rounded-md -z-10 bg-zinc-100 dark:bg-zinc-700/50"
+                      layoutId="hoverBackground"
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: 1,
+                        transition: { duration: 0.15 },
+                      }}
+                      exit={{
+                        opacity: 0,
+                        transition: { duration: 0.15, delay: 0.2 },
+                      }}
+                    />
+                  )}
+                </AnimatePresence>
+              </NavItem>
+            )
+          }
+        })}
       </ul>
     </nav>
   )

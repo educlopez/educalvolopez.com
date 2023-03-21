@@ -3,7 +3,7 @@ import clsx from 'clsx'
 const variantStyles = {
   new: [
     {
-      style: 'bg-red-500',
+      style: 'bg-red-600',
       name: 'nuevo',
     },
   ],

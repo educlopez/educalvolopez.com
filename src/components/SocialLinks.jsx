@@ -1,86 +1,41 @@
 import Link from 'next/link'
+import { linksSocial } from '@/data/links'
 import clsx from 'clsx'
-import { ArrowUpRight, Send } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 
-import {
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  ReadcvIcon,
-  TwitterIcon,
-} from '@/components/SocialIcons'
-
-function SocialLink({ icon: Icon, ...props }) {
+function SocialLink({ icon: Icon, outline, ...props }) {
   return (
     <Link className="p-1 -m-1 group" {...props}>
-      <Icon className="w-6 h-6 transition fill-zinc-600 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+      {outline ? (
+        <Icon className="w-6 h-6 stroke-[1.5px] transition text-zinc-600 group-hover:text-zinc-600 dark:text-zinc-400 dark:group-hover:text-outline-300 outline-zinc-600 group-hover:outline-zinc-600 dark:outline-zinc-400 dark:group-hover:text-zinc-300" />
+      ) : (
+        <Icon className="w-6 h-6 transition fill-zinc-600 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+      )}
     </Link>
   )
 }
 
 export function SocialLinks({}) {
   return (
-    <div className="flex gap-6 mt-6 ">
-      <div className="relative group">
-        <div className="transition-all translate-y-5 opacity-0 group-hover:translate-y-3 group-hover:opacity-100">
-          <div className="relative flex items-center group">
-            <ArrowUpRight className="absolute w-4 h-4 transition-all opacity-0 group-hover:translate-x-1 group-hover:opacity-100" />
+    <div className="flex items-center justify-start gap-6 mt-6">
+      {linksSocial.map((link, index) => (
+        <div className="relative group" key={index}>
+          <div className="transition-all translate-y-5 opacity-0 group-hover:translate-y-3 group-hover:opacity-100">
+            <div className="relative flex items-center group">
+              <ArrowUpRight className="absolute w-4 h-4 transition-all opacity-0 group-hover:translate-x-1 group-hover:opacity-100" />
+            </div>
           </div>
+          <SocialLink
+            href={link.href}
+            rel="noopener noreferrer"
+            target="_blank"
+            aria-label={link.label}
+            className="transition-all group-hover:opacity-20 group-hover:blur-sm sm:h-7 blur-0 grayscale-0"
+            icon={link.icon}
+            outline={link.outline}
+          />
         </div>
-        <SocialLink
-          href="https://twitter.com/educlopez93"
-          rel="noopener noreferrer"
-          target="_blank"
-          aria-label="Follow on Twitter"
-          className="transition-all group-hover:opacity-20 group-hover:blur-sm sm:h-7 blur-0 grayscale-0"
-          icon={TwitterIcon}
-        />
-      </div>
-      <div className="relative group">
-        <div className="transition-all translate-y-5 opacity-0 group-hover:translate-y-3 group-hover:opacity-100">
-          <div className="relative flex items-center group">
-            <ArrowUpRight className="absolute w-4 h-4 transition-all opacity-0 group-hover:translate-x-1 group-hover:opacity-100" />
-          </div>
-        </div>
-        <SocialLink
-          href="https://instagram.com/edui_design/"
-          rel="noopener noreferrer"
-          target="_blank"
-          aria-label="Follow on Instagram"
-          className="transition-all group-hover:opacity-20 group-hover:blur-sm sm:h-7 blur-0 grayscale-0"
-          icon={InstagramIcon}
-        />{' '}
-      </div>
-      <div className="relative group">
-        <div className="transition-all translate-y-5 opacity-0 group-hover:translate-y-3 group-hover:opacity-100">
-          <div className="relative flex items-center group">
-            <ArrowUpRight className="absolute w-4 h-4 transition-all opacity-0 group-hover:translate-x-1 group-hover:opacity-100" />
-          </div>
-        </div>
-        <SocialLink
-          href="https://github.com/educlopez"
-          rel="noopener noreferrer"
-          target="_blank"
-          className="transition-all group-hover:opacity-20 group-hover:blur-sm sm:h-7 blur-0 grayscale-0"
-          aria-label="Follow on GitHub"
-          icon={GitHubIcon}
-        />{' '}
-      </div>
-      <div className="relative group">
-        <div className="transition-all translate-y-5 opacity-0 group-hover:translate-y-3 group-hover:opacity-100">
-          <div className="relative flex items-center group">
-            <ArrowUpRight className="absolute w-4 h-4 transition-all opacity-0 group-hover:translate-x-1 group-hover:opacity-100" />
-          </div>
-        </div>
-        <SocialLink
-          href="https://linkedin.com/in/educlopez"
-          rel="noopener noreferrer"
-          target="_blank"
-          className="transition-all group-hover:opacity-20 group-hover:blur-sm sm:h-7 blur-0 grayscale-0"
-          aria-label="Follow on LinkedIn"
-          icon={LinkedInIcon}
-        />{' '}
-      </div>
+      ))}
     </div>
   )
 }
@@ -100,9 +55,9 @@ export function LinkText({ className, href, children, icon: Icon, outline }) {
           </div>
           <div className="flex text-sm font-medium transition-all group text-zinc-600 dark:text-zinc-400 group-hover:opacity-20 group-hover:blur-sm sm:h-7 blur-0 grayscale-0">
             {outline ? (
-              <Icon className="flex-none w-6 h-6 transition outline-zinc-700 group-hover:outline-zinc-600 dark:outline-zinc-400 dark:group-hover:outline-zinc-300" />
+              <Icon className="w-6 h-6 stroke-[1.5px] transition text-zinc-600 group-hover:text-zinc-600 dark:text-zinc-400 dark:group-hover:text-outline-300 outline-zinc-600 group-hover:outline-zinc-600 dark:outline-zinc-400 dark:group-hover:text-zinc-300" />
             ) : (
-              <Icon className="flex-none w-6 h-6 transition fill-zinc-700 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+              <Icon className="flex-none w-6 h-6 transition fill-zinc-600 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
             )}
             <span className="ml-4 group-hover:text-zinc-600 dark:group-hover:text-zinc-300">
               {children}
@@ -116,51 +71,19 @@ export function LinkText({ className, href, children, icon: Icon, outline }) {
 
 export function SocialText({}) {
   return (
-    <div className="lg:pl-32">
+    <div className="lg:pl-28 ">
       <ul role="list" className="grid grid-cols-2">
-        <LinkText
-          href="https://twitter.com/educlopez93"
-          icon={TwitterIcon}
-          className="mt-4"
-        >
-          Seguir en Twitter
-        </LinkText>
-        <LinkText
-          href="https://instagram.com/edui_design/"
-          icon={InstagramIcon}
-          className="mt-4"
-        >
-          Seguir en Instagram
-        </LinkText>
-        <LinkText
-          href="https://github.com/educlopez"
-          icon={GitHubIcon}
-          className="mt-4"
-        >
-          Seguir en GitHub
-        </LinkText>
-        <LinkText
-          href="https://linkedin.com/in/educlopez"
-          icon={LinkedInIcon}
-          className="mt-4"
-        >
-          Seguir en LinkedIn
-        </LinkText>
-        <LinkText
-          href="https://read.cv/educlopez"
-          icon={ReadcvIcon}
-          className="mt-4"
-        >
-          Read.cv
-        </LinkText>
-        <LinkText
-          href="mailto:educalvolopez@gmail.com"
-          icon={Send}
-          className="mt-4"
-          outline={true}
-        >
-          Correo
-        </LinkText>
+        {linksSocial.map((link, index) => (
+          <LinkText
+            href={link.href}
+            icon={link.icon}
+            className="mt-4"
+            key={index}
+            outline={link.outline}
+          >
+            {link.label}
+          </LinkText>
+        ))}
       </ul>
     </div>
   )
