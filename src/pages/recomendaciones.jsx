@@ -6,10 +6,7 @@ import { stacks } from '@/data/stacks'
 import { Switch } from '@headlessui/react'
 import { motion } from 'framer-motion'
 
-import {
-  FADE_DOWN_ANIMATION_VARIANTS,
-  FADE_IN_ANIMATION_CARD_HOVER,
-} from '@/lib/constants'
+import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
 import { Card } from '@/components/Card'
 import { Pill } from '@/components/Pill'
 import { Section } from '@/components/Section'
@@ -68,18 +65,15 @@ function Toollist({ title, href, children, pills }) {
 }
 function Toolgrid({ title, href, img, children, pills }) {
   return (
-    <li className="relative z-10">
-      <motion.div
-        className="block w-full p-3 overflow-hidden border rounded-lg aspect-w-10 aspect-h-7 group border-zinc-900/10 bg-white/10 backdrop-blur-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur"
-        {...FADE_IN_ANIMATION_CARD_HOVER}
-      >
+    <li className="relative z-10 group">
+      <div className="block w-full p-3 overflow-hidden transition-transform duration-700 border rounded-lg aspect-w-10 aspect-h-7 group border-zinc-900/10 bg-white/10 backdrop-blur-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur group-hover:scale-105">
         <Image
           src={img}
           alt={title}
           placeholder="blur"
           width={70}
           height={70}
-          className="object-cover mx-auto pointer-events-none group-hover:opacity-75"
+          className="object-cover mx-auto transition-transform duration-700 pointer-events-none group-hover:opacity-75 group-hover:scale-105"
         />
         <Link
           href={href}
@@ -100,7 +94,7 @@ function Toolgrid({ title, href, img, children, pills }) {
             ))}
           </div>
         )}
-      </motion.div>
+      </div>
     </li>
   )
 }

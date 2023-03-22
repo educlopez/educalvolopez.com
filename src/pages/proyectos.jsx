@@ -114,7 +114,7 @@ export default function Projects({ pinnedRepos }) {
                   alt={repo.name}
                   width={323}
                   height={162}
-                  className="w-full rounded-xl"
+                  className="w-full transition-transform duration-700 rounded-xl group-hover:scale-105"
                   unoptimized
                 />
               </div>

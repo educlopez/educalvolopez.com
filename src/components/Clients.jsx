@@ -33,7 +33,7 @@ export default function Clients() {
   }
   return (
     <motion.div {...FADE_IN_ANIMATION_CARD}>
-      <div className="grid items-center w-full max-w-screen-lg grid-cols-2 gap-5 px-5 mx-auto mt-20 sm:grid-cols-4 sm:px-0">
+      <div className="grid items-center w-full max-w-screen-lg min-w-full grid-cols-2 gap-5 mt-20 sm:grid-cols-4 sm:px-0">
         {clients.map((client) => (
           <Link
             target="_blank"

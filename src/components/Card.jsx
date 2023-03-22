@@ -1,18 +1,15 @@
 import Link from 'next/link'
 import clsx from 'clsx'
-import { motion } from 'framer-motion'
 import { ChevronsRight } from 'lucide-react'
-
-import { FADE_IN_ANIMATION_CARD_HOVER } from '@/lib/constants'
 
 export function Card({ as: Component = 'div', className, children }) {
   return (
     <Component
       className={clsx(className, 'group relative flex flex-col items-start')}
     >
-      <motion.div {...FADE_IN_ANIMATION_CARD_HOVER} className="p-2">
+      <div className="p-2 transition-transform duration-700 group-hover:scale-105">
         {children}
-      </motion.div>
+      </div>
     </Component>
   )
 }
