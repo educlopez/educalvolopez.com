@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { motion } from 'framer-motion'
+import Balancer from 'react-wrap-balancer'
 
 import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
 import { formatDate } from '@/lib/formatDate'
@@ -90,12 +91,15 @@ export default function Home({ articles }) {
         >
           <h1 className="sr-only">Edu Calvo</h1>
 
-          <StatusWork isAvailable={isAvailable} />
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Soy Edu Calvo, soy diseñador web y frontend con sede en Madrid.
+          <Balancer className="text-base text-zinc-600 dark:text-zinc-400">
+            <span className="font-bold uppercase text-zinc-700 dark:text-white">
+              Edu Calvo
+            </span>
+            <br></br>Soy diseñador web y frontend con sede en Madrid.
             <br></br>
             Trabajo actualmente en Cinetic Digital y como Freelance.
-          </p>
+          </Balancer>
+          <StatusWork isAvailable={isAvailable} className="mt-4" />
           <SocialLinks />
         </motion.div>
       </Container>

@@ -1,12 +1,11 @@
-import { Github, Instagram, Linkedin, Mail, Twitter } from 'lucide-react'
-
 import {
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  ReadcvIcon,
-  TwitterIcon,
-} from '@/components/SocialIcons'
+  Github,
+  Instagram,
+  Linkedin,
+  Mail,
+  Scroll,
+  Twitter,
+} from 'lucide-react'
 
 export const generalLinks = [
   {
@@ -63,9 +62,9 @@ export const linksSocial = [
   },
   {
     href: 'https://read.cv/educlopez',
-    icon: ReadcvIcon,
+    icon: Scroll,
     label: 'Read.cv',
-    outline: false,
+    outline: true,
   },
   {
     href: 'mailto:educalvolopez@gmail.com',

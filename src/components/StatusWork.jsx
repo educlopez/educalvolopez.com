@@ -13,14 +13,14 @@ const Status = [
   },
 ]
 
-export function StatusWork({ isAvailable }) {
+export function StatusWork({ isAvailable = true, className }) {
   const [status, setStatus] = useState(
     isAvailable ? Status[0].Available : Status[0].NotAvailable
   )
   const bgColorClass =
     status === Status[0].Available ? 'bg-lime-400' : 'bg-red-600'
   return (
-    <p>
+    <p className={className}>
       <span className="inline-flex items-center px-2 py-0 text-xs font-semibold border rounded-md pointer-events-auto border-zinc-200 bg-white/10 text-zinc-900 backdrop-blur dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-100">
         <span className="mr-1.5 flex h-3 w-3 items-center">
           <span
