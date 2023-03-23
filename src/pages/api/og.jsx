@@ -35,14 +35,16 @@ export default async function handler(req) {
             style={{
               marginLeft: 190,
               marginRight: 190,
+              marginBottom: 140,
               display: 'flex',
               fontSize: 130,
               fontFamily: 'Inter',
               letterSpacing: '-0.05em',
               fontStyle: 'normal',
               color: 'white',
-              lineHeight: '120px',
+              lineHeight: '130px',
               whiteSpace: 'pre-wrap',
+              fontFamily: 'Inter',
             }}
           >
             {title}
