@@ -2,7 +2,7 @@
 This is a portfolio website built with Next.js and Tailwind CSS. It features a Spotify integration that displays the user's recently played tracks and a weather section that displays the current weather for a specified location.
 
 ## Getting Started
-1. Clone the repository: git clone https://github.com/educlopez/nextjs-portfolio-tailwind.git
+1. Clone the repository: git clone https://github.com/educlopez/educalvolopez.com
 2. Install dependencies: `npm install`
 3. Create an `.env` file in the root of the project and add the following variables:
 
