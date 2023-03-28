@@ -13,13 +13,15 @@ NEXT_PUBLIC_SITE_URL=
 SPOTIFY_CLIENT_ID=
 SPOTIFY_CLIENT_SECRET=
 SPOTIFY_REFRESH_TOKEN=
-# Weather
-NEXT_PUBLIC_WEATHER_API=
+#GITHUB
+GITHUB_ACCESS_TOKEN=
+GITHUB_USERNAME=
 ```
 
 4. The `SITE_URL` variable is used to specify the base URL of the website.
 5. The `NEXT_PUBLIC_SITE_URL` variable is used to specify the public URL of the website.
 6. The `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, and `SPOTIFY_REFRESH_TOKEN` variables are used to authenticate with the Spotify API. You will need to create a Spotify developer account and create an app to obtain these values.
-7. The `NEXT_PUBLIC_WEATHER_API` variable is used to specify the API key for the weather API used in the project.
+7. The `GITHUB_ACCESS_TOKEN` variable is used to authenticate with the GitHub API. You will need to create a GitHub developer account and create an app to obtain this value.
+8. The `GITHUB_USERNAME` variable is used to specify the github username
 9. Run the development server: npm run dev
 10. Visit `http://localhost:3000` in your browser to see the website.
