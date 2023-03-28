@@ -1,17 +1,21 @@
-import { Fragment, useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { generalLinks } from '@/data/links'
-import avatarImage from '@/images/avatar.jpg'
-import { Popover, Transition } from '@headlessui/react'
-import clsx from 'clsx'
-import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronDown, X } from 'lucide-react'
+import { Fragment, useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { generalLinks } from '@/data/links';
+import avatarImage from '@/images/avatar.jpg';
+import avatarImageHover from '@/images/avatarhover.jpg';
+import { Popover, Transition } from '@headlessui/react';
+import clsx from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ChevronDown, X } from 'lucide-react';
 
-import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
-import { Container } from '@/components/Container'
-import ThemeToggle from '@/components/ThemeToggle'
+
+
+import { FADE_IN_ANIMATION_CARD } from '@/lib/constants';
+import { Container } from '@/components/Container';
+import ThemeToggle from '@/components/ThemeToggle';
+
 
 function MobileNavItem({ href, children, target, rel }) {
   return (
@@ -184,25 +188,29 @@ function AvatarContainer({ className, ...props }) {
   )
 }
 
-function Avatar({ large = false, className, ...props }) {
+function Avatar({ large = false, className, index, ...props }) {
+  let [hoveredIndex, setHoveredIndex] = useState(null)
   return (
     <Link
       href="/"
       aria-label="Home"
       className={clsx(className, 'pointer-events-auto')}
+      onMouseEnter={() => setHoveredIndex(index)}
+      onMouseLeave={() => setHoveredIndex(null)}
       {...props}
     >
-      <Image
-        src={avatarImage}
-        alt="avtar Eduardo Calvo López"
-        placeholder="blur"
-        sizes={large ? '4rem' : '2.25rem'}
-        className={clsx(
-          'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-          large ? 'h-16 w-16' : 'h-9 w-9'
-        )}
-        priority
-      />
+        <Image
+          src={hoveredIndex === index ? avatarImageHover : avatarImage}
+          alt="avatar Eduardo Calvo López"
+          placeholder="blur"
+          sizes={large ? '4rem' : '2.25rem'}
+          className={clsx(
+            'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
+            large ? 'h-16 w-16' : 'h-9 w-9'
+          )}
+          priority
+        />
+
     </Link>
   )
 }
