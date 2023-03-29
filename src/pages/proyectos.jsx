@@ -138,7 +138,7 @@ export default function Projects({ pinnedRepos }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <GitHubIcon className="w-4 h-4 transition fill-zinc-600 dark:fill-zinc-600 group-active:fill-zinc-900 group-hover:fill-zinc-900 dark:group-hover:fill-zinc-100 dark:group-active:fill-zinc-50" />
+                  <GitHubIcon className="w-4 h-4 transition fill-zinc-600 dark:fill-zinc-400 group-active:fill-zinc-900 group-hover:fill-zinc-900 dark:group-hover:fill-zinc-100 dark:group-active:fill-zinc-50" />
                   <span className="ml-2">Github</span>
                 </Button>
                 <Button
@@ -148,7 +148,7 @@ export default function Projects({ pinnedRepos }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Link2 className="w-4 h-4 transition stroke-zinc-600 dark:stroke-zinc-600 group-active:stroke-zinc-900 group-hover:stroke-zinc-900 dark:group-hover:stroke-zinc-100 dark:group-active:stroke-zinc-50" />{' '}
+                  <Link2 className="w-4 h-4 transition stroke-zinc-600 dark:stroke-zinc-400 group-active:stroke-zinc-900 group-hover:stroke-zinc-900 dark:group-hover:stroke-zinc-100 dark:group-active:stroke-zinc-50" />{' '}
                   <span className="ml-2">Website</span>
                 </Button>
               </div>
@@ -194,7 +194,7 @@ export default function Projects({ pinnedRepos }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Link2 className="w-4 h-4 transition stroke-zinc-600 dark:stroke-zinc-600 group-active:stroke-zinc-900 group-hover:stroke-zinc-900 dark:group-hover:stroke-zinc-100 dark:group-active:stroke-zinc-50" />
+                  <Link2 className="w-4 h-4 transition stroke-zinc-600 dark:stroke-zinc-400 group-active:stroke-zinc-900 group-hover:stroke-zinc-900 dark:group-hover:stroke-zinc-100 dark:group-active:stroke-zinc-50" />
                   <span className="ml-2">{project.link.label}</span>
                 </Button>
               </div>

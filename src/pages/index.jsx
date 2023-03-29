@@ -92,7 +92,7 @@ export default function Home({ articles }) {
           <h1 className="sr-only">Edu Calvo</h1>
 
           <Balancer className="text-base text-zinc-600 dark:text-zinc-400">
-            <span className="font-bold uppercase text-zinc-700 dark:text-white">
+            <span className="text-2xl font-bold  text-zinc-700 dark:text-white">
               Edu Calvo
             </span>
             <br></br>Soy diseñador web y frontend con sede en Madrid.
