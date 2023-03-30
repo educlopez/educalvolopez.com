@@ -62,7 +62,7 @@ export default function Resume() {
           Read.cv
         </Button>
         <Button
-          href="eduardo_calvo_lopez_curriculum_vitae.pdf"
+          href="2023_eduardo_calvo_lopez_curriculum.pdf"
           variant="solid"
           className="w-full mt-6 group"
           target="_blank"
