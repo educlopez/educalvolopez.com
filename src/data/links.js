@@ -1,11 +1,8 @@
-import {
-  Github,
-  Instagram,
-  Linkedin,
-  Mail,
-  Scroll,
-  Twitter,
-} from 'lucide-react'
+import { Github, Instagram, Linkedin, Mail, Scroll, Twitter } from 'lucide-react';
+
+
+
+
 
 export const generalLinks = [
   {
@@ -25,7 +22,7 @@ export const generalLinks = [
     label: 'Recomendaciones',
   },
   {
-    href: 'https://shop.educalvolopez.com',
+    href: 'https://educalvolopez.lemonsqueezy.com/',
     label: 'Tienda',
     target: '_blank',
   },
