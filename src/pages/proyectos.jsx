@@ -97,7 +97,7 @@ export default function Projects({ pinnedRepos }) {
         intro="¿No sabes por dónde empezar? He trabajado en montones de pequeños proyectos a lo largo de los años, pero estos son los que más me enorgullecen. Muchos de ellos son privados y no podré publicarlos a continuación."
       >
         <motion.h2
-          className="mb-10 text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-2xl"
+          className="mb-10 text-2xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-2xl"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
           Side Projects
@@ -118,7 +118,7 @@ export default function Projects({ pinnedRepos }) {
                   unoptimized
                 />
               </div>
-              <h2 className="z-10 mt-6 text-base font-semibold text-zinc-900 dark:text-white">
+              <h2 className="z-10 mt-6 text-base font-semibold text-neutral-900 dark:text-white">
                 <Card.Link
                   href={repo.url}
                   target="_blank"
@@ -157,7 +157,7 @@ export default function Projects({ pinnedRepos }) {
         </ul>
 
         <motion.h2
-          className="mt-16 mb-10 text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-2xl"
+          className="mt-16 mb-10 text-2xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-2xl"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
           Proyectos
@@ -176,7 +176,7 @@ export default function Projects({ pinnedRepos }) {
                   unoptimized
                 />
               </div>
-              <h2 className="mt-6 text-base font-semibold text-zinc-900 dark:text-white">
+              <h2 className="mt-6 text-base font-semibold text-neutral-900 dark:text-white">
                 <Card.Link
                   href={project.link.href}
                   target="_blank"

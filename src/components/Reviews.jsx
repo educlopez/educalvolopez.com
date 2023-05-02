@@ -9,18 +9,18 @@ function Review({ title, body, author, className, ...props }) {
   return (
     <motion.figure
       className={clsx(
-        'rounded-3xl border border-zinc-900/10 bg-white/10  p-6 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur',
+        'rounded-3xl border border-black/10 bg-zinc-50/70 shadow p-6 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur',
         className
       )}
       {...props}
       {...FADE_IN_ANIMATION_CARD}
     >
-      <blockquote className="text-zinc-900 dark:text-zinc-100">
+      <blockquote className="text-neutral-900 dark:text-zinc-100">
         <p className="text-sm font-semibold leading-6 before:content-['“'] after:content-['”']">
           {body}
         </p>
       </blockquote>
-      <figcaption className="mt-3 text-sm text-zinc-600 dark:text-zinc-400">
+      <figcaption className="mt-3 text-sm text-neutral-700 dark:text-zinc-400">
         {author} - {title}
       </figcaption>
     </motion.figure>
@@ -67,7 +67,7 @@ function ReviewGrid() {
   return (
     <div
       ref={containerRef}
-      className="relative grid items-start grid-cols-1 gap-8 overflow-hidden sm:mt-10 md:grid-cols-2 lg:grid-cols-3"
+      className="relative grid items-start grid-cols-1 gap-8 overflow-hidden sm:mt-5 md:grid-cols-2 lg:grid-cols-3"
     >
       <ReviewColumn
         reviews={[...columns[0], ...columns[2].flat(), ...columns[1]]}
@@ -106,7 +106,7 @@ export function Reviews() {
     >
       <h2
         id="reviews-title"
-        className="text-3xl font-medium tracking-tight text-zinc-900 dark:text-white"
+        className="text-3xl font-medium tracking-tight text-neutral-900 dark:text-white"
       >
         Testimonios
       </h2>

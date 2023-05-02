@@ -11,7 +11,7 @@ function NavLink({ href, children, target, rel, onMouseEnter, onMouseLeave }) {
   return (
     <Link
       href={href}
-      className="relative transition hover:text-amber-600 dark:hover:text-amber-500"
+      className="relative transition hover:text-indigo-600 dark:hover:text-indigo-500"
       target={target}
       rel={rel}
       onMouseEnter={onMouseEnter}
@@ -27,10 +27,10 @@ export function Footer() {
   return (
     <motion.footer className="mt-32" {...FADE_IN_ANIMATION_CARD}>
       <Container.Outer>
-        <div className="pt-10 pb-16 border-t border-zinc-900/10 dark:border-white/10">
+        <div className="pt-10 pb-16 border-t border-black/10 dark:border-white/10">
           <Container.Inner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-              <div className="flex flex-wrap justify-center gap-4 text-sm font-medium text-zinc-700 dark:text-zinc-300 md:justify-start ">
+              <div className="flex flex-wrap justify-center gap-4 text-sm font-medium text-zinc-900 dark:text-zinc-300 md:justify-start ">
                 {generalLinks.map((link, index) => (
                   <NavLink
                     key={link.href}

@@ -59,7 +59,7 @@ export default function About() {
           </motion.div>
           <div className="lg:order-first lg:row-span-2">
             <motion.h1
-              className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl"
+              className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-5xl"
               variants={FADE_DOWN_ANIMATION_VARIANTS}
             >
               <Balancer>
@@ -68,7 +68,7 @@ export default function About() {
               </Balancer>
             </motion.h1>
             <motion.div
-              className="mt-6 text-base space-y-7 text-zinc-600 dark:text-zinc-400"
+              className="mt-6 text-base space-y-7 text-neutral-700 dark:text-zinc-400"
               variants={FADE_DOWN_ANIMATION_VARIANTS}
             >
               <p>

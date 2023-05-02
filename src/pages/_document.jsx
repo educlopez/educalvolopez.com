@@ -16,7 +16,7 @@ export default function Document() {
         />
         <meta name="robots" content="all" />
       </Head>
-      <body className="flex flex-col h-full antialiased bg-white bg-top bg-no-repeat bg-lights-sun dark:bg-zinc-900">
+      <body className="flex flex-col h-full antialiased bg-top bg-no-repeat bg-zinc-50 bg-lights-sun dark:bg-zinc-900">
         <Main />
         <NextScript />
       </body>

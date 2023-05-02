@@ -43,7 +43,7 @@ export function Phototab() {
       selectedIndex={selectedIndex}
       onChange={onChange}
     >
-      <Tab.List className="absolute left-0 right-0 flex flex-row items-center justify-between w-40 px-3 py-2 mx-auto text-sm font-medium transition border rounded-full md:translate-y-20 md:group-hover:-translate-y-4 lef-0 bottom-2 border-zinc-900/10 bg-white/50 text-zinc-700 backdrop-blur-sm hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur dark:hover:text-white ring-1 ring-zinc-100/70 dark:ring-zinc-900/70">
+      <Tab.List className="absolute left-0 right-0 flex flex-row items-center justify-between w-40 px-3 py-2 mx-auto text-sm font-medium transition border rounded-full md:translate-y-20 md:group-hover:-translate-y-4 lef-0 bottom-2 border-black/10 bg-white/50 text-zinc-900 backdrop-blur-sm hover:text-neutral-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur dark:hover:text-white ring-1 ring-zinc-100/70 dark:ring-zinc-900/70">
         {tabs.map((tab, index) => (
           <div
             key={index}
@@ -54,7 +54,7 @@ export function Phototab() {
             <AnimatePresence>
               {hoveredIndex === index && (
                 <motion.span
-                  className="absolute inset-0 transition-colors bg-zinc-500/30 dark:bg-zinc-900/30 rounded-2xl "
+                  className="absolute inset-0 transition-colors bg-zinc-50/50 dark:bg-zinc-900/30 rounded-2xl "
                   layoutId="hoverBackground"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1, transition: { duration: 0.15 } }}

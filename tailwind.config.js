@@ -2,14 +2,16 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,mdx}'],
   darkMode: 'class',
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/typography')],
   theme: {
     extend: {
       backgroundImage: {
         'lights-sun': "url('/images/gradient.svg')",
       },
+    },
+    boxShadow: {
+      DEFAULT:
+        '0px 3px 6px -3px rgba(0,0,0,.05),0px 2px 4px -2px rgba(0,0,0,.05),0px 1px 2px -1px rgba(0,0,0,.05),0px 1px 1px -1px rgba(0,0,0,.05),0px 1px 0px -1px rgba(0,0,0,.05)',
     },
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],

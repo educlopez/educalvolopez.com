@@ -5,7 +5,7 @@ export function Prose({ children, className }) {
     <div
       className={clsx(
         className,
-        'prose text-zinc-900 dark:prose-invert dark:text-white'
+        'prose text-neutral-900 dark:prose-invert dark:text-white'
       )}
     >
       {children}

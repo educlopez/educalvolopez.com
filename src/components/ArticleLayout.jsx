@@ -73,12 +73,12 @@ export function ArticleLayout({
             )}
             <article>
               <motion.div
-                className="fixed top-0 left-0 right-0 z-50 h-1 progress-bar bg-amber-600 dark:bg-amber-500"
+                className="fixed top-0 left-0 right-0 z-50 h-1 bg-indigo-600 progress-bar dark:bg-indigo-500"
                 style={{ scaleX }}
               />
               <header className="flex flex-col">
                 <motion.h1
-                  className="mt-6 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl"
+                  className="mt-6 text-4xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-5xl"
                   variants={FADE_DOWN_ANIMATION_VARIANTS}
                 >
                   <Balancer>{meta.title}</Balancer>
@@ -86,7 +86,7 @@ export function ArticleLayout({
 
                 <motion.time
                   dateTime={meta.date}
-                  className="flex items-center order-first text-base text-zinc-600 dark:text-zinc-400"
+                  className="flex items-center order-first text-base text-neutral-700 dark:text-zinc-400"
                   variants={FADE_DOWN_ANIMATION_VARIANTS}
                 >
                   <span className="h-4 w-0.5 rounded-full bg-zinc-900 dark:bg-zinc-500" />
@@ -98,10 +98,10 @@ export function ArticleLayout({
                   <motion.a
                     href="#"
                     key={tag}
-                    className="inline-block text-zinc-600 before:content-['#'] dark:text-zinc-400"
+                    className="inline-block text-neutral-700 before:content-['#'] dark:text-zinc-400"
                     variants={FADE_DOWN_ANIMATION_VARIANTS}
                   >
-                    <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+                    <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-neutral-700 dark:text-zinc-400">
                       {tag}
                     </span>
                   </motion.a>

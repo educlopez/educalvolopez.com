@@ -6,8 +6,8 @@ import { Button } from '@/components/Button'
 
 export default function Resume() {
   return (
-    <div className="p-6 border rounded-2xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+    <div className="p-6 border rounded-2xl border-black/10 bg-zinc-50/70 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur">
+      <h2 className="flex text-sm font-semibold text-neutral-900 dark:text-zinc-100">
         <Briefcase className="flex-none w-6 h-6" />
         <span className="ml-3">Trabajo</span>
       </h2>
@@ -24,16 +24,16 @@ export default function Resume() {
             </div>
             <dl className="flex flex-wrap flex-auto gap-x-2">
               <dt className="sr-only">Company</dt>
-              <dd className="flex-none w-full text-sm font-medium text-zinc-900 dark:text-white">
+              <dd className="flex-none w-full text-sm font-medium text-neutral-900 dark:text-white">
                 {role.company}
               </dd>
               <dt className="sr-only">Role</dt>
-              <dd className="text-xs text-zinc-600 dark:text-zinc-300">
+              <dd className="text-xs text-neutral-700 dark:text-zinc-300">
                 {role.title}
               </dd>
               <dt className="sr-only">Date</dt>
               <dd
-                className="ml-auto text-xs text-zinc-600 dark:text-zinc-300"
+                className="ml-auto text-xs text-neutral-700 dark:text-zinc-300"
                 aria-label={`${role.start.label ?? role.start} until ${
                   role.end.label ?? role.end
                 }`}

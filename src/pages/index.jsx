@@ -26,9 +26,9 @@ function Article({ article }) {
           <a
             href="#"
             key={tag}
-            className="inline-block text-zinc-600 before:content-['#'] dark:text-zinc-400"
+            className="inline-block text-neutral-700 before:content-['#'] dark:text-zinc-400"
           >
-            <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+            <span className="inline-flex items-center mt-2 mr-2 text-xs font-medium text-neutral-700 dark:text-zinc-400">
               {tag}
             </span>
           </a>
@@ -91,8 +91,8 @@ export default function Home({ articles }) {
         >
           <h1 className="sr-only">Edu Calvo</h1>
 
-          <Balancer className="text-base text-zinc-600 dark:text-zinc-400">
-            <span className="text-2xl font-bold  text-zinc-700 dark:text-white">
+          <Balancer className="text-base text-neutral-700 dark:text-zinc-400">
+            <span className="text-2xl font-bold text-neutral-700 dark:text-white">
               Edu Calvo
             </span>
             <br></br>Soy diseñador web y frontend con sede en Madrid.

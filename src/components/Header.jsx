@@ -1,21 +1,18 @@
-import { Fragment, useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { generalLinks } from '@/data/links';
-import avatarImage from '@/images/avatar.jpg';
-import avatarImageHover from '@/images/avatarhover.jpg';
-import { Popover, Transition } from '@headlessui/react';
-import clsx from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronDown, X } from 'lucide-react';
+import { Fragment, useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { generalLinks } from '@/data/links'
+import avatarImage from '@/images/avatar.jpg'
+import avatarImageHover from '@/images/avatarhover.jpg'
+import { Popover, Transition } from '@headlessui/react'
+import clsx from 'clsx'
+import { AnimatePresence, motion } from 'framer-motion'
+import { ChevronDown, X } from 'lucide-react'
 
-
-
-import { FADE_IN_ANIMATION_CARD } from '@/lib/constants';
-import { Container } from '@/components/Container';
-import ThemeToggle from '@/components/ThemeToggle';
-
+import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
+import { Container } from '@/components/Container'
+import ThemeToggle from '@/components/ThemeToggle'
 
 function MobileNavItem({ href, children, target, rel }) {
   return (
@@ -36,7 +33,7 @@ function MobileNavItem({ href, children, target, rel }) {
 function MobileNavigation(props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="flex items-center px-4 py-2 text-sm font-medium border rounded-full group border-zinc-900/10 bg-white/10 text-zinc-600 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur">
+      <Popover.Button className="flex items-center px-4 py-2 text-sm font-medium border rounded-full group border-black/10 bg-white/10 text-neutral-900 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-300 dark:backdrop-blur">
         Menu
         <ChevronDown className="w-3 h-auto ml-3 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
       </Popover.Button>
@@ -69,12 +66,12 @@ function MobileNavigation(props) {
               <Popover.Button aria-label="Close menu" className="p-1 -m-1">
                 <X className="w-6 h-6 text-zinc-500 dark:text-zinc-400" />
               </Popover.Button>
-              <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+              <h2 className="text-sm font-medium text-neutral-700 dark:text-zinc-400">
                 Menu
               </h2>
             </div>
             <nav className="mt-6">
-              <ul className="-my-2 text-base divide-y divide-zinc-100 text-zinc-600 dark:divide-zinc-100/5 dark:text-zinc-400">
+              <ul className="-my-2 text-base divide-y divide-zinc-100 text-neutral-700 dark:divide-zinc-100/5 dark:text-zinc-400">
                 {generalLinks.map((link, index) => {
                   if (index !== 5) {
                     return (
@@ -112,15 +109,15 @@ function NavItem({ href, children, target, rel, onMouseEnter, onMouseLeave }) {
         className={clsx(
           'relative block px-3  transition',
           isActive
-            ? 'text-amber-600 dark:text-amber-400'
-            : 'hover:text-amber-600 dark:hover:text-amber-400'
+            ? 'text-indigo-600 dark:text-indigo-400'
+            : 'hover:text-indigo-600 dark:hover:text-indigo-400'
         )}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
         {children}
         {isActive && (
-          <span className="absolute h-px inset-x-1 -bottom-px bg-gradient-to-r from-amber-500/0 via-amber-500/40 to-amber-500/0 dark:from-amber-400/0 dark:via-amber-400/40 dark:to-amber-400/0" />
+          <span className="absolute h-px inset-x-1 -bottom-px bg-gradient-to-r from-indigo-500/0 via-indigo-500/40 to-indigo-500/0 dark:from-indigo-400/0 dark:via-indigo-400/40 dark:to-indigo-400/0" />
         )}
       </Link>
     </li>
@@ -131,7 +128,7 @@ function DesktopNavigation(props) {
   let [hoveredIndex, setHoveredIndex] = useState(null)
   return (
     <nav {...props}>
-      <ul className="flex px-3 py-2 text-sm font-medium transition border rounded-full border-zinc-900/10 bg-white/50 text-zinc-700 backdrop-blur-sm hover:text-zinc-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur dark:hover:text-white">
+      <ul className="flex px-3 py-2 text-sm font-medium transition border rounded-full border-black/10 bg-zinc-50/50 text-neutral-900 backdrop-blur-sm hover:text-neutral-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur dark:hover:text-white">
         {generalLinks.map((link, index) => {
           if (index !== 5) {
             return (
@@ -147,7 +144,7 @@ function DesktopNavigation(props) {
                 <AnimatePresence>
                   {hoveredIndex === index && (
                     <motion.span
-                      className="absolute inset-0 transition-colors rounded-md -z-10 bg-zinc-100 dark:bg-zinc-700/50"
+                      className="absolute inset-0 transition-colors rounded-md -z-10 bg-indigo-100/70 dark:bg-zinc-700/50"
                       layoutId="hoverBackground"
                       initial={{ opacity: 0 }}
                       animate={{
@@ -199,18 +196,17 @@ function Avatar({ large = false, className, index, ...props }) {
       onMouseLeave={() => setHoveredIndex(null)}
       {...props}
     >
-        <Image
-          src={hoveredIndex === index ? avatarImageHover : avatarImage}
-          alt="avatar Eduardo Calvo López"
-          placeholder="blur"
-          sizes={large ? '4rem' : '2.25rem'}
-          className={clsx(
-            'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-            large ? 'h-16 w-16' : 'h-9 w-9'
-          )}
-          priority
-        />
-
+      <Image
+        src={hoveredIndex === index ? avatarImageHover : avatarImage}
+        alt="avatar Eduardo Calvo López"
+        placeholder="blur"
+        sizes={large ? '4rem' : '2.25rem'}
+        className={clsx(
+          'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
+          large ? 'h-16 w-16' : 'h-9 w-9'
+        )}
+        priority
+      />
     </Link>
   )
 }

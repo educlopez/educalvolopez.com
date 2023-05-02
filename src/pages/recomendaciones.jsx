@@ -27,8 +27,8 @@ function ToolsSection({ children, ...props }) {
 }
 function ToolsSectionGrid({ children, title }) {
   return (
-    <section className="md:border-l md:border-zinc-900/10 md:pl-6 md:dark:border-white/10">
-      <h2 className="text-sm font-semibold text-zinc-900 dark:text-white">
+    <section className="md:border-l md:border-black/10 md:pl-6 md:dark:border-white/10">
+      <h2 className="text-sm font-semibold text-neutral-900 dark:text-white">
         {title}
       </h2>
       <ul
@@ -66,7 +66,7 @@ function Toollist({ title, href, children, pills }) {
 function Toolgrid({ title, href, img, children, pills }) {
   return (
     <li className="relative z-10 group">
-      <div className="block w-full p-3 overflow-hidden transition-transform duration-700 border rounded-lg aspect-w-10 aspect-h-7 group border-zinc-900/10 bg-white/10 backdrop-blur-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur group-hover:scale-105">
+      <div className="block w-full p-3 overflow-hidden transition-transform duration-700 border rounded-lg shadow aspect-w-10 aspect-h-7 group border-black/10 bg-white/10 backdrop-blur-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur group-hover:scale-105">
         <Image
           src={img}
           alt={title}
@@ -84,7 +84,7 @@ function Toolgrid({ title, href, img, children, pills }) {
         >
           <span className="sr-only">Ver {title}</span>
         </Link>
-        <p className="block my-2 text-sm font-medium text-center truncate pointer-events-none text-zinc-900 dark:text-white">
+        <p className="block my-2 text-sm font-medium text-center truncate pointer-events-none text-neutral-900 dark:text-white">
           {children}
         </p>
         {pills && (
@@ -158,7 +158,7 @@ export default function Uses() {
         intro="Las cosas que uso para crear webs, mantenerme productivo o comprar para engañarme y pensar que estoy siendo productivo cuando en realidad solo estoy procrastinando. Aquí hay una gran lista de todas mis cosas favoritas.  Algunas recomendaciones pueden contener enlaces de afilidados."
       >
         <motion.div
-          className="relative z-20 flex items-center justify-start gap-4 px-4 py-2 my-16 border dark:backdrop-blurbackdrop-blur w-fit rounded-3xl border-zinc-900/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20"
+          className="relative z-20 flex items-center justify-start gap-4 px-4 py-2 my-16 border dark:backdrop-blurbackdrop-blur w-fit rounded-3xl border-black/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
           layout
         >
@@ -170,8 +170,8 @@ export default function Uses() {
               setEnabled(!enabled)
             }}
             className={classNames(
-              enabled ? 'bg-amber-600' : 'bg-zinc-400/60 dark:bg-zinc-700',
-              'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2'
+              enabled ? 'bg-indigo-600' : 'bg-zinc-400/60 dark:bg-zinc-700',
+              'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
             )}
           >
             <span className="sr-only">Use setting</span>
@@ -220,7 +220,7 @@ export default function Uses() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-3 h-3 text-amber-600"
+                  className="w-3 h-3 text-indigo-600"
                 >
                   <path
                     strokeLinecap="round"
