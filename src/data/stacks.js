@@ -172,7 +172,7 @@ export const stacks = [
   {
     type: 'productivity',
     title: 'Notion',
-    link: 'https://notion.com/',
+    link: 'https://affiliate.notion.so/txvwbopbausc',
     info: 'Sea lo que sea en lo que estés trabajando, la aplicación Notion es tu amiga. Organiza tus pensamientos e ideas con nuestra plataforma basada en plantillas, que te permite reunir rápidamente ideas para publicaciones de blog, crear tableros de estado de ánimo y hacer una lluvia de ideas creativas. Creada para los creativos.',
     img: imgNotion,
   },
