@@ -8,6 +8,7 @@ import remarkGfm from 'remark-gfm'
 const nextConfig = {
   pageExtensions: ['jsx', 'mdx'],
   reactStrictMode: true,
+  appDir: false,
   experimental: {
     scrollRestoration: true,
   },
