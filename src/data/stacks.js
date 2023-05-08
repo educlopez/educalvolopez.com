@@ -48,32 +48,47 @@ export const stacksType = [
     online: true,
   },
 ]
+
 export const stacks = [
   {
     type: 'workstation',
     title: '16” MacBook Pro, M1 Max, 16GB RAM (2021)',
-    link: 'https://amzn.to/3hp6Dxj',
+    //how to have a link to amazon with my affiliate link using my id_amazon from the env.local
+
+    link:
+      'https://www.amazon.es/Apple-MacBook-16-polegadas-Processador-GPU-16%E2%80%91Core/dp/B09JRB88SJ?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1MLQLFGXBZV8Y&keywords=Apple+2021+MacBook+Pro+%28de+16+Pulgadas%2C+Chip+M1+Pro+CPU+de+Diez+n%C3%BAcleos+y+GPU+de+diecis%C3%A9is+n%C3%BAcleos%2C+16+GB+RAM%2C+1+TB+SSD%29+-+Gris+Espacial&qid=1683566660&sprefix=apple+2021+macbook+pro+de+16+pulgadas+chip+m1+pro+cpu+de+diez+n%C3%BAcleos+y+gpu+de+diecis%C3%A9is+n%C3%BAcleos+16+gb+ram+1+tb+ssd+-+gris+espacial%2Caps%2C92&sr=8-1&linkCode=ll1&tag=' +
+      process.env.NEXT_PUBLIC_ID_AMAZON +
+      '&linkId=0872c08afe9b27fddca310b6361b2d95&language=es_ES&ref_=as_li_ss_tl',
     info: 'Utilizo este ordenador todos los días para programar, diseñar y para uso personal. Su diseño es bonito y funcional. La duración de la batería es excelente y me encantan los teclados retroiluminados.',
     img: imgMacbook,
   },
   {
     type: 'workstation',
     title: 'Ipad Air 4º 64gb (2020)',
-    link: 'https://amzn.to/3zWYZ3B',
+    link:
+      'https://www.amazon.es/Nuevo-Apple-iPad-Air-Pulgadas-Wi-Fi/dp/B08J6KQKCZ?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=VXDYTA8J9C97&keywords=ipad+air+4%C2%BA&qid=1667918530&qu=eyJxc2MiOiIxLjI3IiwicXNhIjoiMC4wMCIsInFzcCI6IjAuMDAifQ%3D%3D&sprefix=ipad+air+4%C2%BA%2Caps%2C137&sr=8-7&linkCode=ll1&tag=' +
+      process.env.NEXT_PUBLIC_ID_AMAZON +
+      '&linkId=a5ef7ccd7f4d96209c99819946bafd96&language=es_ES&ref_=as_li_ss_tl',
     info: 'Lo uso como pantalla secundaria para el MacBook y para usar procreate y mejorar la productividad en el trabajo. El iPad Air 4th es extremadamente fácil de usar y disfruto viendo películas en él o escuchando música.',
     img: imgIpadair,
   },
   {
     type: 'workstation',
     title: 'LG 27UL650-W - Monitor 27 pulgadas 4K UHD',
-    link: 'https://amzn.to/3zWCgER',
+    link:
+      'https://www.amazon.es/LG-27UL650-W-Monitor-p%C3%ADxeles-Blanco/dp/B07MKT2BNB?_encoding=UTF8&pd_rd_w=urJYM&pf_rd_p=7cb4f41c-4069-4153-8213-7c4029053920&pf_rd_r=JHPSZM8XF4CRHYCM0BR7&pd_rd_r=b523a3d0-880c-4dd9-8d21-461b7fd6618e&pd_rd_wg=mRndX&linkCode=ll1&tag=' +
+      process.env.NEXT_PUBLIC_ID_AMAZON +
+      '&linkId=a1e334c35780ca6dacc85de6736d7c21&language=es_ES&ref_=as_li_ss_tl',
     info: 'El LG 27UL650-W es un gran monitor, con una resolución 4K UHD y una excelente reproducción del color. La pantalla es compatible con el MacBook Pro (modelo de 15 pulgadas), pero se verá muy bien en cualquier otro lugar.',
     img: imgLgmonitor,
   },
   {
     type: 'workstation',
     title: 'Logitech K380 Teclado Inalámbrico',
-    link: 'https://amzn.to/3EbTrVs',
+    link:
+      'https://www.amazon.es/gp/product/B013SL1ZBK?ie=UTF8&psc=1&linkCode=ll1&tag=' +
+      process.env.NEXT_PUBLIC_ID_AMAZON +
+      '&linkId=fa97efd8cceb1403a5cf45b6c9b0e5fe&language=es_ES&ref_=as_li_ss_tl',
     info: 'Gran teclado para trabajar en casa, de viaje o en cualquier lugar de trabajo. Funciona con una gran variedad de dispositivos y ordenadores, lo que lo hace muy flexible.',
     img: imgLogitechteclado,
   },
@@ -150,7 +165,7 @@ export const stacks = [
   {
     type: 'productivity',
     title: 'Arc',
-    link: 'https://arc.net/',
+    link: 'https://arc.net/gift/b697f951',
     info: 'Utilizo el navegador Arc porque me gusta su interfaz y las opciones adicionales que ofrece. También me gusta la gran cantidad de opciones de personalización disponibles, como el editor de temas y los espacios de trabajo. Además, Arc tiene opciones útiles para la reproducción de video y la navegación en websites. Es un navegador rápido, seguro y altamente personalizable que me facilita la navegación en línea.',
     img: imgArc,
   },
@@ -199,9 +214,12 @@ export const stacks = [
   {
     type: 'workstation',
     title: 'Keywoard Ozone Tactical',
-    link: 'https://amzn.to/3yvGQsy',
+    link:
+      'https://www.amazon.es/Ozone-Gaming-OZTACTICALSP-Iluminacion-Silencioso/dp/B08PPHFLPK?keywords=ozone+tactical&qid=1678482010&sprefix=ozone%2Caps%2C136&sr=8-4&linkCode=ll1&tag=' +
+      process.env.NEXT_PUBLIC_ID_AMAZON +
+      '&linkId=e41d8f76ea7aa96776d0e9af528cf0cc&language=es_ES&ref_=as_li_ss_tl',
     info: 'Mi teclado principal este 2023, es un teclado mecánico con switches rojos, es muy cómodo y tiene un diseño muy bonito. Lo uso para programar y para jugar. ',
     img: imgOzone,
-    pills: [{ name: 'new' }],
+    // pills: [{ name: 'new' }],
   },
 ]

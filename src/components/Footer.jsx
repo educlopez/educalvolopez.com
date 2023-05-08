@@ -44,7 +44,7 @@ export function Footer() {
                     <AnimatePresence>
                       {hoveredIndex === index && (
                         <motion.span
-                          className="absolute inset-0 transition-colors rounded-md -z-10 bg-zinc-100 dark:bg-zinc-700/50"
+                          className="absolute inset-0 transition-colors rounded-md -z-10 bg-indigo-100/70 dark:bg-zinc-700/50"
                           layoutId="hoverBackground"
                           initial={{ opacity: 0 }}
                           animate={{
