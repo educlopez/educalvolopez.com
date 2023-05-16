@@ -12,9 +12,6 @@
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@headlessui/react": "1.7.14",
-    "@types/node": "20.1.1",
-    "@types/react": "18.2.6",
-    "@types/react-dom": "18.2.4",
     "@ianvs/prettier-plugin-sort-imports": "3.7.2",
     "@mdx-js/loader": "2.3.0",
     "@mdx-js/react": "2.3.0",
@@ -43,8 +40,7 @@
     "remark-gfm": "3.0.1",
     "sharp": "0.32.1",
     "swr": "2.1.5",
-    "use-debounce": "9.0.4",
-    "typescript": "5.0.4"
+    "use-debounce": "9.0.4"
   },
   "devDependencies": {
     "eslint": "8.40.0",
