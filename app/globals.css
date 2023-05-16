@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+  background-color: rgba(245, 158, 11, 0.7);
+  color: #fefefe;
+}
+
+.prose .anchor {
+  @apply invisible absolute no-underline;
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+.prose a {
+  @apply decoration-neutral-400 decoration-[0.1em] underline-offset-2 transition-all dark:decoration-neutral-600;
+}
+
+.prose .anchor:after {
+  @apply text-neutral-300 dark:text-neutral-700;
+  content: '#';
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+}
+
+[data-rehype-pretty-code-fragment] code {
+  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
+  counter-reset: line;
+  box-decoration-break: clone;
+}
+[data-rehype-pretty-code-fragment] .line {
+  @apply py-1;
+}
+[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: gray;
+}
+[data-rehype-pretty-code-fragment] .line--highlighted {
+  @apply bg-slate-500 bg-opacity-10;
+}
+[data-rehype-pretty-code-fragment] .line-highlighted span {
+  @apply relative;
+}
+[data-rehype-pretty-code-fragment] .word--highlighted {
+  @apply rounded-md bg-slate-500 bg-opacity-10 p-1;
+}
+[data-rehype-pretty-code-title] {
+  @apply rounded-t-lg border border-[#333333] bg-[#1c1c1c] px-4 py-3 font-mono text-xs font-medium text-neutral-200;
+}
+[data-rehype-pretty-code-title] + pre {
+  @apply mt-0 rounded-t-none border-t-0;
+}
+.transform-gpu {
+  transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1)
+    scaleY(1);
+}
+@layer utilities {
+  .shadow-button-light {
+    box-shadow: 0 0 #0000, 0 0 #0000, inset 0px 1px 0px 0px #fff,
+      0px 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 1px 0px 0px rgba(0, 0, 0, 0.08),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.04), 0px 3px 3px 0px rgba(0, 0, 0, 0.02),
+      0px 4px 4px 0px rgba(0, 0, 0, 0.01);
+  }
+  .shadow-button-dark {
+    box-shadow: 0 0 #0000, 0 0 #0000, 0px -1px 0px 0px hsla(0, 0%, 100%, 0.04),
+      0px 0px 0px 1px hsla(0, 0%, 100%, 0.12),
+      0px 0px 1px 0px rgba(0, 0, 0, 0.04), 0px 2px 2px 0px rgba(0, 0, 0, 0.04),
+      0px 4px 2px 0px rgba(0, 0, 0, 0.04), 0px 6px 3px 0px rgba(0, 0, 0, 0.04);
+  }
+}

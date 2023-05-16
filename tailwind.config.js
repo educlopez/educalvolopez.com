@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,mdx}'],
+  content: [
+    './app/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './content/**/*.{md,mdx}',
+  ],
   darkMode: 'class',
   plugins: [require('@tailwindcss/typography')],
   theme: {
