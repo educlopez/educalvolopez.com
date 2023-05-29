@@ -1,6 +1,6 @@
 import { useRouter } from 'next/compat/router'
 import Head from 'next/head'
-import { motion, useScroll, useSpring } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
 import Balancer from 'react-wrap-balancer'
 
@@ -15,13 +15,6 @@ export function ArticleLayout({
   isRssFeed = false,
   previousPathname,
 }) {
-  const { scrollYProgress } = useScroll()
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  })
-
   const router = useRouter()
 
   if (isRssFeed) {

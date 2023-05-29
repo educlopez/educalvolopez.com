@@ -1,4 +1,11 @@
-import { Github, Instagram, Linkedin, Mail, Scroll, Twitter } from 'lucide-react';
+import {
+  Github,
+  Instagram,
+  Linkedin,
+  Mail,
+  Scroll,
+  Twitter,
+} from 'lucide-react'
 
 export const generalLinks = [
   {

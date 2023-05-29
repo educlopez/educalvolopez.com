@@ -5,7 +5,6 @@ const components = {
   Image,
 }
 
-
 export function Mdx({ code }) {
   const Component = useMDXComponent(code)
 

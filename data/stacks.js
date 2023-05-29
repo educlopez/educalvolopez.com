@@ -1,30 +1,26 @@
-import { StaticImageData } from 'next/image';
-import img1Password from '@/images/icons/1password.png';
-import imgArc from '@/images/icons/arc.png';
-import imgBootstrap from '@/images/icons/bootstrap.png';
-import imgDocker from '@/images/icons/docker.png';
-import imgFigma from '@/images/icons/figma.png';
-import imgIpadair from '@/images/icons/ipad-air.png';
-import imgLando from '@/images/icons/lando.png';
-import imgLgmonitor from '@/images/icons/lg-monitor.png';
-import imgLogitechteclado from '@/images/icons/logitech-teclado.png';
-import imgMacbook from '@/images/icons/macbook-pro.png';
-import imgNextjs from '@/images/icons/nextjs.png';
-import imgNotion from '@/images/icons/notion.png';
-import imgOzone from '@/images/icons/ozone.png';
-import imgRaycast from '@/images/icons/raycast.png';
-import imgSetapp from '@/images/icons/setapp.png';
-import imgSketch from '@/images/icons/sketch.png';
-import imgSlack from '@/images/icons/slack.png';
-import imgTableplus from '@/images/icons/tableplus.png';
-import imgTailwind from '@/images/icons/tailwind.png';
-import imgTransmit from '@/images/icons/transmit.png';
-import imgVercel from '@/images/icons/vercel.png';
-import imgVscode from '@/images/icons/vscode.png';
-
-
-
-
+import { StaticImageData } from 'next/image'
+import img1Password from '@/images/icons/1password.png'
+import imgArc from '@/images/icons/arc.png'
+import imgBootstrap from '@/images/icons/bootstrap.png'
+import imgDocker from '@/images/icons/docker.png'
+import imgFigma from '@/images/icons/figma.png'
+import imgIpadair from '@/images/icons/ipad-air.png'
+import imgLando from '@/images/icons/lando.png'
+import imgLgmonitor from '@/images/icons/lg-monitor.png'
+import imgLogitechteclado from '@/images/icons/logitech-teclado.png'
+import imgMacbook from '@/images/icons/macbook-pro.png'
+import imgNextjs from '@/images/icons/nextjs.png'
+import imgNotion from '@/images/icons/notion.png'
+import imgOzone from '@/images/icons/ozone.png'
+import imgRaycast from '@/images/icons/raycast.png'
+import imgSetapp from '@/images/icons/setapp.png'
+import imgSketch from '@/images/icons/sketch.png'
+import imgSlack from '@/images/icons/slack.png'
+import imgTableplus from '@/images/icons/tableplus.png'
+import imgTailwind from '@/images/icons/tailwind.png'
+import imgTransmit from '@/images/icons/transmit.png'
+import imgVercel from '@/images/icons/vercel.png'
+import imgVscode from '@/images/icons/vscode.png'
 
 export const stacksType = [
   {

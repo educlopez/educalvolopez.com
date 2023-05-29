@@ -1,23 +1,20 @@
-'use client';
+'use client'
 
-import { Fragment, useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { Fragment, useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { generalLinks } from '@/data/links';
-import avatarImage from '@/images/avatar.jpg';
-import avatarImageHover from '@/images/avatarhover.jpg';
-import { Popover, Transition } from '@headlessui/react';
-import clsx from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronDown, X } from 'lucide-react';
+import { generalLinks } from '@/data/links'
+import avatarImage from '@/images/avatar.jpg'
+import avatarImageHover from '@/images/avatarhover.jpg'
+import { Popover, Transition } from '@headlessui/react'
+import clsx from 'clsx'
+import { AnimatePresence, motion } from 'framer-motion'
+import { ChevronDown, X } from 'lucide-react'
 
-
-
-import { FADE_IN_ANIMATION_CARD } from '@/lib/constants';
-import { Container } from '@/components/Container';
-import ThemeToggle from '@/components/ThemeToggle';
-
+import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
+import { Container } from '@/components/Container'
+import ThemeToggle from '@/components/ThemeToggle'
 
 function MobileNavItem({ href, children, target, rel }) {
   return (
@@ -103,7 +100,6 @@ function MobileNavigation(props) {
 }
 
 function NavItem({ href, children, target, rel, onMouseEnter, onMouseLeave }) {
-
   let isActive = useRouter().pathname === href
 
   return (
@@ -218,7 +214,6 @@ function Avatar({ large = false, className, index, ...props }) {
 }
 
 export function Header() {
-
   let isHomePage = useRouter().pathname === '/'
 
   let headerRef = useRef()

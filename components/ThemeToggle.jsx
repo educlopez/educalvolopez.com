@@ -15,7 +15,7 @@ export default function ThemeToggle() {
         <Menu.Button className="inline-flex px-3 py-3 transition border rounded-full md:px-2 md:py-2 group border-black/10 bg-white/10 text-neutral-700 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur">
           <Sun className="w-4 h-4 stroke-zinc-900 dark:hidden" />
           <Moon className="hidden w-4 h-4 stroke-zinc-300 dark:block" />
-          <span className="sr-only">Toggle theme</span>
+          <span className="sr-only">Cambiar tema</span>
         </Menu.Button>
       </div>
 

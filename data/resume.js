@@ -4,8 +4,6 @@ import logoCinetic from '@/images/logos/circle/cineticdigital.svg'
 import logoPapayagroup from '@/images/logos/circle/papayagroup.svg'
 import logoTantra from '@/images/logos/circle/tantra.svg'
 
-
-
 export const resume = [
   {
     company: 'Cinetic Digital',

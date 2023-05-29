@@ -1,45 +1,110 @@
-import logoAneto from '@/images/logos/circle/aneto.svg'
-import logoDentaid from '@/images/logos/circle/dentaid.svg'
-import logoJane from '@/images/logos/circle/jane.svg'
-import logoNet2phone from '@/images/logos/circle/net2phone.svg'
-import logoTantra from '@/images/logos/circle/tantra.svg'
+import coverAneto from '@/images/proyectos/cover-aneto.jpg'
+import coverChefHere from '@/images/proyectos/cover-chefhere.jpg'
+import coverDentaid from '@/images/proyectos/cover-dentaid.jpg'
+import coverGameDev from '@/images/proyectos/cover-gamedev.jpg'
+import coverJane from '@/images/proyectos/cover-janeworld.jpg'
+import coverMovieList from '@/images/proyectos/cover-movielist.jpg'
+import coverSemillasvivas from '@/images/proyectos/cover-semillasvivas.jpg'
+import coverNet2phone from '@/images/proyectos/cover-smsnet2phone.jpg'
+import coverTalkWorld from '@/images/proyectos/cover-talkworld.jpg'
+import coverTantra from '@/images/proyectos/cover-tantraspain.jpg'
+import coverWardobeme from '@/images/proyectos/cover-wardobeme.jpg'
 
 export const projects = [
   {
     name: 'Sms Net2phone',
     description:
-      'Dashboard en Laravel para el envío y gestión de sms para la empresa Net2phone',
-    link: { href: 'https://sms.net2phone.es/login', label: 'sms.net2phone.es' },
-    logo: logoNet2phone,
+      'Dashboard en Laravel para el envío y gestión de sms para la empresa Net2phone.',
+    job: 'UI, Maquetación y Frontend',
+    link: 'https://sms.net2phone.es/login',
+    cover: coverNet2phone,
   },
   {
     name: 'Tantra Spain',
     description:
-      'Website en Laravel con catálogo auto gestionable por el cliente',
-    link: { href: 'https://tantraspain.com/', label: 'tantraspain.com' },
-    logo: logoTantra,
+      'Website en Laravel con catálogo auto gestionable por el cliente.',
+    job: 'UI, Maquetación y Frontend',
+    link: 'https://tantraspain.com/',
+    cover: coverTantra,
   },
   {
     name: 'Aneto',
     description:
-      'Tienda online de caldos realizada en Prestashop para la empresa Aneto ',
-    link: { href: 'https://tiendaneto.com/es/', label: 'tiendaneto.com' },
-    logo: logoAneto,
+      'Rediseño de tienda online realizada en Prestashop para la empresa Aneto.',
+    job: 'UI, Maquetación yFrontend',
+    link: 'https://tiendaneto.com/es/',
+    cover: coverAneto,
   },
   {
     name: 'Janeworld',
     description:
-      'Multitienda online de productos de bebés realizada en Prestashop',
-    link: { href: 'https://janeworld.com/', label: 'janeworld.com' },
-    logo: logoJane,
+      'Implementación de funcionalidades en multitiendas Janeworld y Becool en Prestashop.',
+    job: 'Maquetación y Frontend',
+    link: 'https://janeworld.com/',
+    cover: coverJane,
   },
   {
     name: 'Dentaid & Waterpike',
-    description: 'Tiendas online de productos para el cuidado dental ',
-    link: {
-      href: 'https://www.dentaidcomprasonline.pe/',
-      label: 'dentaidcomprasonline.pe',
-    },
-    logo: logoDentaid,
+    description:
+      'Implementación de funcionalidades en distintas tiendas online para varios países Dentaid y Waterpik en Prestashop.',
+    job: 'Maquetación y Frontend',
+    link: 'https://www.dentaidcomprasonline.pe/',
+
+    cover: coverDentaid,
+  },
+  {
+    name: 'Semillas Vivas',
+    description: 'Rediseño y Frontend de tienda online en Prestashop.',
+    job: 'UI, Maquetación y Frontend',
+    link: 'https://www.semillasvivas.bio/es/',
+    cover: coverSemillasvivas,
+  },
+]
+
+export const openprojects = [
+  {
+    name: 'Movie List',
+    description:
+      'Sitio web en NextJS y Tailwind, uso de la API de TMDB para mostrar diferentes colecciones de películas y series. El proyecto todavía está en desarrollo',
+    job: 'UI, Maquetación y Frontend',
+    link: 'https://movielist.educalvolopez.com/',
+    cover: coverMovieList,
+    github: 'https://github.com/educlopez/movie-list',
+  },
+  {
+    name: 'Talk World',
+    description:
+      'Proyecto realizado con remix.run y usando Suppabase para crear un chat. Para los estilos, se está utilizando Tailwindcss.',
+    job: 'UI, Maquetación y Frontend',
+    link: 'https://talkworld.educalvolopez.com/',
+    cover: coverTalkWorld,
+    github: 'https://github.com/educlopez/supabase-remix-talkworld-chat',
+  },
+  {
+    name: 'Gamedev',
+    description:
+      'Gamedev es un proyecto donde agregaré minijuegos a medida que aprenda React, Nextjs, y posiblemente migraré de JavaScript a TypeScript. Todos los comentarios y consejos para mejorar el código son bienvenidos.',
+    job: 'UI, Maquetación y Frontend',
+    link: 'https://gamedev.educalvolopez.com/',
+    cover: coverGameDev,
+    github: 'https://github.com/educlopez/gamedev',
+  },
+  {
+    name: 'Chefhere',
+    description:
+      'Generador de recetas con co:here, pasando ciertos parametros el prompt se completa y devuelve una receta con los ingredientes y pasos a seguir',
+    job: 'UI, Maquetación y Frontend',
+    link: 'https://chefhere.educalvolopez.com/',
+    cover: coverChefHere,
+    github: 'https://github.com/educlopez/chefhere-ai-cohere',
+  },
+  {
+    name: 'Wardobeme',
+    description:
+      '¡Descubre su guardarropa como nunca antes con Wardrobeme! Sube una imagen de tu ropa y deja que la api de cloudinary detecte elementos y colores individuales en la imagen.',
+    job: 'UI, Maquetación y Frontend',
+    link: 'https://wardobeme.educalvolopez.com/',
+    cover: coverWardobeme,
+    github: 'https://github.com/educlopez/wardrobeme',
   },
 ]

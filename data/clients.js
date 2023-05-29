@@ -1,11 +1,11 @@
-import bancosabadellLogo from '@/images/logos/color/bancosabadell-logo.svg';
-import net2phoneLogo from '@/images/logos/color/net2phone-logo.svg';
-import tantraLogo from '@/images/logos/color/tantra-logo.svg';
-import uamLogo from '@/images/logos/color/uam-logo.svg';
-import bancosabadellWhiteLogo from '@/images/logos/white/bancosabadell-logo.svg';
-import net2phoneWhiteLogo from '@/images/logos/white/net2phone-logo.svg';
-import tantraWhiteLogo from '@/images/logos/white/tantra-logo.svg';
-import uamWhiteLogo from '@/images/logos/white/uam-logo.svg';
+import bancosabadellLogo from '@/images/logos/color/bancosabadell-logo.svg'
+import net2phoneLogo from '@/images/logos/color/net2phone-logo.svg'
+import tantraLogo from '@/images/logos/color/tantra-logo.svg'
+import uamLogo from '@/images/logos/color/uam-logo.svg'
+import bancosabadellWhiteLogo from '@/images/logos/white/bancosabadell-logo.svg'
+import net2phoneWhiteLogo from '@/images/logos/white/net2phone-logo.svg'
+import tantraWhiteLogo from '@/images/logos/white/tantra-logo.svg'
+import uamWhiteLogo from '@/images/logos/white/uam-logo.svg'
 
 export const clients = [
   {

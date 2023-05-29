@@ -2,17 +2,12 @@
 
 import { useState } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
 import { stacks } from '@/data/stacks'
 import { Switch } from '@headlessui/react'
-import { motion } from 'framer-motion'
 
-import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
-import { Card } from '@/components/Card'
-import { Pill } from '@/components/Pill'
 import { Section } from '@/components/Section'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import { Toolgrid, Toollist } from '@/components/ToolItem'
 
 function filterStacks(stacks, type) {
   return stacks.filter((stack) => stack.type === type)
@@ -43,63 +38,6 @@ function ToolsSectionGrid({ children, title }) {
   )
 }
 
-function Toollist({ title, href, children, pills }) {
-  return (
-    <Card as="li" className="relative z-10">
-      <Card.Title
-        as="div"
-        href={href}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        {title}{' '}
-        {pills && (
-          <div className="inline-flex flex-wrap gap-2 ml-1">
-            {pills.map((pill) => (
-              <Pill key={pill.name} variant={pill.name} />
-            ))}
-          </div>
-        )}
-      </Card.Title>
-      <Card.Description>{children}</Card.Description>
-    </Card>
-  )
-}
-function Toolgrid({ title, href, img, children, pills }) {
-  return (
-    <li className="relative z-10 group">
-      <div className="block w-full p-3 overflow-hidden transition-transform duration-700 border rounded-lg shadow aspect-w-10 aspect-h-7 group border-black/10 bg-white/10 backdrop-blur-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur group-hover:scale-105">
-        <Image
-          src={img}
-          alt={title}
-          placeholder="blur"
-          width={70}
-          height={70}
-          className="object-cover mx-auto transition-transform duration-700 pointer-events-none group-hover:opacity-75 group-hover:scale-105"
-        />
-        <Link
-          href={href}
-          type="button"
-          className="absolute inset-0 focus:outline-none"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span className="sr-only">Ver {title}</span>
-        </Link>
-        <p className="block my-2 text-sm font-medium text-center truncate pointer-events-none text-neutral-900 dark:text-white">
-          {children}
-        </p>
-        {pills && (
-          <div className="absolute inline-flex items-center justify-between gap-2 inset-x-1 top-1 ">
-            {pills.map((pill) => (
-              <Pill key={pill.name} variant={pill.name} />
-            ))}
-          </div>
-        )}
-      </div>
-    </li>
-  )
-}
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -159,11 +97,7 @@ export default function Uses() {
         title="El software que uso, los dispositivos que amo y otras cosas que recomiendo."
         intro="Las cosas que uso para crear webs, mantenerme productivo o comprar para engañarme y pensar que estoy siendo productivo cuando en realidad solo estoy procrastinando. Aquí hay una gran lista de todas mis cosas favoritas.  Algunas recomendaciones pueden contener enlaces de afilidados."
       >
-        <motion.div
-          className="relative z-20 flex items-center justify-start gap-4 px-4 py-2 my-16 border dark:backdrop-blurbackdrop-blur w-fit rounded-3xl border-black/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20"
-          variants={FADE_DOWN_ANIMATION_VARIANTS}
-          layout
-        >
+        <div className="relative z-20 flex items-center justify-start gap-4 px-4 py-2 my-16 border dark:backdrop-blurbackdrop-blur w-fit rounded-3xl border-black/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20">
           <span>Vista</span>
           <Switch
             checked={enabled}
@@ -233,7 +167,7 @@ export default function Uses() {
               </span>
             </span>
           </Switch>
-        </motion.div>
+        </div>
         {view === 'list' ? (
           <div className="space-y-20">
             <ToolsSection title="Workstation">
