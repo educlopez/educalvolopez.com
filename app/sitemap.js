@@ -1,7 +1,7 @@
-import { allBlogs } from 'contentlayer/generated'
+import { allPosts } from 'contentlayer/generated'
 
 export default async function sitemap() {
-  const blogs = allBlogs.map((post) => ({
+  const blogs = allPosts.map((post) => ({
     url: `https://educalvolopez.com/blog/${post.slug}`,
     lastModified: post.publishedAt,
   }))
