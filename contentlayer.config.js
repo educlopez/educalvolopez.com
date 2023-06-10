@@ -10,6 +10,25 @@ const computedFields = {
     type: 'string',
     resolve: (doc) => doc._raw.flattenedPath,
   },
+  structuredData: {
+    type: 'object',
+    resolve: (doc) => ({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: doc.title,
+      datePublished: doc.publishedAt,
+      dateModified: doc.publishedAt,
+      description: doc.summary,
+      image: doc.image
+        ? `https://educalvolopez.com${doc.image}`
+        : `https://educalvolopez.com/api/og?title=${doc.title}`,
+      url: `https://educalvolopez.com/blog/${doc._raw.flattenedPath}`,
+      author: {
+        '@type': 'Person',
+        name: 'Edu Calvo',
+      },
+    }),
+  },
 }
 
 export const Post = defineDocumentType(() => ({
@@ -24,9 +43,12 @@ export const Post = defineDocumentType(() => ({
     description: {
       type: 'string',
     },
-    date: {
+    publishedAt: {
       type: 'string',
       required: true,
+    },
+    image: {
+      type: 'string',
     },
   },
   computedFields,

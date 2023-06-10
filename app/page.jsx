@@ -31,7 +31,7 @@ export default function Home() {
         <div className="grid max-w-xl grid-cols-1 mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
             {allPosts
-              .sort((a, b) => b.date.localeCompare(a.date))
+              .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
               .slice(0, 3)
               .map((post) => (
                 <Article key={post.slug} post={post} home={true} />

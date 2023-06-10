@@ -5,6 +5,11 @@ import { Phototab } from '@/components/PhotoTab'
 import { Reviews } from '@/components/Reviews'
 import { SocialText } from '@/components/SocialLinks'
 
+export const metadata = {
+  title: 'About',
+  description: 'Diseñador web y Frontend con sede en Madrid',
+}
+
 export default function About() {
   return (
     <>

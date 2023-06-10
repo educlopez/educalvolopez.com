@@ -30,7 +30,7 @@ export default function SearchPost() {
           </p>
         )}
         {filteredBlogPosts
-          .sort((a, b) => b.date.localeCompare(a.date))
+          .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
           .map((post) => (
             <Article key={post.slug} post={post} home={false} />
           ))}

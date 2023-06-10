@@ -4,6 +4,11 @@ import Clients from '@/components/Clients'
 import ProjectCard from '@/components/ProjectCard'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
+export const metadata = {
+  title: 'Proyectos',
+  description: 'Proyectos que he realizado durante mi carrera.',
+}
+
 export default function Projects() {
   return (
     <>
