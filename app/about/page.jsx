@@ -8,6 +8,9 @@ import { SocialText } from '@/components/SocialLinks'
 export const metadata = {
   title: 'About',
   description: 'Diseñador web y Frontend con sede en Madrid',
+  keywords: [
+    'Diseñador web, frontend, maquetador, creatividad, habilidades de comunicación visual, resolución de problemas, interfaces de usuario, diseños responsive, clientes , empresas',
+  ],
 }
 
 export default function About() {

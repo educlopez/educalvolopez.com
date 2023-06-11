@@ -32,7 +32,7 @@ export function Toolgrid({ title, href, img, pills }) {
   return (
     <li className="relative z-10 group">
       <div className="block w-full p-3 overflow-hidden transition-transform duration-700 border rounded-lg shadow aspect-w-10 aspect-h-7 group bg-zinc-50/70 backdrop-blur-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 dark:backdrop-blur group-hover:scale-105 border-black/10 group-hover:shadow-lg dark:border-white/10 dark:bg-zinc-900/20">
-        <LinkArrow />
+        <LinkArrow variant="grid" />
         <Image
           src={img}
           alt={title}

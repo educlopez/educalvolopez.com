@@ -7,6 +7,9 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 export const metadata = {
   title: 'Proyectos',
   description: 'Proyectos que he realizado durante mi carrera.',
+  keywords: [
+    'proyectos de carrera, colaboración con grandes marcas, ayuda a pequeños negocios, calidad en trabajo',
+  ],
 }
 
 export default function Projects() {

@@ -29,10 +29,6 @@ export const generalLinks = [
     label: 'Tienda',
     target: '_blank',
   },
-  {
-    href: '/rss/feed.xml',
-    label: 'Rss',
-  },
 ]
 
 export const linksSocial = [

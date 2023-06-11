@@ -8,7 +8,7 @@ export default function Article({ post, home }) {
         <Card.Title href={`/blog/${post.slug}`}>{post.title}</Card.Title>
         {home && (
           <Card.Eyebrow as="time" decorate>
-            {formatDate(post.date)}
+            {formatDate(post.publishedAt)}
           </Card.Eyebrow>
         )}
         <Card.Description>{post.description}</Card.Description>
@@ -16,7 +16,7 @@ export default function Article({ post, home }) {
       </Card>
       {!home && (
         <Card.Eyebrow as="time" className="hidden mt-1 md:block">
-          {formatDate(post.date)}
+          {formatDate(post.publishedAt)}
         </Card.Eyebrow>
       )}
     </article>

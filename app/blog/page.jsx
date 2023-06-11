@@ -5,6 +5,9 @@ export const metadata = {
   title: 'Blog',
   description:
     'Escribiendo sobre diseño de interfaces, programación y hobbies.',
+  keywords: [
+    'diseño de interfaces, programación, hobbies, escritura, LinkedIn',
+  ],
 }
 
 export default function ArticlesIndex({}) {
