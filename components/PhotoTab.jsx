@@ -9,6 +9,7 @@ import { Tab } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Dog, Map as MapIcon, User } from 'lucide-react'
 import { useDebouncedCallback } from 'use-debounce'
+import useSound from 'use-sound'
 
 const tabs = [
   {
@@ -29,6 +30,7 @@ const tabs = [
 ]
 
 export function Phototab() {
+  const [click] = useSound('sounds/click.mp3')
   let [selectedIndex, setSelectedIndex] = useState(0)
   let [hoveredIndex, setHoveredIndex] = useState(null)
   let onChange = useDebouncedCallback(
@@ -74,7 +76,10 @@ export function Phototab() {
                 initial={{ borderRadius: 16 }}
               />
             )}
-            <Tab className="relative z-10 p-8 px-2 py-1 rounded-full focus:outline-none">
+            <Tab
+              className="relative z-10 p-8 px-2 py-1 rounded-full focus:outline-none"
+              onClick={click}
+            >
               {tab.icon}
               <div className="sr-only">{tab.name}</div>
             </Tab>

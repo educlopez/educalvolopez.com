@@ -11,6 +11,7 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDown, X } from 'lucide-react'
+import useSound from 'use-sound'
 
 import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
 import { Container } from '@/components/Container'
@@ -101,13 +102,14 @@ function MobileNavigation(props) {
 
 function NavItem({ href, children, target, rel, onMouseEnter, onMouseLeave }) {
   let isActive = useRouter().pathname === href
-
+  const [click] = useSound('sounds/click.mp3')
   return (
     <li>
       <Link
         target={target}
         rel={rel}
         href={href}
+        onClick={click}
         className={clsx(
           'relative block px-3  transition',
           isActive

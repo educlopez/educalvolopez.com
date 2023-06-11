@@ -15,6 +15,9 @@ export const metadata = {
     template: '%s | Edu Calvo',
   },
   description: 'Diseñador web y Frontend con sede en Madrid',
+  keywords: [
+    'diseñador web, frontend, maquetador, Madrid, Cinetic Digital, Freelance, portfolio, edu, calvo',
+  ],
   openGraph: {
     title: 'Edu Calvo',
     description: 'Diseñador web y Frontend con sede en Madrid',
