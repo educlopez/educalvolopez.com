@@ -191,6 +191,7 @@ function AvatarContainer({ className, ...props }) {
 
 function Avatar({ large = false, className, index, ...props }) {
   let [hoveredIndex, setHoveredIndex] = useState(null)
+  const [click] = useSound('sounds/click.mp3')
   return (
     <Link
       href="/"
@@ -198,6 +199,7 @@ function Avatar({ large = false, className, index, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
+      onClick={click}
       {...props}
     >
       <Image
