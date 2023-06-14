@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "email": "email dev --dir emails"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
@@ -15,6 +16,9 @@
     "@mdx-js/loader": "2.3.0",
     "@mdx-js/react": "2.3.0",
     "@next/mdx": "13.4.1",
+    "@react-email/button": "0.0.8",
+    "@react-email/components": "0.0.6",
+    "@react-email/html": "0.0.4",
     "@tailwindcss/typography": "0.5.9",
     "@vercel/analytics": "1.0.1",
     "autoprefixer": "10.4.14",
@@ -31,11 +35,13 @@
     "postcss-focus-visible": "8.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-email": "1.9.3",
     "react-wrap-balancer": "0.5.0",
     "rehype-autolink-headings": "6.1.1",
     "rehype-pretty-code": "0.9.5",
     "rehype-slug": "5.1.0",
     "remark-gfm": "3.0.1",
+    "resend": "^0.15.1",
     "sharp": "0.32.1",
     "swr": "2.1.5",
     "use-debounce": "9.0.4",

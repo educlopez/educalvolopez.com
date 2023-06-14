@@ -2,6 +2,7 @@ import { allPosts } from '@/.contentlayer/generated'
 import Balancer from 'react-wrap-balancer'
 
 import Article from '@/components/ArticleCard'
+import ContactForm from '@/components/ContactForm'
 import { Container } from '@/components/Container'
 import Resume from '@/components/Resume'
 import { SocialLinks } from '@/components/SocialLinks'
@@ -38,6 +39,7 @@ export default function Home() {
               ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
+            <ContactForm />
             <Resume />
           </div>
         </div>
