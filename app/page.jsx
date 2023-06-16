@@ -7,6 +7,7 @@ import { Container } from '@/components/Container'
 import Resume from '@/components/Resume'
 import { SocialLinks } from '@/components/SocialLinks'
 import { StatusWork } from '@/components/StatusWork'
+import Toasty from '@/components/Toast'
 
 export default function Home() {
   const isAvailable = true
@@ -30,7 +31,7 @@ export default function Home() {
       </Container>
       <Container className="mt-24 md:mt-28">
         <div className="grid max-w-xl grid-cols-1 mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-16 pt-5">
             {allPosts
               .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
               .slice(0, 3)
@@ -44,6 +45,7 @@ export default function Home() {
           </div>
         </div>
       </Container>
+      <Toasty />
     </>
   )
 }

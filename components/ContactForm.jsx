@@ -1,43 +1,55 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { MessageCircle, Send } from 'lucide-react';
+import { useState } from 'react'
+import { MessageCircle, Send } from 'lucide-react'
+import { Toaster, toast } from 'sonner'
 
+import { Button } from '@/components/Button'
 
-import { Button } from '@/components/Button';
-
-function isInputNamedElement(e){
+function isInputNamedElement(e) {
   return 'value' in e && 'name' in e
 }
 
 export default function ContactForm() {
-   const [state, setState] = useState();
+  const [state, setState] = useState()
 
-  async function handleSubmit(e) {
+  async function handleOnSubmit(e) {
     e.preventDefault()
-    const formData = {};
+    const formData = {}
 
-    Array.from(e.currentTarget.elements).filter(isInputNamedElement).forEach((field) => {
-        if (!field.name) return;
-        formData[field.name] = field.value;
-    });
-
-    setState('loading');
-
-      await fetch('/api/send', {
-        method: 'POST',
-        body: JSON.stringify({
-          firstName: formData.firstName,
-          email: formData.email,
-          message: formData.message,
-        }),
+    Array.from(e.currentTarget.elements)
+      .filter(isInputNamedElement)
+      .forEach((field) => {
+        if (!field.name) return
+        formData[field.name] = field.value
       })
 
-      setState('ready')
+    setState('loading')
+
+    await fetch('/api/send', {
+      method: 'POST',
+      body: JSON.stringify({
+        firstName: formData.firstName,
+        email: formData.email,
+        message: formData.message,
+      }),
+    })
+
+    setState('ready')
+    const promise = () => new Promise((e) => setTimeout(e, 2000))
+
+    toast.promise(promise, {
+      loading: 'Enviando...',
+      success: () => {
+        return `¡Mensaje enviado!`
+      },
+      error: 'Error al enviar el mensaje',
+    })
   }
+
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={handleOnSubmit}
       className="p-6 border rounded-2xl border-black/10 bg-neutral-50/70 backdrop-blur-sm dark:border-white/10 dark:bg-neutral-900/20 dark:backdrop-blur"
     >
       <h2 className="flex text-sm font-semibold text-neutral-900 dark:text-neutral-100">
@@ -45,30 +57,33 @@ export default function ContactForm() {
         <span className="ml-3">Contactar</span>
       </h2>
       <p className="mt-2 text-sm text-neutral-900 dark:text-neutral-100">
-        Get notified when I publish something new, and unsubscribe at any time.
+        Pregúntame lo que quieras, estaré encantado de responderte.
       </p>
       <div className="flex flex-col gap-4 mt-6">
         <input
           type="name"
-          id="firstname"
+          id="firstName"
+          name="firstName"
           placeholder="Nombre"
           aria-label="Nombre"
           required=""
-          className="relative w-full h-8 pl-2 text-base border rounded-md resize-none text-neutral-900 dark:text-neutral-100 bg-neutral-50/70 border-black/10 dark:border-white/10 dark:bg-neutral-900/20 placeholder-neutral-400 invalid:text-red-500 sm:text-sm dark:bg-quaternary dark:placeholder-gray-500 focus:ring-2 focus:invalid:text-white focus:invalid:border-blue-600 focus:ring-blue-100 focus:invalid: dark:focus:ring-blue-600/40"
+          className="relative w-full h-8 pl-2 text-base border rounded-md resize-none text-neutral-900 dark:text-neutral-100 bg-neutral-50/70 border-black/10 dark:border-white/10 dark:bg-neutral-900/20 placeholder-neutral-400 invalid:text-red-500 sm:text-sm dark:bg-quaternary dark:placeholder-neutral-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-600/40"
         />
         <input
           type="email"
           id="email"
+          name="email"
           placeholder="Email"
           aria-label="Email"
           required=""
-          className="relative w-full h-8 pl-2 text-base border rounded-md resize-none text-neutral-900 dark:text-neutral-100 bg-neutral-50/70 border-black/10 dark:border-white/10 dark:bg-neutral-900/20 placeholder-neutral-400 invalid:text-red-500 sm:text-sm dark:bg-quaternary dark:placeholder-gray-500 focus:ring-2 focus:invalid:text-white focus:invalid:border-blue-600 focus:ring-blue-100 focus:invalid: dark:focus:ring-blue-600/40"
+          className="relative w-full h-8 pl-2 text-base border rounded-md resize-none text-neutral-900 dark:text-neutral-100 bg-neutral-50/70 border-black/10 dark:border-white/10 dark:bg-neutral-900/20 placeholder-neutral-400 invalid:text-red-500 sm:text-sm dark:bg-quaternary dark:placeholder-neutral-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-600/40"
         />
         <textarea
           id="message"
-          placeholder="How can I help you?"
+          name="message"
+          placeholder="Cuéntame que necesitas"
           rows="4"
-          className="relative w-full h-8 pl-2 text-base border rounded-md resize-none text-neutral-900 dark:text-neutral-100 bg-neutral-50/70 border-black/10 dark:border-white/10 dark:bg-neutral-900/20 placeholder-neutral-400 invalid:text-red-500 sm:text-sm dark:bg-quaternary dark:placeholder-gray-500 focus:ring-2 focus:invalid:text-white focus:invalid:border-blue-600 focus:ring-blue-100 focus:invalid: dark:focus:ring-blue-600/40"
+          className="relative w-full pl-2 text-base border rounded-md resize-none text-neutral-900 dark:text-neutral-100 bg-neutral-50/70 border-black/10 dark:border-white/10 dark:bg-neutral-900/20 placeholder-neutral-400 invalid:text-red-500 sm:text-sm dark:bg-quaternary dark:placeholder-neutral-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-600/40"
           required
         />
       </div>

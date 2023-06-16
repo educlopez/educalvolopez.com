@@ -15,7 +15,7 @@ export const ContactEmail = ({ firstName, email, message }) => (
     <Preview>Contacto</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Heading style={h1}>Welcome {firstName}</Heading>
+        <Heading style={h1}>Contacto {firstName}</Heading>
         <Text style={{ ...text, marginBottom: '14px' }}>{email}</Text>
         <Text style={{ ...text, marginBottom: '14px' }}>{message}</Text>
 

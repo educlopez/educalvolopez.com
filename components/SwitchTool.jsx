@@ -1,15 +1,12 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { stacks } from '@/data/stacks';
-import { Switch } from '@headlessui/react';
-import useSound from 'use-sound';
+import { useState } from 'react'
+import { stacks } from '@/data/stacks'
+import { Switch } from '@headlessui/react'
+import useSound from 'use-sound'
 
-
-
-import { Toolgrid, Toollist } from '@/components/ToolItem';
-import { ToolsSection, ToolsSectionGrid } from '@/components/ToolsSections';
-
+import { Toolgrid, Toollist } from '@/components/ToolItem'
+import { ToolsSection, ToolsSectionGrid } from '@/components/ToolsSections'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -25,7 +22,7 @@ export function SwitchTool() {
   const productivity = filterStacks(stacks, 'productivity')
   const [view, setView] = useState('list')
   const [enabled, setEnabled] = useState(false)
-  const [click] = useSound('sounds/switch.mp3', { volume: 0.25 })
+  const [click] = useSound('sounds/toggle_on.wav', { volume: 0.25 })
   return (
     <>
       <div className="relative z-20 flex items-center justify-start gap-4 px-4 py-2 my-16 border dark:backdrop-blurbackdrop-blur w-fit rounded-3xl border-black/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20">

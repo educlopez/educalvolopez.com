@@ -16,9 +16,7 @@
     "@mdx-js/loader": "2.3.0",
     "@mdx-js/react": "2.3.0",
     "@next/mdx": "13.4.1",
-    "@react-email/button": "0.0.8",
     "@react-email/components": "0.0.6",
-    "@react-email/html": "0.0.4",
     "@tailwindcss/typography": "0.5.9",
     "@vercel/analytics": "1.0.1",
     "autoprefixer": "10.4.14",
@@ -43,6 +41,7 @@
     "remark-gfm": "3.0.1",
     "resend": "^0.15.1",
     "sharp": "0.32.1",
+    "sonner": "^0.4.0",
     "swr": "2.1.5",
     "use-debounce": "9.0.4",
     "use-sound": "^4.0.1"

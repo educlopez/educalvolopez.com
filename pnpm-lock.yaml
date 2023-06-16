@@ -16,15 +16,9 @@ dependencies:
   '@next/mdx':
     specifier: 13.4.1
     version: 13.4.1(@mdx-js/loader@2.3.0)(@mdx-js/react@2.3.0)
-  '@react-email/button':
-    specifier: 0.0.8
-    version: 0.0.8
   '@react-email/components':
     specifier: 0.0.6
     version: 0.0.6
-  '@react-email/html':
-    specifier: 0.0.4
-    version: 0.0.4
   '@tailwindcss/typography':
     specifier: 0.5.9
     version: 0.5.9(tailwindcss@3.3.2)
@@ -97,6 +91,9 @@ dependencies:
   sharp:
     specifier: 0.32.1
     version: 0.32.1
+  sonner:
+    specifier: ^0.4.0
+    version: 0.4.0(react-dom@18.2.0)(react@18.2.0)
   swr:
     specifier: 2.1.5
     version: 2.1.5(react@18.2.0)
@@ -6756,6 +6753,16 @@ packages:
     resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
     engines: {node: '>=12'}
     dev: true
+
+  /sonner@0.4.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-zEU/Mzur39xYPpyQOOCmN6YQftl5v+TSmdsmWEbWf6ovnOvnHyRwR7+/6BIBbzwRa8+3v06FJlpF7J3KS4Ll9Q==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /sort-keys@5.0.0:
     resolution: {integrity: sha512-Pdz01AvCAottHTPQGzndktFNdbRA75BgOfeT1hH+AMnJFv8lynkPi42rfeEhpx1saTEI3YNMWxfqu0sFD1G8pw==}

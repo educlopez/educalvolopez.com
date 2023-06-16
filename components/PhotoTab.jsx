@@ -30,7 +30,7 @@ const tabs = [
 ]
 
 export function Phototab() {
-  const [click] = useSound('sounds/click.mp3')
+  const [click] = useSound('sounds/tap_01.wav')
   let [selectedIndex, setSelectedIndex] = useState(0)
   let [hoveredIndex, setHoveredIndex] = useState(null)
   let onChange = useDebouncedCallback(

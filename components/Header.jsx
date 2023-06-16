@@ -102,7 +102,7 @@ function MobileNavigation(props) {
 
 function NavItem({ href, children, target, rel, onMouseEnter, onMouseLeave }) {
   let isActive = useRouter().pathname === href
-  const [click] = useSound('sounds/click.mp3')
+  const [click] = useSound('sounds/tap_01.wav')
   return (
     <li>
       <Link
@@ -191,7 +191,7 @@ function AvatarContainer({ className, ...props }) {
 
 function Avatar({ large = false, className, index, ...props }) {
   let [hoveredIndex, setHoveredIndex] = useState(null)
-  const [click] = useSound('sounds/click.mp3')
+  const [click] = useSound('sounds/tap_01.wav')
   return (
     <Link
       href="/"
