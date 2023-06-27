@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { linksSocial } from '@/data/links'
 import clsx from 'clsx'
@@ -43,19 +45,24 @@ export function SocialLinks({}) {
 export function LinkText({ className, href, children, icon: Icon, outline }) {
   return (
     <li className={clsx(className, 'flex')}>
-      <Link href={href} rel="noopener noreferrer" target="_blank" className="">
+      <Link
+        href={href}
+        rel="noopener noreferrer"
+        target="_blank"
+        className=""
+      >
         <div className="relative group">
           <div className="absolute z-10 flex items-center justify-center w-full h-full transition-all translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
-            <p className="font-semibold cursor-pointer text-zinc-900 dark:text-white">
+            <p className="font-semibold cursor-pointer body-primary">
               {children}
             </p>
             <div className="relative flex items-center group">
               <ArrowUpRight className="absolute w-4 h-4 transition-all opacity-0 group-hover:translate-x-1 group-hover:opacity-100" />
             </div>
           </div>
-          <div className="flex text-sm font-medium transition-all group text-neutral-700 dark:text-zinc-400 group-hover:opacity-20 group-hover:blur-sm sm:h-7 blur-0 grayscale-0">
+          <div className="flex text-sm font-medium transition-all group body-secondary group-hover:opacity-20 group-hover:blur-sm sm:h-7 blur-0 grayscale-0">
             {outline ? (
-              <Icon className="w-6 h-6 stroke-[1.5px] transition text-neutral-700 group-hover:text-neutral-700 dark:text-zinc-400 dark:group-hover:text-outline-300 outline-zinc-600 group-hover:outline-zinc-600 dark:outline-zinc-400 dark:group-hover:text-zinc-300" />
+              <Icon className="w-6 h-6 stroke-[1.5px] transition text-neutral-700 group-hover:body-secondary dark:group-hover:text-outline-300 outline-zinc-600 group-hover:outline-zinc-600 dark:outline-zinc-400 dark:group-hover:text-zinc-300" />
             ) : (
               <Icon className="flex-none w-6 h-6 transition fill-zinc-600 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
             )}

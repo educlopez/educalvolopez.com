@@ -11,7 +11,7 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDown, X } from 'lucide-react'
-import useSound from 'use-sound'
+
 
 import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
 import { Container } from '@/components/Container'
@@ -36,7 +36,7 @@ function MobileNavItem({ href, children, target, rel }) {
 function MobileNavigation(props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="flex items-center px-4 py-2 text-sm font-medium border rounded-full group border-black/10 bg-white/10 text-neutral-900 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-300 dark:backdrop-blur">
+      <Popover.Button className="flex items-center px-4 py-2 text-sm font-medium border rounded-full group box-gen body-primary">
         Menu
         <ChevronDown className="w-3 h-auto ml-3 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
       </Popover.Button>
@@ -67,14 +67,14 @@ function MobileNavigation(props) {
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="p-1 -m-1">
-                <X className="w-6 h-6 text-zinc-500 dark:text-zinc-400" />
+                <X className="w-6 h-6 body-primary" />
               </Popover.Button>
-              <h2 className="text-sm font-medium text-neutral-700 dark:text-zinc-400">
+              <h2 className="text-sm font-medium body-primary">
                 Menu
               </h2>
             </div>
             <nav className="mt-6">
-              <ul className="-my-2 text-base divide-y divide-zinc-100 text-neutral-700 dark:divide-zinc-100/5 dark:text-zinc-400">
+              <ul className="-my-2 text-base divide-y divide-zinc-100 dark:divide-zinc-100/5 body-primary">
                 {generalLinks.map((link, index) => {
                   if (index !== 5) {
                     return (
@@ -102,14 +102,12 @@ function MobileNavigation(props) {
 
 function NavItem({ href, children, target, rel, onMouseEnter, onMouseLeave }) {
   let isActive = useRouter().pathname === href
-  const [click] = useSound('sounds/tap_01.wav')
   return (
     <li>
       <Link
         target={target}
         rel={rel}
         href={href}
-        onClick={click}
         className={clsx(
           'relative block px-3  transition',
           isActive
@@ -132,7 +130,7 @@ function DesktopNavigation(props) {
   let [hoveredIndex, setHoveredIndex] = useState(null)
   return (
     <nav {...props}>
-      <ul className="flex px-3 py-2 text-sm font-medium transition border rounded-full border-black/10 bg-zinc-50/50 text-neutral-900 backdrop-blur-sm hover:text-neutral-900 dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur dark:hover:text-white">
+      <ul className="flex px-3 py-2 text-sm font-semibold transition rounded-full text-neutral-900 hover:text-neutral-900 dark:text-white/90 dark:hover:text-white box-gen">
         {generalLinks.map((link, index) => {
           if (index !== 5) {
             return (
@@ -191,7 +189,6 @@ function AvatarContainer({ className, ...props }) {
 
 function Avatar({ large = false, className, index, ...props }) {
   let [hoveredIndex, setHoveredIndex] = useState(null)
-  const [click] = useSound('sounds/tap_01.wav')
   return (
     <Link
       href="/"
@@ -199,7 +196,6 @@ function Avatar({ large = false, className, index, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
-      onClick={click}
       {...props}
     >
       <Image

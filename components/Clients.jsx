@@ -45,9 +45,7 @@ export default function Clients() {
             href={client.url}
           >
             <div className="absolute z-10 flex items-center justify-center w-full h-full transition-all translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
-              <p className="font-semibold text-neutral-900 dark:text-white">
-                {client.urlname}
-              </p>
+              <p className="font-semibold body-primary">{client.urlname}</p>
               <div className="relative flex items-center group">
                 <ArrowUpRight className="absolute w-4 h-4 transition-all opacity-0 group-hover:translate-x-1 group-hover:opacity-100" />
               </div>

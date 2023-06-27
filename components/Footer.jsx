@@ -29,10 +29,10 @@ export function Footer() {
   return (
     <motion.footer className="mt-32" {...FADE_IN_ANIMATION_CARD}>
       <Container.Outer>
-        <div className="pt-10 pb-16 border-t border-black/10 dark:border-white/10">
+        <div className="pt-10 pb-16 border-t border-zinc-400/40 dark:border-white/10">
           <Container.Inner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-              <div className="flex flex-wrap justify-center gap-4 text-sm font-medium text-zinc-900 dark:text-zinc-300 md:justify-start ">
+              <div className="flex flex-wrap justify-center gap-4 text-sm font-semibold body-primary md:justify-start ">
                 {generalLinks.map((link, index) => (
                   <NavLink
                     key={link.href}

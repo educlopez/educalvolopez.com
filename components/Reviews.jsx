@@ -10,19 +10,16 @@ import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
 function Review({ title, body, author, className, ...props }) {
   return (
     <motion.figure
-      className={clsx(
-        'rounded-3xl border border-black/10 bg-zinc-50/70 shadow p-6 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur',
-        className
-      )}
+      className={clsx('rounded-3xl  shadow p-6 box-gen m-1', className)}
       {...props}
       {...FADE_IN_ANIMATION_CARD}
     >
-      <blockquote className="text-neutral-900 dark:text-zinc-100">
-        <p className="text-sm font-semibold leading-6 before:content-['“'] after:content-['”']">
+      <blockquote className="body-secondary">
+        <p className="text-sm leading-6 before:content-['“'] after:content-['”']">
           {body}
         </p>
       </blockquote>
-      <figcaption className="mt-3 text-sm text-neutral-700 dark:text-zinc-400">
+      <figcaption className="mt-3 text-sm font-semibold body-primary ">
         {author} - {title}
       </figcaption>
     </motion.figure>
@@ -108,7 +105,7 @@ export function Reviews() {
     >
       <h2
         id="reviews-title"
-        className="text-3xl font-medium tracking-tight text-neutral-900 dark:text-white"
+        className="text-3xl font-medium tracking-tight body-primary"
       >
         Testimonios
       </h2>

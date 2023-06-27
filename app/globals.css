@@ -83,3 +83,18 @@
       0px 4px 2px 0px rgba(0, 0, 0, 0.04), 0px 6px 3px 0px rgba(0, 0, 0, 0.04);
   }
 }
+
+@layer components {
+  .box-gen {
+    @apply border border-white bg-zinc-50/70 bg-blend-luminosity outline outline-1 outline-offset-0 outline-zinc-200 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-900/20 dark:outline-[#1a1a1a];
+  }
+  .title-primary {
+    @apply text-4xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-5xl;
+  }
+  .body-primary {
+    @apply text-neutral-900 dark:text-white;
+  }
+  .body-secondary {
+    @apply text-neutral-700 dark:text-white/80;
+  }
+}

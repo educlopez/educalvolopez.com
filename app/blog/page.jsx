@@ -17,7 +17,7 @@ export default function ArticlesIndex({}) {
         title="Escribiendo sobre diseño de interfaces, programación y hobbies."
         intro={`Cuando no estoy programando, puedes encontrarme escribiendo sobre diseño de interfaces, programación y hobbies. Si quieres saber más sobre mí, echa un vistazo a mi perfil de LinkedIn.`}
       >
-        <div className="md:border-l md:border-black/10 md:pl-6 md:dark:border-white/10">
+        <div className="md:border-l md:border-zinc-400/40 md:pl-6 md:dark:border-white/10">
           <SearchPost />
         </div>
       </SimpleLayout>

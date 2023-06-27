@@ -42,6 +42,7 @@ export const Post = defineDocumentType(() => ({
     },
     description: {
       type: 'string',
+      required: true,
     },
     publishedAt: {
       type: 'string',
@@ -49,6 +50,13 @@ export const Post = defineDocumentType(() => ({
     },
     image: {
       type: 'string',
+    },
+    keywords: {
+      type: 'string',
+    },
+    tags: {
+      type: 'list',
+      of: { type: 'string' },
     },
   },
   computedFields,

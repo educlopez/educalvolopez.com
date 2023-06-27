@@ -10,7 +10,14 @@ export async function generateMetadata({ params }) {
   if (!post) {
     return
   }
-  const { title, publishedAt: publishedTime, description, image, slug } = post
+  const {
+    title,
+    keywords,
+    publishedAt: publishedTime,
+    description,
+    image,
+    slug,
+  } = post
   const ogImage = image
     ? `https://educalvolopez.com${image}`
     : `https://educalvolopez.com/api/og?title=${title}`
@@ -18,6 +25,7 @@ export async function generateMetadata({ params }) {
   return {
     title,
     description,
+    keywords: keywords,
     openGraph: {
       title,
       description,
@@ -47,6 +55,7 @@ export async function generateStaticParams() {
 
 export default async function PostPage({ params }) {
   const post = allPosts.find((post) => post.slug === params.slug)
+  const sortedTags = post.tags.sort((a, b) => a.localeCompare(b))
 
   if (!post) {
     notFound()
@@ -58,10 +67,19 @@ export default async function PostPage({ params }) {
         <div className="max-w-2xl mx-auto">
           <article className="py-6 prose dark:prose-invert">
             <header className="flex flex-col">
-              <h1 className="mt-6 text-4xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-5xl">
+              <h1 className="mt-6 title-primary">
                 <Balancer>{post.title}</Balancer>
               </h1>
-
+              <div className="inline-flex gap-2 mt-4">
+                {sortedTags.map((tag) => (
+                  <div
+                    key={tag}
+                    className="px-2 py-1 text-xs rounded-full box-gen before:content-['#']"
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
               <div className="flex items-center order-first text-base text-neutral-700 dark:text-zinc-400">
                 <span className="h-4 w-0.5 rounded-full bg-zinc-900 dark:bg-zinc-500" />
                 <span className="ml-3">{post.publishedAt}</span>

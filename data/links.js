@@ -21,8 +21,8 @@ export const generalLinks = [
     label: 'Proyectos',
   },
   {
-    href: '/recomendaciones',
-    label: 'Recomendaciones',
+    href: '/stack',
+    label: 'Stack',
   },
   {
     href: 'https://educalvolopez.lemonsqueezy.com/',

@@ -51,7 +51,7 @@ Song.Title = function SongTitle({ title, songUrl, className }) {
   return (
     <Link
       href={songUrl}
-      className="font-medium truncate text-neutral-900 capsize max-w-max dark:text-zinc-200"
+      className="font-semibold truncate capsize max-w-max body-primary"
     >
       {title}
     </Link>
@@ -60,7 +60,7 @@ Song.Title = function SongTitle({ title, songUrl, className }) {
 
 Song.Artist = function SongArtist({ as: Component = 'p', artist }) {
   return (
-    <Component className="truncate capsize max-w-max text-zinc-900 dark:text-zinc-300">
+    <Component className="truncate capsize max-w-max body-secondary">
       {artist}
     </Component>
   )

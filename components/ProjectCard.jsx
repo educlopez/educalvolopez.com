@@ -8,7 +8,7 @@ import { Card } from './Card'
 export default function ProjectCard({ project, github }) {
   return (
     <Card as="li" key={project.name}>
-      <div className="relative z-10 flex items-center justify-center w-full bg-white shadow-md rounded-xl shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+      <div className="relative z-10 flex items-center justify-center w-full shadow-md rounded-xl shadow-zinc-800/5 ">
         <Image
           src={project.cover}
           alt={project.name}
@@ -17,7 +17,7 @@ export default function ProjectCard({ project, github }) {
           className="w-full transition-transform duration-700 rounded-xl group-hover:scale-105"
         />
       </div>
-      <h2 className="z-10 mt-6 text-base font-semibold text-neutral-900 dark:text-white">
+      <h2 className="z-10 mt-6 text-base font-semibold body-primary">
         <Card.Link
           href={project.link}
           target="_blank"

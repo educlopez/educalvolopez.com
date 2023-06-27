@@ -31,7 +31,7 @@ export function Toollist({ title, href, children, pills }) {
 export function Toolgrid({ title, href, img, pills }) {
   return (
     <li className="relative z-10 group">
-      <div className="block w-full p-3 overflow-hidden transition-transform duration-700 border rounded-lg shadow aspect-w-10 aspect-h-7 group bg-zinc-50/70 backdrop-blur-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 dark:backdrop-blur group-hover:scale-105 border-black/10 group-hover:shadow-lg dark:border-white/10 dark:bg-zinc-900/20">
+      <div className="block w-full p-3 overflow-hidden transition-transform duration-700 rounded-lg shadow aspect-w-10 aspect-h-7 group group-hover:scale-105 group-hover:shadow-lg box-gen">
         <LinkArrow variant="grid" />
         <Image
           src={img}
@@ -50,7 +50,7 @@ export function Toolgrid({ title, href, img, pills }) {
         >
           <span className="sr-only">Ver {title}</span>
         </Link>
-        <p className="block my-2 text-sm font-medium text-center truncate pointer-events-none text-neutral-900 dark:text-white">
+        <p className="block my-2 text-sm font-medium text-center truncate pointer-events-none body-primary">
           {title}
         </p>
         {pills && (

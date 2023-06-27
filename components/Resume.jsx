@@ -1,55 +1,19 @@
-import Image from 'next/image'
-import { resume } from '@/data/resume'
 import { Briefcase, Download, Scroll } from 'lucide-react'
 
 import { Button } from '@/components/Button'
+import JobsList from '@/components/ScrollList'
+
+const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6']
 
 export default function Resume() {
   return (
-    <div className="p-6 border rounded-2xl border-black/10 bg-zinc-50/70 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:backdrop-blur">
-      <h2 className="flex text-sm font-semibold text-neutral-900 dark:text-zinc-100">
-        <Briefcase className="flex-none w-6 h-6" />
-        <span className="ml-3">Trabajo</span>
+    <div className="p-6 shadow rounded-2xl box-gen">
+      <h2 className="inline-flex items-center px-2 py-1 text-xs font-semibold body-primary box-gen rounded-2xl">
+        <Briefcase className="flex-none w-4 h-4" />
+        <span className="ml-1">Experiencia</span>
       </h2>
-      <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
-          <li key={roleIndex} className="flex gap-4">
-            <div className="relative flex items-center justify-center flex-none w-10 h-10 mt-1 rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image
-                src={role.logo}
-                alt={role.title}
-                className="w-10 h-10"
-                unoptimized
-              />
-            </div>
-            <dl className="flex flex-wrap flex-auto gap-x-2">
-              <dt className="sr-only">Company</dt>
-              <dd className="flex-none w-full text-sm font-medium text-neutral-900 dark:text-white">
-                {role.company}
-              </dd>
-              <dt className="sr-only">Role</dt>
-              <dd className="text-xs text-neutral-700 dark:text-zinc-300">
-                {role.title}
-              </dd>
-              <dt className="sr-only">Date</dt>
-              <dd
-                className="ml-auto text-xs text-neutral-700 dark:text-zinc-300"
-                aria-label={`${role.start.label ?? role.start} until ${
-                  role.end.label ?? role.end
-                }`}
-              >
-                <time dateTime={role.start.dateTime ?? role.start}>
-                  {role.start.label ?? role.start}
-                </time>{' '}
-                <span aria-hidden="true">—</span>{' '}
-                <time dateTime={role.end.dateTime ?? role.end}>
-                  {role.end.label ?? role.end}
-                </time>
-              </dd>
-            </dl>
-          </li>
-        ))}
-      </ol>
+      <JobsList />
+
       <div className="flex gap-4">
         <Button
           href="https://read.cv/educlopez"

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { stacks } from '@/data/stacks'
 import { Switch } from '@headlessui/react'
-import useSound from 'use-sound'
+
 
 import { Toolgrid, Toollist } from '@/components/ToolItem'
 import { ToolsSection, ToolsSectionGrid } from '@/components/ToolsSections'
@@ -22,14 +22,12 @@ export function SwitchTool() {
   const productivity = filterStacks(stacks, 'productivity')
   const [view, setView] = useState('list')
   const [enabled, setEnabled] = useState(false)
-  const [click] = useSound('sounds/toggle_on.wav', { volume: 0.25 })
   return (
     <>
-      <div className="relative z-20 flex items-center justify-start gap-4 px-4 py-2 my-16 border dark:backdrop-blurbackdrop-blur w-fit rounded-3xl border-black/10 bg-white/10 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20">
+      <div className="relative z-20 flex items-center justify-start gap-4 px-4 py-2 my-16 w-fit rounded-3xl box-gen">
         <span>Vista</span>
         <Switch
           checked={enabled}
-          onClick={click}
           onChange={() => {
             setView(view === 'list' ? 'grid' : 'list')
             setEnabled(!enabled)
@@ -61,7 +59,7 @@ export function SwitchTool() {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-3 h-3 text-gray-400 dark:text-zinc-700"
+                className="w-3 h-3 text-neutral-700 "
               >
                 <path
                   strokeLinecap="round"

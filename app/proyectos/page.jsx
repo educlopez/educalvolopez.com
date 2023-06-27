@@ -19,7 +19,7 @@ export default function Projects() {
         title="Proyectos que he realizado durante mi carrera."
         intro="¿No sabes por dónde empezar? He trabajado en montones de pequeños proyectos a lo largo de los años, pero estos son los que más me enorgullecen. Muchos de ellos son privados y no podré mostrarlos a continuación."
       >
-        <h2 className="mb-10 text-2xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-2xl">
+        <h2 className="mb-10 text-2xl font-bold tracking-tight body-primary sm:text-2xl">
           Side Projects
         </h2>
         <ul
@@ -30,7 +30,7 @@ export default function Projects() {
             <ProjectCard key={project.name} project={project} github={true} />
           ))}
         </ul>
-        <h2 className="mt-16 mb-10 text-2xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-2xl">
+        <h2 className="mt-16 mb-10 text-2xl font-bold tracking-tight body-primary sm:text-2xl">
           Proyectos
         </h2>
         <ul

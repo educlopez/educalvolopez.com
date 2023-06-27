@@ -12,9 +12,11 @@ export default function ThemeToggle() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex px-3 py-3 transition border rounded-full md:px-2 md:py-2 group border-black/10 bg-white/10 text-neutral-700 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur">
+        <Menu.Button
+          className="inline-flex px-3 py-3 transition rounded-full md:px-2 md:py-2 group text-neutral-700 dark:text-white box-gen"
+        >
           <Sun className="w-4 h-4 stroke-zinc-900 dark:hidden" />
-          <Moon className="hidden w-4 h-4 stroke-zinc-300 dark:block" />
+          <Moon className="hidden w-4 h-4 stroke-white dark:block" />
           <span className="sr-only">Cambiar tema</span>
         </Menu.Button>
       </div>
@@ -28,7 +30,7 @@ export default function ThemeToggle() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 z-10 w-auto mt-2 origin-top-right border divide-y divide-gray-100 rounded-md shadow-lg border-black/10 bg-white/10 text-neutral-700 ring-1 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-900/20 dark:text-zinc-400 dark:backdrop-blur ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute right-0 z-10 w-auto mt-2 font-semibold origin-top-right divide-y divide-gray-100 rounded-md shadow-lg body-primary box-gen ">
           <div className="py-1">
             <Menu.Item onClick={() => setTheme('light')}>
               {({ active }) => (
@@ -36,16 +38,16 @@ export default function ThemeToggle() {
                   href="#"
                   className={classNames(
                     active
-                      ? ' text-neutral-900 dark:text-white'
-                      : 'text-zinc-700 dark:text-zinc-300',
+                      ? ' body-primary'
+                      : 'text-zinc-700 dark:text-white/90',
                     'group flex items-center px-4 py-2 text-sm '
                   )}
                 >
                   <Sun
-                    className="w-5 h-5 mr-3 text-zinc-900 dark:text-zinc-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-500"
+                    className="w-5 h-5 mr-3 body-primary group-hover:text-indigo-600 dark:group-hover:text-indigo-500"
                     aria-hidden="true"
                   />
-                  Claro
+                  <span className="dark:drop-shadow">Claro</span>
                 </a>
               )}
             </Menu.Item>
@@ -55,16 +57,16 @@ export default function ThemeToggle() {
                   href="#"
                   className={classNames(
                     active
-                      ? ' text-neutral-900 dark:text-white'
-                      : 'text-zinc-700 dark:text-zinc-300',
+                      ? ' body-primary'
+                      : 'text-zinc-700 dark:text-white/90',
                     'group flex items-center px-4 py-2 text-sm'
                   )}
                 >
                   <Moon
-                    className="w-5 h-5 mr-3 text-zinc-900 dark:text-zinc-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-500"
+                    className="w-5 h-5 mr-3 body-primary group-hover:text-indigo-600 dark:group-hover:text-indigo-500"
                     aria-hidden="true"
                   />
-                  Oscuro
+                  <span className="dark:drop-shadow">Oscuro</span>
                 </a>
               )}
             </Menu.Item>
@@ -74,16 +76,16 @@ export default function ThemeToggle() {
                   href="#"
                   className={classNames(
                     active
-                      ? ' text-neutral-900 dark:text-white'
-                      : 'text-zinc-700 dark:text-zinc-300',
+                      ? ' body-primary'
+                      : 'text-zinc-700 dark:text-white/90',
                     'group flex items-center px-4 py-2 text-sm'
                   )}
                 >
                   <Laptop
-                    className="w-5 h-5 mr-3 text-zinc-900 dark:text-zinc-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-500"
+                    className="w-5 h-5 mr-3 body-primary group-hover:text-indigo-600 dark:group-hover:text-indigo-500"
                     aria-hidden="true"
                   />
-                  Sistema
+                  <span className="dark:drop-shadow">Sistema</span>
                 </a>
               )}
             </Menu.Item>

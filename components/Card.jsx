@@ -17,7 +17,7 @@ export function Card({ as: Component = 'div', className, children }) {
 Card.Link = function CardLink({ children, ...props }) {
   return (
     <>
-      <div className="absolute z-0 transition scale-95 border shadow opacity-100 bg-zinc-50/70 -inset-y-6 -inset-x-4 border-black/10 group-hover:shadow-lg dark:border-white/10 dark:bg-zinc-900/20 sm:-inset-x-6 rounded-2xl" />
+      <div className="absolute z-0 transition scale-95 shadow opacity-100 -inset-y-6 -inset-x-4 group-hover:shadow-lg sm:-inset-x-6 rounded-2xl box-gen" />
       <Link {...props}>
         <span className="absolute z-20 block -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
@@ -34,7 +34,7 @@ Card.Title = function CardTitle({
   rel,
 }) {
   return (
-    <Component className="text-base font-semibold tracking-tight text-neutral-900 dark:text-white">
+    <Component className="text-base font-semibold tracking-tight body-primary">
       {href ? (
         <Card.Link href={href} target={target} rel={rel}>
           {children}
@@ -47,11 +47,7 @@ Card.Title = function CardTitle({
 }
 
 Card.Description = function CardDescription({ children }) {
-  return (
-    <p className="relative z-10 mt-2 text-sm text-neutral-900 dark:text-white">
-      {children}
-    </p>
-  )
+  return <p className="relative z-10 mt-2 text-sm body-secondary">{children}</p>
 }
 
 Card.Cta = function CardCta({ children }) {
@@ -77,7 +73,7 @@ Card.Eyebrow = function CardEyebrow({
     <Component
       className={clsx(
         className,
-        'relative z-10 order-first mb-3 flex items-center text-sm text-neutral-900 dark:text-white',
+        'relative z-10 order-first mb-3 flex items-center text-sm body-secondary',
         decorate && 'pl-3.5'
       )}
       {...props}

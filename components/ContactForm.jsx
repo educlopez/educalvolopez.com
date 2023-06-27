@@ -50,13 +50,13 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleOnSubmit}
-      className="p-6 border rounded-2xl border-black/10 bg-neutral-50/70 backdrop-blur-sm dark:border-white/10 dark:bg-neutral-900/20 dark:backdrop-blur"
+      className="p-6 border shadow rounded-2xl box-gen"
     >
-      <h2 className="flex text-sm font-semibold text-neutral-900 dark:text-neutral-100">
-        <MessageCircle className="flex-none w-6 h-6" />
-        <span className="ml-3">Contactar</span>
+      <h2 className="inline-flex items-center px-2 py-1 text-xs font-semibold body-primary box-gen rounded-2xl">
+        <MessageCircle className="flex-none w-4 h-4 " />
+        <span className="ml-1">Contactar</span>
       </h2>
-      <p className="mt-2 text-sm text-neutral-900 dark:text-neutral-100">
+      <p className="mt-2 text-sm body-secondary">
         Pregúntame lo que quieras, estaré encantado de responderte.
       </p>
       <div className="flex flex-col gap-4 mt-6">
@@ -67,7 +67,7 @@ export default function ContactForm() {
           placeholder="Nombre"
           aria-label="Nombre"
           required=""
-          className="relative w-full h-8 pl-2 text-base border rounded-md resize-none text-neutral-900 dark:text-neutral-100 bg-neutral-50/70 border-black/10 dark:border-white/10 dark:bg-neutral-900/20 placeholder-neutral-400 invalid:text-red-500 sm:text-sm dark:bg-quaternary dark:placeholder-neutral-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-600/40"
+          className="relative w-full h-8 pl-2 text-base border rounded-md resize-none text-neutral-900 dark:text-neutral-100 bg-neutral-50/70 border-zinc-400/40 dark:border-white/10 dark:bg-neutral-900/20 placeholder-neutral-400 invalid:text-red-500 sm:text-sm dark:bg-quaternary dark:placeholder-neutral-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-600/40"
         />
         <input
           type="email"
@@ -76,14 +76,14 @@ export default function ContactForm() {
           placeholder="Email"
           aria-label="Email"
           required=""
-          className="relative w-full h-8 pl-2 text-base border rounded-md resize-none text-neutral-900 dark:text-neutral-100 bg-neutral-50/70 border-black/10 dark:border-white/10 dark:bg-neutral-900/20 placeholder-neutral-400 invalid:text-red-500 sm:text-sm dark:bg-quaternary dark:placeholder-neutral-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-600/40"
+          className="relative w-full h-8 pl-2 text-base border rounded-md resize-none text-neutral-900 dark:text-neutral-100 bg-neutral-50/70 border-zinc-400/40 dark:border-white/10 dark:bg-neutral-900/20 placeholder-neutral-400 invalid:text-red-500 sm:text-sm dark:bg-quaternary dark:placeholder-neutral-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-600/40"
         />
         <textarea
           id="message"
           name="message"
           placeholder="Cuéntame que necesitas"
-          rows="4"
-          className="relative w-full pl-2 text-base border rounded-md resize-none text-neutral-900 dark:text-neutral-100 bg-neutral-50/70 border-black/10 dark:border-white/10 dark:bg-neutral-900/20 placeholder-neutral-400 invalid:text-red-500 sm:text-sm dark:bg-quaternary dark:placeholder-neutral-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-600/40"
+          rows="3"
+          className="relative w-full pl-2 text-base border rounded-md resize-none text-neutral-900 dark:text-neutral-100 bg-neutral-50/70 border-zinc-400/40 dark:border-white/10 dark:bg-neutral-900/20 placeholder-neutral-400 invalid:text-red-500 sm:text-sm dark:bg-quaternary dark:placeholder-neutral-400 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-600/40"
           required
         />
       </div>

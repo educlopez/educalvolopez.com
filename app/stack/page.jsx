@@ -2,7 +2,7 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import { SwitchTool } from '@/components/SwitchTool'
 
 export const metadata = {
-  title: 'Recomendaciones',
+  title: 'Stack',
   description:
     'El software que uso, los dispositivos que amo y otras cosas que recomiendo.',
   keywords: [
