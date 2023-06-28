@@ -17,7 +17,7 @@ export default function Projects() {
     <>
       <SimpleLayout
         title="Proyectos que he realizado durante mi carrera."
-        intro="¿No sabes por dónde empezar? He trabajado en montones de pequeños proyectos a lo largo de los años, pero estos son los que más me enorgullecen. Muchos de ellos son privados y no podré mostrarlos a continuación."
+        intro="¿No sabes por dónde empezar? He trabajado en montones de pequeños y grandes proyectos a lo largo de los años, pero estos son los que más me enorgullecen. Muchos de ellos son privados y no podré mostrarlos a continuación."
       >
         <h2 className="mb-10 text-2xl font-bold tracking-tight body-primary sm:text-2xl">
           Side Projects

@@ -12,6 +12,19 @@ module.exports = {
       backgroundImage: {
         'lights-sun': "url('/images/gradient.svg')",
       },
+      animation: {
+        marquee: 'marquee 50s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          from: {
+            transform: 'translateX(0)',
+          },
+          to: {
+            transform: 'translateX(calc(-100% - 2.5rem))',
+          },
+        },
+      },
     },
     boxShadow: {
       DEFAULT:
