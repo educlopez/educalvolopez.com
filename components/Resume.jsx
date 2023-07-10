@@ -1,23 +1,27 @@
 import { Briefcase, Download, Scroll } from 'lucide-react'
 
+import { cn } from '@/lib/utils'
 import { Button } from '@/components/Button'
-import JobsList from '@/components/ScrollList'
+import JobsList from '@/components/JobList'
+import { Pill } from '@/components/Pill'
 
-const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6']
-
-export default function Resume() {
+export default function Resume({ className }) {
   return (
-    <div className="p-6 shadow rounded-2xl box-gen">
-      <h2 className="inline-flex items-center px-2 py-1 text-xs font-semibold body-primary box-gen rounded-2xl">
-        <Briefcase className="flex-none w-4 h-4" />
-        <span className="ml-1">Experiencia</span>
-      </h2>
+    <div
+      className={cn(
+        className,
+        'p-6 shadow rounded-2xl box-gen flex justify-between flex-col items-start'
+      )}
+    >
+      <Pill icon={Briefcase} className="mb-0">
+        Experiencia
+      </Pill>
       <JobsList />
 
-      <div className="flex gap-4">
+      <div className="flex flex-row justify-between w-full gap-4">
         <Button
           href="https://read.cv/educlopez"
-          variant="solid"
+          styleBtn="solid"
           className="w-full mt-6 group"
           target="_blank"
           rel="noopener noreferrer"
@@ -27,7 +31,7 @@ export default function Resume() {
         </Button>
         <Button
           href="2023_eduardo_calvo_lopez_curriculum.pdf"
-          variant="solid"
+          styleBtn="solid"
           className="w-full mt-6 group"
           target="_blank"
         >

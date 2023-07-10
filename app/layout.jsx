@@ -3,6 +3,7 @@ import 'focus-visible'
 import { Inter } from 'next/font/google'
 
 import { Analytics } from '@/components/Analytics'
+import { FloatNav } from '@/components/FloatNav'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { ThemeProvider } from '@/components/ThemeProvider'
@@ -60,10 +61,9 @@ export default function RootLayout({ children }) {
         className={`flex flex-col h-full antialiased bg-top bg-no-repeat bg-neutral-50 bg-lights-sun dark:bg-neutral-900 ${inter.className}`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="relative">
-            <Header />
+          <div className="relative mb-16 sm:mb-32">
             <main>{children}</main>
-            <Footer />
+            <FloatNav />
           </div>
           <Analytics />
         </ThemeProvider>

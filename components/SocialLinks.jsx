@@ -2,8 +2,9 @@
 
 import Link from 'next/link'
 import { linksSocial } from '@/data/links'
-import clsx from 'clsx'
 import { ArrowUpRight } from 'lucide-react'
+
+import { cn } from '@/lib/utils'
 
 function SocialLink({ icon: Icon, outline, ...props }) {
   return (
@@ -44,13 +45,8 @@ export function SocialLinks({}) {
 
 export function LinkText({ className, href, children, icon: Icon, outline }) {
   return (
-    <li className={clsx(className, 'flex')}>
-      <Link
-        href={href}
-        rel="noopener noreferrer"
-        target="_blank"
-        className=""
-      >
+    <li className={cn(className, 'flex')}>
+      <Link href={href} rel="noopener noreferrer" target="_blank" className="">
         <div className="relative group">
           <div className="absolute z-10 flex items-center justify-center w-full h-full transition-all translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
             <p className="font-semibold cursor-pointer body-primary">

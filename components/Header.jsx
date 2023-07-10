@@ -8,12 +8,11 @@ import { generalLinks } from '@/data/links'
 import avatarImage from '@/images/avatar.jpg'
 import avatarImageHover from '@/images/avatarhover.jpg'
 import { Popover, Transition } from '@headlessui/react'
-import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDown, X } from 'lucide-react'
 
-
 import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
+import { cn } from '@/lib/utils'
 import { Container } from '@/components/Container'
 import ThemeToggle from '@/components/ThemeToggle'
 
@@ -69,9 +68,7 @@ function MobileNavigation(props) {
               <Popover.Button aria-label="Close menu" className="p-1 -m-1">
                 <X className="w-6 h-6 body-primary" />
               </Popover.Button>
-              <h2 className="text-sm font-medium body-primary">
-                Menu
-              </h2>
+              <h2 className="text-sm font-medium body-primary">Menu</h2>
             </div>
             <nav className="mt-6">
               <ul className="-my-2 text-base divide-y divide-zinc-100 dark:divide-zinc-100/5 body-primary">
@@ -108,7 +105,7 @@ function NavItem({ href, children, target, rel, onMouseEnter, onMouseLeave }) {
         target={target}
         rel={rel}
         href={href}
-        className={clsx(
+        className={cn(
           'relative block px-3  transition',
           isActive
             ? 'text-indigo-600 dark:text-indigo-400'
@@ -178,7 +175,7 @@ function clamp(number, a, b) {
 function AvatarContainer({ className, ...props }) {
   return (
     <div
-      className={clsx(
+      className={cn(
         className,
         'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
       )}
@@ -193,7 +190,7 @@ function Avatar({ large = false, className, index, ...props }) {
     <Link
       href="/"
       aria-label="Home"
-      className={clsx(className, 'pointer-events-auto')}
+      className={cn(className, 'pointer-events-auto')}
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
       {...props}
@@ -203,7 +200,7 @@ function Avatar({ large = false, className, index, ...props }) {
         alt="avatar Eduardo Calvo López"
         placeholder="blur"
         sizes={large ? '4rem' : '2.25rem'}
-        className={clsx(
+        className={cn(
           'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
           large ? 'h-16 w-16' : 'h-9 w-9'
         )}

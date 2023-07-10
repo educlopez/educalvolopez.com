@@ -1,33 +1,11 @@
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 
-const variantStyles = {
-  new: [
-    {
-      style: 'bg-red-600',
-      name: 'nuevo',
-    },
-  ],
-  affiliate: [
-    {
-      style: 'bg-orange-400 animate-none',
-      name: 'afiliado',
-    },
-  ],
-}
-
-export function Pill({ variant = 'new', className }) {
-  className = clsx(variantStyles[variant][0].style)
-
+export function Pill({ className, children, icon }) {
+  const IconComponent = icon
   return (
-    <div className="inline-flex items-center px-1 py-1 text-xs font-semibold rounded-full pointer-events-auto body-primary box-gen">
-      <div className="flex items-center justify-center w-3 h-3">
-        <span
-          className={`absolute inline-flex w-2 h-2 rounded-full opacity-75 animate-ping  ${className}`}
-        ></span>
-        <span
-          className={`relative inline-flex w-2 h-2 rounded-full ${className}`}
-        ></span>
-      </div>
-    </div>
+    <h2 className="inline-flex items-center px-2 py-1 mb-3 text-xs font-semibold body-primary box-gen rounded-2xl">
+      <IconComponent className="flex-none w-4 h-4 " />
+      <span className="ml-1">{children}</span>
+    </h2>
   )
 }

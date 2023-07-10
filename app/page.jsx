@@ -1,23 +1,26 @@
 import { allPosts } from '@/.contentlayer/generated'
+import { openprojects } from '@/data/projects'
 import Balancer from 'react-wrap-balancer'
 
 import Article from '@/components/ArticleCard'
-import ContactForm from '@/components/ContactForm'
+import { Avatar } from '@/components/Avatar'
+import DialogContact from '@/components/ContactForm'
 import { Container } from '@/components/Container'
+import { SpotifyPlayer } from '@/components/NowPlaying'
+import ProjectCard from '@/components/ProjectCard'
 import Resume from '@/components/Resume'
 import { SocialLinks } from '@/components/SocialLinks'
 import { StatusWork } from '@/components/StatusWork'
-import Toasty from '@/components/Toast'
 
 export default function Home() {
   const isAvailable = true
   return (
     <>
-      <Container className="mt-9">
+      <Container className="mt-16 sm:mt-32">
         <div className="max-w-xl">
           <h1 className="sr-only">Edu Calvo</h1>
-
-          <Balancer className="text-base text-neutral-700 dark:text-white/80">
+          <Avatar size="lg" />
+          <Balancer className="mt-2 text-base text-neutral-700 dark:text-white/80">
             <span className="text-2xl font-bold text-neutral-900 dark:text-white">
               Edu Calvo
             </span>
@@ -30,22 +33,35 @@ export default function Home() {
         </div>
       </Container>
       <Container className="mt-24 md:mt-28">
-        <div className="grid max-w-xl grid-cols-1 mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16 pt-5">
-            {allPosts
-              .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
-              .slice(0, 3)
-              .map((post) => (
-                <Article key={post.slug} post={post} home={true} />
-              ))}
+        <div className="grid grid-cols-6 gap-4 mb-2 text-left grid-rows-12 sm:grid-rows-7 md:grid-rows-6 lg:grid-rows-2 ">
+          {allPosts
+            .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+            .slice(0, 1)
+            .map((post) => (
+              <Article
+                key={post.slug}
+                post={post}
+                home={true}
+                className="relative col-span-6 overflow-hidden sm:col-span-3 md:col-span-3 lg:col-span-2"
+              />
+            ))}
+
+          {openprojects.slice(0, 1).map((project) => (
+            <ProjectCard
+              key={project.name}
+              project={project}
+              github={true}
+              home={true}
+              className="relative col-span-6 overflow-hidden sm:col-span-3 md:col-span-3 lg:col-span-2"
+            />
+          ))}
+          <div className="relative grid col-span-6 grid-rows-3 gap-4 sm:col-span-3 md:col-span-3 lg:col-span-2">
+            <SpotifyPlayer />
+            <DialogContact className="row-span-2" />
           </div>
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <ContactForm />
-            <Resume />
-          </div>
+          <Resume className="relative col-span-6 sm:col-span-3 md:col-span-3 lg:col-span-3 " />
         </div>
       </Container>
-      <Toasty />
     </>
   )
 }

@@ -3,40 +3,27 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import { resume } from '@/data/resume'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
-const variants = {
-  offscreen: {
-    filter: 'blur(2px)',
-    opacity: 0.4,
-  },
-  onscreen: {
-    filter: 'blur(0px)',
-    opacity: 1,
-  },
-}
 export default function JobsList() {
-  const container = useRef(null)
   const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    container: ref,
+    offset: ['end end', 'start start'],
+  })
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0])
 
   return (
     <div className="relative mt-2">
       <section
-        ref={container}
-        className="h-40 pt-12 pb-8 space-y-3 overflow-scroll snap-y snap-proximity scroll-py-12"
+        ref={ref}
+        className="space-y-3 overflow-scroll h-44 snap-y snap-proximity scroll-py-24"
       >
         {resume.map((role, roleIndex) => (
           <motion.div
             key={roleIndex}
-            ref={ref}
             className="flex gap-4 snap-start work-item snap-always"
-            initial="offscreen"
-            whileInView="onscreen"
-            variants={variants}
-            viewport={{
-              root: container,
-              amount: 0.8,
-            }}
+            style={{ opacity, blur: scrollYProgress }}
           >
             <div className="relative flex items-center justify-center flex-none w-10 h-10 mt-1 rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
               <Image

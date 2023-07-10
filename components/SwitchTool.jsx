@@ -2,147 +2,156 @@
 
 import { useState } from 'react'
 import { stacks } from '@/data/stacks'
-import { Switch } from '@headlessui/react'
+import * as ToggleGroup from '@radix-ui/react-toggle-group'
+import { cva } from 'class-variance-authority'
 
-
-import { Toolgrid, Toollist } from '@/components/ToolItem'
+import { cn } from '@/lib/utils'
+import { Tool } from '@/components/ToolItem'
 import { ToolsSection, ToolsSectionGrid } from '@/components/ToolsSections'
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 function filterStacks(stacks, type) {
   return stacks.filter((stack) => stack.type === type)
 }
-
+const toggleVariants = cva(
+  'inline-flex items-center justify-center rounded-full text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:box-gen data-[state=on]:text-accent-foreground',
+  {
+    variants: {
+      variant: {
+        default: 'bg-transparent',
+        outline:
+          'border border-input bg-transparent hover:bg-accent hover:text-accent-foreground',
+      },
+      size: {
+        default: 'p-3',
+        sm: 'p-2.5',
+        lg: 'p-5',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+      size: 'default',
+    },
+  }
+)
+const Toggle = ({ className, variant, size, ...props }) => (
+  <ToggleGroup.Item
+    className={cn(toggleVariants({ variant, size, className }))}
+    {...props}
+  />
+)
 export function SwitchTool() {
   const development = filterStacks(stacks, 'development')
   const workstation = filterStacks(stacks, 'workstation')
   const design = filterStacks(stacks, 'design')
   const productivity = filterStacks(stacks, 'productivity')
   const [view, setView] = useState('list')
-  const [enabled, setEnabled] = useState(false)
+
   return (
     <>
-      <div className="relative z-20 flex items-center justify-start gap-4 px-4 py-2 my-16 w-fit rounded-3xl box-gen">
-        <span>Vista</span>
-        <Switch
-          checked={enabled}
-          onChange={() => {
-            setView(view === 'list' ? 'grid' : 'list')
-            setEnabled(!enabled)
-          }}
-          className={classNames(
-            enabled ? 'bg-indigo-600' : 'bg-zinc-400/60 dark:bg-zinc-700',
-            'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
-          )}
+      <div className="relative z-20 flex items-center justify-start gap-4 px-4 py-2 my-16 rounded-full w-fit box-gen">
+        <ToggleGroup.Root
+          type="single"
+          defaultValue="list"
+          aria-label="Modo List Grid"
         >
-          <span className="sr-only">Use setting</span>
-          <span
-            className={classNames(
-              enabled ? 'translate-x-5' : 'translate-x-0',
-              'pointer-events-none relative inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out'
-            )}
+          <Toggle
+            variant={view === 'list' ? 'outline' : 'default'}
+            size="sm"
+            value="list"
+            aria-label="modo list"
+            onClick={() => {
+              setView('list')
+            }}
           >
-            <span
-              className={classNames(
-                enabled
-                  ? 'opacity-0 duration-100 ease-out'
-                  : 'opacity-100 duration-200 ease-in',
-                'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity'
-              )}
-              aria-hidden="true"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-4 h-4"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-3 h-3 text-neutral-700 "
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                />
-              </svg>
-            </span>
-            <span
-              className={classNames(
-                enabled
-                  ? 'opacity-100 duration-200 ease-in'
-                  : 'opacity-0 duration-100 ease-out',
-                'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity'
-              )}
-              aria-hidden="true"
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+              />
+            </svg>
+          </Toggle>
+          <Toggle
+            variant={view === 'grid' ? 'outline' : 'default'}
+            size="sm"
+            value="grid"
+            aria-label="modo grid"
+            onClick={() => {
+              setView('grid')
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-4 h-4"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-3 h-3 text-indigo-600"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"
-                />
-              </svg>
-            </span>
-          </span>
-        </Switch>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"
+              />
+            </svg>
+          </Toggle>
+        </ToggleGroup.Root>
       </div>
       {view === 'list' ? (
         <div className="space-y-20">
           <ToolsSection title="Workstation">
             {workstation.map((stack) => (
-              <Toollist
+              <Tool
+                grid={false}
                 title={stack.title}
                 href={stack.link}
                 key={stack.title}
-                pills={stack.pills}
               >
                 {stack.info}
-              </Toollist>
+              </Tool>
             ))}
           </ToolsSection>
           <ToolsSection title="Desarrollo">
             {development.map((stack) => (
-              <Toollist
+              <Tool
+                grid={false}
                 title={stack.title}
                 href={stack.link}
                 key={stack.title}
-                pills={stack.pills}
               >
                 {stack.info}
-              </Toollist>
+              </Tool>
             ))}
           </ToolsSection>
           <ToolsSection title="Diseño">
             {design.map((stack) => (
-              <Toollist
+              <Tool
+                grid={false}
                 title={stack.title}
                 href={stack.link}
                 key={stack.title}
-                pills={stack.pills}
               >
                 {stack.info}
-              </Toollist>
+              </Tool>
             ))}
           </ToolsSection>
           <ToolsSection title="Productividad">
             {productivity.map((stack) => (
-              <Toollist
+              <Tool
+                grid={false}
                 title={stack.title}
                 href={stack.link}
                 key={stack.title}
-                pills={stack.pills}
               >
                 {stack.info}
-              </Toollist>
+              </Tool>
             ))}
           </ToolsSection>
         </div>
@@ -150,54 +159,54 @@ export function SwitchTool() {
         <div className="space-y-20">
           <ToolsSectionGrid title="Workstation">
             {workstation.map((stack) => (
-              <Toolgrid
+              <Tool
+                grid={true}
                 title={stack.title}
                 href={stack.link}
                 key={stack.title}
                 img={stack.img}
-                pills={stack.pills}
               >
                 {stack.title}
-              </Toolgrid>
+              </Tool>
             ))}
           </ToolsSectionGrid>
           <ToolsSectionGrid title="Desarrollo">
             {development.map((stack) => (
-              <Toolgrid
+              <Tool
+                grid={true}
                 title={stack.title}
                 href={stack.link}
                 key={stack.title}
                 img={stack.img}
-                pills={stack.pills}
               >
                 {stack.title}
-              </Toolgrid>
+              </Tool>
             ))}
           </ToolsSectionGrid>
           <ToolsSectionGrid title="Diseño">
             {design.map((stack) => (
-              <Toolgrid
+              <Tool
+                grid={true}
                 title={stack.title}
                 href={stack.link}
                 key={stack.title}
                 img={stack.img}
-                pills={stack.pills}
               >
                 {stack.title}
-              </Toolgrid>
+              </Tool>
             ))}
           </ToolsSectionGrid>
           <ToolsSectionGrid title="Productividad">
             {productivity.map((stack) => (
-              <Toolgrid
+              <Tool
+                grid={true}
                 title={stack.title}
                 href={stack.link}
                 key={stack.title}
                 img={stack.img}
-                pills={stack.pills}
               >
                 {stack.title}
-              </Toolgrid>
+              </Tool>
             ))}
           </ToolsSectionGrid>
         </div>

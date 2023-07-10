@@ -1,15 +1,17 @@
 import Link from 'next/link'
-import clsx from 'clsx'
 import { ChevronsRight } from 'lucide-react'
+
+import { cn } from '@/lib/utils'
 
 export function Card({ as: Component = 'div', className, children }) {
   return (
     <Component
-      className={clsx(className, 'group relative flex flex-col items-start')}
+      className={cn(
+        className,
+        'group relative flex flex-col items-start rounded-2xl box-gen p-4 shadow hover:shadow-lg'
+      )}
     >
-      <div className="p-2 transition-transform duration-700 group-hover:scale-105">
-        {children}
-      </div>
+      <div className="p-2">{children}</div>
     </Component>
   )
 }
@@ -17,9 +19,8 @@ export function Card({ as: Component = 'div', className, children }) {
 Card.Link = function CardLink({ children, ...props }) {
   return (
     <>
-      <div className="absolute z-0 transition scale-95 shadow opacity-100 -inset-y-6 -inset-x-4 group-hover:shadow-lg sm:-inset-x-6 rounded-2xl box-gen" />
       <Link {...props}>
-        <span className="absolute z-20 block -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl" />
+        <span className="absolute z-20 block -inset-y-1 -inset-x-1" />
         <span className="relative z-10">{children}</span>
       </Link>
     </>
@@ -32,9 +33,17 @@ Card.Title = function CardTitle({
   target,
   children,
   rel,
+  className,
+  ...props
 }) {
   return (
-    <Component className="text-base font-semibold tracking-tight body-primary">
+    <Component
+      className={cn(
+        className,
+        'text-base font-semibold tracking-tight body-primary'
+      )}
+      {...props}
+    >
       {href ? (
         <Card.Link href={href} target={target} rel={rel}>
           {children}
@@ -46,8 +55,15 @@ Card.Title = function CardTitle({
   )
 }
 
-Card.Description = function CardDescription({ children }) {
-  return <p className="relative z-10 mt-2 text-sm body-secondary">{children}</p>
+Card.Description = function CardDescription({ children, className, ...props }) {
+  return (
+    <p
+      className={cn(className, 'relative z-10 mt-2 text-sm body-secondary')}
+      {...props}
+    >
+      {children}
+    </p>
+  )
 }
 
 Card.Cta = function CardCta({ children }) {
@@ -71,7 +87,7 @@ Card.Eyebrow = function CardEyebrow({
 }) {
   return (
     <Component
-      className={clsx(
+      className={cn(
         className,
         'relative z-10 order-first mb-3 flex items-center text-sm body-secondary',
         decorate && 'pl-3.5'

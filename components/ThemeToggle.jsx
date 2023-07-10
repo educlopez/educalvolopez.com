@@ -1,97 +1,57 @@
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { Laptop, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
-export default function ThemeToggle() {
+export default function ThemeToggle({ ...props }) {
   const { setTheme } = useTheme()
   return (
-    <Menu as="div" className="relative inline-block text-left">
-      <div>
-        <Menu.Button
-          className="inline-flex px-3 py-3 transition rounded-full md:px-2 md:py-2 group text-neutral-700 dark:text-white box-gen"
-        >
-          <Sun className="w-4 h-4 stroke-zinc-900 dark:hidden" />
-          <Moon className="hidden w-4 h-4 stroke-white dark:block" />
-          <span className="sr-only">Cambiar tema</span>
-        </Menu.Button>
-      </div>
-
-      <Transition
-        as={Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
-      >
-        <Menu.Items className="absolute right-0 z-10 w-auto mt-2 font-semibold origin-top-right divide-y divide-gray-100 rounded-md shadow-lg body-primary box-gen ">
-          <div className="py-1">
-            <Menu.Item onClick={() => setTheme('light')}>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active
-                      ? ' body-primary'
-                      : 'text-zinc-700 dark:text-white/90',
-                    'group flex items-center px-4 py-2 text-sm '
-                  )}
-                >
-                  <Sun
-                    className="w-5 h-5 mr-3 body-primary group-hover:text-indigo-600 dark:group-hover:text-indigo-500"
-                    aria-hidden="true"
-                  />
-                  <span className="dark:drop-shadow">Claro</span>
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item onClick={() => setTheme('dark')}>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active
-                      ? ' body-primary'
-                      : 'text-zinc-700 dark:text-white/90',
-                    'group flex items-center px-4 py-2 text-sm'
-                  )}
-                >
-                  <Moon
-                    className="w-5 h-5 mr-3 body-primary group-hover:text-indigo-600 dark:group-hover:text-indigo-500"
-                    aria-hidden="true"
-                  />
-                  <span className="dark:drop-shadow">Oscuro</span>
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item onClick={() => setTheme('system')}>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active
-                      ? ' body-primary'
-                      : 'text-zinc-700 dark:text-white/90',
-                    'group flex items-center px-4 py-2 text-sm'
-                  )}
-                >
-                  <Laptop
-                    className="w-5 h-5 mr-3 body-primary group-hover:text-indigo-600 dark:group-hover:text-indigo-500"
-                    aria-hidden="true"
-                  />
-                  <span className="dark:drop-shadow">Sistema</span>
-                </a>
-              )}
-            </Menu.Item>
-          </div>
-        </Menu.Items>
-      </Transition>
-    </Menu>
+    <div {...props}>
+      <DropdownMenu.Root>
+        <DropdownMenu.Trigger asChild>
+          <button className="inline-flex px-3 py-3 transition rounded-full md:px-2 md:py-2 group text-neutral-700 dark:text-white box-gen">
+            <Sun className="w-4 h-4 stroke-zinc-900 dark:hidden" />
+            <Moon className="hidden w-4 h-4 stroke-white dark:block" />
+            <span className="sr-only">Cambiar tema</span>
+          </button>
+        </DropdownMenu.Trigger>
+        <DropdownMenu.Portal>
+          <DropdownMenu.Content
+            sideOffset={5}
+            className="z-50 min-w-[8rem] overflow-hidden rounded-md border box-gen p-1 shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2"
+          >
+            <DropdownMenu.Item
+              onClick={() => setTheme('light')}
+              className="flex items-center px-4 py-2 text-sm cursor-pointer body-primary group focus:bg-neutral-200/40 dark:focus:bg-black/30 focus:outline-indigo-700/50"
+            >
+              <Sun
+                className="w-5 h-5 mr-3 body-primary group-hover:text-indigo-600 dark:group-hover:text-indigo-500"
+                aria-hidden="true"
+              />
+              <span className="dark:drop-shadow ">Claro</span>
+            </DropdownMenu.Item>
+            <DropdownMenu.Item
+              onClick={() => setTheme('dark')}
+              className="flex items-center px-4 py-2 text-sm cursor-pointer body-primary group focus:bg-neutral-200/40 dark:focus:bg-black/30 focus:outline-indigo-700/50"
+            >
+              <Moon
+                className="w-5 h-5 mr-3 body-primary group-hover:text-indigo-600 dark:group-hover:text-indigo-500"
+                aria-hidden="true"
+              />
+              <span className="dark:drop-shadow">Oscuro</span>
+            </DropdownMenu.Item>
+            <DropdownMenu.Item
+              onClick={() => setTheme('system')}
+              className="flex items-center px-4 py-2 text-sm cursor-pointer body-primary group focus:bg-neutral-200/40 dark:focus:bg-black/30 focus:outline-indigo-700/50"
+            >
+              <Laptop
+                className="w-5 h-5 mr-3 body-primary group-hover:text-indigo-600 dark:group-hover:text-indigo-500"
+                aria-hidden="true"
+              />
+              <span className="dark:drop-shadow">Sistema</span>
+            </DropdownMenu.Item>
+          </DropdownMenu.Content>
+        </DropdownMenu.Portal>
+      </DropdownMenu.Root>
+    </div>
   )
 }

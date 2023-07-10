@@ -1,13 +1,16 @@
 import Image from 'next/image'
-import { Link2 } from 'lucide-react'
+import { Link2, Sparkles } from 'lucide-react'
 
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/Button'
+import { Card } from '@/components/Card'
+import { Pill } from '@/components/Pill'
 import { GitHubIcon } from '@/components/SocialIcons'
-import { Button } from './Button'
-import { Card } from './Card'
 
-export default function ProjectCard({ project, github }) {
+export default function ProjectCard({ project, github, home, className }) {
   return (
-    <Card as="li" key={project.name}>
+    <Card as="div" key={project.name} className={cn(className)}>
+      {home && <Pill icon={Sparkles}>Último proyecto</Pill>}
       <div className="relative z-10 flex items-center justify-center w-full shadow-md rounded-xl shadow-zinc-800/5 ">
         <Image
           src={project.cover}
@@ -26,16 +29,18 @@ export default function ProjectCard({ project, github }) {
           {project.name}
         </Card.Link>
       </h2>
-      <Card.Description>
-        <span className="line-clamp-2">{project.description}</span>
-        <span className="line-clamp-2">{project.job}</span>
-      </Card.Description>
+      {!home && (
+        <Card.Description>
+          <span className="line-clamp-2">{project.description}</span>
+          <span className="line-clamp-2">{project.job}</span>
+        </Card.Description>
+      )}
       <div className="z-30 flex gap-4">
         {github && (
           <Button
             className="z-40 flex items-center w-full mt-6 group"
             href={project.github}
-            variant="solid"
+            styleBtn="solid"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -46,7 +51,7 @@ export default function ProjectCard({ project, github }) {
         <Button
           className="z-40 flex items-center w-full mt-6 group"
           href={project.link}
-          variant="solid"
+          styleBtn="solid"
           target="_blank"
           rel="noopener noreferrer"
         >

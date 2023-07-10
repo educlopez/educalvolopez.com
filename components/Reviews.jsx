@@ -2,15 +2,15 @@
 
 import { useRef } from 'react'
 import { reviews } from '@/data/reviews'
-import clsx from 'clsx'
 import { motion } from 'framer-motion'
 
 import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
+import { cn } from '@/lib/utils'
 
 function Review({ title, body, author, className, ...props }) {
   return (
     <motion.figure
-      className={clsx('rounded-3xl  shadow p-6 box-gen m-1', className)}
+      className={cn('rounded-3xl  shadow p-6 box-gen m-1', className)}
       {...props}
       {...FADE_IN_ANIMATION_CARD}
     >
@@ -45,7 +45,7 @@ function ReviewColumn({
   msPerPixel = 0,
 }) {
   return (
-    <div className={clsx('space-y-8 py-4', className)}>
+    <div className={cn('space-y-8 py-4', className)}>
       {reviews.map((review, reviewIndex) => (
         <Review
           key={reviewIndex}
@@ -71,7 +71,7 @@ function ReviewGrid() {
       <ReviewColumn
         reviews={[...columns[0], ...columns[2].flat(), ...columns[1]]}
         reviewClassName={(reviewIndex) =>
-          clsx(
+          cn(
             reviewIndex >= columns[0].length + columns[2][0].length &&
               'md:hidden',
             reviewIndex >= columns[0].length && 'lg:hidden'
