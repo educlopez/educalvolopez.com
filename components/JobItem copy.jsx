@@ -1,27 +1,28 @@
-'use client';
+import { useRef } from 'react'
+import Image from 'next/image'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
-import { useRef } from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-
-
-
-export function JobItem({ role, scrollPosition, heightItem }) {
+export function JobItem({ role, containerref }) {
   const ref = useRef(null)
 
-  const distance = role.index * heightItem
-  const offset = scrollPosition - distance
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    container: containerref,
+    offset: ['start end', 'end start'],
+  })
 
-  const blurtwo = offset >= (-heightItem - 1) && offset <= 0 ? 0 : 2
-  const opacity = offset >= (-heightItem - 1) && offset <= 0 ? 1 : 0.3
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.5, 0.75, 1],
+    [0, 0.5, 1, 1]
+  )
 
-  const marginBoxTop = "last:mb-[128px]"
   return (
     <motion.div
-      className={`flex gap-4 pb-4 snap-start work-item ${marginBoxTop}`}
+      className="flex gap-4 mt-4 snap-start work-item last:mb-36 first:mt-0"
       style={{
-        filter: `blur(${blurtwo}px)`,
         opacity: opacity,
+        height: '48px',
       }}
       ref={ref}
     >

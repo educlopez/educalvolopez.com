@@ -2,15 +2,17 @@ import { allPosts } from '@/.contentlayer/generated'
 import { openprojects } from '@/data/projects'
 import Balancer from 'react-wrap-balancer'
 
-import Article from '@/components/ArticleCard'
 import { Avatar } from '@/components/Avatar'
-import DialogContact from '@/components/ContactForm'
 import { Container } from '@/components/Container'
-import { SpotifyPlayer } from '@/components/NowPlaying'
-import ProjectCard from '@/components/ProjectCard'
-import Resume from '@/components/Resume'
 import { SocialLinks } from '@/components/SocialLinks'
 import { StatusWork } from '@/components/StatusWork'
+import Article from '@/components/cards/ArticleCard'
+import DialogContact from '@/components/cards/ContactCard'
+import { SpotifyPlayer } from '@/components/cards/NowPlaying'
+import { ProjectCardHome } from '@/components/cards/ProjectCard'
+import Resume from '@/components/cards/ResumeCard'
+import Stack from '@/components/cards/StackCard'
+import ExperienceList from '@/components/Test'
 
 export default function Home() {
   const isAvailable = true
@@ -42,24 +44,24 @@ export default function Home() {
                 key={post.slug}
                 post={post}
                 home={true}
-                className="relative col-span-6 overflow-hidden sm:col-span-3 md:col-span-3 lg:col-span-2"
+                className="relative col-span-6 overflow-hidden sm:col-span-3 md:col-span-3 lg:col-span-3 h-80"
               />
             ))}
-
-          {openprojects.slice(0, 1).map((project) => (
-            <ProjectCard
+          <Resume className="relative col-span-6 sm:col-span-3 md:col-span-3 lg:col-span-3 h-80" />
+          {openprojects.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt)).slice(0, 1).map((project) => (
+            <ProjectCardHome
               key={project.name}
               project={project}
               github={true}
-              home={true}
-              className="relative col-span-6 overflow-hidden sm:col-span-3 md:col-span-3 lg:col-span-2"
+              className="relative col-span-6 overflow-hidden sm:col-span-3 md:col-span-3 lg:col-span-2 h-80"
             />
           ))}
-          <div className="relative grid col-span-6 grid-rows-3 gap-4 sm:col-span-3 md:col-span-3 lg:col-span-2">
+          <div className="relative grid col-span-6 grid-rows-3 gap-4 sm:col-span-3 md:col-span-3 lg:col-span-2 h-80">
             <SpotifyPlayer />
             <DialogContact className="row-span-2" />
           </div>
-          <Resume className="relative col-span-6 sm:col-span-3 md:col-span-3 lg:col-span-3 " />
+
+          <Stack className="relative col-span-6 sm:col-span-3 md:col-span-3 lg:col-span-2 " />
         </div>
       </Container>
     </>

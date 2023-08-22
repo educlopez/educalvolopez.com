@@ -1,8 +1,8 @@
 import { openprojects, projects } from '@/data/projects'
 
 import Clients from '@/components/Clients'
-import ProjectCard from '@/components/ProjectCard'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import { ProjectCardGal } from '@/components/cards/ProjectCard'
 
 export const metadata = {
   title: 'Proyectos',
@@ -27,7 +27,11 @@ export default function Projects() {
           className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3"
         >
           {openprojects.map((project) => (
-            <ProjectCard key={project.name} project={project} github={true} />
+            <ProjectCardGal
+              key={project.name}
+              project={project}
+              github={true}
+            />
           ))}
         </ul>
         <h2 className="mt-16 mb-10 text-2xl font-bold tracking-tight body-primary sm:text-2xl">
@@ -38,7 +42,11 @@ export default function Projects() {
           className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((project) => (
-            <ProjectCard key={project.name} project={project} github={false} />
+            <ProjectCardGal
+              key={project.name}
+              project={project}
+              github={false}
+            />
           ))}
         </ul>
         <Clients />

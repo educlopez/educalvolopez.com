@@ -93,7 +93,7 @@ export function SpotifyPlayer({ className }) {
   if (currentlyPlaying.isError || lastPlayed.isError) return null
 
   return (
-    <div className={cn(className, 'rounded-2xl box-gen flex p-6')}>
+    <div className={cn(className, 'rounded-2xl box-gen flex p-4')}>
       {currentlyPlaying.isLoading ? (
         <Song.Skeleton />
       ) : currentlyPlaying.song?.isPlaying ? (

@@ -6,14 +6,23 @@ module.exports = {
     './content/**/*.{md,mdx}',
   ],
   darkMode: 'class',
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
   theme: {
     extend: {
       backgroundImage: {
         'lights-sun': "url('/images/gradient.svg')",
       },
       animation: {
+        'fade-in': 'fade-in 0.5s linear forwards',
         marquee: 'marquee 50s linear infinite',
+        'spin-slow': 'spin 4s linear infinite',
+        'spin-slower': 'spin 6s linear infinite',
+        'spin-reverse': 'spin-reverse 1s linear infinite',
+        'spin-reverse-slow': 'spin-reverse 4s linear infinite',
+        'spin-reverse-slower': 'spin-reverse 6s linear infinite',
+        "meteor-effect": "meteor 5s linear infinite",
       },
       keyframes: {
         marquee: {
@@ -22,6 +31,14 @@ module.exports = {
           },
           to: {
             transform: 'translateX(calc(-100% - 2.5rem))',
+          },
+        },
+         meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: 1 },
+          "70%": { opacity: 1 },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: 0,
           },
         },
       },

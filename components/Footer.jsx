@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
 import { Container } from '@/components/Container'
-import { SpotifyPlayer } from '@/components/NowPlaying'
+import { SpotifyPlayer } from '@/components/cards/NowPlaying'
 
 function NavLink({ href, children, target, rel, onMouseEnter, onMouseLeave }) {
   return (

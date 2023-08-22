@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ChevronsRight } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
+import { Pill } from '@/components/Pill'
 
 export function Card({ as: Component = 'div', className, children }) {
   return (
@@ -11,7 +12,7 @@ export function Card({ as: Component = 'div', className, children }) {
         'group relative flex flex-col items-start rounded-2xl box-gen p-4 shadow hover:shadow-lg'
       )}
     >
-      <div className="p-2">{children}</div>
+      {children}
     </Component>
   )
 }
@@ -24,6 +25,13 @@ Card.Link = function CardLink({ children, ...props }) {
         <span className="relative z-10">{children}</span>
       </Link>
     </>
+  )
+}
+Card.Pill = function CardPill({ children, icon, className, ...props }) {
+  return (
+    <Pill icon={icon} className={cn(className)}>
+      {children}
+    </Pill>
   )
 }
 
@@ -39,8 +47,8 @@ Card.Title = function CardTitle({
   return (
     <Component
       className={cn(
-        className,
-        'text-base font-semibold tracking-tight body-primary'
+        'text-base font-semibold tracking-tight body-primary',
+        className
       )}
       {...props}
     >
@@ -58,7 +66,7 @@ Card.Title = function CardTitle({
 Card.Description = function CardDescription({ children, className, ...props }) {
   return (
     <p
-      className={cn(className, 'relative z-10 mt-2 text-sm body-secondary')}
+      className={cn(className, 'relative z-10 mt-3 text-sm body-secondary')}
       {...props}
     >
       {children}
@@ -70,7 +78,7 @@ Card.Cta = function CardCta({ children }) {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 flex items-center mt-4 text-sm font-medium text-indigo-600 dark:text-indigo-400"
+      className="relative z-10 flex items-center mt-3 text-sm font-medium text-indigo-600 dark:text-indigo-400"
     >
       {children}
       <ChevronsRight className="w-3 h-3 ml-1 stroke-current" />
@@ -89,7 +97,7 @@ Card.Eyebrow = function CardEyebrow({
     <Component
       className={cn(
         className,
-        'relative z-10 order-first mb-3 flex items-center text-sm body-secondary',
+        'relative z-10 mt-3 flex items-center text-sm body-secondary',
         decorate && 'pl-3.5'
       )}
       {...props}

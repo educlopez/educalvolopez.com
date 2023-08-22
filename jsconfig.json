@@ -5,5 +5,5 @@
       "@/*": ["./*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
-  },
+  }
 }

@@ -6,8 +6,11 @@ import * as ToggleGroup from '@radix-ui/react-toggle-group'
 import { cva } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
-import { Tool } from '@/components/ToolItem'
-import { ToolsSection, ToolsSectionGrid } from '@/components/ToolsSections'
+import { Tool } from '@/components/stack/ToolItem'
+import {
+  ToolsSection,
+  ToolsSectionGrid,
+} from '@/components/stack/ToolsSections'
 
 function filterStacks(stacks, type) {
   return stacks.filter((stack) => stack.type === type)
@@ -157,7 +160,7 @@ export function SwitchTool() {
         </div>
       ) : (
         <div className="space-y-20">
-          <ToolsSectionGrid title="Workstation">
+          <ToolsSectionGrid title="Workstation" size="three">
             {workstation.map((stack) => (
               <Tool
                 grid={true}

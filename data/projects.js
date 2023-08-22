@@ -1,14 +1,18 @@
-import coverAneto from '@/images/proyectos/cover-aneto.jpg'
-import coverChefHere from '@/images/proyectos/cover-chefhere.jpg'
-import coverDentaid from '@/images/proyectos/cover-dentaid.jpg'
-import coverGameDev from '@/images/proyectos/cover-gamedev.jpg'
-import coverJane from '@/images/proyectos/cover-janeworld.jpg'
-import coverMovieList from '@/images/proyectos/cover-movielist.jpg'
-import coverSemillasvivas from '@/images/proyectos/cover-semillasvivas.jpg'
-import coverNet2phone from '@/images/proyectos/cover-smsnet2phone.jpg'
-import coverTalkWorld from '@/images/proyectos/cover-talkworld.jpg'
-import coverTantra from '@/images/proyectos/cover-tantraspain.jpg'
-import coverWardobeme from '@/images/proyectos/cover-wardobeme.jpg'
+import coverAneto from '@/images/proyectos/cover-aneto.jpg';
+import coverChefHere from '@/images/proyectos/cover-chefhere.jpg';
+import coverDentaid from '@/images/proyectos/cover-dentaid.jpg';
+import coverGameDev from '@/images/proyectos/cover-gamedev.jpg';
+import coverJane from '@/images/proyectos/cover-janeworld.jpg';
+import coverMovieList from '@/images/proyectos/cover-movielist.jpg';
+import coverSemillasvivas from '@/images/proyectos/cover-semillasvivas.jpg';
+import coverNet2phone from '@/images/proyectos/cover-smsnet2phone.jpg';
+import coverTalkWorld from '@/images/proyectos/cover-talkworld.jpg';
+import coverTantra from '@/images/proyectos/cover-tantraspain.jpg';
+import coverWardobeme from '@/images/proyectos/cover-wardobeme.jpg';
+
+
+
+
 
 export const projects = [
   {
@@ -18,6 +22,7 @@ export const projects = [
     job: 'UI, Maquetación y Frontend',
     link: 'https://sms.net2phone.es/login',
     cover: coverNet2phone,
+    publishedAt: '2018-08-15',
   },
   {
     name: 'Tantra Spain',
@@ -26,6 +31,7 @@ export const projects = [
     job: 'UI, Maquetación y Frontend',
     link: 'https://tantraspain.com/',
     cover: coverTantra,
+    publishedAt: '2017-09-15',
   },
   {
     name: 'Aneto',
@@ -34,6 +40,7 @@ export const projects = [
     job: 'UI, Maquetación yFrontend',
     link: 'https://tiendaneto.com/es/',
     cover: coverAneto,
+    publishedAt: '2022-10-15',
   },
   {
     name: 'Janeworld',
@@ -42,6 +49,7 @@ export const projects = [
     job: 'Maquetación y Frontend',
     link: 'https://janeworld.com/',
     cover: coverJane,
+    publishedAt: '2022-06-15',
   },
   {
     name: 'Dentaid & Waterpike',
@@ -49,8 +57,8 @@ export const projects = [
       'Implementación de funcionalidades en distintas tiendas online para varios países Dentaid y Waterpik en Prestashop.',
     job: 'Maquetación y Frontend',
     link: 'https://www.dentaidcomprasonline.pe/',
-
     cover: coverDentaid,
+    publishedAt: '2022-07-15',
   },
   {
     name: 'Semillas Vivas',
@@ -58,6 +66,7 @@ export const projects = [
     job: 'UI, Maquetación y Frontend',
     link: 'https://www.semillasvivas.bio/es/',
     cover: coverSemillasvivas,
+    publishedAt: '2021-05-15',
   },
 ]
 
@@ -70,6 +79,8 @@ export const openprojects = [
     link: 'https://movielist.educalvolopez.com/',
     cover: coverMovieList,
     github: 'https://github.com/educlopez/movie-list',
+    video: 'movielist',
+    publishedAt: '2023-02-15',
   },
   {
     name: 'Talk World',
@@ -79,6 +90,7 @@ export const openprojects = [
     link: 'https://talkworld.educalvolopez.com/',
     cover: coverTalkWorld,
     github: 'https://github.com/educlopez/supabase-remix-talkworld-chat',
+    publishedAt: '2023-02-07',
   },
   {
     name: 'Gamedev',
@@ -88,6 +100,7 @@ export const openprojects = [
     link: 'https://gamedev.educalvolopez.com/',
     cover: coverGameDev,
     github: 'https://github.com/educlopez/gamedev',
+    publishedAt: '2023-03-31',
   },
   {
     name: 'Chefhere',
@@ -97,6 +110,7 @@ export const openprojects = [
     link: 'https://chefhere.educalvolopez.com/',
     cover: coverChefHere,
     github: 'https://github.com/educlopez/chefhere-ai-cohere',
+    publishedAt: '2023-02-20',
   },
   {
     name: 'Wardobeme',
@@ -106,5 +120,6 @@ export const openprojects = [
     link: 'https://wardobeme.educalvolopez.com/',
     cover: coverWardobeme,
     github: 'https://github.com/educlopez/wardrobeme',
+    publishedAt: '2023-03-13',
   },
 ]

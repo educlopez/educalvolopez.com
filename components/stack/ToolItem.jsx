@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
-import { Card } from '@/components/Card'
 import LinkArrow from '@/components/LinkArrow'
+import { Card } from '@/components/cards/Card'
 
 export function Tool({ title, href, img, children, grid }) {
   return (
@@ -22,7 +22,7 @@ export function Tool({ title, href, img, children, grid }) {
         href={href}
         rel="noopener noreferrer"
         target="_blank"
-        className={grid && 'text-sm'}
+        className={grid && 'text-xs, text-center w-full'}
       >
         {title}
       </Card.Title>

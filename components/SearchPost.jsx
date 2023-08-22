@@ -1,13 +1,10 @@
-'use client';
+'use client'
 
-import { Suspense, useState } from 'react';
-import { allPosts } from 'contentlayer/generated';
-import { Search } from 'lucide-react';
+import { Suspense, useState } from 'react'
+import { allPosts } from 'contentlayer/generated'
+import { Search } from 'lucide-react'
 
-
-
-import Article from '@/components/ArticleCard';
-
+import Article from '@/components/cards/ArticleCard'
 
 export default function SearchPost() {
   const [searchValue, setSearchValue] = useState('')
