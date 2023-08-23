@@ -6,7 +6,9 @@ import Link from 'next/link'
 import { clients, clientsBottom } from '@/data/clients'
 import { useTheme } from 'next-themes'
 
-export default function Clients() {
+import { cn } from '@/lib/utils'
+
+export default function Clients({ className }) {
   const [mounted, setMounted] = useState(false)
   const { theme } = useTheme()
 
@@ -29,7 +31,15 @@ export default function Clients() {
     numericHeight = styles.height
   }
   return (
-    <div className="relative flex flex-col justify-center pt-6 overflow-hidden sm:pt-12">
+    <div
+      className={cn(
+        'relative flex flex-col justify-center  overflow-hidden ',
+        className
+      )}
+    >
+      <h2 className="mb-10 text-2xl font-bold tracking-tight body-primary sm:text-2xl">
+        Clientes
+      </h2>
       <div className="relative flex gap-10 overflow-hidden">
         <div className="flex items-center justify-around min-w-full gap-10 animate-marquee shrink-0">
           {clients.map((client) => (

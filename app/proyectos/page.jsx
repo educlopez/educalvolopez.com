@@ -1,4 +1,4 @@
-import { openprojects, projects } from '@/data/projects'
+import { allProjects } from 'contentlayer/generated'
 
 import Clients from '@/components/Clients'
 import { SimpleLayout } from '@/components/SimpleLayout'
@@ -20,36 +20,25 @@ export default function Projects() {
         intro="¿No sabes por dónde empezar? He trabajado en montones de pequeños y grandes proyectos a lo largo de los años, pero estos son los que más me enorgullecen. Muchos de ellos son privados y no podré mostrarlos a continuación."
       >
         <h2 className="mb-10 text-2xl font-bold tracking-tight body-primary sm:text-2xl">
-          Side Projects
+          Proyectos destacados
         </h2>
+
         <ul
           role="list"
-          className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {openprojects.map((project) => (
-            <ProjectCardGal
-              key={project.name}
-              project={project}
-              github={true}
-            />
-          ))}
+          {allProjects
+            .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+            .map((project, index) => (
+              <ProjectCardGal
+                key={project.slug}
+                project={project}
+                index={index}
+              />
+            ))}
         </ul>
-        <h2 className="mt-16 mb-10 text-2xl font-bold tracking-tight body-primary sm:text-2xl">
-          Proyectos
-        </h2>
-        <ul
-          role="list"
-          className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {projects.map((project) => (
-            <ProjectCardGal
-              key={project.name}
-              project={project}
-              github={false}
-            />
-          ))}
-        </ul>
-        <Clients />
+
+        <Clients className="mt-16 sm:mt-20" />
       </SimpleLayout>
     </>
   )

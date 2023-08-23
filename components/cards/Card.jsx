@@ -8,8 +8,8 @@ export function Card({ as: Component = 'div', className, children }) {
   return (
     <Component
       className={cn(
-        className,
-        'group relative flex flex-col items-start rounded-2xl box-gen p-4 shadow hover:shadow-lg'
+        'group relative flex flex-col items-start rounded-2xl box-gen p-4 shadow hover:shadow-lg overflow-hidden',
+        className
       )}
     >
       {children}

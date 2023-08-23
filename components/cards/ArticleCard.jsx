@@ -12,7 +12,7 @@ export default function Article({ post, home, className }) {
           Último Post
         </Card.Pill>
       )}
-      <Card.Title href={`/blog/${post.slug}`}>{post.title}</Card.Title>
+      <Card.Title href={post.slug}>{post.title}</Card.Title>
 
       <Card.Eyebrow as="time" decorate>
         {formatDate(post.publishedAt)}
