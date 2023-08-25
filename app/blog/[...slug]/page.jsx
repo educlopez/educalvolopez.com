@@ -4,8 +4,8 @@ import { allPosts } from 'contentlayer/generated'
 import { ArrowLeft } from 'lucide-react'
 import { Balancer } from 'react-wrap-balancer'
 
-import { Container } from '@/components/Container'
 import { Mdx } from '@/components/Mdx-components'
+import { Container } from '@/components/ui/Container'
 
 async function getPostFromParams(params) {
   const slug = params?.slug?.join('/')

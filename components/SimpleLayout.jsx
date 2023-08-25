@@ -1,6 +1,6 @@
 import Balancer from 'react-wrap-balancer'
 
-import { Container } from '@/components/Container'
+import { Container } from '@/components/ui/Container'
 
 export function SimpleLayout({ title, intro, children }) {
   return (

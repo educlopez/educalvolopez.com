@@ -8,9 +8,9 @@ const gridVariants = cva(
   {
     variants: {
       size: {
-        default: 'lg:grid-cols-5',
-        two: 'lg:grid-cols-2',
-        three: 'lg:grid-cols-3',
+        default: 'lg:grid-cols-5 grid-cols-2',
+        two: 'lg:grid-cols-2 grid-cols-2',
+        three: 'lg:grid-cols-3 grid-cols-2',
       },
     },
     defaultVariants: {

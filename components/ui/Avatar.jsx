@@ -50,7 +50,40 @@ export const ImgAvatar = ({ className, size, ...props }) => (
     />
   </Link>
 )
+export const ImgAvatarNav = ({ className, size, ...props }) => (
+  <div className="group">
+    <Image
+      src={avatarImage}
+      alt="avatar Eduardo Calvo López"
+      placeholder="blur"
+      className={cn(avatarVariants({ size, className }), 'group-hover:hidden')}
+      priority
+    />
+    <Image
+      src={avatarImageHover}
+      alt="avatar Eduardo Calvo López"
+      placeholder="blur"
+      className={cn(
+        avatarVariants({ size, className }),
+        'hidden group-hover:flex'
+      )}
+      priority
+    />
+  </div>
+)
 
-export const Avatar = ({ className, size, ...props }) => (
-  <ImgAvatar className={cn(avatarVariants({ size, className }))} {...props} />
+export const Avatar = ({ mouseX, className, size, nav, ...props }) => (
+  <>
+    {nav ? (
+      <ImgAvatarNav
+        className={cn(avatarVariants({ size, className }))}
+        {...props}
+      />
+    ) : (
+      <ImgAvatar
+        className={cn(avatarVariants({ size, className }))}
+        {...props}
+      />
+    )}
+  </>
 )

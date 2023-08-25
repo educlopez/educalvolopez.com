@@ -3,7 +3,7 @@ import Image from 'next/image'
 import LinkArrow from '@/components/LinkArrow'
 import { Card } from '@/components/cards/Card'
 
-export function Tool({ title, href, img, children, grid }) {
+export function Tool({ title, href, img, children, grid, index }) {
   return (
     <Card as="li" className="relative z-10">
       <LinkArrow variant="grid" />
@@ -14,7 +14,8 @@ export function Tool({ title, href, img, children, grid }) {
           placeholder="blur"
           width={70}
           height={70}
-          className="object-cover mx-auto transition-transform duration-700 pointer-events-none "
+          className="object-cover mx-auto transition-transform duration-700 pointer-events-none"
+          priority={index <= 1}
         />
       )}
       <Card.Title

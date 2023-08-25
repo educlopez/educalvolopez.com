@@ -161,52 +161,56 @@ export function SwitchTool() {
       ) : (
         <div className="space-y-20">
           <ToolsSectionGrid title="Workstation" size="three">
-            {workstation.map((stack) => (
+            {workstation.map((stack, index) => (
               <Tool
                 grid={true}
                 title={stack.title}
                 href={stack.link}
                 key={stack.title}
                 img={stack.img}
+                index={index}
               >
                 {stack.title}
               </Tool>
             ))}
           </ToolsSectionGrid>
           <ToolsSectionGrid title="Desarrollo">
-            {development.map((stack) => (
+            {development.map((stack, index) => (
               <Tool
                 grid={true}
                 title={stack.title}
                 href={stack.link}
                 key={stack.title}
                 img={stack.img}
+                index={index}
               >
                 {stack.title}
               </Tool>
             ))}
           </ToolsSectionGrid>
           <ToolsSectionGrid title="Diseño">
-            {design.map((stack) => (
+            {design.map((stack, index) => (
               <Tool
                 grid={true}
                 title={stack.title}
                 href={stack.link}
                 key={stack.title}
                 img={stack.img}
+                index={index}
               >
                 {stack.title}
               </Tool>
             ))}
           </ToolsSectionGrid>
           <ToolsSectionGrid title="Productividad">
-            {productivity.map((stack) => (
+            {productivity.map((stack, index) => (
               <Tool
                 grid={true}
                 title={stack.title}
                 href={stack.link}
                 key={stack.title}
                 img={stack.img}
+                index={index}
               >
                 {stack.title}
               </Tool>

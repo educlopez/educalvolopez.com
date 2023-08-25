@@ -3,9 +3,9 @@
 import { MessageCircle } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/Button'
 import { Meteors } from '@/components/Meteors'
 import { Card } from '@/components/cards/Card'
+import { Button } from '@/components/ui/Button'
 
 export default function DialogContact({ className, ...props }) {
   return (
@@ -19,11 +19,17 @@ export default function DialogContact({ className, ...props }) {
         Te puedo ayudar a establecer el diseño de su sitio web o UI de
         productos.
       </p>
-      <div className="flex flex-row gap-2 mt-6">
-        <Button href="mailto:contacto@educalvolopez.com">
+      <div className="flex flex-row w-full gap-2 mt-6">
+        <Button
+          styleBtn="boxgen"
+          className="w-1/2"
+          href="mailto:contacto@educalvolopez.com"
+        >
           Envíame un Email
         </Button>
         <Button
+          styleBtn="boxgen"
+          className="w-1/2"
           href="https://x.com/messages/compose?recipient_id=296227502"
           target="_blank"
         >

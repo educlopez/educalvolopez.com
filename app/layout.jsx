@@ -3,8 +3,8 @@ import 'focus-visible'
 import { Inter } from 'next/font/google'
 
 import { Analytics } from '@/components/Analytics'
-import { FloatNav } from '@/components/FloatNav'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { FloatNav } from '@/components/nav/FloatNav'
 
 const inter = Inter({ subsets: ['latin'] })
 

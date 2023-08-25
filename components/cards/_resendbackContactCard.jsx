@@ -5,8 +5,8 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { MessageCircle, Send, X } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/Button'
 import { Card } from '@/components/cards/Card'
+import { Button } from '@/components/ui/Button'
 
 function isInputNamedElement(e) {
   return 'value' in e && 'name' in e

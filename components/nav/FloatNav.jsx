@@ -8,10 +8,11 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
 import { cn } from '@/lib/utils'
-import { Avatar } from '@/components/Avatar'
-import { Container } from '@/components/Container'
-import MobileNavigation from '@/components/MobileNav'
-import ThemeToggle from '@/components/ThemeToggle'
+import MobileNavigation from '@/components/nav/MobileNav'
+import ThemeToggle from '@/components/nav/ThemeToggle'
+import { Avatar } from '@/components/ui/Avatar'
+import { Container } from '@/components/ui/Container'
+import { Dock } from './Dock'
 
 function NavItem({ href, children, target, rel, onMouseEnter, onMouseLeave }) {
   let isActive = useRouter().pathname === href
@@ -89,17 +90,17 @@ function DesktopNavigation(props) {
 export function FloatNav() {
   return (
     <>
+      <Dock className="hidden pointer-events-auto md:flex" />
       <motion.header
-        className="fixed z-10 flex flex-col w-full bottom-8"
+        className="fixed z-10 flex flex-col w-full bottom-8 md:hidden"
         {...FADE_IN_ANIMATION_CARD}
       >
         <div className="h-16">
           <Container className="w-full">
             <div className="relative flex gap-4">
               <div className="flex justify-end flex-1 md:justify-center">
-                <DesktopNavigation className="hidden pointer-events-auto md:block" />
-                <MobileNavigation className="block pointer-events-auto md:hidden" />
-                <ThemeToggle className="block ml-2 md:hidden" />
+                <MobileNavigation className="pointer-events-auto" />
+                <ThemeToggle className="ml-2" />
               </div>
             </div>
           </Container>

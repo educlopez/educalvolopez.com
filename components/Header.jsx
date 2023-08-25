@@ -13,8 +13,8 @@ import { ChevronDown, X } from 'lucide-react'
 
 import { FADE_IN_ANIMATION_CARD } from '@/lib/constants'
 import { cn } from '@/lib/utils'
-import { Container } from '@/components/Container'
 import ThemeToggle from '@/components/ThemeToggle'
+import { Container } from '@/components/ui/Container'
 
 function MobileNavItem({ href, children, target, rel }) {
   return (

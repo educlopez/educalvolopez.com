@@ -1,21 +1,19 @@
-'use client';
+'use client'
 
-import { useRef } from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { useRef } from 'react'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
 
-
-
-export function JobItem({ role, scrollPosition, heightItem }) {
+export function JobItem({ role, scrollPosition, heightItem, roleIndex }) {
   const ref = useRef(null)
 
   const distance = role.index * heightItem
   const offset = scrollPosition - distance
 
-  const blurtwo = offset >= (-heightItem - 1) && offset <= 0 ? 0 : 2
-  const opacity = offset >= (-heightItem - 1) && offset <= 0 ? 1 : 0.3
+  const blurtwo = offset >= -heightItem - 1 && offset <= 0 ? 0 : 2
+  const opacity = offset >= -heightItem - 1 && offset <= 0 ? 1 : 0.3
 
-  const marginBoxTop = "last:mb-[128px]"
+  const marginBoxTop = 'last:mb-[128px]'
   return (
     <motion.div
       className={`flex gap-4 pb-4 snap-start work-item ${marginBoxTop}`}
@@ -30,7 +28,7 @@ export function JobItem({ role, scrollPosition, heightItem }) {
           src={role.logo}
           alt={role.title}
           className="w-10 h-10"
-          unoptimized
+          priority={roleIndex <= 1}
         />
       </div>
       <dl className="flex flex-wrap flex-auto gap-x-2">

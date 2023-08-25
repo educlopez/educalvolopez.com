@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ChevronsRight } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
-import { Pill } from '@/components/Pill'
+import { Pill } from '@/components/ui/Pill'
 
 export function Card({ as: Component = 'div', className, children }) {
   return (
@@ -29,7 +29,7 @@ Card.Link = function CardLink({ children, ...props }) {
 }
 Card.Pill = function CardPill({ children, icon, className, ...props }) {
   return (
-    <Pill icon={icon} className={cn(className)}>
+    <Pill icon={icon} className={cn('mb-3', className)}>
       {children}
     </Pill>
   )
@@ -66,7 +66,7 @@ Card.Title = function CardTitle({
 Card.Description = function CardDescription({ children, className, ...props }) {
   return (
     <p
-      className={cn(className, 'relative z-10 mt-3 text-sm body-secondary')}
+      className={cn('relative z-10 text-sm body-secondary', className)}
       {...props}
     >
       {children}
@@ -78,7 +78,7 @@ Card.Cta = function CardCta({ children }) {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 flex items-center mt-3 text-sm font-medium text-indigo-600 dark:text-indigo-400"
+      className="relative z-10 flex items-center text-sm font-medium text-indigo-600 dark:text-indigo-400"
     >
       {children}
       <ChevronsRight className="w-3 h-3 ml-1 stroke-current" />
@@ -97,7 +97,7 @@ Card.Eyebrow = function CardEyebrow({
     <Component
       className={cn(
         className,
-        'relative z-10 mt-3 flex items-center text-sm body-secondary',
+        'relative z-10 flex items-center text-sm body-secondary',
         decorate && 'pl-3.5'
       )}
       {...props}

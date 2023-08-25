@@ -1,9 +1,9 @@
 import Balancer from 'react-wrap-balancer'
 
-import { Container } from '@/components/Container'
 import { Phototab } from '@/components/PhotoTab'
 import { Reviews } from '@/components/Reviews'
 import { SocialText } from '@/components/SocialLinks'
+import { Container } from '@/components/ui/Container'
 
 export const metadata = {
   title: 'About',

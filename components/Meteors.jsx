@@ -1,4 +1,5 @@
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
+
 export const Meteors = ({ number }) => {
   const meteors = new Array(number || 20).fill(true)
   return (

@@ -2,10 +2,12 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { PlayCircle } from 'lucide-react'
 import useSWR from 'swr'
 
 import fetcher from '@/lib/fetcher'
 import { cn } from '@/lib/utils'
+import { Button } from '../ui/Button'
 
 function usePlayerState(path) {
   const { data, error, isLoading } = useSWR(`/api/spotify/${path}`, fetcher)
@@ -34,6 +36,7 @@ function Song({
         <Song.Title title={title} songUrl={songUrl} />
         <Song.Artist artist={artist} />
       </div>
+      <Song.Play songUrl={songUrl} />
     </Component>
   )
 }
@@ -52,6 +55,20 @@ Song.Album = function SongAlbum({ album, albumImageUrl }) {
       />
       <div className="bg-black border border-white rounded-full shadow-md h-14 w-14 dark:border-white/10 ring-1 ring-white/10 outline outline-1 outline-offset-0 outline-zinc-200 dark:outline-[#1a1a1a]"></div>
     </div>
+  )
+}
+
+Song.Play = function SongPlay({ songUrl }) {
+  return (
+    <Button
+      styleBtn="boxgen"
+      className="px-2"
+      href={songUrl}
+      target="_blank"
+      rel="noopener noreferer"
+    >
+      <PlayCircle size={24} />
+    </Button>
   )
 }
 

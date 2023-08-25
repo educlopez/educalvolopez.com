@@ -1,33 +1,48 @@
 import {
+  BookOpen,
+  Code,
   Github,
   Instagram,
+  Layers,
   Linkedin,
   Mail,
   Scroll,
+  ShoppingCart,
   Twitter,
+  User,
 } from 'lucide-react'
 
 export const generalLinks = [
   {
+    href: '/',
+    label: 'Inicio',
+    icon: 'Avatar',
+  },
+  {
     href: '/about',
     label: 'About',
+    icon: User,
   },
   {
     href: '/blog',
     label: 'Blog',
+    icon: BookOpen,
   },
   {
     href: '/proyectos',
     label: 'Proyectos',
+    icon: Code,
   },
   {
     href: '/stack',
     label: 'Stack',
+    icon: Layers,
   },
   {
     href: 'https://educalvolopez.lemonsqueezy.com/',
     label: 'Tienda',
     target: '_blank',
+    icon: ShoppingCart,
   },
 ]
 
