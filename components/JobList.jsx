@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { resume } from '@/data/resume'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 

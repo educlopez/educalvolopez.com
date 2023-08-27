@@ -44,8 +44,9 @@ const variants = {
 }
 
 export default function StackProject({ className }) {
-  const shuffled = allProjects.sort(() => 0.5 - Math.random())
-  const items = shuffled.slice(1, 4)
+  const items = allProjects
+    .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+    .slice(1, 4)
 
   return (
     <Card as="div" className={cn('group gap-2', className)}>
@@ -68,13 +69,13 @@ export default function StackProject({ className }) {
         >
           {items.map((project, i) => {
             return (
-              <Fragment key={project.id}>
+              <Fragment key={i}>
                 <motion.div
                   variants={variants}
                   className="absolute"
                   style={{ z: i * 200 }}
                 >
-                  <Media key={i} index={i} length={items.length} {...project} />
+                  <Media index={i} length={items.length} {...project} />
                 </motion.div>
               </Fragment>
             )
