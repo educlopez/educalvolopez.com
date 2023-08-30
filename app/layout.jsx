@@ -9,6 +9,7 @@ import { FloatNav } from '@/components/nav/FloatNav'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
+  metadataBase: new URL('https://educalvolopez.com'),
   title: {
     default: 'Edu Calvo - Diseñador Web & Frontend',
     template: '%s | Edu Calvo',

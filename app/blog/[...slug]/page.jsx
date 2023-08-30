@@ -19,10 +19,18 @@ async function getPostFromParams(params) {
 }
 
 export async function generateMetadata({ params }) {
-  const post = allPosts.find((post) => post.slug === params.slug)
+  const post = await getPostFromParams(params)
+
   if (!post) {
     return
   }
+  const url = 'https://educalvolopez.com'
+
+  const ogUrl = new URL(`${url}/api/og`)
+  ogUrl.searchParams.set('heading', post.title)
+  ogUrl.searchParams.set('type', 'Blog Post')
+  ogUrl.searchParams.set('mode', 'dark')
+
   const {
     title,
     keywords,
@@ -30,7 +38,6 @@ export async function generateMetadata({ params }) {
     description,
     image,
     slug,
-    tags = [], // Add default value for tags
   } = post
   const ogImage = image
     ? `https://educalvolopez.com${image}`
@@ -45,7 +52,7 @@ export async function generateMetadata({ params }) {
       description,
       type: 'article',
       publishedTime,
-      url: `https://educalvolopez.com/blog/${slug}`,
+      url: `https://educalvolopez.com${slug}`,
       images: [
         {
           url: ogImage,
