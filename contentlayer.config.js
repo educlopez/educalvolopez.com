@@ -89,6 +89,9 @@ export const Project = defineDocumentType(() => ({
     },
     image: {
       type: 'string',
+    },
+    cover: {
+      type: 'string',
       required: true,
     },
     keywords: {

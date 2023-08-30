@@ -20,7 +20,7 @@ async function getProjectFromParams(params) {
 }
 
 export async function generateMetadata({ params }) {
-  const project = allProjects.find((project) => project.slug === params.slug)
+  const project = await getProjectFromParams(params)
   if (!project) {
     return
   }
@@ -29,10 +29,9 @@ export async function generateMetadata({ params }) {
     keywords,
     publishedAt: publishedTime,
     description,
+    image,
     cover,
-    link,
     slug,
-    tags = [], // Add default value for tags
   } = project
   const ogImage = image
     ? `https://educalvolopez.com${image}`
@@ -47,7 +46,7 @@ export async function generateMetadata({ params }) {
       description,
       type: 'article',
       publishedTime,
-      url: `https://educalvolopez.com/blog/${slug}`,
+      url: `https://educalvolopez.com${slug}`,
       images: [
         {
           url: ogImage,
@@ -107,9 +106,9 @@ export default async function projectPage({ params }) {
                 <span className="ml-3">{project.publishedAt}</span>
               </div>
             </header>
-            {project.image && (
+            {project.cover && (
               <Image
-                src={project.image}
+                src={project.cover}
                 alt={project.title}
                 width={720}
                 height={405}

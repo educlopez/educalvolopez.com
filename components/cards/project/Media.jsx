@@ -13,7 +13,7 @@ export function modulate(current, from, to) {
   return clamp(mapped, to[0], to[1])
 }
 
-export default function Media({ image, title, index, length }) {
+export default function Media({ cover, title, index, length }) {
   const { mouseX, mouseY } = useMouse()
   const opacity = modulate(index, [0, length - 1], [1 - length / 10, 1])
 
@@ -40,7 +40,7 @@ export default function Media({ image, title, index, length }) {
         height={600}
         draggable={false}
         style={{ opacity }}
-        src={image}
+        src={cover}
         className="select-none rounded-xl"
         unoptimized={true}
       />

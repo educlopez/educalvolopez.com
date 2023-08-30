@@ -11,9 +11,9 @@ export function ProjectCardHome({ project, className, index }) {
     <Card as="div" key={project.title} className={cn('p-0', className)}>
       <div className="relative z-10 w-full h-full overflow-hidden rounded-lg">
         <div className="absolute z-10  w-full h-full -bottom-[64px] bg-gradient-to-t from-neutral-900 to-transparent"></div>
-        {project.image && (
+        {project.cover && (
           <Image
-            src={project.image}
+            src={project.cover}
             alt={project.title}
             width={323}
             height={162}
@@ -36,9 +36,9 @@ export function ProjectCardGal({ project, className, index }) {
     <Card as="div" key={project.title} className={cn('p-0', className)}>
       <div className="relative z-10 w-full h-full overflow-hidden rounded-lg">
         <div className="absolute z-10  w-full h-full -bottom-[64px] bg-gradient-to-t from-neutral-900 to-transparent "></div>
-        {project.image && (
+        {project.cover && (
           <Image
-            src={project.image}
+            src={project.cover}
             alt={project.title}
             width={323}
             height={162}
