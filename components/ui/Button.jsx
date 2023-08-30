@@ -13,7 +13,8 @@ const buttonVariants = cva('object-cover', {
       solid:
         'p-1 py-2 px-3  transform-gpu touch-none select-none border border-none border-transparent bg-white dark:bg-zinc-800 font-semibold leading-none text-neutral-700 hover:text-neutral-900 dark:text-zinc-300 dark:hover:text-zinc-100 shadow-button-light dark:shadow-button-dark after:absolute after:-inset-[1px] after:block  after:bg-gradient-to-t after:from-black/5 after:opacity-50 after:transition-opacity hover:after:opacity-100 focus-visible:border-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 disabled:cursor-not-allowed disabled:opacity-50 dark:after:from-black/[0.15] dark:focus-visible:ring-blue-600',
       card: 'h-[40px] bg-neutral-300 dark:bg-neutral-800 border-sm items-center	justify-center text-md font-regular flex',
-      boxgen: 'box-gen outline-0 ring-1 ring-zinc-200 dark:ring-[#1a1a1a] p-1',
+      boxgen:
+        'box-gen outline-0 ring-1 ring-zinc-200 dark:ring-[#1a1a1a] p-1 hover:bg-white dark:hover:bg-neutral-900/90 dark:hover:ring-neutral-800',
     },
   },
   defaultVariants: {

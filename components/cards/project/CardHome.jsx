@@ -56,7 +56,8 @@ export default function StackProject({ className }) {
       <div className="flex items-center justify-center w-full h-[240px]">
         <Button
           href="/proyectos"
-          className="absolute z-40 hidden transition -translate-y-1/2 group-hover:flex top-1/2"
+          styleBtn="boxgen"
+          className="absolute z-40 hidden px-2 transition -translate-y-1/2 group-hover:flex top-1/2 dark:bg-neutral-900/70"
         >
           Ver Proyectos
         </Button>

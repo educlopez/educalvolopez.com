@@ -14,8 +14,8 @@ export default function DialogContact({ className, ...props }) {
       </Card.Pill>
 
       <p className={cn('my-2 text-sm body-secondary')}>
-        Te puedo ayudar a establecer el diseño de su sitio web o UI de
-        productos.
+        Construyendo experiencias digitales excepcionales. ¡Hablemos de tu
+        proyecto!
       </p>
       <div className="flex flex-row w-full gap-2 mt-6">
         <Button

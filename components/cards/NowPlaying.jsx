@@ -29,7 +29,7 @@ function Song({
   isPlaying,
 }) {
   return (
-    <Component className="flex items-center max-w-full space-x-4">
+    <Component className="flex items-center justify-between w-full max-w-full space-x-4">
       {isPlaying}
       <Song.Album album={album} albumImageUrl={albumImageUrl} />
       <div className="inline-flex flex-col w-full max-w-full ">

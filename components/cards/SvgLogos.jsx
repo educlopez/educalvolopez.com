@@ -45,7 +45,7 @@ export default function SvgLogos(props, className) {
               height={64}
               x={19.123}
               y={41}
-              className="fill-white stroke-[#E9E9EB] dark:stroke-[#2f2f2f] dark:fill-[#18171C] hover:dark:fill-zinc-800 hover:fill-zinc-100 cursor-pointer"
+              className="fill-white stroke-[#E9E9EB] dark:stroke-[#2f2f2f] dark:fill-[#18171C] dark:hover:fill-neutral-800 hover:fill-neutral-100 cursor-pointer"
               rx={8}
             />
           </Link>
@@ -61,7 +61,7 @@ export default function SvgLogos(props, className) {
               height={63}
               x={94.746}
               y={41.5}
-              className="fill-white dark:fill-[#18171C] stroke-[#E9E9EB] dark:stroke-[#2f2f2f] hover:dark:fill-zinc-800 hover:fill-zinc-100 cursor-pointer"
+              className="fill-white dark:fill-[#18171C] stroke-[#E9E9EB] dark:stroke-[#2f2f2f] dark:hover:fill-neutral-800 hover:fill-neutral-100 cursor-pointer"
               rx={7.5}
             />
           </Link>
@@ -75,7 +75,7 @@ export default function SvgLogos(props, className) {
               height={63}
               x={169.869}
               y={41.5}
-              className="fill-white dark:fill-[#18171C] stroke-[#E9E9EB] dark:stroke-[#2f2f2f] hover:dark:fill-zinc-800 hover:fill-zinc-100 cursor-pointer"
+              className="fill-white dark:fill-[#18171C] stroke-[#E9E9EB] dark:stroke-[#2f2f2f] dark:hover:fill-neutral-800 hover:fill-neutral-100 cursor-pointer"
               rx={7.5}
             />
           </Link>
@@ -96,7 +96,7 @@ export default function SvgLogos(props, className) {
               height={63}
               x={244.992}
               y={41.5}
-              className="fill-white dark:fill-[#18171C] stroke-[#E9E9EB] dark:stroke-[#2f2f2f] hover:dark:fill-zinc-800 hover:fill-zinc-100 cursor-pointer"
+              className="fill-white dark:fill-[#18171C] stroke-[#E9E9EB] dark:stroke-[#2f2f2f] dark:hover:fill-neutral-800 hover:fill-neutral-100 cursor-pointer"
               rx={7.5}
             />
           </Link>
@@ -144,7 +144,7 @@ export default function SvgLogos(props, className) {
               height={64}
               x={19.123}
               y={115}
-              className="stroke-[#E9E9EB] dark:stroke-[#2f2f2f] fill-white dark:fill-[#18171C] hover:dark:fill-zinc-800 hover:fill-zinc-100 cursor-pointer"
+              className="stroke-[#E9E9EB] dark:stroke-[#2f2f2f] fill-white dark:fill-[#18171C] dark:hover:fill-neutral-800 hover:fill-neutral-100 cursor-pointer"
               rx={8}
             />
           </Link>
@@ -184,7 +184,7 @@ export default function SvgLogos(props, className) {
               height={63}
               x={94.746}
               y={115.5}
-              className="fill-white dark:fill-[#18171C] stroke-[#E9E9EB] dark:stroke-[#2f2f2f] hover:dark:fill-zinc-800 hover:fill-zinc-100 cursor-pointer"
+              className="fill-white dark:fill-[#18171C] stroke-[#E9E9EB] dark:stroke-[#2f2f2f] dark:hover:fill-neutral-800 hover:fill-neutral-100 cursor-pointer"
               rx={7.5}
             />
           </Link>
@@ -198,7 +198,7 @@ export default function SvgLogos(props, className) {
               height={63}
               x={244.746}
               y={115.5}
-              className="fill-white dark:fill-[#18171C] stroke-[#E9E9EB] dark:stroke-[#2f2f2f] hover:dark:fill-zinc-800 hover:fill-zinc-100 cursor-pointer"
+              className="fill-white dark:fill-[#18171C] stroke-[#E9E9EB] dark:stroke-[#2f2f2f] dark:hover:fill-neutral-800 hover:fill-neutral-100 cursor-pointer"
               rx={7.5}
             />
           </Link>

@@ -42,11 +42,11 @@ export default function Clients({ className }) {
       </h2>
       <div className="relative flex gap-10 overflow-hidden">
         <div className="flex items-center justify-around min-w-full gap-10 animate-marquee shrink-0">
-          {clients.map((client) => (
+          {clients.map((client, index) => (
             <Link
               target="_blank"
               rel="noopener noreferer"
-              className="relative group"
+              className="relative opacity-70 group"
               key={client.name}
               href={client.url}
             >
@@ -57,6 +57,7 @@ export default function Clients({ className }) {
                 height={numericHeight}
                 style={styles}
                 className=" max-w-[clamp(10rem,28vmin,20rem)] shadow-md"
+                priority={index <= 1}
               />
             </Link>
           ))}
@@ -65,11 +66,11 @@ export default function Clients({ className }) {
           aria-hidden="true"
           className="flex items-center justify-around min-w-full gap-10 animate-marquee shrink-0"
         >
-          {clients.map((client) => (
+          {clients.map((client, index) => (
             <Link
               target="_blank"
               rel="noopener noreferer"
-              className="relative group"
+              className="relative group opacity-70"
               key={client.name}
               href={client.url}
             >
@@ -80,6 +81,7 @@ export default function Clients({ className }) {
                 height={numericHeight}
                 style={styles}
                 className=" max-w-[clamp(10rem,28vmin,20rem)] shadow-md"
+                priority={index <= 1}
               />
             </Link>
           ))}
@@ -87,11 +89,11 @@ export default function Clients({ className }) {
       </div>
       <div className="relative flex gap-10 mt-10 overflow-hidden ">
         <div className="animate-marquee flex min-w-full shrink-0 items-center justify-around gap-10 [animation-direction:reverse]">
-          {clientsBottom.map((client) => (
+          {clientsBottom.map((client, index) => (
             <Link
               target="_blank"
               rel="noopener noreferer"
-              className="relative group"
+              className="relative group opacity-70"
               key={client.name}
               href={client.url}
             >
@@ -102,16 +104,17 @@ export default function Clients({ className }) {
                 height={numericHeight}
                 style={styles}
                 className=" max-w-[clamp(10rem,28vmin,20rem)] shadow-md"
+                priority={index <= 1}
               />
             </Link>
           ))}
         </div>
         <div className="animate-marquee flex min-w-full shrink-0 items-center justify-around gap-10 [animation-direction:reverse]">
-          {clientsBottom.map((client) => (
+          {clientsBottom.map((client, index) => (
             <Link
               target="_blank"
               rel="noopener noreferer"
-              className="relative group"
+              className="relative group opacity-70"
               key={client.name}
               href={client.url}
             >
@@ -122,6 +125,7 @@ export default function Clients({ className }) {
                 height={numericHeight}
                 style={styles}
                 className=" max-w-[clamp(10rem,28vmin,20rem)] shadow-md"
+                priority={index <= 1}
               />
             </Link>
           ))}
