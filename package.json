@@ -24,6 +24,7 @@
     "@react-email/components": "0.0.6",
     "@tailwindcss/typography": "0.5.9",
     "@vercel/analytics": "1.0.1",
+    "@vercel/og": "^0.5.11",
     "autoprefixer": "10.4.14",
     "class-variance-authority": "0.6.1",
     "clsx": "1.2.1",
