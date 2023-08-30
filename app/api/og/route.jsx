@@ -6,7 +6,7 @@ const font = fetch(
   new URL('/public/fonts/Inter-Bold.ttf', import.meta.url)
 ).then((res) => res.arrayBuffer())
 
-export default async function handler(req) {
+export async function GET(req) {
   const { searchParams } = req.nextUrl
   const postTitle = searchParams.get('title')
   const fontData = await font
