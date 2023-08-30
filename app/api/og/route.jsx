@@ -1,8 +1,6 @@
-import { ImageResponse } from 'next/server'
+import { ImageResponse } from '@vercel/og'
 
-export const config = {
-  runtime: 'edge',
-}
+export const runtime = 'edge'
 
 const font = fetch(
   new URL('/public/fonts/Inter-Bold.ttf', import.meta.url)
