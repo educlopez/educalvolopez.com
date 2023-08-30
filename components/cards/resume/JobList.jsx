@@ -2,9 +2,9 @@
 
 import { useRef, useState } from 'react'
 import { resume } from '@/data/resume'
-import { motion, useMotionValue, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 
-import { JobItem } from '@/components/JobItem'
+import { JobItem } from '@/components/cards/resume/JobItem'
 
 export default function JobsList() {
   const [scrollPosition, setScrollPosition] = useState(0)

@@ -1,8 +1,8 @@
 import { Briefcase, Download, Scroll } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
-import JobsList from '@/components/JobList'
 import { Card } from '@/components/cards/Card'
+import JobsList from '@/components/cards/resume/JobList'
 import { Button } from '@/components/ui/Button'
 
 export default function Resume({ className }) {

@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
-import { Section } from '@/components/Section'
+import { Section } from '@/components/ui/Section'
 
 const gridVariants = cva(
   'grid grid-cols-3 mt-5 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 xl:gap-x-8',

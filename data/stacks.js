@@ -1,4 +1,3 @@
-import { StaticImageData } from 'next/image'
 import img1Password from '@/images/icons/1password.png'
 import imgArc from '@/images/icons/arc.png'
 import imgBootstrap from '@/images/icons/bootstrap.png'

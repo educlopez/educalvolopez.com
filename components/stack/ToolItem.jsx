@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
-import LinkArrow from '@/components/LinkArrow'
 import { Card } from '@/components/cards/Card'
+import LinkArrow from '@/components/ui/LinkArrow'
 
 export function Tool({ title, href, img, children, grid, index }) {
   return (

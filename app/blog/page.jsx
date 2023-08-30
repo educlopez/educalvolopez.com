@@ -1,5 +1,5 @@
 import SearchPost from '@/components/SearchPost'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { SimpleLayout } from '@/components/ui/SimpleLayout'
 
 export const metadata = {
   title: 'Blog',

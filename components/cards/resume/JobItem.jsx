@@ -31,29 +31,29 @@ export function JobItem({ role, scrollPosition, heightItem, roleIndex }) {
           priority={roleIndex <= 1}
         />
       </div>
-      <dl className="flex flex-wrap flex-auto gap-x-2">
-        <dt className="sr-only">Empresa</dt>
-        <dd className="flex-none w-full text-sm font-medium body-primary">
-          {role.company}
-        </dd>
-        <dt className="sr-only">Rol</dt>
-        <dd className="text-xs body-secondary">{role.title}</dd>
-        <dt className="sr-only">Fecha</dt>
-        <dd
-          className="ml-auto text-xs body-secondary"
-          aria-label={`${role.start.label ?? role.start} until ${
-            role.end.label ?? role.end
-          }`}
-        >
-          <time dateTime={role.start.dateTime ?? role.start}>
-            {role.start.label ?? role.start}
-          </time>{' '}
-          <span aria-hidden="true">—</span>{' '}
-          <time dateTime={role.end.dateTime ?? role.end}>
-            {role.end.label ?? role.end}
-          </time>
-        </dd>
-      </dl>
+      <div className="flex flex-wrap flex-auto gap-x-2">
+        <div className="sr-only">Empresa y Fecha</div>
+        <div className="flex-none w-full text-sm font-medium body-primary">
+          {role.company}&nbsp;-&nbsp;
+          <div
+            className="inline text-xs body-secondary"
+            aria-label={`${role.start.label ?? role.start} until ${
+              role.end.label ?? role.end
+            }`}
+          >
+            <time dateTime={role.start.dateTime ?? role.start}>
+              {role.start.label ?? role.start}
+            </time>{' '}
+            <span aria-hidden="true">—</span>{' '}
+            <time dateTime={role.end.dateTime ?? role.end}>
+              {role.end.label ?? role.end}
+            </time>
+          </div>
+        </div>
+
+        <div className="sr-only">Rol</div>
+        <div className="text-xs body-secondary">{role.title}</div>
+      </div>
     </motion.div>
   )
 }

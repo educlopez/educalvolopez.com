@@ -11,7 +11,7 @@ export default function Error({ error, reset }) {
   return (
     <div>
       <p className="body-primary">
-        Oh no, Algo salió mal ... ¿tal vez deberías recargar la página
+        Oh no, Algo salió mal... ¿tal vez deberías recargar la página
       </p>
     </div>
   )

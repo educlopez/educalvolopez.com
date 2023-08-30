@@ -1,17 +1,16 @@
-import { allPosts, allProjects } from '@/.contentlayer/generated'
+import { allPosts } from '@/.contentlayer/generated'
 import Balancer from 'react-wrap-balancer'
 
-import { SocialLinks } from '@/components/SocialLinks'
-import { StatusWork } from '@/components/StatusWork'
 import Article from '@/components/cards/ArticleCard'
 import DialogContact from '@/components/cards/ContactCard'
 import { SpotifyPlayer } from '@/components/cards/NowPlaying'
-import Resume from '@/components/cards/ResumeCard'
 import Stack from '@/components/cards/StackCard'
 import StackProject from '@/components/cards/project/CardHome'
-import { ProjectCardHome } from '@/components/cards/project/ProjectCard'
+import Resume from '@/components/cards/resume/ResumeCard'
+import { StatusWork } from '@/components/sections/StatusWork'
 import { Avatar } from '@/components/ui/Avatar'
 import { Container } from '@/components/ui/Container'
+import { SocialLinks } from '@/components/ui/SocialLinks'
 
 export default function Home() {
   const isAvailable = true

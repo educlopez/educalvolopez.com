@@ -1,12 +1,8 @@
-import logoAdraba from '@/images/logos/circle/adraba.svg';
-import logoBdo from '@/images/logos/circle/bdo.svg';
-import logoCinetic from '@/images/logos/circle/cineticdigital.svg';
-import logoPapayagroup from '@/images/logos/circle/papayagroup.svg';
-import logoTantra from '@/images/logos/circle/tantra.svg';
-
-
-
-
+import logoAdraba from '@/images/logos/circle/adraba.svg'
+import logoBdo from '@/images/logos/circle/bdo.svg'
+import logoCinetic from '@/images/logos/circle/cineticdigital.svg'
+import logoPapayagroup from '@/images/logos/circle/papayagroup.svg'
+import logoTantra from '@/images/logos/circle/tantra.svg'
 
 export const resume = [
   {
@@ -39,7 +35,7 @@ export const resume = [
   {
     index: 4,
     company: 'BDO',
-    title: 'Diseñador en Marketing y comunicación',
+    title: 'Diseñador Gráfico y Maquetador web',
     logo: logoBdo,
     start: '2016',
     end: '2017',
@@ -47,7 +43,7 @@ export const resume = [
   {
     index: 5,
     company: 'Papaya Group',
-    title: 'Diseñador Gráfico',
+    title: 'Diseñador Gráfico.',
     logo: logoPapayagroup,
     start: '2014',
     end: '2014',

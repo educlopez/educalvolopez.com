@@ -1,5 +1,5 @@
-import { SimpleLayout } from '@/components/SimpleLayout'
 import { SwitchTool } from '@/components/stack/SwitchTool'
+import { SimpleLayout } from '@/components/ui/SimpleLayout'
 
 export const metadata = {
   title: 'Stack',

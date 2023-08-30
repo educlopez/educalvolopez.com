@@ -8,7 +8,6 @@ import portraitImage from '@/images/portrait.jpg'
 import * as Tabs from '@radix-ui/react-tabs'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Dog, Map as MapIcon, User } from 'lucide-react'
-import { useDebouncedCallback } from 'use-debounce'
 
 const tabs = [
   {

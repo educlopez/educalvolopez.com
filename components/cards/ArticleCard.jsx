@@ -3,7 +3,6 @@ import { Sparkles } from 'lucide-react'
 import { formatDate } from '@/lib/formatDate'
 import { cn } from '@/lib/utils'
 import { Card } from '@/components/cards/Card'
-import { Button } from '@/components/ui/Button'
 
 export default function Article({ post, home, className }) {
   const sortedTags = post.tags.sort((a, b) => a.localeCompare(b))

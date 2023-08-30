@@ -1,11 +1,9 @@
-'use client'
-
 import { MessageCircle } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
-import { Meteors } from '@/components/Meteors'
 import { Card } from '@/components/cards/Card'
 import { Button } from '@/components/ui/Button'
+import { Meteors } from '@/components/ui/Meteors'
 
 export default function DialogContact({ className, ...props }) {
   return (

@@ -6,7 +6,7 @@ export default async function sitemap() {
     lastModified: post.publishedAt,
   }))
 
-  const routes = ['', '/about', '/blog', '/recomendaciones', '/proyectos'].map(
+  const routes = ['', '/about', '/blog', '/stack', '/proyectos'].map(
     (route) => ({
       url: `https://educalvolopez.com${route}`,
       lastModified: new Date().toISOString().split('T')[0],
