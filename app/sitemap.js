@@ -1,9 +1,13 @@
-import { allPosts } from 'contentlayer/generated'
+import { allPosts, allProjects } from 'contentlayer/generated'
 
 export default async function sitemap() {
   const blogs = allPosts.map((post) => ({
-    url: `https://educalvolopez.com/blog/${post.slug}`,
+    url: `https://educalvolopez.com${post.slug}`,
     lastModified: post.publishedAt,
+  }))
+  const projects = allProjects.map((project) => ({
+    url: `https://educalvolopez.com${project.slug}`,
+    lastModified: project.publishedAt,
   }))
 
   const routes = ['', '/about', '/blog', '/stack', '/proyectos'].map(
@@ -13,5 +17,5 @@ export default async function sitemap() {
     })
   )
 
-  return [...routes, ...blogs]
+  return [...routes, ...blogs, ...projects]
 }
