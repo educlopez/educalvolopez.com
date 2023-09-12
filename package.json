@@ -12,6 +12,9 @@
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "3.7.2",
+    "@mdx-js/loader": "2.3.0",
+    "@mdx-js/react": "2.3.0",
+    "@next/mdx": "13.4.1",
     "@radix-ui/react-dropdown-menu": "2.0.5",
     "@radix-ui/react-tabs": "1.0.4",
     "@radix-ui/react-toggle-group": "1.0.4",
@@ -40,6 +43,7 @@
     "rehype-slug": "5.1.0",
     "remark-gfm": "3.0.1",
     "swr": "2.1.5",
+    "sharp": "0.32.1",
     "tailwind-merge": "1.13.2"
   },
   "devDependencies": {
