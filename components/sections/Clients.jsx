@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes'
 
 import Marquee from '@/components/ui/Marquee'
 
-const ClientCard = ({ imageblack, imagewhite, url, index }) => {
+const ClientCard = ({ imageblack, imagewhite, url, index, title }) => {
   const { theme } = useTheme()
 
   return (
@@ -19,7 +19,7 @@ const ClientCard = ({ imageblack, imagewhite, url, index }) => {
       <div className="flex flex-row items-center justify-center w-full h-auto gap-2 text-white transition group-hover:scale-110">
         <Image
           src={theme === 'light' ? imageblack : imagewhite}
-          alt={name}
+          alt={title}
           className="max-w-[clamp(10rem,28vmin,20rem)] shadow-md"
           priority={index <= 1}
         />

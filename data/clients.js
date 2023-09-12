@@ -17,81 +17,81 @@ import uamWhiteLogo from '@/images/logos/white/uam-logo.svg'
 
 export const clients = [
   {
-    name: 'Net2phone',
+    title: 'Net2phone',
     imageblack: net2phoneLogo,
     imagewhite: net2phoneWhiteLogo,
     url: 'https://www.net2phone.es/',
-    urlname: 'net2phone.es',
+    urltitle: 'net2phone.es',
     style: {
       width: 206,
     },
   },
   {
-    name: 'Tantra Spain',
+    title: 'Tantra Spain',
     imageblack: tantraLogo,
     imagewhite: tantraWhiteLogo,
     url: 'https://tantraspain.com/',
-    urlname: 'tantraspain.com',
+    urltitle: 'tantraspain.com',
     style: {
       height: 55,
     },
   },
   {
-    name: 'Universidad Autonoma de Madrid',
+    title: 'Universidad Autonoma de Madrid',
     imageblack: uamLogo,
     imagewhite: uamWhiteLogo,
     url: 'https://www.uam.es/',
-    urlname: 'uam.es',
+    urltitle: 'uam.es',
     style: {
       width: 289,
     },
   },
   {
-    name: 'Banco Sabadell',
+    title: 'Banco Sabadell',
     imageblack: bancosabadellLogo,
     imagewhite: bancosabadellWhiteLogo,
     url: 'https://www.bancsabadell.com/',
-    urlname: 'bancsabadell.com',
+    urltitle: 'bancsabadell.com',
     style: {
       width: 230,
     },
   },
   {
-    name: 'Termix',
+    title: 'Termix',
     imageblack: termixLogo,
     imagewhite: termixWhiteLogo,
     url: 'https://www.termix.net/',
-    urlname: 'termix.net',
+    urltitle: 'termix.net',
     style: {
       width: 209,
     },
   },
   {
-    name: 'Janè',
+    title: 'Janè',
     imageblack: janeLogo,
     imagewhite: janeWhiteLogo,
     url: 'https://janeworld.com/',
-    urlname: 'janeworld.com',
+    urltitle: 'janeworld.com',
     style: {
       width: 224,
     },
   },
   {
-    name: 'Dentaid',
+    title: 'Dentaid',
     imageblack: dentaidLogo,
     imagewhite: dentaidWhiteLogo,
     url: 'https://www.dentaid.es/',
-    urlname: 'dentaid.es',
+    urltitle: 'dentaid.es',
     style: {
       width: 288,
     },
   },
   {
-    name: 'Aneto',
+    title: 'Aneto',
     imageblack: anetoLogo,
     imagewhite: anetoWhiteLogo,
     url: 'https://www.aneto.com/',
-    urlname: 'aneto.com',
+    urltitle: 'aneto.com',
     style: {
       width: 230,
     },
