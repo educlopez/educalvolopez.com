@@ -1,7 +1,7 @@
 import { allProjects } from 'contentlayer/generated'
 
 import { ProjectCardGal } from '@/components/cards/project/ProjectCard'
-import Clients from '@/components/sections/Clients'
+import { Clients } from '@/components/sections/Clients'
 import { SimpleLayout } from '@/components/ui/SimpleLayout'
 
 export const metadata = {

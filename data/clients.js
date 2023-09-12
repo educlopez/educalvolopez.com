@@ -56,9 +56,6 @@ export const clients = [
       width: 230,
     },
   },
-]
-
-export const clientsBottom = [
   {
     name: 'Termix',
     imageblack: termixLogo,

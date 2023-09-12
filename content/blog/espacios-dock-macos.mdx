@@ -1,0 +1,27 @@
+---
+title: Cómo añadir espacios en el dock de MacOS
+description: Maximiza la eficiencia de tu MacOS personalizando el dock con espacios estratégicos para resaltar tus aplicaciones clave. Descubre cómo mejorar tu flujo de trabajo con este mini tutorial.
+publishedAt: '2023-09-12'
+tags: ['Macos', 'Terminal', 'Mini Tutorial']
+keywords: Espacios en el dock, MacOS, Personalización del dock, Aplicaciones destacadas, Productividad en MacOS, Dock de MacOS, Configuración del dock, Trucos de MacOS, Organización de aplicaciones, Optimización del flujo de trabajo
+---
+
+<Image
+  className="w-full rounded-md"
+  src="/images/blog/cover-img-macosdock.jpg"
+  alt="Macos Dock"
+  width={672}
+  height={258}
+  priority
+/>
+
+## Cómo añadir espacios en el dock de MacOS
+
+1. Abre la aplicación Terminal.
+2. Introduce este comando:
+
+```bash
+defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock
+```
+
+**Voilà!!** Disfruta de tu nuevo espacio en el dock de MacOS que te ayudará a organizar tus aplicaciones y mejorar tu flujo de trabajo.

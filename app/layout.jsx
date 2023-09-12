@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body
-        className={`flex flex-col h-full antialiased bg-top bg-no-repeat bg-neutral-50 bg-lights-sun dark:bg-neutral-900 ${inter.className}`}
+        className={`flex flex-col h-full antialiased bg-top bg-no-repeat bg-neutral-50 bg-lights-sun  dark:bg-neutral-900 ${inter.className}`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="relative mb-16 sm:mb-32">

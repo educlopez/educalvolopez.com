@@ -11,12 +11,7 @@
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
-    "@headlessui/react": "1.7.14",
     "@ianvs/prettier-plugin-sort-imports": "3.7.2",
-    "@mdx-js/loader": "2.3.0",
-    "@mdx-js/react": "2.3.0",
-    "@next/mdx": "13.4.1",
-    "@radix-ui/react-dialog": "1.0.4",
     "@radix-ui/react-dropdown-menu": "2.0.5",
     "@radix-ui/react-tabs": "1.0.4",
     "@radix-ui/react-toggle-group": "1.0.4",
@@ -29,8 +24,6 @@
     "class-variance-authority": "0.6.1",
     "clsx": "1.2.1",
     "contentlayer": "0.3.2",
-    "fast-glob": "3.2.12",
-    "feed": "4.2.2",
     "focus-visible": "5.2.0",
     "framer-motion": "10.12.9",
     "lucide-react": "0.214.0",
@@ -46,11 +39,8 @@
     "rehype-pretty-code": "0.9.5",
     "rehype-slug": "5.1.0",
     "remark-gfm": "3.0.1",
-    "resend": "0.15.1",
-    "sharp": "0.32.1",
     "swr": "2.1.5",
-    "tailwind-merge": "1.13.2",
-    "use-debounce": "9.0.4"
+    "tailwind-merge": "1.13.2"
   },
   "devDependencies": {
     "eslint": "8.40.0",
