@@ -48,7 +48,7 @@ export const generalLinks = [
 
 export const linksSocial = [
   {
-    href: 'https://twitter.com/educlopez93',
+    href: 'https://twitter.com/educalvolpz',
     icon: Twitter,
     label: 'Seguir en Twitter',
     outline: true,
