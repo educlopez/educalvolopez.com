@@ -1,9 +1,12 @@
-import { Briefcase, Download, Scroll } from 'lucide-react'
+import { Briefcase, Download, Scroll } from 'lucide-react';
 
-import { cn } from '@/lib/utils'
-import { Card } from '@/components/cards/Card'
-import JobsList from '@/components/cards/resume/JobList'
-import { Button } from '@/components/ui/Button'
+
+
+import { cn } from '@/lib/utils';
+import { Card } from '@/components/cards/Card';
+import JobsList from '@/components/cards/resume/JobList';
+import { Button } from '@/components/ui/Button';
+
 
 export default function Resume({ className }) {
   return (
@@ -11,7 +14,7 @@ export default function Resume({ className }) {
       <Card.Pill icon={Briefcase}>Experiencia</Card.Pill>
       <JobsList />
 
-      <div className="flex flex-row justify-between w-full gap-2">
+      <div className="flex flex-row gap-2 justify-between w-full">
         <Button
           href="https://read.cv/educlopez"
           styleBtn="boxgen"
@@ -23,7 +26,7 @@ export default function Resume({ className }) {
           Read.cv
         </Button>
         <Button
-          href="2023_eduardo_calvo_lopez_curriculum.pdf"
+          href="/images/blog/cover-lorem-ipsum.png"
           styleBtn="boxgen"
           className="w-1/2"
           target="_blank"
