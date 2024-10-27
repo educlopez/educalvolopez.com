@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 import { Card } from '@/components/cards/Card'
 import { Button } from '@/components/ui/Button'
 import { Meteors } from '@/components/ui/Meteors'
-
+import config from '@/config/config'
 export default function DialogContact({ className, ...props }) {
   return (
     <Card className={cn('overflow-hidden', className)}>
@@ -17,11 +17,11 @@ export default function DialogContact({ className, ...props }) {
         Construyendo experiencias digitales excepcionales. ¡Hablemos de tu
         proyecto!
       </p>
-      <div className="flex flex-row w-full gap-2 mt-6">
+      <div className="flex flex-row gap-2 mt-6 w-full">
         <Button
           styleBtn="boxgen"
           className="w-1/2"
-          href="mailto:contacto@educalvolopez.com"
+          href={config.links.email}
         >
           Envíame un Email
         </Button>

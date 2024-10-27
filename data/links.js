@@ -11,35 +11,36 @@ import {
   Twitter,
   User,
 } from 'lucide-react'
+import config from '@/config/config';
 
 export const generalLinks = [
   {
-    href: '/',
+    href: config.links.home,
     label: 'Inicio',
     icon: 'Avatar',
   },
   {
-    href: '/about',
+    href: config.links.about,
     label: 'About',
     icon: User,
   },
   {
-    href: '/blog',
+    href: config.links.blog,
     label: 'Blog',
     icon: BookOpen,
   },
   {
-    href: '/proyectos',
+    href: config.links.projects,
     label: 'Proyectos',
     icon: Code,
   },
   {
-    href: '/stack',
+    href: config.links.stack,
     label: 'Stack',
     icon: Layers,
   },
   {
-    href: 'https://educalvolopez.lemonsqueezy.com/',
+    href: config.links.shop,
     label: 'Tienda',
     target: '_blank',
     icon: ShoppingCart,
@@ -48,37 +49,37 @@ export const generalLinks = [
 
 export const linksSocial = [
   {
-    href: 'https://twitter.com/educalvolpz',
+    href: config.socialLinks.twitter,
     icon: Twitter,
     label: 'Seguir en Twitter',
     outline: true,
   },
   {
-    href: 'https://instagram.com/edui_design/',
+    href: config.socialLinks.instagram,
     icon: Instagram,
     label: 'Seguir en Instagram',
     outline: true,
   },
   {
-    href: 'https://github.com/educlopez',
+    href: config.socialLinks.github,
     icon: Github,
     label: 'Seguir en GitHub',
     outline: true,
   },
   {
-    href: 'https://linkedin.com/in/educlopez',
+    href: config.socialLinks.linkedin,
     icon: Linkedin,
     label: 'Seguir en LinkedIn',
     outline: true,
   },
   {
-    href: 'https://read.cv/educlopez',
+    href: config.socialLinks.readcv,
     icon: Scroll,
     label: 'Read.cv',
     outline: true,
   },
   {
-    href: 'mailto:educalvolopez@gmail.com',
+    href: config.links.email,
     icon: Mail,
     label: 'Enviar Correo',
     outline: true,
