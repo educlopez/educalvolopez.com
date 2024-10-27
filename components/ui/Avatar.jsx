@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import avatarImage from '@/images/avatar.jpg'
-import avatarImageHover from '@/images/avatarhover.jpg'
+import avatarImage from '@/images/avatar.png'
 import { cva } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
@@ -35,17 +34,7 @@ export const ImgAvatar = ({ className, size, ...props }) => (
       src={avatarImage}
       alt="avatar Eduardo Calvo López"
       placeholder="blur"
-      className={cn(avatarVariants({ size, className }), 'group-hover:hidden')}
-      priority
-    />
-    <Image
-      src={avatarImageHover}
-      alt="avatar Eduardo Calvo López"
-      placeholder="blur"
-      className={cn(
-        avatarVariants({ size, className }),
-        'hidden group-hover:flex'
-      )}
+      className={cn(avatarVariants({ size, className }), '')}
       priority
     />
   </Link>
@@ -56,17 +45,7 @@ export const ImgAvatarNav = ({ className, size, ...props }) => (
       src={avatarImage}
       alt="avatar Eduardo Calvo López"
       placeholder="blur"
-      className={cn(avatarVariants({ size, className }), 'group-hover:hidden')}
-      priority
-    />
-    <Image
-      src={avatarImageHover}
-      alt="avatar Eduardo Calvo López"
-      placeholder="blur"
-      className={cn(
-        avatarVariants({ size, className }),
-        'hidden group-hover:flex'
-      )}
+      className={cn(avatarVariants({ size, className }), '')}
       priority
     />
   </div>
