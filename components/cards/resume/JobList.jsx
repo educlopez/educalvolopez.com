@@ -15,9 +15,9 @@ export default function JobsList() {
 
   const containerref = useRef(null)
   return (
-    <motion.div className="relative w-full ">
+    <motion.div className="relative w-full">
       <section
-        className="relative overflow-scroll h-[192px] snap-y snap-proximity"
+        className="relative overflow-auto h-[192px] snap-y snap-proximity"
         onScroll={handleScroll}
         ref={containerref}
       >
