@@ -21,7 +21,7 @@ export async function GET(req) {
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'center',
-          backgroundImage: 'url(https://educalvolopez.com/og-bg.jpg)',
+          backgroundImage: 'url(https://educalvolopez-com.vercel.app/og-bg.jpg)',
         }}
       >
         <div

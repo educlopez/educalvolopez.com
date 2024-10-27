@@ -24,9 +24,9 @@ const computedFields = {
       dateModified: doc.publishedAt,
       description: doc.summary,
       image: doc.image
-        ? `https://educalvolopez.com${doc.image}`
-        : `https://educalvolopez.com/api/og?title=${doc.title}`,
-      url: `https://educalvolopez.com/blog/${doc._raw.flattenedPath}`,
+        ? `https://educalvolopez-com.vercel.app${doc.image}`
+        : `https://educalvolopez-com.vercel.app/api/og?title=${doc.title}`,
+      url: `https://educalvolopez-com.vercel.app/blog/${doc._raw.flattenedPath}`,
       author: {
         '@type': 'Person',
         name: 'Edu Calvo',

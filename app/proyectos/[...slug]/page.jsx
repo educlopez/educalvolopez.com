@@ -34,8 +34,8 @@ export async function generateMetadata({ params }) {
     slug,
   } = project
   const ogImage = image
-    ? `https://educalvolopez.com${image}`
-    : `https://educalvolopez.com/api/og?title=${title}`
+    ? `https://educalvolopez-com.vercel.app${image}`
+    : `https://educalvolopez-com.vercel.app/api/og?title=${title}`
 
   return {
     title,
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }) {
       description,
       type: 'article',
       publishedTime,
-      url: `https://educalvolopez.com${slug}`,
+      url: `https://educalvolopez-com.vercel.app${slug}`,
       images: [
         {
           url: ogImage,

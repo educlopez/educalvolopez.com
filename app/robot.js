@@ -5,7 +5,7 @@ export default function robots() {
         userAgent: '*',
       },
     ],
-    sitemap: 'https://educalvolopez.com/sitemap.xml',
-    host: 'https://educalvolopez.com',
+    sitemap: 'https://educalvolopez-com.vercel.app/sitemap.xml',
+    host: 'https://educalvolopez-com.vercel.app',
   }
 }

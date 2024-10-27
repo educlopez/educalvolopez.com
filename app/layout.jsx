@@ -9,7 +9,7 @@ import { FloatNav } from '@/components/nav/FloatNav'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  metadataBase: new URL('https://educalvolopez.com'),
+  metadataBase: new URL('https://educalvolopez-com.vercel.app'),
   title: {
     default: 'Edu Calvo - Diseñador Web & Frontend',
     template: '%s | Edu Calvo',
@@ -21,11 +21,11 @@ export const metadata = {
   openGraph: {
     title: 'Edu Calvo',
     description: 'Diseñador web y Frontend con sede en Madrid',
-    url: 'https://educalvolopez.com',
+    url: 'https://educalvolopez-com.vercel.app',
     siteName: 'Edu Calvo',
     images: [
       {
-        url: 'https://educalvolopez.com/og.jpg',
+        url: 'https://educalvolopez-com.vercel.app/og.jpg',
         width: 1920,
         height: 1080,
       },
