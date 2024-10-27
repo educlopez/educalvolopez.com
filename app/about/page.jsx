@@ -1,9 +1,13 @@
-import Balancer from 'react-wrap-balancer'
+import Balancer from 'react-wrap-balancer';
 
-import { Phototab } from '@/components/sections/PhotoTab'
-import { Reviews } from '@/components/sections/Reviews'
-import { Container } from '@/components/ui/Container'
-import { SocialText } from '@/components/ui/SocialLinks'
+
+
+import config from '@/config/config'
+import { Phototab } from '@/components/sections/PhotoTab';
+import { Reviews } from '@/components/sections/Reviews';
+import { Container } from '@/components/ui/Container';
+import { SocialText } from '@/components/ui/SocialLinks';
+
 
 export const metadata = {
   title: 'About',
@@ -26,27 +30,12 @@ export default function About() {
           <div className="lg:order-first lg:row-span-2">
             <h1 className="title-primary">
               <Balancer>
-                Soy Edu Calvo, vivo en Madrid en donde diseño y creo webs.
+                {config.abouttitle}
               </Balancer>
             </h1>
-            <div className="mt-6 text-base space-y-7 body-secondary">
+            <div className="mt-6 space-y-7 text-base body-secondary">
               <p>
-                Soy <b> diseñador web y frontend</b> desde mi primer año de
-                estudios de diseño gráfico en la universidad UDIT (ESNE). He
-                trabajado en muchos tipos de proyectos diferentes, como
-                <b> ecommerce, paneles de usuario y páginas de aterrizaje</b>.
-              </p>
-              <p>
-                Me encanta lo que hago porque me permite utilizar mi creatividad
-                y mis habilidades en la comunicación visual, así como en la
-                <b> resolución de problemas</b>.
-              </p>
-              <p>
-                Tengo un gran conocimiento de lo que se necesita para crear
-                grandes interfaces de usuario y diseños que funcionen bien en
-                cualquier dispositivo. He trabajado con clientes de todo el
-                mundo en proyectos que van desde pequeñas empresas hasta grandes
-                corporaciones.
+                {config.aboutbody}
               </p>
             </div>
           </div>
